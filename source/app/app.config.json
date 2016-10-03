@@ -6,7 +6,8 @@
         "httppath":"http://www.realsun.me:8003/rispweb//upfiles",
         "saveMethod":"SaveData_Ajax",
         "dic1Resid":526765618499,
-        "debug":true
+        "debug":true,
+        "dbs":null
     },
      "domesticfilght":
     {        

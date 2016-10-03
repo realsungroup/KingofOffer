@@ -73,8 +73,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                         
                         flightappform.show(o).then(function(response) {
                            system.log(response);
-                        //  o=response;
-                          
+                           
                            var newrows=self.rows().clone();
                           self.rows.removeAll();
                           self.rows(newrows);
@@ -113,6 +112,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
     var user  = getQueryString('user');
    
     var dbs=new dbHelper(baseUrl,user,ucode);
+    appConfig.app.dbs=dbs;
    // var el = document.getElementById('content');
    // var datagrids = document.getElementById('datagrids');
     //var shiftPanel = new internationalfilght(el);
