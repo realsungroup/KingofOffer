@@ -29,14 +29,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
         
         compositionComplete: function (view) {
          mini.parse();
-       // ko.applyBindings(this.rows, view);
-            $(view).on("click",'#testid',function(e){
-
-                     flightappform.show().then(function(response) {
-                           app.showMessage(response);
-                           system.log(response);
-                        });
-            });
+       
              $(view).on("click",'.mini-button',this,function(e){
                      var button=mini.get(this);
                      var self=e.data;
@@ -59,21 +52,21 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                        }
                      if (button.name=='edit')
                        {
-                         //  alert("edit:"+button.recid);
+                      // self.rows.extend({ rateLimit: 5 });
                          var o=$.grep(rows,function(row,i){return row["REC_ID"]==button.recid})[0];
-                         //alert(o.REC_ID);
+                        
                         flightappform.show(o).then(function(response) {
-                          // app.showMessage(response);
                            system.log(response);
-                          o.C3_526655624603=response.C3_526655624603;
-                          // self.rows[0]=new Object(o);
-                         // system.log(self.rows()[0]);
-                         // self.rows()[0].C3_526655624603='344131245555';
-                          var newrows=self.rows().clone();
+                          o=response;
+                          
+                           var newrows=self.rows().clone();
                           self.rows.removeAll();
                           self.rows(newrows);
+                       
+
+                         
                           mini.parse();
-                          //ko.applyBindings(this);
+                         
                         });
  
                        }
