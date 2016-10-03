@@ -3,9 +3,13 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
      
     };
     flightappform.prototype.data;
+    flightappform.prototype.close = function() {
+
+        dialog.close(this,this.data);              
+    };
     flightappform.prototype.ok = function() {
-    var o =  new mini.Form("form3").getData();
-    var that=this;
+        var o =  new mini.Form("form3").getData();
+        var that=this;
         o._id=1;
         if (that.data.REC_ID>0)
         {  o._state="modified";}
@@ -17,7 +21,7 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
       
         o.REC_ID=that.data.REC_ID;
         var json = mini.encode([o]);
-        console.log(json);
+        
         appConfig.app.dbs.dbSavedata(appConfig.internationalfilght.guojiResid,0,json,dataSaved,fnerror,fnhttperror);
                     function dataSaved(text){
                          

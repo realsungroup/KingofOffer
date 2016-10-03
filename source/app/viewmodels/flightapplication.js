@@ -50,9 +50,11 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                             emptyrow[p]=""; 
                           } 
                            flightappform.show(emptyrow).then(function(response) {
-                          // app.showMessage(response);
+                       
                            system.log(response);
-                           self.rows.unshift(response);
+                           if (response.REC_ID>0)
+                           { self.rows.unshift(response);}
+                          
                             
                             mini.parse();
                         });
