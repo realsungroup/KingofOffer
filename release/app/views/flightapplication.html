@@ -18,7 +18,14 @@
 		</tbody>
 	</table>
 	<br>	
-	<table  border="1px" width="100%" align="center" cellspacing="0px" id="tbManage" data-bind="foreach: rows">	
+    <ul class="pagination">
+        <!-- ko foreach: ko.utils.range(0, maxPageIndex()) -->
+        <li>
+            <a href="#" data-bind="text: $data+1, click: function () { $root.currentPageIndex($data);mini.parse(); }" ></a>
+        </li>
+        <!-- /ko -->
+  </ul>
+	<table  border="1px" width="100%" align="center" cellspacing="0px" id="tbManage" data-bind="foreach: itemsOnCurrentPage()">	
 		
              	<tr height="30px">
                 <td class="head" width="10%" colspan="2">出差单据号</td>

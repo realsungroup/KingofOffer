@@ -1,20 +1,28 @@
 define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/router','./flightappform'], function (http, app, ko,system,router,flightappform) {
     
-    var CartLine = function ()
-    {
-      
-       
-    };
-
+   
     
     return {
-        car: new CartLine(),
+        
         rows: ko.observableArray([]),
+        currentPageIndex : ko.observable(0),
+        pageSize:5,
+        maxPageIndex: function(){ return ko.computed(function() {
+            return Math.ceil(ko.utils.unwrapObservable(this.rows).length / this.pageSize) - 1;
+        }, this);},
+        itemsOnCurrentPage:function(){ 
+          return ko.computed(function() {
+            var startIndex = this.pageSize * this.currentPageIndex();
+            return this.rows.slice(startIndex, startIndex + this.pageSize);
+        }, this);
+
+
+        },
+        click_add:'test2',
         activate:function(){ 
              var that=this;
             submain(system,that);
         },
-        click_add:'test2',
         binding: function () {
            // mini.parse();
            
@@ -23,7 +31,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
           // mini.parse();
         },
         attached: function (view, parent) {
-           //  mini.parse();
+            // mini.parse();
         //    mini.parse();
         },
         
@@ -36,9 +44,17 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                      var rows=self.rows();
                      if (button.name=='add')
                      {
-                             flightappform.show().then(function(response) {
-                           app.showMessage(response);
+                        var emptyrow=rows.clone()[0];
+                          for(var p in emptyrow) 
+                          { 
+                            emptyrow[p]=""; 
+                          } 
+                           flightappform.show(emptyrow).then(function(response) {
+                          // app.showMessage(response);
                            system.log(response);
+                           self.rows.unshift(response);
+                            
+                            mini.parse();
                         });
                      }
                        if (button.name=='submit')
@@ -57,12 +73,12 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                         
                         flightappform.show(o).then(function(response) {
                            system.log(response);
-                          o=response;
+                        //  o=response;
                           
                            var newrows=self.rows().clone();
                           self.rows.removeAll();
                           self.rows(newrows);
-                       
+                         
 
                          
                           mini.parse();
