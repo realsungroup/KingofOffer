@@ -44,9 +44,15 @@ var dbHelper = (function () {
         this.user = user;
         this.ucode = ucode;
     }
-    dbHelper.prototype.dbGetdata = function (resid, subresid, cmswhere, fnSuccess, fnError, fnSyserror) {
+     
+    dbHelper.prototype.dbGetdata = function (resid, subresid, cmswhere, fnSuccess, fnError, fnSyserror,pageSize,pageIndex) {
         var url;
         url = this.baseUrl + "&method=" + this.getMethod + "&user=" + this.user + "&ucode=" + this.ucode + "&resid=" + resid + "&subresid=" + subresid + "&cmswhere=" + cmswhere;
+        if ((pageSize >0))
+        {
+             url=url+"&pageIndex="+pageIndex+"&pageSize="+pageSize;
+        }
+        
         $.ajax({
             url: url,
             dataType: "jsonp",
@@ -61,12 +67,17 @@ var dbHelper = (function () {
                     }
                     var adata = [];
                     var subdata = [];
+                    var total=0;
                     adata = data.data;
+                    if (data.total)
+                    {  total = data.total;}
+                 
                     if (data.subdata != null) {
                         subdata = data.subdata.data;
                     }
                     if (fnSuccess != null) {
-                        fnSuccess(adata, subdata);
+
+                        fnSuccess(adata, subdata,total);
                     }
                 }
             },

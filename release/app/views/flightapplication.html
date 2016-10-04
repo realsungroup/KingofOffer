@@ -2,7 +2,7 @@
 	
 	 
  
-	<a name="add" class="mini-button" iconCls="icon-downgrade"  data-bind="attr: {onclick:click_add}">新增航班</a>
+	<a name="add" class="mini-button" iconCls="icon-downgrade"  >新增航班</a>
 	<a  class="mini-button" iconCls="icon-downgrade" >待申请人确认出票</a>
 	<a class="mini-button" iconCls="icon-downgrade">待行政确认出票</a>
 	<a class="mini-button" iconCls="icon-downgrade" >订单完成</a>
@@ -17,15 +17,15 @@
 		<tbody id="si">
 		</tbody>
 	</table>
-	<br>	
+
     <ul class="pagination">
         <!-- ko foreach: ko.utils.range(0, maxPageIndex()) -->
         <li>
-            <a href="#" data-bind="text: $data+1, click: function () { $root.currentPageIndex($data);mini.parse(); }" ></a>
+            <a href="#" data-bind="text: $data+1, click: function () { $root.pageIndexChanged($data);mini.parse(); }" ></a>
         </li>
         <!-- /ko -->
   </ul>
-	<table  border="1px" width="100%" align="center" cellspacing="0px" id="tbManage" data-bind="foreach: itemsOnCurrentPage()">	
+	<table  border="1px" width="100%" align="center" cellspacing="0px" id="tbManage" data-bind="foreach: rows">	
 		
              	<tr height="30px">
                 <td class="head" width="10%" colspan="2">出差单据号</td>
@@ -44,10 +44,10 @@
                       <td width="10%" class="title" rowspan="2">出发地</td>
                       <td width="10%" rowspan="2" data-bind="text:C3_526655262089"></td>
                       <td rowspan="3" width="15%" class="ImgBox">
-                          <img data-bind="attr: {src:C3_527873192635}"   class="oImg" />
+                          <img data-bind="attr: {src:C3_527873192635},event: { mouseover: function(e){$root.bigImage(e,event);},mouseout:function(e){$root.smallImage(e,event);}}"   class="oImg" />
                       </td>
                       <td rowspan="3" width="15%" class="ImgBox">
-                          <img data-bind="attr: {src:C3_526655353950}"   class="oImg"  />
+                          <img data-bind="attr: {src:C3_526655353950},event: { mouseover: function(e){$root.bigImage(e,event);},mouseout:function(e){$root.smallImage(e,event);}}"  class="oImg"  />
                       </td>
                       <td align="center">往程航班号</td>
                       <td data-bind="text:C3_526655793514"> </td>
