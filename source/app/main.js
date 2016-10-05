@@ -36,11 +36,12 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap','
         viewLocator.useConvention();
         //Show the app by setting the root view model for our application with a transition.
        
-         $.getJSON("app/app.config.json",function(data,textStatus,hr){
+         $.getJSON("app.config.json",function(data,textStatus,hr){
          appConfig=data;
          appConfig.appfunction=appfunctions;
          system.log(appConfig);
          app.setRoot('viewmodels/shell', 'entrance');});
       
     });
+     
 });

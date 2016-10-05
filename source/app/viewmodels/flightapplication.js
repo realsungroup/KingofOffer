@@ -1,117 +1,117 @@
 define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/router','./flightappform'], function (http, app, ko,system,router,flightappform) {
    
-fetchPage=function(self)
- {
-
-        
-        fetchrows(system,self,self.pageSize,self.pageIndex,function(result,data,total){
-               if (result)
-               { 
-                    
-                   self.rows(data);
-                   self.total(total);   
-                   mini.parse();
-                  
-                  
-                }
-               
-             }
-           );
-   }
-fetchrows= function (system,self,pageSize,pageIndex,callback) {
-        baseUrl=appConfig.app.baseUrl;
-        getMethod=appConfig.app.getMethod;
-        saveMethod=appConfig.app.saveMethod;
-        var dbs=new dbHelper(baseUrl,self.user,self.ucode);
-        appConfig.app.dbs=dbs;
-        var resid=appConfig.internationalfilght.guojiResid;
-        var cmswhere="";
-       
-        dbs.dbGetdata(resid,"",cmswhere,dataGot,fnerror,fnhttperror,pageSize,pageIndex);
-        function dataGot(data,subdata,total)
+        fetchPage=function(self)
         {
-            system.log(data);
-            system.log("total="+total);
-        
-            callback(true,data,total);
-        }
-        function fnerror(data){   
 
-            alert(data);
-            callback(false);
-
-        }
-        function fnhttperror(jqXHR, textStatus, errorThrown){
-    
-            system.log(jqXHR);
-            callback(false);
-    
-        }
- 
-};
-bindButtonFunction=function (view,that){
-    
-     $(view).on("click",'.mini-button',that,function(e){
-                     var button=mini.get(this);
-                     var self=e.data;
-                     var rows=self.rows();
-
-                     if (button.name=='add')
-                     {
-                        addApplication(self,rows);
-                     }
-                    if (button.name=='submit')
-                       {
-                           
-                   
-                       }
-                     if (button.name=='edit')
-                       {
-                           
-                         editApplication(self,rows,button.recid);
- 
-                       }
-                     if (button.name=='cancel')
-                       {
-                           alert("cancel:"+button.recid);
-                       }
-                    
-            });
-}
-editApplication=function(self,rows,recid){
-       var o=$.grep(rows,function(row,i){return row["REC_ID"]==recid})[0];
-                        
-                        flightappform.show(o).then(function(response) {
-                           system.log(response);
-                           
-                           var newrows=self.rows().clone();
-                          self.rows.removeAll();
-                          self.rows(newrows);
-                          mini.parse();
-                         
-                        });
-}
-addApplication=function(self,rows){
-
-           var emptyrow=rows.clone()[0];
-            for(var p in emptyrow) 
-            { 
-                emptyrow[p]=""; 
-            } 
-            flightappform.show(emptyrow).then(function(response){
-                       
-                           system.log(response);
-                           if (response.REC_ID>0)
-                           { self.rows.unshift(response);}
-                          
+                
+                fetchrows(system,self,self.pageSize,self.pageIndex,function(result,data,total){
+                    if (result)
+                    { 
                             
-                            mini.parse();
-                        });
-}  
+                        self.rows(data);
+                        self.total(total);   
+                        mini.parse();
+                        
+                        
+                        }
+                    
+                    }
+                );
+        }
+        fetchrows= function (system,self,pageSize,pageIndex,callback) {
+                baseUrl=appConfig.app.baseUrl;
+                getMethod=appConfig.app.getMethod;
+                saveMethod=appConfig.app.saveMethod;
+                var dbs=new dbHelper(baseUrl,self.user,self.ucode);
+                appConfig.app.dbs=dbs;
+                var resid=appConfig.internationalfilght.guojiResid;
+                var cmswhere="";
+            
+                dbs.dbGetdata(resid,"",cmswhere,dataGot,fnerror,fnhttperror,pageSize,pageIndex);
+                function dataGot(data,subdata,total)
+                {
+                    system.log(data);
+                    system.log("total="+total);
+                
+                    callback(true,data,total);
+                }
+                function fnerror(data){   
+
+                    alert(data);
+                    callback(false);
+
+                }
+                function fnhttperror(jqXHR, textStatus, errorThrown){
+            
+                    system.log(jqXHR);
+                    callback(false);
+            
+                }
+        
+        };
+        bindButtonFunction=function (view,that){
+            
+            $(view).on("click",'.mini-button',that,function(e){
+                            var button=mini.get(this);
+                            var self=e.data;
+                            var rows=self.rows();
+
+                            if (button.name=='add')
+                            {
+                                addApplication(self,rows);
+                            }
+                            if (button.name=='submit')
+                            {
+                                
+                        
+                            }
+                            if (button.name=='edit')
+                            {
+                                
+                                editApplication(self,rows,button.recid);
+        
+                            }
+                            if (button.name=='cancel')
+                            {
+                                alert("cancel:"+button.recid);
+                            }
+                            
+                    });
+        }
+        editApplication=function(self,rows,recid){
+            var o=$.grep(rows,function(row,i){return row["REC_ID"]==recid})[0];
+                                
+                                flightappform.show(o).then(function(response) {
+                                system.log(response);
+                                
+                                var newrows=self.rows().clone();
+                                self.rows.removeAll();
+                                self.rows(newrows);
+                                mini.parse();
+                                
+                                });
+        }
+        addApplication=function(self,rows){
+
+                var emptyrow=rows.clone()[0];
+                    for(var p in emptyrow) 
+                    { 
+                        emptyrow[p]=""; 
+                    } 
+                    flightappform.show(emptyrow).then(function(response){
+                            
+                                system.log(response);
+                                if (response.REC_ID>0)
+                                { self.rows.unshift(response);}
+                                
+                                    
+                                    mini.parse();
+                                });
+        }  
     return {
         
         rows: ko.observableArray([]),
-        pageSize:5,
+        pageSize:7,
         key:ko.observable(""),
         total:ko.observable(0),
         maxPageIndex: function(){ return ko.pureComputed(function() {

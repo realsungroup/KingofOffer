@@ -139,7 +139,7 @@ gulp.task("bundle", function() {
     gulp.src("scripts/css/*.css")
         .pipe(gulp.dest(outputRootFolder+"/scripts/css"));
       gulp.src("source/"+appSourcePathName+'/*.json')
-        .pipe(gulp.dest(outputFolder));
+        .pipe(gulp.dest(appPublishPathName));
 });
 /////////////////duranal
 gulp.task("bundle-du", function() {
@@ -159,8 +159,12 @@ gulp.task("bundle-du", function() {
         .pipe(gulp.dest(durandaloutputCssFolder));
      gulp.src("source/lib/**")
         .pipe(gulp.dest(durandaloutputLibFolder));
-       gulp.src("source/app/*.json")
-        .pipe(gulp.dest(outputFolder));
+       gulp.src("source/*.json")
+        .pipe(gulp.dest(durandaloutputFolder));
+    gulp.src("swfupload/**")
+        .pipe(gulp.dest(durandaloutputFolder+"/swfupload"));
+      gulp.src("scripts/**")
+        .pipe(gulp.dest(durandaloutputFolder+"/scripts"));
 });
 //******************************************************************************
 //* DEV SERVER for duarandal
@@ -169,14 +173,14 @@ gulp.task("bundle-du", function() {
 //var currentStartpage="domesticfilght.html?user=demo1&ucode=bTqoF2CcMCj7uIOBllZtDw=="; 
 //var currentStartpage="internationalfilght.html?user=demo1&ucode=bTqoF2CcMCj7uIOBllZtDw==";
 
-gulp.task("watch-du", ["default-du"], function () {
+gulp.task("watch-durandal-debug", ["default-du"], function () {
     
     browserSync.init({
         server: "./"+durandaloutputFolder 
         
     });
     //test2
-    gulp.watch([ "source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["default"]);
+    gulp.watch([ "source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["default-du"]);
     gulp.watch(durandaloutputFolder+"/*.*").on('change', browserSync.reload); 
 });
 
@@ -208,4 +212,51 @@ gulp.task("default", function (cb) {
 });
 gulp.task("default-du", function (cb) {
     runSequence("lint", "build-du", "test", "bundle-du", cb);
+});
+//******************************************************************************
+//* durandal
+//***
+var durandal = require('gulp-durandal');
+var durandalReleaseDir='durandalRelease'
+var appdir='app'
+gulp.task('durandal', function(){
+  durandal({
+         baseDir: 'source/app',   //same as default, so not really required.
+         main: 'main.js',  //same as default, so not really required.
+         output: 'main.js', //same as default, so not really required.
+         almond: true,
+         minify: true 
+
+         })
+         .pipe(gulp.dest(durandalReleaseDir+'/'+appdir));
+    gulp.src("scripts/**")
+        .pipe(gulp.dest(durandalReleaseDir+"/scripts"));
+    gulp.src("source/index.html")
+        .pipe(gulp.dest(durandalReleaseDir));
+     gulp.src("source/css/*.*")
+        .pipe(gulp.dest(durandalReleaseDir+"/css"));
+     gulp.src("source/lib/**")
+       .pipe(gulp.dest(durandalReleaseDir+"/lib"));
+      gulp.src("swfupload/**")
+        .pipe(gulp.dest(durandalReleaseDir+"/swfupload"));
+       gulp.src("source/*.json")
+        .pipe(gulp.dest(durandalReleaseDir));
+     
+ });
+ //******************************************************************************
+//* DEV SERVER for duarandal
+//******************************************************************************
+
+//var currentStartpage="domesticfilght.html?user=demo1&ucode=bTqoF2CcMCj7uIOBllZtDw=="; 
+//var currentStartpage="internationalfilght.html?user=demo1&ucode=bTqoF2CcMCj7uIOBllZtDw==";
+
+gulp.task("watch-durandal", ["durandal"], function () {
+    
+    browserSync.init({
+        server: "./"+durandalReleaseDir 
+        
+    });
+    //test2
+    gulp.watch([ "source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["durandal"]);
+    gulp.watch(durandalReleaseDir+"/*.*").on('change', browserSync.reload); 
 });
