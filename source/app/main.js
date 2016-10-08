@@ -23,7 +23,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap','
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'Durandal Starter Kit';
+    app.title = '新同事订餐系统';
 
     app.configurePlugins({
         router:true,

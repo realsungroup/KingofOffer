@@ -115,6 +115,8 @@ var outputComponentFolderjs  = appPublishPathName+"/"+appSourcePathName+"/dist/s
     var durandaloutputAppFolder   = appPublishPathName+"/app/";
     var durandaloutputCssFolder   = appPublishPathName+"/css/";
     var durandaloutputLibFolder   = appPublishPathName+"/lib/";
+   var durandaloutputjsFolder   = appPublishPathName+"/js/";
+   var durandaloutputvendorFolder   = appPublishPathName+"/vendor/";
 //var durandaloutputFolder   = appPublishPathName+"/";
 gulp.task("bundle", function() {
    
@@ -149,16 +151,21 @@ gulp.task("bundle-du", function() {
         debug: true,
         standalone : libraryName3
     });
-   gulp.src("scripts/css/*.css")
+      gulp.src("source/css/**")
         .pipe(gulp.dest(outputRootFolder+"/scripts/css"));
+   
     gulp.src("source/index.html")
         .pipe(gulp.dest(durandaloutputFolder));
     gulp.src("source/app/**")
         .pipe(gulp.dest(durandaloutputAppFolder));
-     gulp.src("source/css/*.*")
+     gulp.src("source/css/**")
         .pipe(gulp.dest(durandaloutputCssFolder));
      gulp.src("source/lib/**")
         .pipe(gulp.dest(durandaloutputLibFolder));
+     gulp.src("source/js/**")
+        .pipe(gulp.dest(durandaloutputjsFolder));
+    gulp.src("vendor/**")
+        .pipe(gulp.dest(durandaloutputvendorFolder));
        gulp.src("source/*.json")
         .pipe(gulp.dest(durandaloutputFolder));
     gulp.src("swfupload/**")
@@ -180,7 +187,7 @@ gulp.task("watch-durandal-debug", ["default-du"], function () {
         
     });
     //test2
-    gulp.watch([ "source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["default-du"]);
+    gulp.watch([  "source/css/**","source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["default-du"]);
     gulp.watch(durandaloutputFolder+"/*.*").on('change', browserSync.reload); 
 });
 
@@ -211,7 +218,7 @@ gulp.task("default", function (cb) {
     runSequence("lint", "build", "test", "bundle-du", cb);
 });
 gulp.task("default-du", function (cb) {
-    runSequence("lint", "build-du", "test", "bundle-du", cb);
+    runSequence("lint", "build-du", "bundle-du", cb);
 });
 //******************************************************************************
 //* durandal
@@ -233,10 +240,14 @@ gulp.task('durandal', function(){
         .pipe(gulp.dest(durandalReleaseDir+"/scripts"));
     gulp.src("source/index.html")
         .pipe(gulp.dest(durandalReleaseDir));
-     gulp.src("source/css/*.*")
+     gulp.src("source/css/**")
         .pipe(gulp.dest(durandalReleaseDir+"/css"));
      gulp.src("source/lib/**")
        .pipe(gulp.dest(durandalReleaseDir+"/lib"));
+     gulp.src("source/js/**")
+       .pipe(gulp.dest(durandalReleaseDir+"/js"));
+     gulp.src("vendor/**")
+       .pipe(gulp.dest(durandalReleaseDir+"/vendor"));
       gulp.src("swfupload/**")
         .pipe(gulp.dest(durandalReleaseDir+"/swfupload"));
        gulp.src("source/*.json")
