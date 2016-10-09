@@ -1,12 +1,49 @@
 var appfunctions = appfunctions || {};
 var appConfig;
+
+//http://www.realsun.me:8003/rispweb/
+//http://kingofdinner.realsun.me:8081/rispweb
+appfunctions.system=new function(){
+    this.doLogin=function(user,upass,fnSuccess, fnError, fnSyserror) {
+
+           var url;
+           url = appConfig.app.loginUrl +"&apitoken=KingOfDinner123456789&clienttype=mobile&user="+user+"&upass="+upass;
+           $.ajax({
+            url: url,
+            dataType: "jsonp",
+            jsonp: "jsoncallback",
+            success: function (text) {
+                if (text !== "") {
+                    var data = mini.decode(text);
+                    if (data.error !== 0) {
+                        if (fnError != null) {
+                            fnError(data);
+                        }
+                    }
+                    else{  
+                        if (fnSuccess != null) {
+
+                            fnSuccess(data);
+                          }
+                        }
+                   }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                if (fnSyserror != null) {
+                    fnSyserror(jqXHR, textStatus, errorThrown);
+                }
+            } });
+
+     };
+
+}
 appfunctions.uploadFile = new function () {
     var uploadFile = this;
     this.swfFileUpload = function (aappConfig, fileupload) {
         fileupload.setUploadUrl(aappConfig.app.uploadFileUrl + "?savepath=e:\\web\\rispweb\\upfiles&httppath=" + aappConfig.app.httppath);
         fileupload.startUpload();
     };
-    this.ajaxFileUpload = function (aappConfig, inputFile) {
+this.ajaxFileUpload = function (aappConfig, inputFile) {
         mini.parse();
         scriptLoaded();
         function scriptLoaded() {
@@ -35,6 +72,8 @@ appfunctions.uploadFile = new function () {
             });
         }
     };
+
+
 };
 var dbHelper = (function () {
     function dbHelper(baseurl, user, ucode) {

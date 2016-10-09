@@ -1,4 +1,4 @@
-define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/router','./flightappform'], function (http, app, ko,system,router,flightappform) {
+define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/router','./flightappform','plugins/dialog'], function (http, app, ko,system,router,flightappform,dialog) {
    
         fetchPage=function(self)
         {
@@ -19,20 +19,15 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                 );
         }
         fetchrows= function (system,self,pageSize,pageIndex,callback) {
-                baseUrl=appConfig.app.baseUrl;
-                getMethod=appConfig.app.getMethod;
-                saveMethod=appConfig.app.saveMethod;
-                var dbs=new dbHelper(baseUrl,self.user,self.ucode);
-                appConfig.app.dbs=dbs;
                 var resid=appConfig.internationalfilght.guojiResid;
                 var cmswhere="";
             
-                dbs.dbGetdata(resid,"",cmswhere,dataGot,fnerror,fnhttperror,pageSize,pageIndex);
+                appConfig.app.dbs.dbGetdata(resid,"",cmswhere,dataGot,fnerror,fnhttperror,pageSize,pageIndex);
                 function dataGot(data,subdata,total)
                 {
                     system.log(data);
                     system.log("total="+total);
-                
+                    
                     callback(true,data,total);
                 }
                 function fnerror(data){   
@@ -124,15 +119,16 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
         },
         user:"",
         ucode:"",
-        activate:function(e){ 
-            if (e){
-                if (e.hasOwnProperty("user")){ 
-                    if (e.user){ 
-                        this.user=e.user;}
-                    if (e.ucode){this.ucode=e.ucode;}
-                }
-            }
+        activate:function(){ 
+             if ( appConfig.app.dbs==null)
+             {
+               // dialog.showMessage(data.message,"请先登入系统!");
+                alert("请先登入系统");
+                router.navigate('#');
+                 
+             }
             fetchPage(this);
+
      
         },
         binding: function () {

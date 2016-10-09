@@ -1,5 +1,6 @@
 {
     "app": {
+        "loginUrl": "http://www.realsun.me:8003/rispweb/rispservice/apiSvrLogin.aspx?",
         "baseUrl": "http://www.realsun.me:8003/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
         "getMethod": "ShowHostTableDatas_Ajax",
         "uploadFileUrl":"http://www.realsun.me:8003/rispweb/rispservice/SvcUploadFile2.aspx",
@@ -17,5 +18,8 @@
     "internationalfilght":{
         "guojiResid":526664335204,
         "mainHtml":"./dist/component/international.html"
-    }
+    },
+    "appfunction":null
+
 }
+

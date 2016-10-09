@@ -1,4 +1,4 @@
-define(['durandal/app','knockout','plugins/router'], function (app,ko,router) {
+define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (app,ko,router,dialog) {
      var user = ko.observable(),
          upass = ko.observable();
 
@@ -18,17 +18,37 @@ define(['durandal/app','knockout','plugins/router'], function (app,ko,router) {
      var keeplogininfo=ko.observable(true);
   
        return  {
-         user:user,
-         upass:upass,
-         canLogin: canLogin,
-         keeplogininfo:keeplogininfo,
-         dologin:function(){
-             alert('dologin');
-             var checkbox=$("#checkbox1");
-              alert(this.user());
-               alert(this.upass());
-               alert(this.keeplogininfo());
-           router.navigate('#flightapplication');
+                user:user,
+                upass:upass,
+                canLogin: canLogin,
+                keeplogininfo:keeplogininfo,
+                dologin:function(){
+               // alert('dologin');
+                var checkbox=$("#checkbox1");
+            
+                appConfig.appfunction.system.doLogin(this.user(),this.upass(),fnSuccess, fnError, fnSyserror);
+                function fnSuccess(data){
+                     var baseUrl=appConfig.app.baseUrl;
+                    
+                     var dbs=new dbHelper(baseUrl,data.user,data.ucode);
+                     appConfig.app.dbs=dbs;
+                     router.navigate('#flightapplication');
+                     // dialog.showMessage(data.message,"登入成功!");
+                }
+                function fnError(data){
+                     dialog.showMessage(data.message,"登入失败!");
+                     appConfig.app.dbs=null;
+                     router.navigate('#');
+                     
+                }
+                function fnSyserror(jqXHR, textStatus, errorThrown){
+                        alert("error");
+                    }
+
+
+
+
+             
 
          }
             
