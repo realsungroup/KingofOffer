@@ -32,7 +32,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                     
                      var dbs=new dbHelper(baseUrl,data.user,data.ucode);
                      appConfig.app.dbs=dbs;
-                     router.navigate('#flightapplication');
+                     router.navigate('#dinnerlist');
                      // dialog.showMessage(data.message,"登入成功!");
                 }
                 function fnError(data){

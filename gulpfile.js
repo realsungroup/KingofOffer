@@ -153,7 +153,8 @@ gulp.task("bundle-du", function() {
     });
       gulp.src("source/css/**")
         .pipe(gulp.dest(outputRootFolder+"/scripts/css"));
-   
+    gulp.src("source/img/*.*")
+        .pipe(gulp.dest(durandaloutputFolder+'/img'));
     gulp.src("source/index.html")
         .pipe(gulp.dest(durandaloutputFolder));
     gulp.src("source/app/**")
@@ -238,6 +239,8 @@ gulp.task('durandal', function(){
          .pipe(gulp.dest(durandalReleaseDir+'/'+appdir));
     gulp.src("scripts/**")
         .pipe(gulp.dest(durandalReleaseDir+"/scripts"));
+    gulp.src("source/img/*.*")
+        .pipe(gulp.dest(durandalReleaseDir+'/img'));
     gulp.src("source/index.html")
         .pipe(gulp.dest(durandalReleaseDir));
      gulp.src("source/css/**")

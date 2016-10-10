@@ -8,7 +8,6 @@ requirejs.config({
         'bootstrap': '../lib/bootstrap/js/bootstrap',
         'jquery': '../lib/jquery/jquery-1.9.1',
         'realsun': '../lib/realsun/js'
-        
     },
     shim: {
         'bootstrap': {
@@ -19,29 +18,18 @@ requirejs.config({
 });
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap','realsun/common'],  function (system, app, viewLocator) {
-    //>>excludeStart("build", true);
     system.debug(true);
-    //>>excludeEnd("build");
-
     app.title = '新同事订餐系统';
-
     app.configurePlugins({
         router:true,
         dialog: true
     });
-    
     app.start().then(function() {
-        //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
-        //Look for partial views in a 'views' folder in the root.
         viewLocator.useConvention();
-        //Show the app by setting the root view model for our application with a transition.
-       
          $.getJSON("app.config.json",function(data,textStatus,hr){
          appConfig=data;
          appConfig.appfunction=appfunctions;
          system.log(appConfig);
          app.setRoot('viewmodels/shell', 'entrance');});
-      
     });
-     
 });
