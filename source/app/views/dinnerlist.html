@@ -8,6 +8,7 @@
         #claim table {
             width: 100%;
             background: #26c6da;
+            text-align:center;
         }
         #claim table.bgc{
             background: #eee;
@@ -15,13 +16,15 @@
         #claim table .imgw1{
             width: 225px;
             height: 225px;
+            border-radius:50%;
+            padding:10px;
         }
         #claim tbody tr>td:first-child{
             width:220px;
         }
-        .imgw{
+        #claim table .imgw{
             width:24px;
-            filter:alpha(opacity=50);
+            margin-right:5px;
         }
         #claim table span{
             line-height: 24px;
@@ -44,15 +47,12 @@
             color:#000;
         }
         .br{
-            width:220px;
-            height:220px;
-            border-radius:50%;
-            overflow: hidden;
+            border: none;
         }
     </style>
  
     <div id="claim">
-        <table>
+        <table data-bind="foreach: rows">
             <tr>
                 <td rowspan="4">
                     <div class="br">
@@ -90,30 +90,82 @@
         </table>
         <table class="bgc">
             <tr>
-                <td rowspan="4">
+                <td rowspan="5">
                     <div class="br">
                         <img src="img/hanb.jpg" class="imgw1"/>
                     </div>
                 </td>
-                <td width="80%">
-                    <span>工作餐</span>
+                <td width="16%">
+                    <span>菜品名称</span>
                 </td>
-                <td rowspan="4">
-                    <input type="button" value="未领取" class="tBtn tBtn2"/>
+                <td width="16%">
+                    <span>单价</span>
+                </td>
+                <td width="16%">
+                    <span>数量</span>
+                </td>
+                <td width="16%">
+                    <span>小计</span>
+                </td>
+                <td width="16%">
+                </td>
+                <td rowspan="5">
+                    <input type="button" value="未领取" data-bind="text:C3_512262253052" class="tBtn tBtn2"/>
+                </td>
+            </tr>
+            <tr>
+                <td data-bind="text:C3_512140251614">
+                </td>
+                <td data-bind="text:C3_512140252005">
+                </td>
+                <td data-bind="text:C3_512140253505">
+                </td>
+                <td data-bind="text:C3_512140251614">
+                </td>
+                <td>
+                    <span>自选</span>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <span>A套餐</span>
+                    <span>大排</span>
                 </td>
-            </tr>
-            <tr>
+                <td>
+                    <span>￥ 2</span>
+                </td>
+                <td>
+                    <span>1</span>
+                </td>
+                <td>
+                    <span>￥ 2</span>
+                </td>
                 <td>
                     <span>已支付</span>
                 </td>
             </tr>
             <tr>
-                <td></td>
+                <td>
+                    <span>米饭</span>
+                </td>
+                <td>
+                    <span>￥ 2</span>
+                </td>
+                <td>
+                    <span>1</span>
+                </td>
+                <td>
+                    <span>￥ 2</span>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <span class="rf">合计:</span>
+                </td>
+                <td  data-bind="text:C3_512140253223">
+                    <span>￥ 6</span>
+                </td>
             </tr>
         </table>
     </div>
