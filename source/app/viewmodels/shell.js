@@ -10,7 +10,7 @@
             router.map([
                 { route: '', title:'登入', moduleId: 'viewmodels/welcome', nav: true },
                 
-                { route: 'flightapplication', moduleId: 'viewmodels/flightapplication', nav: true }
+                { route: 'flightapplication',title:'开始', moduleId: 'viewmodels/flightapplication', nav: true }
             ]).buildNavigationModel();
            
             return router.activate();

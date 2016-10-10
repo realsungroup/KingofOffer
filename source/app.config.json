@@ -1,10 +1,10 @@
 {
     "app": {
-        "loginUrl": "http://www.realsun.me:8003/rispweb/rispservice/apiSvrLogin.aspx?",
-        "baseUrl": "http://www.realsun.me:8003/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
+        "loginUrl": "http://kingofdinner.realsun.me:8081/rispweb/rispservice/apiSvrLogin.aspx?",
+        "baseUrl": "http://kingofdinner.realsun.me:8081/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
         "getMethod": "ShowHostTableDatas_Ajax",
-        "uploadFileUrl":"http://www.realsun.me:8003/rispweb/rispservice/SvcUploadFile2.aspx",
-        "httppath":"http://www.realsun.me:8003/rispweb//upfiles",
+        "uploadFileUrl":"http://kingofdinner.realsun.me:8081/rispweb/rispservice/SvcUploadFile2.aspx",
+        "httppath":"http://kingofdinner.realsun.me:8081/rispweb/upfiles",
         "saveMethod":"SaveData_Ajax",
         "dic1Resid":526765618499,
         "debug":true,
