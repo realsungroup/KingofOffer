@@ -6,18 +6,15 @@
         "uploadFileUrl":"http://kingofdinner.realsun.me:8081/rispweb/rispservice/SvcUploadFile2.aspx",
         "httppath":"http://kingofdinner.realsun.me:8081/rispweb/upfiles",
         "saveMethod":"SaveData_Ajax",
-        "dic1Resid":526765618499,
         "debug":true,
-        "dbs":null
+        "dbs":null,
+        "user":"demo1",
+        "upass":"123456"
     },
-     "domesticfilght":
+     "dinnerlist":
     {        
-        "guoneiResid":526664384125,
-        "mainHtml":"./dist/component/domestic.html"
-    },
-    "internationalfilght":{
-        "guojiResid":526664335204,
-        "mainHtml":"./dist/component/international.html"
+        "resid":529019544123,
+        "subresid":512140171786
     },
     "appfunction":null
 

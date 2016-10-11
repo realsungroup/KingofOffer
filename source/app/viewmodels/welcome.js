@@ -22,6 +22,10 @@
                 upass:upass,
                 canLogin: canLogin,
                 keeplogininfo:keeplogininfo,
+                activate:function(){
+                    this.user(appConfig.app.user);
+                    this.upass(appConfig.app.upass);
+                },
                 dologin:function(){
                // alert('dologin');
                 var checkbox=$("#checkbox1");

@@ -8,7 +8,7 @@ define(['plugins/router', 'durandal/app'], function (router, app) {
         },
         activate: function () {
             router.map([
-                { route: '', title:'登入', moduleId: 'viewmodels/welcome', nav: true },
+                { route: '', title:'欢迎', moduleId: 'viewmodels/welcome', nav: true },
                 { route: 'dinnerlist',title:'开始', moduleId: 'viewmodels/dinnerlist', nav: true }
             ]).buildNavigationModel();
            

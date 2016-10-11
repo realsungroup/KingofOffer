@@ -3,9 +3,9 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
      
     };
     
-    scanner.prototype.close = function() {
+    scanner.prototype.cancel = function() {
            
-        dialog.close(this,"");              
+        dialog.close(this);              
     };
     scanner.prototype.ok = function() {
     

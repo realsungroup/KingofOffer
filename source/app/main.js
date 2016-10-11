@@ -18,7 +18,7 @@
 });
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap','realsun/common'],  function (system, app, viewLocator) {
-    system.debug(true);
+  
     app.title = '新同事订餐系统';
     app.configurePlugins({
         router:true,
@@ -29,7 +29,9 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap','
          $.getJSON("app.config.json",function(data,textStatus,hr){
          appConfig=data;
          appConfig.appfunction=appfunctions;
-         system.log(appConfig);
+        
+         system.debug(appConfig.app.debug);
+          system.log(appConfig);
          app.setRoot('viewmodels/shell', 'entrance');});
     });
 });
