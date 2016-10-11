@@ -12,7 +12,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             {
                 return false;
             }
-
              return  true;
             });
      var keeplogininfo=ko.observable(true);
@@ -48,13 +47,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                 function fnSyserror(jqXHR, textStatus, errorThrown){
                         alert("error");
                     }
-
-
-
-
-             
-
          }
-            
        };
 }); 

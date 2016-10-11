@@ -1,188 +1,70 @@
-<style>
-        .lf{
-            float:left;
-        }
-        .rf{
-            float:right;
-        }
-        #claim table {
-            width: 100%;
-            background: #26c6da;
-            text-align:center;
-        }
-        #claim table.bgc{
-            background: #eee;
-        }
-        #claim table .imgw1{
-            width: 225px;
-            height: 225px;
-            border-radius:50%;
-            padding:10px;
-        }
-        #claim tbody tr>td:first-child{
-            width:220px;
-        }
-        #claim table .imgw{
-            width:24px;
-            margin-right:5px;
-        }
-        #claim table span{
-            line-height: 24px;
-            color:#fff;
-            margin: 0 20px;
-        }
-        .tBtn{
-            width:170px;
-            height:220px;
-            color:#fff;
-            font-size: 28px;
-        }
-        .tBtn1{
-            background: #29b6f6;
-        }
-        .tBtn2{
-            background: #ffa726;
-        }
-        #claim table.bgc span{
-            color:#000;
-        }
-        .br{
-            border: none;
-        }
-    </style>
- 
-    <div id="claim">
-        <table >
-            <tr>
-                <td rowspan="4">
-                    <div class="br">
-                        <img src="img/user.jpg" class="imgw1"/>
-                    </div>
-                </td>
-                <td width="80%">
-                    <span class="lf">上海菲尼萨</span>
-                    <img class="imgw rf" src="img/home.png"/>
-                    <span class="rf">上海公司餐厅1</span>
-                </td>
-                <td rowspan="4">
-                    <input type="button" value="扫描" class="tBtn tBtn1" data-bind="click : openScanner"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="lf">韩涛</span>
-                    <img class="imgw rf" src="img/date.png"/>
-                    <span class="rf">2016-10-10</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img class="imgw rf" src="img/kcal.png"/>
-                    <span class="rf">中餐</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img class="imgw rf" src="img/uu.png"/>
-                    <span class="rf">操作员</span>
-                </td>
-            </tr>
-        </table>
-        <table  >
-             <thead>
+<div id="claim" data-bind="if:haverows" class="lf" style="background-image: url(img/bg.jpg);">
+    <img src="img/user.jpg" class="imgw1 lf"/>
+    <!--<img data-bind="attr: { src:rows()[0].C3_514046415115 }" class="imgw1 lf"/>-->
+    <table class="lf">
+        <tr>
+            <td>
+                <span class="lf" data-bind="text:rows()[0].C3_517602192375"></span>
+                <img class="imgw rf" src="img/home.png"/>
+                <span class="rf" data-bind="text:rows()[0].C3_517602201297"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="lf" data-bind="text:rows()[0].C3_529485594613"></span>
+                <img class="imgw rf" src="img/date.png"/>
+                <span class="rf" data-bind="text:rows()[0].C3_512140206161"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img class="imgw rf" src="img/kcal.png"/>
+                <span class="rf" data-bind="text:rows()[0].C3_513890663124"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img class="imgw rf" src="img/uu.png"/>
+                <span class="rf">操作员</span>
+            </td>
+        </tr>
+    </table>
+</div>
+<input type="button" value="扫描" class="tBtn tBtn1 rf" data-bind="click : openScanner"/>
+<div id="menu" class="lf">
+    <table class="lf">
+        <thead>
             <tr data-bind="foreach: columns">
                 <th data-bind="text: headerText"></th>
             </tr>
-          </thead>
-        </table>
-         <table  >
-             <thead>
-            <tr data-bind="foreach: subrows">
-                <th data-bind="text: C3_512140251614"></th>
-            </tr>
-          </thead>
-        </table>
-        <table class="bgc"  >
-         
-            <tr>
-                <td rowspan="5">
-                    <div class="br">
-                        <img src="img/hanb.jpg" class="imgw1"/>
-                    </div>
+        </thead>
+        <tbody data-bind="foreach: subrows">
+            <tr >
+                <td width=15%>
+                    <img data-bind="attr: { src: C3_512140252349 }" width="40px" height="40px"/>
                 </td>
-                <td width="16%">
-                    <span>菜品名称</span>
-                </td>
-                <td width="16%">
-                    <span>单价</span>
-                </td>
-                <td width="16%">
-                    <span>数量</span>
-                </td>
-                <td width="16%">
-                    <span>小计</span>
-                </td>
-                <td width="16%">
-                </td>
-                <td rowspan="5">
-                    <input type="button" value="未领取" data-bind="text:C3_512262253052" class="tBtn tBtn2"/>
-                </td>
-            </tr>
-            <tr > 
                 <td data-bind="text:C3_512140251614">
+                </td>
+                <td data-bind="text:C3_512140253770" width=40%>
                 </td>
                 <td data-bind="text:C3_512140252005">
                 </td>
                 <td data-bind="text:C3_512140253505">
                 </td>
-                <td data-bind="text:C3_512140251614">
-                </td>
-                <td>
-                    <span>自选</span>
-                </td>
+                <td data-bind="text:C3_512140253223">
+                </td>    
             </tr>
-            <tr>
-                <td>
-                    <span>大排</span>
-                </td>
-                <td>
-                    <span>￥ 2</span>
-                </td>
-                <td>
-                    <span>1</span>
-                </td>
-                <td>
-                    <span>￥ 2</span>
-                </td>
-                <td>
-                    <span>已支付</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>米饭</span>
-                </td>
-                <td>
-                    <span>￥ 2</span>
-                </td>
-                <td>
-                    <span>1</span>
-                </td>
-                <td>
-                    <span>￥ 2</span>
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="4">
+        </tbody>
+        <tfoot>
+            <tr data-bind="if:haverows">
+                <td colspan="5">
                     <span class="rf">合计:</span>
                 </td>
-                <td  data-bind="text:C3_512140253223">
-                    <span>￥ 6</span>
+                <td  data-bind="text:rows()[0].C3_512140208817">
                 </td>
-            </tr>
-           
-        </table>
-    </div>
+             </tr>
+        </tfoot>
+    </table>
+    <input type="button" value="未领取" class="tBtn tBtn2 rf" data-bind="text:C3_512262253052"/>
+</div>
  

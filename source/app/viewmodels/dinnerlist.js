@@ -1,5 +1,6 @@
 define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/router','./scanner','plugins/dialog'], function (http, app, ko,system,router,scanner,dialog) {
   var dinnerList=function(){
+        this.haverows=ko.observable(false);
         this.rows= ko.observableArray([]);
         this.subrows=ko.observableArray([]);
         this.pageSize=0;
@@ -8,7 +9,9 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
         this.barcode=ko.observable("");
         self=this;
         this.columns= [
+            { headerText: "图例" },
             { headerText: "菜品名称" },
+            { headerText: "描述" },
             { headerText: "单价" },
             { headerText: "数量" },
             { headerText: "小计" }
@@ -25,7 +28,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
     });
      openScanner=function(){
         scanner.show().then(function(response) {
-         system.log(response);
+          system.log(response);
           self.barcode(response);
       });
     }
@@ -33,21 +36,31 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
 
                 
                 fetchrows(system, self.barcode(),self.pageSize,self.pageIndex,function(result,data,subdata,count){
+                   
                     if (result)
                     { 
-                            
+                       self.haverows(false);
+                       self.rows.removeAll();
+                       self.subrows.removeAll();     
                        self.rows(data);
                        self.subrows(subdata);
                        self.total=count;
                        self.barcode("");
+                       self.haverows(true);
                         
                         }
                     else
                     {
-                       self.rows([]);
-                       self.subrows([]);
-                       self.total(0);   
+                       //self.rows([]);
+                       //self.subrows([]);
+                       self.haverows(false);
+                       self.rows.removeAll();
+                       self.subrows.removeAll();
+                      
+
+                       self.total=0;   
                        self.barcode("");
+                       
 
                     }
                     
@@ -83,13 +96,22 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
 dinnerList.prototype.activate=function(){ 
              if ( appConfig.app.dbs==null)
              {
-                alert("请先登入系统");
-                router.navigate('#');
+                //alert("请先登入系统");
+               // router.navigate('#');
                  
              }
            
         };
-        
+dinnerList.prototype.attached=function(){
+       
+    if ( appConfig.app.dbs==null)
+             {
+                 dialog.showMessage('请先登入系统',"新同事");
+                 router.navigate('#');
+                 
+             }
+
+    };      
         };
   return  dinnerList;
 });
