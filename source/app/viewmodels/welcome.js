@@ -12,7 +12,6 @@
             {
                 return false;
             }
-
              return  true;
             });
      var keeplogininfo=ko.observable(true);
@@ -48,13 +47,6 @@
                 function fnSyserror(jqXHR, textStatus, errorThrown){
                         alert("error");
                     }
-
-
-
-
-             
-
          }
-            
        };
 }); 
