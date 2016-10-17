@@ -287,3 +287,12 @@ gulp.task("watch-durandal", ["durandal"], function () {
     gulp.watch([ "source/cache.manifest","source/app.manifest","source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["durandal"]);
     gulp.watch(durandalReleaseDir+"/*.*").on('change', browserSync.reload); 
 });
+gulp.task("browse", function () {
+    
+    browserSync.init({
+        server: "./"+appPublishPathName 
+        
+    });
+    
+});
+

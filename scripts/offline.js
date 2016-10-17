@@ -36,7 +36,7 @@
         if (window.location.pathname=="/")
         {
            // alert("goto app");
-            setTimeout(function() {window.location="app.html";}, 500);
+            //setTimeout(function() {window.location="app.html";}, 500);
         }
      }
 
