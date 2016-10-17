@@ -1,0 +1,14 @@
+CACHE MANIFEST
+# version 47
+
+CACHE:
+/app/
+/lib/
+/script/
+/css/
+/img/
+/js/
+/swfupload/
+/vendor/
+NETWORK:
+*
