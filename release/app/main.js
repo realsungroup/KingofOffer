@@ -33,5 +33,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap','
          system.debug(appConfig.app.debug);
           system.log(appConfig);
          app.setRoot('viewmodels/shell', 'entrance');});
+        
+
     });
 });

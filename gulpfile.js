@@ -155,7 +155,14 @@ gulp.task("bundle-du", function() {
         .pipe(gulp.dest(outputRootFolder+"/scripts/css"));
     gulp.src("source/img/*.*")
         .pipe(gulp.dest(durandaloutputFolder+'/img'));
+        
+    gulp.src("source/cache.manifest")
+        .pipe(gulp.dest(durandaloutputFolder));
     gulp.src("source/index.html")
+        .pipe(gulp.dest(durandaloutputFolder));
+    gulp.src("source/app.html")
+        .pipe(gulp.dest(durandaloutputFolder));
+     gulp.src("source/app.manifest")
         .pipe(gulp.dest(durandaloutputFolder));
     gulp.src("source/app/**")
         .pipe(gulp.dest(durandaloutputAppFolder));
@@ -188,7 +195,7 @@ gulp.task("watch-durandal-debug", ["default-du"], function () {
         
     });
     //test2
-    gulp.watch([  "source/css/**","source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["default-du"]);
+    gulp.watch(["source/app.manifest",  "source/cache.manifest","source/css/**","source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["default-du"]);
     gulp.watch(durandaloutputFolder+"/*.*").on('change', browserSync.reload); 
 });
 
@@ -243,6 +250,12 @@ gulp.task('durandal', function(){
         .pipe(gulp.dest(durandalReleaseDir+'/img'));
     gulp.src("source/index.html")
         .pipe(gulp.dest(durandalReleaseDir));
+     gulp.src("source/app.html")
+        .pipe(gulp.dest(durandalReleaseDir));
+    gulp.src("source/app.manifest")
+        .pipe(gulp.dest(durandalReleaseDir));
+     gulp.src("source/cache.manifest")
+        .pipe(gulp.dest(durandalReleaseDir));
      gulp.src("source/css/**")
         .pipe(gulp.dest(durandalReleaseDir+"/css"));
      gulp.src("source/lib/**")
@@ -271,6 +284,6 @@ gulp.task("watch-durandal", ["durandal"], function () {
         
     });
     //test2
-    gulp.watch([ "source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["durandal"]);
+    gulp.watch([ "source/cache.manifest","source/app.manifest","source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["durandal"]);
     gulp.watch(durandalReleaseDir+"/*.*").on('change', browserSync.reload); 
 });

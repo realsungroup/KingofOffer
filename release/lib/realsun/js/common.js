@@ -1,5 +1,6 @@
 var appfunctions = appfunctions || {};
 var appConfig;
+var online=null;
 
 //http://www.realsun.me:8003/rispweb/
 //http://kingofdinner.realsun.me:8081/rispweb
