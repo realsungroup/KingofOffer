@@ -18,7 +18,7 @@
      "error" : [ "Error! (Are you already offline?)", colors.error ],
      "noupdate" : [ "Cache is up to date.", colors.done ],
      "obsolete" : [ "Cache is obsolete.", colors.error ],
-     "progress" : [ "正在更新程序请稍等...", colors.progress ],
+     "progress" : [ "正在更新程序,需约1分钟,请稍等...", colors.progress ],
      "updateready" : [ "Update ready...", colors.other ]};
  function cachedCallback(e) {
     console.log("Cache event: " + e.type + "(status is " + window.applicationCache.status + ", online is " + navigator.onLine + ")");
