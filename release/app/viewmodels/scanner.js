@@ -11,15 +11,28 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
     
         var that=this;
         var barcode=$("#barcode").val();
-       dialog.close(that,barcode);
+        dialog.close(that,barcode);
         
     };
     scanner.prototype.attached=function(){
        
-    
-
+         $("#barcode").focus(function(){
+                 $("#barcode").css("background-color","#FFFFCC");
+                     });
+       
     };
+       
+     scanner.prototype.compositionComplete=function(view){
+        setTimeout(function(){
+           
+            
+              $("#barcode").focus();
 
+        },500);
+        
+       // alert('focus');
+
+     }
     scanner.prototype.canDeactivate = function () {
         return true;
         
