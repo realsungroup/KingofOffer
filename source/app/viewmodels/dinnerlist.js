@@ -106,7 +106,7 @@ dinnerList.prototype.attached=function(){
        
     if ( appConfig.app.dbs==null)
              {
-                 dialog.showMessage('请先登入系统',"新同事");
+                // dialog.showMessage('请先登入系统',"新同事");
                  router.navigate('#');
                  
              }

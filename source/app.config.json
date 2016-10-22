@@ -1,16 +1,23 @@
 {
     "app": {
-        "loginUrl": "http://kingofdinner.realsun.me:8081/rispweb/rispservice/apiSvrLogin.aspx?",
+        "loginUrl": "",
         "baseUrl": "http://kingofdinner.realsun.me:8081/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
-        "localbaseUrl":"",
+        "localbaseUrl": "",
+        "hostuser":"demo1",
+        "hostucode":"GHgfPHoXCQm3k3m3DY4DqQ==",
+        "hostwebpos":530122554910,
         "getMethod": "ShowHostTableDatas_Ajax",
         "uploadFileUrl":"http://kingofdinner.realsun.me:8081/rispweb/rispservice/SvcUploadFile2.aspx",
         "httppath":"http://kingofdinner.realsun.me:8081/rispweb/upfiles",
         "saveMethod":"SaveData_Ajax",
         "debug":true,
         "dbs":null,
-        "user":"demo1",
-        "upass":"123456"
+        "user":"",
+        "upass":"",
+        "winno":0,
+        "winname":"",
+        "canteenno":0,
+        "canteenname":""
     },
      "dinnerlist":
     {        
