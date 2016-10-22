@@ -31,7 +31,8 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap','
          appConfig.appfunction=appfunctions;
         
          system.debug(appConfig.app.debug);
-          system.log(appConfig);
+         system.log(appConfig);
+        
          app.setRoot('viewmodels/shell', 'entrance');});
         
 

@@ -22,10 +22,22 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./scanner']
                 canLogin: canLogin,
                 keeplogininfo:keeplogininfo,
                 activate:function(){
-                     var vartemp=(JSON.parse(localStorage.getItem('doWindowlogin')));
+                     
+                     if (localStorage.getItem('doWindowlogin')==undefined)
+                     {
+                         appConfig.appfunction.system.clearAppConfig();
+                         return true;
+                     }
+                     try {
+                          var vartemp=(JSON.parse(localStorage.getItem('doWindowlogin')));
+                         
+                     } catch (error) {
+
+                          appConfig.appfunction.system.clearAppConfig();
+                          return true;
+                     }
+                    
                      var self=this;
-                     //alert(text);
-         
                      var text;
                      if (vartemp)
                      {
@@ -33,7 +45,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./scanner']
                      }
                     if (text){
                        if (text.length>0){
-                                 appConfig.appfunction.system.doParseText(text,fnSuccess,fnError);
+                                 appConfig.appfunction.system.doWindowlogin(text,fnSuccess,fnError);
                                  function fnSuccess(){
                                             self.user(appConfig.app.user);
                                             self.upass(appConfig.app.upass);
@@ -58,10 +70,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./scanner']
                 },
                 attached:function(){
                     var self=this;
+                    
+                    
                     if (!this.canLogin||appConfig.app.loginUrl==""){
                          scanner.show().then(function(response) {
                                // system.log(response);
-                                appConfig.appfunction.system.doWindowlogin(response,fnSuccess,fnError);
+                                appConfig.appfunction.system.TryWindowlogin(response,fnSuccess,fnError);
                                 function fnSuccess(){
                                      self.user(appConfig.app.user);
                                      self.upass(appConfig.app.upass);
@@ -78,7 +92,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./scanner']
 
                     }
                     else{
-                         this.dologin();
+                         //this.dologin();
                     }
                    
 
@@ -90,12 +104,21 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./scanner']
                      var baseUrl=appConfig.app.localbaseUrl;
                      var dbs=new dbHelper(baseUrl,data.user,data.ucode);
                      appConfig.app.dbs=dbs;
-                     router.navigate('#dinnerlist');
+                     dialog.showMessage("欢迎光临",'新同事',['开始'],false).then(function(response){
+                        var content = document.body;
+                      
+                        fullScreen(content);
+                        router.navigate('#dinnerlist');
+                      
+                    });
+                    // 
+                   
+                   
                      
                 }
                 function fnError(data){
                      dialog.showMessage(data.message,"登入失败!");
-                     appConfig.app.dbs=null;
+                     appConfig.appfunction.system.clearAppConfig();
                      router.navigate('#');
                      
                 }

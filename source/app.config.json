@@ -19,6 +19,16 @@
         "canteenno":0,
         "canteenname":""
     },
+    "kingofdinner":
+    {
+        "dinnerno":0,
+        "dinnername":"",
+        "starttime":null,
+        "endtime":null,
+        "isopen":"",
+        "operator":"",
+        "updatetime":null
+    },
      "dinnerlist":
     {        
         "resid":529019544123,

@@ -16,7 +16,7 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
     };
     scanner.prototype.attached=function(){
        
-   
+    
 
     };
 

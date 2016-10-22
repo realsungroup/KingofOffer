@@ -65,6 +65,8 @@
              </tr>
         </tfoot>
     </table>
-    <input type="button" value="未领取" class="tBtn tBtn2 rf" data-bind="text:C3_512262253052"/>
+    <div data-bind="if:haverows">
+       <input type="button" value="领取" class="tBtn tBtn2 rf" data-bind="click : finishOrder"/>
+    </div>
 </div>
  
