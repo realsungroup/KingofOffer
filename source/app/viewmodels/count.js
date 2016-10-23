@@ -26,7 +26,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','calendar/fu
 							 var amount=aData.data[0].C3_530553501701;
 							 var dates=aData.data[0].C3_530553501967;
 							// dialog.showMessage(JSON.stringify(data),'',[],true);
-							 var html='<table><tr><td>日期:</td><td>'+dates+'</td></tr><tr><td>领取数量:</td><td>'+amount+'</td></tr></table>';
+							 var html='<table class="cx"><tr><td>所选日期:</td><td>'+dates+'</td></tr><tr><td>领取数量:</td><td>'+amount+'</td></tr></table>';
 							 dialog.showMessage(html,'查询结果',['返回'],false); 
 
 						
