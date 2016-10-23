@@ -7,7 +7,8 @@ requirejs.config({
         'knockout': '../lib/knockout/knockout-3.4.0',
         'bootstrap': '../lib/bootstrap/js/bootstrap',
         'jquery': '../lib/jquery/jquery-1.9.1',
-        'realsun': '../lib/realsun/js'
+        'realsun': '../lib/realsun/js',
+        'calendar': '../lib/fullcalendar'
     },
     shim: {
         'bootstrap': {

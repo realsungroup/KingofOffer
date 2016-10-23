@@ -5,7 +5,7 @@
         "**/.DS_Store": true,
      
         "test/**/*.js": false,
-        "release":true,
+        "release":false,
         "durandalRelease":true,
         "source/entities":true,
         "source/interfaces":true,

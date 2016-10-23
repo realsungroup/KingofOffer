@@ -33,7 +33,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    background-color: #ddd;
+    background-color: #f8f8f8;
 }
 
 section {

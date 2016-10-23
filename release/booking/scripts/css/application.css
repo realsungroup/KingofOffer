@@ -15715,7 +15715,8 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
  */
 .fc {
   direction: ltr;
-  text-align: left; }
+  text-align: left;
+  margin:5% 3%;}
 
 .fc table {
   border-collapse: collapse;
@@ -15728,7 +15729,8 @@ html .fc,
 .fc td,
 .fc th {
   padding: 0;
-  vertical-align: top; }
+  vertical-align: top; 
+  text-align: center;}
 
 /* Header
 ------------------------------------------------------------------------*/
@@ -16037,8 +16039,8 @@ table.fc-border-separate {
   padding: 0 2px; }
 
 .fc-grid .fc-day-number {
-  float: right;
-  padding: 0 2px; }
+  font-size: 4em;
+  color:#50a0f0}
 
 .fc-grid .fc-other-month .fc-day-number {
   opacity: 0.3;
