@@ -19,7 +19,13 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
          $("#barcode").focus(function(){
                  $("#barcode").css("background-color","#FFFFCC");
                      });
-       
+         $(document).keydown(function(event){ 
+            if(event.keyCode==13){ 
+                $("#confirm").click(); 
+            } 
+            }); 
+
+
     };
        
      scanner.prototype.compositionComplete=function(view){

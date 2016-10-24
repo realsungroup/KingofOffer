@@ -15716,7 +15716,7 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 .fc {
   direction: ltr;
   text-align: left;
-  margin:5% 3%;}
+  margin:2% 3% 5% 3%;}
 
 .fc table {
   border-collapse: collapse;
