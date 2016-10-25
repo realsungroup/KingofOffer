@@ -8,7 +8,54 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 //http://www.realsun.me:8003/rispweb/
 //http://kingofdinner.realsun.me:8081/rispweb
-appfunctions.system=new function(){
+appfunctions.system=new function(){ 
+    this.setFullCalendar=function(dayClickCallback){
+        
+			    jQuery(document).ready(function() {
+	
+				var date = new Date();
+				var d = date.getDate();
+				var m = date.getMonth();
+				var y = date.getFullYear();
+                var daycallback=dayClickCallback;
+				var calendar = jQuery('#calendar').fullCalendar({
+					header: {
+						left: 'prev,next today',
+						center: 'title',
+						right: 'month,agendaWeek,agendaDay'
+					},
+					height:400,
+					monthNames:['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '11月', '12月'],
+					dayNamesShort:[ '星期日','星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+					buttonText: {
+						prev: '上个月',
+						next: '下个月',
+						prevYear: '&nbsp;&lt;&lt;&nbsp;',
+						nextYear: '&nbsp;&gt;&gt;&nbsp;',
+						today: '回到今天',
+						month: 'month',
+						week: 'week',
+						day: 'day'
+					},
+					 
+					selectable:true,
+					dayClick: function(date) {
+						var newDate=date.toString();
+						var yyyy=date.getFullYear();
+						var mm=date.getMonth();
+						var dd=date.getDate();
+						$('#calendar').fullCalendar( 'gotoDate', yyyy,mm,dd );
+						daycallback(date);
+					}
+				});
+				$('.fc-header-right').empty();
+				
+			});
+				
+		 
+
+    }
+
     this.setDinnerConfig=function(adata)
     {
         appConfig.kingofdinner.dinnerno=adata.C3_530458675389;
@@ -253,11 +300,47 @@ var dbHelper = (function () {
     function dbHelper(baseurl, user, ucode) {
         this.saveMethod = appConfig.app.saveMethod;
         this.getMethod = appConfig.app.getMethod;
+        this.getBysqlMethod=appConfig.app.getBysqlMethod;
         this.baseUrl = baseurl;
         this.user = user;
         this.ucode = ucode;
     }
-     
+    dbHelper.prototype.dbGetLittleDataBysql = function (resid, f3svc_sql, fnSuccess, fnError, fnSyserror)
+    {
+        var url;
+        url = this.baseUrl + "&method=" + this.getBysqlMethod + "&user=" + this.user + "&ucode=" + this.ucode + "&resid=" + resid  + "&f3svc_sql=" + f3svc_sql;
+        $.ajax({
+            url: url,
+            dataType: "jsonp",
+            jsonp: "jsoncallback",
+            success: function (text) {
+                if (text !== "") {
+                    var data = mini.decode(text);
+                    if (data.error == -1) {
+                        if (fnError != null) {
+                            fnError(data);
+                        }
+                    }
+                    var adata = [];
+                   
+                    var total=0;
+                    adata = data.data;
+                    if (data.total)
+                    {  total = data.total;}
+                  
+                    if (fnSuccess != null) {
+
+                        fnSuccess(adata,total);
+                    }
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                if (fnSyserror != null) {
+                    fnSyserror(jqXHR, textStatus, errorThrown);
+                }
+            } });
+
+    }
     dbHelper.prototype.dbGetdata = function (resid, subresid, cmswhere, fnSuccess, fnError, fnSyserror,pageSize,pageIndex) {
         var url;
         url = this.baseUrl + "&method=" + this.getMethod + "&user=" + this.user + "&ucode=" + this.ucode + "&resid=" + resid + "&subresid=" + subresid + "&cmswhere=" + cmswhere;
@@ -424,3 +507,22 @@ function exitFullScreen(el) {
         }  
   }  
 }
+Date.prototype.format = function(format)
+ {
+  var o = {
+  "M+" : this.getMonth()+1, //month
+  "d+" : this.getDate(),    //day
+  "h+" : this.getHours(),   //hour
+  "m+" : this.getMinutes(), //minute
+  "s+" : this.getSeconds(), //second
+  "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+  "S" : this.getMilliseconds() //millisecond
+  }
+  if(/(y+)/.test(format)) format=format.replace(RegExp.$1,
+  (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+  for(var k in o)if(new RegExp("("+ k +")").test(format))
+  format = format.replace(RegExp.$1,
+  RegExp.$1.length==1 ? o[k] :
+  ("00"+ o[k]).substr((""+ o[k]).length));
+  return format;
+ }

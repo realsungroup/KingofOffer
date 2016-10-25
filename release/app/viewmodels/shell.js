@@ -10,7 +10,7 @@ define(['plugins/router', 'durandal/app'], function (router, app) {
             router.map([
                 { route: '', title:'欢迎', moduleId: 'viewmodels/welcome', nav: true },
                 { route: 'dinnerlist',title:'开始', moduleId: 'viewmodels/dinnerlist', nav: true },
-                { route: 'count',title:'统计', moduleId: 'viewmodels/count', nav: true }
+                { route: 'orderrpt*details',title:'统计', moduleId: 'orderrpt/index', nav: true }
             ]).buildNavigationModel();
            
             return router.activate();

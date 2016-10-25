@@ -10,6 +10,7 @@
         "uploadFileUrl":"http://kingofdinner.realsun.me:8081/rispweb/rispservice/SvcUploadFile2.aspx",
         "httppath":"http://kingofdinner.realsun.me:8081/rispweb/upfiles",
         "saveMethod":"SaveData_Ajax",
+        "getBysqlMethod":"Ajax_QueryBySql",
         "debug":true,
         "dbs":null,
         "user":"",
@@ -27,13 +28,15 @@
         "endtime":null,
         "isopen":"",
         "operator":"",
-        "updatetime":null
+        "updatetime":null,
+        "v_dishlistofprepare":530719253364
     },
      "dinnerlist":
     {        
         "resid":529019544123,
         "subresid":512140171786
     },
+    
     "appfunction":null
 
 }

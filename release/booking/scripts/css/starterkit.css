@@ -39,6 +39,9 @@
 section {
     margin: 100px 20px;
 }
+section2 {
+    margin: 20px 20px;
+}
 
 .navbar-nav li.loader {
     margin: 12px 6px 0 6px;

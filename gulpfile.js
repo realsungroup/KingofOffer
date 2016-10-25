@@ -195,7 +195,7 @@ gulp.task("watch-durandal-debug", ["default-du"], function () {
         
     });
     //test2
-    gulp.watch(["source/app.manifest",  "source/cache.manifest","source/css/**","source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**.html", "test/**/*.ts"], ["default-du"]);
+    gulp.watch(["source/app.manifest",  "source/cache.manifest","source/css/**","source/**/**.json","scripts/css/*.css","source/*.html","source/**/**.ts","source/**/**.js","source/**/**/**","source/**/**.html", "test/**/*.ts"], ["default-du"]);
     gulp.watch(durandaloutputFolder+"/*.*").on('change', browserSync.reload); 
 });
 
