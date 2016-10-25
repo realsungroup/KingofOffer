@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version 1.26
+# version 1.29
 CACHE:
 /app.config.json
 /app/main.js
@@ -8,17 +8,17 @@ CACHE:
 /app/main/views/scanner.html
 /app/main/views/shell.html
 /app/main/views/welcome.html
-/app/main/views/img/date.jpg
-/app/main/views/img/date.png
-/app/main/views/img/hanb.jpg
-/app/main/views/img/home.jpg
-/app/main/views/img/home.png
-/app/main/views/img/kcal.jpg
-/app/main/views/img/kcal.png
-/app/main/views/img/Thumbs.db
-/app/main/views/img/user.jpg
-/app/main/views/img/uu.jpg
-/app/main/views/img/uu.png
+/app/img/date.jpg
+/app/img/date.png
+/app/img/hanb.jpg
+/app/img/home.jpg
+/app/img/home.png
+/app/img/kcal.jpg
+/app/img/kcal.png
+/app/img/Thumbs.db
+/app/img/user.jpg
+/app/img/uu.jpg
+/app/img/uu.png
 /app/main/viewmodels/dinnerlist.js
 /app/main/viewmodels/scanner.js
 /app/main/viewmodels/shell.js
