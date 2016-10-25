@@ -10,7 +10,8 @@
             router.map([
                 { route: '', title:'欢迎', moduleId: 'main/viewmodels/welcome', nav: true },
                 { route: 'dinnerlist',title:'开始', moduleId: 'main/viewmodels/dinnerlist', nav: true },
-                { route: 'orderrpt*details',title:'统计', moduleId: 'orderrpt/index', nav: true }
+                { route: 'orderrpt*details',title:'统计', moduleId: 'orderrpt/index', nav: true },
+                { route: 'update',title:'更新', moduleId: 'main/viewmodels/update', nav: true }
             ]).buildNavigationModel();
            
             return router.activate();

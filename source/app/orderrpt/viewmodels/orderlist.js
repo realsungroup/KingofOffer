@@ -1,4 +1,4 @@
-define(['durandal/app','knockout','plugins/router','plugins/dialog','calendar/fullcalendar','durandal/viewEngine'], function (app,ko,router,dialog,fullcalendar,viewEngine) {
+define(['durandal/app','knockout','plugins/router','plugins/dialog','calendar/fullcalendar','durandal/viewEngine','jqueryprint'], function (app,ko,router,dialog,fullcalendar,viewEngine) {
      var onewindow = (function (_super) {
                 __extends(onewindow, _super);
                 function onewindow(id,action,date) {
@@ -24,7 +24,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','calendar/fu
 							 var aData=mini.decode(data);
 						 
 							 var html='<p data-bind="html: title"></p>';
-							 var extendSettings={"v1":"test","data":aData};
+							 var extendSettings={"dates":dates,"data":aData};
 							 dialog.MessageBox.setViewUrl("orderrpt/views/fetchOrderList.html");
 							 dialog.showMessage(html,'查询结果',['返回'],false,extendSettings);
 							 delete dialog.MessageBox.prototype.viewUrl;
