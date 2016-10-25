@@ -65,6 +65,7 @@ appfunctions.system=new function(){
         appConfig.kingofdinner.updatetime=adata.C3_530124918144;
         appConfig.kingofdinner.isopen=adata.C3_530459359201;
         appConfig.kingofdinner.operator=adata.C3_530459427248;
+        appConfig.kingofdinner.dinnerdates=adata.C3_530749929793;
     }
     this.clearAppConfig=function(){
          appConfig.app.dbs=null;

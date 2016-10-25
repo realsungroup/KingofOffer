@@ -23,6 +23,7 @@
     "kingofdinner":
     {
         "dinnerno":0,
+        "dinnerdates":"",
         "dinnername":"",
         "starttime":null,
         "endtime":null,

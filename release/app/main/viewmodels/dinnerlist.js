@@ -116,8 +116,8 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
     fetchrows= function (system,barcode,pageSize,pageIndex,callback) {
                 var resid=appConfig.dinnerlist.resid;
                 var subresid=appConfig.dinnerlist.subresid;
-                var cmswhere="C3_512261452989="+barcode+" or C3_529489922410="+barcode;
-            
+                var cmswhere="C3_512261452989="+barcode+" or (C3_529489922410="+barcode+" and C3_512140206161="+appConfig.kingofdinner.dinnerdates+" and C3_512140206692="+appConfig.kingofdinner.dinnerno+")";
+                //alert(cmswhere);
                 appConfig.app.dbs.dbGetdata(resid,subresid,cmswhere,dataGot,fnerror,fnhttperror,pageSize,pageIndex);
                 function dataGot(data,subdata,total)
                 {
