@@ -10,6 +10,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
          }(onerecord));
   var dinnerList=function(){
         this.haverows=ko.observable(false);
+         
         this.rows= ko.observableArray([]);
         this.subrows=ko.observableArray([]);
         this.pageSize=0;
@@ -92,7 +93,22 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                        self.barcode("");
                        if (count > 0){ 
                            self.haverows(true);
+                           var audio=$("#menuaudio")[0];
+                           var play=0;
+                           audio.onended=function(){
+                               if (play==0)
+                               {
+                                     setTimeout(function() {
+                                          audio.play();
+                                          play=1;
+                                     }, 500);
+                                    
+                               }
+                           }
+                           
                         } 
+                      
+                      
                           
             
                     }
