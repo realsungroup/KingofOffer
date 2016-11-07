@@ -39,9 +39,13 @@
 </div>
 <input type="button" value="扫描" class="tBtn tBtn1 rf" data-bind="click : openScanner"/>
 <div id="menu" class="lf">
-<div id='printmenu' data-bind="if:haverows"  style="display:none">
-    <span  class="lf" data-bind="text:rows()[0].C3_529889657644"></span>             
-    <span  class="lf" data-bind="text:rows()[0].C3_529485594613"></span>
+<div id='printmenu' data-bind="if:haverows" style="display:none" >
+    <span  data-bind="text:rows()[0].C3_517602192375"></span>
+    <span  data-bind="text:rows()[0].C3_517602201297"></span>
+    <span  data-bind="text:rows()[0].C3_529889657644"></span>             
+    <span  data-bind="text:rows()[0].C3_529485594613"></span>
+    <span  data-bind="text:rows()[0].C3_512140206161"></span>
+    <span  data-bind="text:rows()[0].C3_513890663124"></span>
      <table  class="lf">
         <thead>
             <tr data-bind="foreach: printcolumns">
@@ -53,8 +57,7 @@
                
                 <td data-bind="text:C3_512140251614">
                 </td>
-                <td data-bind="text:C3_512140253770" width=40%>
-                </td>
+                 
                 <td data-bind="text:C3_512140252005">
                 </td>
                 <td data-bind="text:C3_512140253505">
@@ -110,6 +113,7 @@
 
     <div data-bind="if:haverows">
        <input type="button" value="领取" class="tBtn tBtn2 rf" data-bind="click : finishOrder"/>
+       <!--<input type="button" value="打印" class="tBtn tBtn2 rf" data-bind="click : finishOrder"/>-->
     </div>
 </div>
     

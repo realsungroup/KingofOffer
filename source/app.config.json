@@ -19,7 +19,10 @@
         "winname":"",
         "canteenno":0,
         "canteenname":"",
-        "audiotranslateurl":"http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=5&text="
+        "audiotranslateurl":"http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=5&text=",
+        "setupprinter":true,
+        "LODOP":null,
+        "setupaudio":false
     },
     "kingofdinner":
     {

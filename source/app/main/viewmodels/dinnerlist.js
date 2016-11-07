@@ -30,7 +30,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
         this.printcolumns= [
           
             { headerText: "菜品名称" },
-            { headerText: "描述" },
+          
             { headerText: "单价" },
             { headerText: "数量" },
             { headerText: "小计" }
@@ -51,12 +51,11 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
              var records=[];
              records.push(record);
              var json=mini.encode(records);
-      //       alert(json);
-             
              appConfig.app.dbs.dbSavedataWithparm(appConfig.dinnerlist.resid,0,json,"0","1","0",fnsaved,fnnosave,fnsyserror);
              function fnsaved(data){ 
                   dialog.showMessage("谢谢下次光临",'领取完成',[],true).then(
                   function(response){
+
                        self.haverows(false);
                        self.rows.removeAll();
                        self.subrows.removeAll();
@@ -108,45 +107,43 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                        self.barcode("");
                        if (count > 0){ 
                            self.haverows(true);
-                        //语音播报菜单：    
-                        //    var play=1;
-                        //    self.audiostr(appConfig.app.audiotranslateurl+encodeURI("配餐前，请先点击领取按钮"));
-                        //    var audio=$("#menuaudio")[0];
-                        //    audio.onended=function(){
-                            //    if (play==1){
-                                //    play=2;
-                                //    self.audiostr(data[0].C3_531434981277);
-                                //    audio.play();
-                                //    return;
-                            //    }
-                            //    
-                            //   if (play==2){
-                                    //    setTimeout(function() {
-                                                            //    audio.play();
-                                                            //    play=3;
-                                                            //  }, 
-                                                //   500);
-                                //    return;
-                                    //   
-                            //    }
-                            //  
-                        //    }
+                           if (appConfig.app.setupaudio)
+                           {
+//语音播报菜单：    
+                                var play=1;
+                                self.audiostr(appConfig.app.audiotranslateurl+encodeURI("配餐前，请先点击领取按钮"));
+                                var audio=$("#menuaudio")[0];
+                                audio.onended=function(){
+                                    if (play==1){
+                                        play=2;
+                                        self.audiostr(data[0].C3_531434981277);
+                                        audio.play();
+                                        return;
+                                    }
+                                    
+                                    if (play==2){
+                                            setTimeout(function() {
+                                                                    audio.play();
+                                                                    play=3;
+                                                                    }, 
+                                                        500);
+                                        return;
+                                            
+                                    }
+                                    
+                                }
 
-                         setTimeout(function() {
-                                var strHTML=document.getElementById("printmenu").innerHTML;
-                                // LODOP.PRINT_INITA(1,1,770,660,"测试预览功能");
-                                //LODOP.ADD_PRINT_TEXT(10,60,300,200,"这是测试的纯文本，下面是超文本:");
-                               // var empname=document.getElementById("empname").innerHTML;
-                               // console.log(empname);
-                                // LODOP.ADD_PRINT_HTM(10,5,"100%","80%",empname);
-                                // LODOP.SET_PRINT_PAGESIZE(3,1385,45,"")
-                                LODOP.ADD_PRINT_BARCODE(10,5,168,146,"Code93",data[0].C3_512261452989);
-                                LODOP.ADD_PRINT_HTM(180,5,"100%","80%",strHTML);
-                                LODOP.SET_PRINT_PAGESIZE(3,1385,45,"")
-                                LODOP.SET_PREVIEW_WINDOW(0,0,0,760,540,"");	
-                                LODOP.PREVIEW();
-                            
-                        }, 50);
+                           }
+                           if (appConfig.app.setupprinter)
+                           {
+                                setTimeout(function() {
+                                    var strHTML=document.getElementById("printmenu").innerHTML;
+                                    LODOP.ADD_PRINT_HTM(10,5,"100%","100%",strHTML);
+                                    LODOP.SET_PRINT_PAGESIZE(3,1385,45,"")
+                                    LODOP.SET_PREVIEW_WINDOW(0,0,0,760,540,"");	
+                                    LODOP.PRINT();
+                                    }, 50);
+                           }
                         }
                        
                           
