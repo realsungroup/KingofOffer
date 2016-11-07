@@ -140,8 +140,8 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                                // console.log(empname);
                                 // LODOP.ADD_PRINT_HTM(10,5,"100%","80%",empname);
                                 // LODOP.SET_PRINT_PAGESIZE(3,1385,45,"")
-                                //LODOP.ADD_PRINT_BARCODE(10,5,168,146,"QRCode",data[0].C3_512261452989);
-                                LODOP.ADD_PRINT_HTM(10,5,"100%","80%",strHTML);
+                                LODOP.ADD_PRINT_BARCODE(10,5,168,146,"Code93",data[0].C3_512261452989);
+                                LODOP.ADD_PRINT_HTM(180,5,"100%","80%",strHTML);
                                 LODOP.SET_PRINT_PAGESIZE(3,1385,45,"")
                                 LODOP.SET_PREVIEW_WINDOW(0,0,0,760,540,"");	
                                 LODOP.PREVIEW();
