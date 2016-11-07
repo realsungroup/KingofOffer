@@ -10,7 +10,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
          }(onerecord));
   var dinnerList=function(){
         this.haverows=ko.observable(false);
-         
+        this.audiostr=ko.observable("");
         this.rows= ko.observableArray([]);
         this.subrows=ko.observableArray([]);
         this.pageSize=0;
@@ -21,6 +21,14 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
         
         this.columns= [
             { headerText: "图例" },
+            { headerText: "菜品名称" },
+            { headerText: "描述" },
+            { headerText: "单价" },
+            { headerText: "数量" },
+            { headerText: "小计" }
+        ];
+        this.printcolumns= [
+          
             { headerText: "菜品名称" },
             { headerText: "描述" },
             { headerText: "单价" },
@@ -72,10 +80,17 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
         
     };
      openScanner=function(){
-          scanner.show().then(function(response) {
-          system.log(response);
-          self.barcode(response);
-      });
+          var audio=$("#menuaudio")[0];
+          self.audiostr("");
+          audio.pause();
+          setTimeout(function() {
+              scanner.show().then(function(response) {
+             
+                        self.barcode(response);
+                 });
+              
+          }, 100);
+          
     }
     fetchPage=function(self){
 
@@ -93,20 +108,49 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                        self.barcode("");
                        if (count > 0){ 
                            self.haverows(true);
-                           var audio=$("#menuaudio")[0];
-                           var play=0;
-                           audio.onended=function(){
-                               if (play==0)
-                               {
-                                     setTimeout(function() {
-                                          audio.play();
-                                          play=1;
-                                     }, 500);
-                                    
-                               }
-                           }
-                           
-                        } 
+                        //语音播报菜单：    
+                        //    var play=1;
+                        //    self.audiostr(appConfig.app.audiotranslateurl+encodeURI("配餐前，请先点击领取按钮"));
+                        //    var audio=$("#menuaudio")[0];
+                        //    audio.onended=function(){
+                            //    if (play==1){
+                                //    play=2;
+                                //    self.audiostr(data[0].C3_531434981277);
+                                //    audio.play();
+                                //    return;
+                            //    }
+                            //    
+                            //   if (play==2){
+                                    //    setTimeout(function() {
+                                                            //    audio.play();
+                                                            //    play=3;
+                                                            //  }, 
+                                                //   500);
+                                //    return;
+                                    //   
+                            //    }
+                            //  
+                        //    }
+
+                         setTimeout(function() {
+                                var strHTML=document.getElementById("printmenu").innerHTML;
+                                // LODOP.PRINT_INITA(1,1,770,660,"测试预览功能");
+                                //LODOP.ADD_PRINT_TEXT(10,60,300,200,"这是测试的纯文本，下面是超文本:");
+                               // var empname=document.getElementById("empname").innerHTML;
+                               // console.log(empname);
+                                // LODOP.ADD_PRINT_HTM(10,5,"100%","80%",empname);
+                                // LODOP.SET_PRINT_PAGESIZE(3,1385,45,"")
+                                //LODOP.ADD_PRINT_BARCODE(10,5,168,146,"QRCode",data[0].C3_512261452989);
+                                LODOP.ADD_PRINT_HTM(10,5,"100%","80%",strHTML);
+                                LODOP.SET_PRINT_PAGESIZE(3,1385,45,"")
+                                LODOP.SET_PREVIEW_WINDOW(0,0,0,760,540,"");	
+                                LODOP.PREVIEW();
+                            
+                        }, 50);
+                        }
+                       
+                          
+
                       
                       
                           
