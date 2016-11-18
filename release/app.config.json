@@ -22,7 +22,11 @@
         "audiotranslateurl":"http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=5&text=",
         "setupprinter":true,
         "LODOP":null,
-        "setupaudio":false
+        "setupaudio":false,
+        "poslogincode":"10198742719",
+        "displaymode":"none",
+        "dbh":null,
+        "posrecordsjson":null
     },
     "kingofdinner":
     {

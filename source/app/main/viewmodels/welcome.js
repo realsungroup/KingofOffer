@@ -68,14 +68,9 @@
                    
        
                 },
-                attached:function(){
+                TryWindowlogin:function(logincode){
                     var self=this;
-                    
-                    
-                    if (!this.canLogin||appConfig.app.loginUrl==""){
-                         scanner.show().then(function(response) {
-                               // system.log(response);
-                                appConfig.appfunction.system.TryWindowlogin(response,fnSuccess,fnError);
+                     appConfig.appfunction.system.TryWindowlogin(logincode,fnSuccess,fnError);
                                 function fnSuccess(){
                                      self.user(appConfig.app.user);
                                      self.upass(appConfig.app.upass);
@@ -88,7 +83,24 @@
                                     router.navigate('#');
                      
                                 }
-                        });
+
+                },
+                attached:function(){
+                    var self=this;
+                    
+                    
+                    if (!this.canLogin||appConfig.app.loginUrl==""){
+                        if (appConfig.app.displaymode=="none")
+                        {
+                            self.TryWindowlogin(appConfig.app.poslogincode);
+                        }
+                        else
+                        {
+                          scanner.show().then(function(response) {
+                               // system.log(response);
+                            self.TryWindowlogin(response);
+                          });
+                        }
 
                     }
                     else{
@@ -104,13 +116,20 @@
                      var baseUrl=appConfig.app.localbaseUrl;
                      var dbs=new dbHelper(baseUrl,data.user,data.ucode);
                      appConfig.app.dbs=dbs;
-                     dialog.showMessage("欢迎光临",'新同事',['开始'],false).then(function(response){
+                      if (appConfig.app.displaymode=="none")
+                      {
+                           router.navigate('#dinnerlist');
+                      }
+                      else
+                      { dialog.showMessage("欢迎光临",'新同事',['开始'],false).then(function(response){
                         var content = document.body;
                       
                         fullScreen(content);
                         router.navigate('#dinnerlist');
                       
                     });
+                    }
+                    
                     // 
                    
                    

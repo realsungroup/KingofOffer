@@ -91,6 +91,44 @@ appfunctions.system=new function(){
         appConfig.app.uploadFileUrl=adata.C3_530399460189;
         appConfig.app.httppath=adata.C3_530399471235;
     }
+     
+    this.refreshWinpos=function(refreshed){
+            var self =this; 
+            appConfig.app.dbh.dbSavedata(appConfig.app.hostwebpos,0, appConfig.app.posrecordsjson,refreshdata,dataerror,syserror);
+                       function refreshdata(returnText)
+                        {
+                          
+                            try {
+                                  if (typeof(returnText)=='object')
+                                  {
+                                     self.setDinnerConfig(returnText.data[0]);
+                                  }
+                                   if (typeof(returnText)=='string')
+                                  {
+                                     self.setDinnerConfig(JSON.parse(returnText).data[0]);
+                                  }
+                                  
+                                  refreshed();
+                                  return;
+                                
+                            } catch (error) {
+                                   refreshed();
+                                return ;
+                            }
+                             
+                        }
+                        function dataerror(error)
+                        {
+                               refreshed();
+                        }
+                        function syserror(error)
+                        {
+                             refreshed();
+                        }
+
+                        
+
+    }
     this.doWindowlogin=function(text,fnSuccess,fnError){
                     var temp = mini.decode(text);
                     var data;
@@ -144,13 +182,18 @@ appfunctions.system=new function(){
                     if (fnSuccess != null) {
                         self.setAppConfig(adata);
                         var dbh=new dbHelper(appConfig.app.baseUrl,appConfig.app.hostuser,appConfig.app.hostucode);
+                       
                         var aRecord=new onerecord(adata.REC_ID,"modified");
                         var records=[];
                         records.push(aRecord);
+                       
                         var json=mini.encode(records);
+                        
                         dbh.dbSavedata(appConfig.app.hostwebpos,0,json,fnsaved,fnnosave,fnsyserror);
                         function fnsaved(returnText)
                         {
+                            appConfig.app.dbh=dbh;
+                            appConfig.app.posrecordsjson=json;
                             try {
                                   if (typeof(returnText)=='object')
                                   {
