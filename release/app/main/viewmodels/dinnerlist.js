@@ -168,6 +168,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                        self.subrows(subdata);
                        self.total=count;
                        self.barcode("");
+                       //取订单操作完成并且有记录
                        if (count > 0){ 
                            self.haverows(true);
                            if (appConfig.app.setupaudio){//语音播报菜单
@@ -195,6 +196,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                                 }
 
                            }
+                           //无屏幕模式
                            if (appConfig.app.displaymode=="none")
                            {
 
@@ -203,12 +205,14 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                             }
                             else
                             {
+                          //有屏幕模式
                                 if (appConfig.app.setupprinter){
-                                      sendPrinter();
+                                      sendPrinter(function(){});
                                 }
                             }
                            
                         }
+                       //取订单操作完成但无记录
                         else
                         {
                               if (appConfig.app.displaymode=="none")
@@ -216,6 +220,7 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
                         }
                        
                     }
+                    // 取订单操作错误
                     else
                     {
                    
