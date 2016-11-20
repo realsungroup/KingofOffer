@@ -136,7 +136,22 @@ define(['plugins/http', 'durandal/app', 'knockout','durandal/system','plugins/ro
           audio.pause();
           setTimeout(function() {
               scanner.show().then(function(response) {
-             
+                      if (response==undefined)
+                      {
+                           if (appConfig.app.displaymode=="none"){
+                                 openScanner();
+                                 return;
+                           }
+                        
+                      }
+                     if (response=="")
+                      {
+                          if (appConfig.app.displaymode=="none")
+                           {
+                             openScanner();
+                             return;}
+                          
+                      }
                         self.barcode(response);
                  });
               
