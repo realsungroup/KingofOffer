@@ -118,14 +118,14 @@
                      appConfig.app.dbs=dbs;
                       if (appConfig.app.displaymode=="none")
                       {
-                           router.navigate('#dinnerlist');
+                           router.navigate('#orderrpt/index');
                       }
                       else
                       { dialog.showMessage("欢迎光临",'新同事',['开始'],false).then(function(response){
                         var content = document.body;
                       
                         fullScreen(content);
-                        router.navigate('#dinnerlist');
+                        router.navigate('#orderrpt/index');
                       
                     });
                     }

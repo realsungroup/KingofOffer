@@ -5,7 +5,9 @@ define(['plugins/router', 'knockout'], function(router, ko) {
             fromParent:true
         }).map([
            
-           { route: '',      moduleId: 'viewmodels/index',     title: '统计说明',         type: 'orderrpt',   nav: true },
+           { route: '',      moduleId: 'viewmodels/index',     title: '使用说明',         type: 'orderrpt',   nav: true },
+           { route: 'basicmenu',      moduleId: 'viewmodels/basicmenu',     title: '菜单维护',         type: 'orderrpt',   nav: true },
+           { route: 'postmenu',      moduleId: 'viewmodels/postmenu',     title: '菜单发布',         type: 'orderrpt',   nav: true },
             { route: 'orderlist',      moduleId: 'viewmodels/orderlist',     title: '备餐统计',         type: 'orderrpt',   nav: true },
             { route: 'count',               moduleId: 'viewmodels/count',     title: '领餐统计',         type: 'orderrpt',   nav: true }
         ]).buildNavigationModel();

@@ -1,14 +1,14 @@
 {
     "app": {
         "loginUrl": "",
-        "baseUrl": "http://kingofdinner.realsun.me:8081/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
+        "baseUrl": "http://www.realsun.me:8081/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
         "localbaseUrl": "",
         "hostuser":"demo1",
         "hostucode":"GHgfPHoXCQm3k3m3DY4DqQ==",
         "hostwebpos":530122554910,
         "getMethod": "ShowHostTableDatas_Ajax",
-        "uploadFileUrl":"http://kingofdinner.realsun.me:8081/rispweb/rispservice/SvcUploadFile2.aspx",
-        "httppath":"http://kingofdinner.realsun.me:8081/rispweb/upfiles",
+        "uploadFileUrl":"http://www.realsun.me:8081/rispweb/rispservice/SvcUploadFile2.aspx",
+        "httppath":"http://www.realsun.me:8081/rispweb/upfiles",
         "saveMethod":"SaveData_Ajax",
         "getBysqlMethod":"Ajax_QueryBySql",
         "debug":true,
@@ -23,8 +23,8 @@
         "setupprinter":true,
         "LODOP":null,
         "setupaudio":false,
-        "poslogincode":"10198742719",
-        "displaymode":"none",
+        "poslogincode":"",
+        "displaymode":"",
         "dbh":null,
         "posrecordsjson":null
     },
