@@ -9,7 +9,7 @@
         activate: function () {
             router.map([
                 { route: '', title:'欢迎', moduleId: 'main/viewmodels/welcome', nav: true },
-                { route: 'orderrpt*details',title:'统计', moduleId: 'orderrpt/index', nav: true },
+                { route: 'orderrpt*details',title:'管理', moduleId: 'orderrpt/index', nav: true },
                 { route: 'update',title:'重新登入', moduleId: 'main/viewmodels/update', nav: true }
             ]).buildNavigationModel();
            
