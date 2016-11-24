@@ -8,6 +8,7 @@
         "hostwebpos":530122554910,
         "getMethod": "ShowHostTableDatas_Ajax",
         "uploadFileUrl":"http://www.realsun.me:8081/rispweb/rispservice/SvcUploadFile2.aspx",
+        "uppath":"?savepath=d:\\web\\rispweb\\upfiles&httppath=",
         "httppath":"http://www.realsun.me:8081/rispweb/upfiles",
         "saveMethod":"SaveData_Ajax",
         "getBysqlMethod":"Ajax_QueryBySql",
@@ -26,7 +27,9 @@
         "poslogincode":"",
         "displaymode":"",
         "dbh":null,
-        "posrecordsjson":null
+        "posrecordsjson":null,
+        "cpnid":511301804833,
+        "resid":511301949614
     },
     "kingofdinner":
     {

@@ -143,3 +143,22 @@
 .modal-footer button{
     margin: 5px;
 }
+/*********************************************/
+.mta{
+    width: 100%;
+    margin:0 auto;
+    border: 2px solid #ddd;
+    background: #fefefe;
+}
+.mta thead th{
+    font-size: 3em;
+}
+.mta td{
+    padding:5px;
+}
+.mta tbody tr td:first-child{
+    text-align: right;
+}
+.mtaf input{
+    margin:20px;
+}
