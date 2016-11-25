@@ -1,21 +1,20 @@
 <form class="mta" id="form">
     <div>
-		<div class="lf">
-			<input type="button" value="主荤" data-bind="click : "/>
-			<input type="button" value="副荤" data-bind="click : "/>
-			<input type="button" value="汤" data-bind="click : "/>
-			<input type="button" value="小吃" data-bind="click : "/>
-			<input type="button" value="饮料" data-bind="click : "/>
+		<div data-bind="foreach: mlist" class="">
+			<button  data-bind="click :  ">
+                <p data-bind="text: C3_511301864786"></p>
+            </button>
 		</div>
-		<div class="meeting" data-bind="foreach: mlist">
-				<span data-bind="text: "></span>
+		<!--<div class="meeting" data-bind="foreach: mlist">
+				<img/>
 				<span data-bind="text: "></span><br>
 				<span data-bind="text: "></span><br>
 				<span data-bind="text: "></span><br>
-                <button data-bind="click : " ></button>
-		</div>
+                <button data-bind="click : " >编辑</button>
+                <button data-bind="click : " >删除</button>
+		</div>-->
 	</div>
-    <table>
+    <!--<table>
         <thead>
             <tr>
                 <th></th>
@@ -26,7 +25,7 @@
                 <td></td>
             </tr>
         </tbody>
-    </table>
+    </table>-->
 </form>
 <!--<table>
         <thead>
@@ -38,7 +37,7 @@
         <tr>
             <td>菜品类别:</td>
             <td>
-                <select class="mini-combobox" name="C3_530883695470">C3_511301864786取记录id
+                <select class="mini-combobox" name="C3_530883695470">
                     <option value="A座">Ａ座</option>
                     <option value="B座">Ｂ座</option>
                     <option value="C座">Ｃ座</option>
