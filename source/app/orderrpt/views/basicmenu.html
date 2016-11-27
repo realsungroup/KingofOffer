@@ -1,31 +1,21 @@
 <form class="mta" id="form">
     <div>
-		<div data-bind="foreach: mlist" class="">
-			<button  data-bind="click :  ">
+		<div class="mIndex" data-bind="foreach: mIndex">
+			<button class="mini-button mini-button-info" data-bind="click : menuListcp.bind(C3_511301864786)">
                 <p data-bind="text: C3_511301864786"></p>
             </button>
 		</div>
-		<!--<div class="meeting" data-bind="foreach: mlist">
-				<img/>
-				<span data-bind="text: "></span><br>
-				<span data-bind="text: "></span><br>
-				<span data-bind="text: "></span><br>
-                <button data-bind="click : " >编辑</button>
-                <button data-bind="click : " >删除</button>
-		</div>-->
-	</div>
-    <!--<table>
-        <thead>
-            <tr>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>-->
+    </div>
+    <div data-bind="foreach: mList">
+	    <div class="mList lf">
+			<img id='imgUploaded' class="lf" data-bind="attr: { src: C3_511302422114 }" width="150" height="150"/>
+			<b class="lf">菜品名称:</b><span class="lf" data-bind="text: C3_511302131411"></span><br>
+            <b class="lf">菜品价格:</b><span class="lf" data-bind="text: C3_511302150302"></span><br>
+            <b class="lf">菜品类别:</b><span class="lf" data-bind="text: C3_530883695470"></span><br>
+            <a class="mini-button mini-button-warning lf" id="editClick" data-bind="click : editClick">编辑</a>
+            <a class="mini-button mini-button-danger lf" onclick="delClick">删除</a>
+	    </div>
+    </div>
 </form>
 <!--<table>
         <thead>
