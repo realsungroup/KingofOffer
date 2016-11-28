@@ -177,7 +177,7 @@
     margin:10px;
 }
 .mList{
-    width:382px;
+    width:394px;
     height: 170px;
     padding: 8px;
     border: 2px solid #ccc;
@@ -197,8 +197,7 @@
 .mList>span,.mList>div{
     margin-left: 10px;
     font-size: 20px;
-    width:130px;
-    overflow:hidden;
+    width:140px;
 }
 .mList b{
     margin-top: 2px;

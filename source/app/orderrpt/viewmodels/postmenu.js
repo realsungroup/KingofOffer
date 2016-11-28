@@ -38,9 +38,11 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','calendar/fu
             menuListcp1=function(cpn){
                 menuList(me,cpn.C3_511301864786);
             };
-            editClick=function(){
-                alert(1);
-            }
+            add=function(){
+                addmenu.show().then(function(){
+                    menuList(me);
+                });
+            };
         }
     }
 })

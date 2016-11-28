@@ -1,11 +1,5 @@
 <form id="form">
-    <div>
-		<div class="mIndex" data-bind="foreach: mIndex">
-			<button class="btn btn-info" data-bind="click : menuListcp1.bind(C3_511301864786)">
-                <b data-bind="text: C3_511301864786"></b>
-            </button>
-		</div>
-    </div>
+    <input type="button" value="新增菜品" class="mtai btn btn-success" onclick="add()">
     <div data-bind="foreach: mList">
 	    <div class="mList lf">
 			<img id='imgUploaded' class="lf" data-bind="attr: { src: C3_511302422114 }" width="150" height="150"/>

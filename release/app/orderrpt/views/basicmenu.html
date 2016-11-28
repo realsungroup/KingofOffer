@@ -13,69 +13,8 @@
 			<b class="lf">菜品名称:</b><span class="lf" data-bind="text: C3_511302131411"></span>
             <b class="lf">菜品价格:</b><div class="lf"><span data-bind="text: C3_511302150302"></span><span>元</span></div>
             <b class="lf">菜品类别:</b><span class="lf" data-bind="text: C3_530883695470"></span>
-            <input type="button" value="编辑" class="btn btn-warning lf mtai" data-bind="click : editClick.bind(C3_511302131411)">
-            <input type="button" value="删除" class="btn btn-danger lf mtai"  data-bind="click : menuDel.bind(C3_511302131411)">
+            <input type="button" value="编辑/删除" class="btn btn-warning lf mtai" data-bind="click : editClick.bind(C3_511302131411)">
+            <!--<input type="button" value="删除" class="btn btn-danger lf mtai"  data-bind="click : menuDel.bind(C3_511302131411)">-->
 	    </div>
     </div>
 </form>
-<!--<table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>新增菜品</th>
-            </tr>
-        </thead>
-        <tr>
-            <td>菜品类别:</td>
-            <td>
-                <select class="mini-combobox" name="C3_530883695470">
-                    <option value="A座">Ａ座</option>
-                    <option value="B座">Ｂ座</option>
-                    <option value="C座">Ｃ座</option>
-                    <option value="D座">Ｄ座</option>
-                    <option value="E座">Ｅ座</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>菜品名称:</td>
-            <td>
-                <input class="mini-textbox" name="C3_511302131411" required="true"/>
-            </td>
-        </tr>
-        <tr>
-            <td>菜品价格:</td>
-            <td>
-                <input class="mini-textbox" name="C3_511302150302" required="true"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                上传菜品图片:
-            </td>
-            <td>
-                <input
-                    cursor="pointer"
-                    id='fileupload1'
-                    onuploaderror='onUploadError'
-                    onfileselect='onFileSelect'
-                    onuploadsuccess='onUploadSuccess'
-                    uploadUrl='upload.aspx'
-                    flashUrl='swfupload/swfupload.swf'
-                    class='mini-fileupload'
-                    uploadOnSelect=true 
-                    name='Fdata'
-                    limitType='*.jpg;*.jpeg;*.png'/>
-                <input id="imgurl" name='C3_511302422114' class="mini-textbox"  allowInput="false"/>
-                <img align='right' id='imgUploaded' width="70px"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            </td>
-            <td>
-                <br>
-                <input class="mini-button mini-button-primary" onclick="saveClick" text="确认添加" >
-            </td>
-        </tr>
-    </table>-->

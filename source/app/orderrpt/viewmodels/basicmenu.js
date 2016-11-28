@@ -24,12 +24,11 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
             };
             menuList=function(self,cpn){
                 if(cpn){
-                    cmswhere="C3_530883695470="+cpn;
+                    cmswhere="C3_530883695470='"+cpn+"'";
                 };
                 dbs.dbGetdata(resid,0,cmswhere,fnSuccess,null,fnhttperror);
                 function fnSuccess(data){
                     self.mList(data);
-                    // console.log(data)
                 };
                 function fnhttperror(jqXHR, textStatus, errorThrown){
                     // console.log(jqXHR);
@@ -41,8 +40,9 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
                 menuList(me,cpn.C3_511301864786);
             };
             editClick=function(cpn){
-                editmenu.show(cpn.C3_511302131411);
-                //console.log(cpn.C3_511302131411);
+                editmenu.show(cpn.C3_511302131411).then(function(){
+                    menuList(me);
+                });
             };
             add=function(){
                 addmenu.show().then(function(){
