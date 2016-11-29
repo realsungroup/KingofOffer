@@ -1,17 +1,18 @@
-<form class="cpnlist" data-bind="foreach: cpIndex">
-    <table class="lf">
-        <thead>
-            <tr>
-                <th colspan="2"><h4  data-bind="text: C3_511301864786"></h4></th>
-            </tr>
-            <tr>
-                <th class="tc">菜单名称</th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: cpList">
-            <tr data-bind="click : cpnm">
-                <td data-bind="text: C3_511302131411"></td>
-            </tr>
-        </tbody>
-    </table>
+<form class="cpnlist">
+    <div>
+        <table>
+            <thead>
+                <tr data-bind="foreach: cpIndex">
+                    <th class="tc" data-bind="click : cpmList.bind(C3_511301864786)"><h4  data-bind="text: C3_511301864786"></h4></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div>
+        <div data-bind="foreach: cpList">
+            <div data-bind="click : cpnm" class="lf tc">
+                <span data-bind="text: C3_511302131411"></span>
+            </div>
+        </div>
+    </div>
 </form>

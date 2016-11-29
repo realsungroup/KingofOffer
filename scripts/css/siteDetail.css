@@ -7,6 +7,9 @@
 .tc{
     text-align: center;
 }
+.oa{
+    overflow: auto;
+}
 .imgw1{
     width: 20%;
     height:100%;
@@ -145,8 +148,8 @@
 }
 /*********************************************/
 .mta{
-    width: 100%;
-    margin:0 auto;
+    width: 300px;
+    margin:10px auto;
     border: 2px solid #ddd;
     background: #fefefe;
 }
@@ -208,7 +211,8 @@
 }
 .cbn{
     width: 300px;
-    margin:0 auto;
+    height: 150px;
+    margin:20px auto;
     border: 2px solid #ddd;
     background: #fefefe;
 }
@@ -225,5 +229,32 @@
     cursor:pointer;
 }
 .cbn table tbody tr:hover{
+    background: #29b6f6;
+}
+.cpnlist{
+    width: 900px;
+    height: 700px;
+    margin:10px auto;
+    border: 2px solid #ddd;
+    background: #fefefe;
+}
+.cpnlist table{
+    width:100%;
+}
+.cpnlist table th{
+    width:12.5%;
+}
+.cpnlist table th,.cpnlist table td{
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+.cpnlist>div>div>div{
+    width: 12.5%;
+    height: 24px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.cpnlist>div>div>div:hover,.cpnlist th:hover,.cpnlist th.bgb{
+    cursor:pointer;
     background: #29b6f6;
 }

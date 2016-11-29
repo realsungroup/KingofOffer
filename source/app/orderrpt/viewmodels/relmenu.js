@@ -52,10 +52,10 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./relcbn','
                 form.setData(cnn);
             });
         });
-        $("input[name*='C3_529015877010']").click(function(){
+        $("input[name*='C3_529015358827']").click(function(){
             relcpn.show().then(function(cpn){
-                cnn.C3_529015295101=cpn.C3_511307409286;
-                cnn.C3_529015358827=cpn.C3_511307425895;
+                cnn.C3_529015295101=cpn.C3_511302066880;
+                cnn.C3_529015358827=cpn.C3_511302131411;
                 var form = new mini.Form("form2");
                 form.setData(cnn);
             });

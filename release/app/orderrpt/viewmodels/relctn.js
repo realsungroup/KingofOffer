@@ -9,15 +9,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     var cmswhere="";
     var relctn = function() {
     };
-    relctn.prototype.cancel = function() {
-        dialog.close(this);              
-    };
-    relctn.prototype.ok = function(ctn) {
-        
-        console.log(ctn);
-        var that=this;
-        dialog.close(that);
-    };
     relctn.prototype.ctList=ko.observableArray([]),
     relctn.prototype.attached=function(){
         mini.parse();
