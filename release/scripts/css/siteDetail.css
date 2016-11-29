@@ -199,7 +199,31 @@
     font-size: 20px;
     width:140px;
 }
+.mList>div>span{
+    margin-left: 10px;
+}
 .mList b{
     margin-top: 2px;
     line-height: 26px;
+}
+.cbn{
+    width: 300px;
+    margin:0 auto;
+    border: 2px solid #ddd;
+    background: #fefefe;
+}
+.cbn table{
+    width:200px;
+    margin:15px auto;
+    border: 2px solid #ddd;
+}
+.cbn table th,.cbn table td{
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+.cbn table td{
+    cursor:pointer;
+}
+.cbn table tbody tr:hover{
+    background: #29b6f6;
 }

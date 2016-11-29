@@ -17,7 +17,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         var that=this;
         var form = new mini.Form("form1");
         var o =  new mini.Form("form1").getData();
-        console.log(o);
         form.validate(); 
         if (form.isValid() == false) return;
         o._id=1;

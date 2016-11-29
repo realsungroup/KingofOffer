@@ -1,12 +1,13 @@
 <form id="form">
-    <input type="button" value="新增菜品" class="mtai btn btn-success" onclick="add()">
-    <div data-bind="foreach: mList">
+    <input type="button" value="新增菜品" class="mtai btn btn-success" onclick="addRel()">
+    <div data-bind="foreach: rList">
 	    <div class="mList lf">
-			<img id='imgUploaded' class="lf" data-bind="attr: { src: C3_511302422114 }" width="150" height="150"/>
-			<b class="lf">菜品名称:</b><span class="lf" data-bind="text: C3_511302131411"></span>
-            <b class="lf">菜品价格:</b><span class="lf" data-bind="text: C3_511302150302"></span>
-            <b class="lf">菜品类别:</b><span class="lf" data-bind="text: C3_530883695470"></span>
-            <a class="btn btn-warning" id="editClick" data-bind="click : editClick">发布</a>
+			<img id='imgUploaded' class="lf" data-bind="attr: { src: C3_529015359909 }" width="150" height="150"/>
+			<b class="lf">发布日期:</b><span class="lf" data-bind="text: C3_529015397294"></span>
+            <b class="lf">餐别名称:</b><span class="lf" data-bind="text: C3_529015877010"></span>
+            <b class="lf">餐厅名称:</b><span class="lf" data-bind="text: C3_529015233937"></span>
+            <b class="lf">菜品名称:</b><span class="lf" data-bind="text: C3_529015358827"></span>
+            <b class="lf">菜品价格:</b><div class="lf"><span data-bind="text: C3_529015359113"></span><span>元</span></div>
 	    </div>
     </div>
 </form>
