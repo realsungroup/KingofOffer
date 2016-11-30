@@ -38,7 +38,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             dialog.close(me,cpn);
         }
     };
-   
+    relcpn.prototype.cancel = function() {
+        dialog.close(this);              
+    };
 
     relcpn.show = function(){
         return dialog.show(new relcpn());

@@ -21,8 +21,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             dialog.close(me,cbn);
         }
     };
-   
-
+    relcbn.prototype.cancel = function() {
+        dialog.close(this);              
+    };
     relcbn.show = function(){
         return dialog.show(new relcbn());
     };

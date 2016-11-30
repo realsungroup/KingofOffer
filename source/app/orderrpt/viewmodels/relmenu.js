@@ -10,7 +10,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./relcbn','
     var relmenu = function() {
     };
     relmenu.prototype.cancel = function() {
-        dialog.close(this);              
+        dialog.close(this);
     };
     relmenu.prototype.ok = function() {
         var that=this;
@@ -23,7 +23,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./relcbn','
         var json = mini.encode([o]);
         dbs.dbSavedata(relid,0,json,dataSaved,fnerror,fnhttperror);
         function dataSaved(text){
-            dialog.showMessage('<h1>发布成功</h1>','菜品发布',['返回'],true);
+            // dialog.showMessage('<h1>发布成功</h1>','菜品发布',['返回'],true);
             dialog.close(that);
         };
         function fnerror(text){
@@ -36,28 +36,35 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./relcbn','
     };
     relmenu.prototype.attached=function(){
         mini.parse();
-        $("input[name*='C3_529015877010']").click(function(){
+        cnn={};
+        $("input[name*='C3_529015877010']").focus(function(){
             relcbn.show().then(function(cbn){
-                cnn.C3_529015876735=cbn.C3_511307409286;
-                cnn.C3_529015877010=cbn.C3_511307425895;
-                var form = new mini.Form("form2");
-                form.setData(cnn);
+                if(cbn){
+                    cnn.C3_529015876735=cbn.C3_511307409286;
+                    cnn.C3_529015877010=cbn.C3_511307425895;
+                    var form = new mini.Form("form2");
+                    form.setData(cnn);
+                }
             });
         });
-        $("input[name*='C3_529015233937']").click(function(){
+        $("input[name*='C3_529015233937']").focus(function(){
             relctn.show().then(function(ctn){
-                cnn.C3_529015233619=ctn.C3_511301141786;
-                cnn.C3_529015233937=ctn.C3_511301160005;
-                var form = new mini.Form("form2");
-                form.setData(cnn);
+                if(ctn){
+                    cnn.C3_529015233619=ctn.C3_511301141786;
+                    cnn.C3_529015233937=ctn.C3_511301160005;
+                    var form = new mini.Form("form2");
+                    form.setData(cnn);
+                }
             });
         });
-        $("input[name*='C3_529015358827']").click(function(){
+        $("input[name*='C3_529015358827']").focus(function(){
             relcpn.show().then(function(cpn){
-                cnn.C3_529015295101=cpn.C3_511302066880;
-                cnn.C3_529015358827=cpn.C3_511302131411;
-                var form = new mini.Form("form2");
-                form.setData(cnn);
+                if(cpn){
+                    cnn.C3_529015295101=cpn.C3_511302066880;
+                    cnn.C3_529015358827=cpn.C3_511302131411;
+                    var form = new mini.Form("form2");
+                    form.setData(cnn);
+                }
             });
         });
     };

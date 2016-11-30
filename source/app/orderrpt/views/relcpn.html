@@ -1,5 +1,6 @@
 <form class="cpnlist">
     <div>
+        <b class="closecp rf" data-bind="click : cancel">×</b>
         <table>
             <thead>
                 <tr data-bind="foreach: cpIndex">
@@ -8,11 +9,9 @@
             </thead>
         </table>
     </div>
-    <div>
         <div data-bind="foreach: cpList">
             <div data-bind="click : cpnm" class="lf tc">
                 <span data-bind="text: C3_511302131411"></span>
             </div>
         </div>
-    </div>
 </form>
