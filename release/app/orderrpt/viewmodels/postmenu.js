@@ -12,22 +12,22 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
             var cmswhere="",cp={};
             var me=this;
             var i=1;
-            relList=function(self,cpn){
+            relList=function(cpn){
                 if(cpn){
                     cmswhere="C3_530883695470='"+cpn+"'";
                 };
                 dbs.dbGetdata(relid,0,cmswhere,fnSuccess,null,fnhttperror);
                 function fnSuccess(data){
-                    self.rList(data);
+                    me.rList(data);
                 };
                 function fnhttperror(jqXHR, textStatus, errorThrown){
                     console.log(jqXHR);
                 };
             }
-            relList(this);
+            relList();
             addRel=function(){
                 relmenu.show().then(function(){
-                    relList(me);
+                    relList();
                 });
             };
             upClick=function(cpn){
@@ -38,7 +38,7 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
                 json="["+JSON.stringify(cp)+"]";
                 dbs.dbSavedata(relid,0,json);
                 setTimeout(function() {
-                    relList(me);
+                    relList();
                 }, 200);
             };
             downClick=function(cpn){
@@ -49,7 +49,7 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
                 json="["+JSON.stringify(cp)+"]";
                 dbs.dbSavedata(relid,0,json);
                 setTimeout(function() {
-                    relList(me);
+                    relList();
                 }, 200);
             };
         }
