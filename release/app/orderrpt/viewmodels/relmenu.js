@@ -14,6 +14,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./relcbn','
     };
     relmenu.prototype.ok = function() {
         $('#fbb').attr({"disabled":"disabled"});
+        setTimeout(function() {
+            $('#fbb').removeAttr("disabled");
+        }, 1000);
         var that=this;
         var form = new mini.Form("form2");
         var o =  new mini.Form("form2").getData();
@@ -39,16 +42,16 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./relcbn','
     relmenu.prototype.attached=function(){
         mini.parse();
         cnn={};
-        $("input[name*='C3_529015877010']").focus(function(){
-            relcbn.show().then(function(cbn){
-                if(cbn){
-                    cnn.C3_529015876735=cbn.C3_511307409286;
-                    cnn.C3_529015877010=cbn.C3_511307425895;
-                    var form = new mini.Form("form2");
-                    form.setData(cnn);
-                }
-            });
-        });
+        // $("input[name*='C3_529015877010']").focus(function(){
+        //     relcbn.show().then(function(cbn){
+        //         if(cbn){
+        //             cnn.C3_529015876735=cbn.C3_511307409286;
+        //             cnn.C3_529015877010=cbn.C3_511307425895;
+        //             var form = new mini.Form("form2");
+        //             form.setData(cnn);
+        //         }
+        //     });
+        // });
         $("input[name*='C3_529015233937']").focus(function(){
             relctn.show().then(function(ctn){
                 if(ctn){
