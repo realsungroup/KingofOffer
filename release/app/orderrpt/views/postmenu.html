@@ -8,6 +8,8 @@
             <b class="lf">餐厅名称:</b><span class="lf" data-bind="text: C3_529015233937"></span>
             <b class="lf">菜品名称:</b><span class="lf" data-bind="text: C3_529015358827"></span>
             <b class="lf">菜品价格:</b><div class="lf"><span data-bind="text: C3_529015359113"></span><span>元</span></div>
+            <input type="button" value="上架" class="btn btn-warning rf" data-bind="click : upClick.bind(C3_529015358827),if: C3_530885453314">
+            <!--<input type="button" value="下架" class="btn btn-warning rf" data-bind="click : downClick.bind(C3_529015358827),if: C3_530885453314">-->
 	    </div>
     </div>
 </form>

@@ -198,12 +198,15 @@
     line-height: 28px;
 }
 .mList>span,.mList>div{
-    margin-left: 10px;
+    margin-left: 5px;
     font-size: 20px;
     width:140px;
 }
+.mList>div{
+    width:90px;
+}
 .mList>div>span{
-    margin-left: 10px;
+    margin-left: 3px;
 }
 .mList b{
     margin-top: 2px;

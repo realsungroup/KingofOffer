@@ -11,7 +11,7 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
             var dbs=new dbHelper(baseUrl,user,ucode);
             var cpnid=appConfig.app.cpnid;
             var resid=appConfig.app.resid;
-            var cmswhere="",cpn="";
+            var cmswhere="",cp={};
             var me=this;
             menuIndex=function(self){
                 dbs.dbGetdata(cpnid,0,cmswhere,fnSuccess,null,fnhttperror);
@@ -51,30 +51,17 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
             };
             menuDel = function(cpn){//删除按钮
                 if(confirm('您确定要删除么？')){
-                    mini.parse();
-                    var form = new mini.Form("form");
-                    var o =  new mini.Form("form").getData();
-                    form.validate(); 
-                    if (form.isValid() == false) return;
-                    o._id=1;
-                    o._state="modified";
-                    o.C3_533643824454="Y";
-                    console.log(cpn.C3_511302131411);
-                    var json = mini.encode([o]);
+                    
+                    cp._id=1;
+                    cp._state="modified";
+                    cp.C3_533643824454="Y";
+                    cp.REC_ID=cpn.REC_ID;
+                    json="["+JSON.stringify(cp)+"]";
                     console.log(json);
-                    dbs.dbSavedata(resid,0,json,dataSaved,fnerror,fnhttperror);
-                    function dataSaved(text){
-                        dialog.showMessage('<h1>删除成功</h1>','菜单维护',['返回'],true);
+                    dbs.dbSavedata(resid,0,json);
+                    setTimeout(function() {
                         menuList(me);
-                        dialog.close(that);
-                    }
-                    function fnerror(text){
-                        console.log(text.message);
-                        // dialog.showMessage(text.message,'删除失败',['返回'],true);
-                    }
-                    function fnhttperror(jqXHR, textStatus, errorThrown){
-                        dialog.showMessage('error','错误',['返回'],true);
-                    }
+                    }, 200);
                 }else{
                     return;
                 }

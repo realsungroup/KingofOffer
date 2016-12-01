@@ -20,6 +20,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./relcbn','
         if (form.isValid() == false) return;
         o._id=1;
         o._state="added";
+        o.C3_530885453314="N"
         var json = mini.encode([o]);
         dbs.dbSavedata(relid,0,json,dataSaved,fnerror,fnhttperror);
         function dataSaved(text){
