@@ -52,6 +52,16 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
                     relList();
                 }, 200);
             };
+            delClick=function(cpn){
+                cp._id=1;
+                cp._state="removed";
+                cp.REC_ID=cpn.REC_ID;
+                json="["+JSON.stringify(cp)+"]";
+                dbs.dbSavedata(relid,0,json);
+                setTimeout(function() {
+                    relList();
+                }, 200);
+            };
         }
     }
 })

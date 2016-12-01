@@ -202,9 +202,6 @@
     font-size: 20px;
     width:140px;
 }
-.mList>div{
-    width:90px;
-}
 .mList>div>span{
     margin-left: 3px;
 }
