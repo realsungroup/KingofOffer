@@ -13,6 +13,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./relcbn','
         dialog.close(this);
     };
     relmenu.prototype.ok = function() {
+        $('#fbb').attr({"disabled":"disabled"});
         var that=this;
         var form = new mini.Form("form2");
         var o =  new mini.Form("form2").getData();
@@ -20,7 +21,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./relcbn','
         if (form.isValid() == false) return;
         o._id=1;
         o._state="added";
-        o.C3_530885453314="N"
+        // o.C3_530885453314="N"
         var json = mini.encode([o]);
         dbs.dbSavedata(relid,0,json,dataSaved,fnerror,fnhttperror);
         function dataSaved(text){

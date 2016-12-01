@@ -69,15 +69,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         function fnSuccess(data){
             var form = new mini.Form("editform");
             form.setData(data[0]);
-            var fileupload=mini.get("fileupload1");
-            fileupload.setUploadUrl(appConfig.app.uploadFileUrl+appConfig.app.uppath+appConfig.app.httppath);
-            var imgfield=mini.get('imgurl');
-            var imgurl=imgfield.getValue();
-            if (imgurl)
-            { 
-                var img=$("#imgUploaded");
-                img[0].src=imgurl;
-            }   
         }
     };
    

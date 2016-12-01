@@ -19,7 +19,6 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
                 dbs.dbGetdata(relid,0,cmswhere,fnSuccess,null,fnhttperror);
                 function fnSuccess(data){
                     self.rList(data);
-                    console.log(data);
                 };
                 function fnhttperror(jqXHR, textStatus, errorThrown){
                     console.log(jqXHR);
@@ -35,23 +34,23 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
                 cp._id=1;
                 cp._state="modified";
                 cp.C3_530885453314="Y";
-                console.log(cpn);
                 cp.REC_ID=cpn.REC_ID;
                 json="["+JSON.stringify(cp)+"]";
                 dbs.dbSavedata(relid,0,json);
-                console.log(json);
-                relList(me);
+                setTimeout(function() {
+                    relList(me);
+                }, 200);
             };
             downClick=function(cpn){
                 cp._id=1;
                 cp._state="modified";
                 cp.C3_530885453314="N";
-                console.log(cpn);
                 cp.REC_ID=cpn.REC_ID;
                 json="["+JSON.stringify(cp)+"]";
                 dbs.dbSavedata(relid,0,json);
-                console.log(json);
-                relList(me);
+                setTimeout(function() {
+                    relList(me);
+                }, 200);
             };
         }
     }

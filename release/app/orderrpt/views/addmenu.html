@@ -7,7 +7,7 @@
             </tr>
         </thead>
         <tr>
-            <td>菜品类别:</td>
+            <td width="96px">菜品类别:</td>
             <td>
                 <select class="mini-combobox" name="C3_530883695470">
                     <option value="主荤">主荤</option>
@@ -44,14 +44,14 @@
                     onuploaderror='onUploadError'
                     onfileselect='onFileSelect'
                     onuploadsuccess='onUploadSuccess'
-                    uploadUrl='upload.aspx'
+                    uploadUrl='http://kingofdinner.realsun.me:8081/rispweb/rispservice/SvcUploadFile2.aspx?savepath=c:\\web\\web\\rispweb\\upfiles&httppath=http://kingofdinner.realsun.me:8081/rispweb/upfiles'
                     flashUrl='swfupload/swfupload.swf'
                     class='mini-fileupload'
                     uploadOnSelect=true 
                     name='Fdata'
                     limitType='*.jpg;*.jpeg;*.png'/>
                 <input id="imgurl" name='C3_511302422114' class="mini-hidden"  allowInput="false"/>
-                <img align='right' id='imgUploaded' width="70px"/>
+                <img align='right' id='imgUploaded' width="70px" hidden/>
             </td>
         </tr>
         <tr>
