@@ -1,9 +1,9 @@
 {
     "app": {
         "loginUrl": "",
-        "baseUrl": "http://www.realsun.me:8081/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
+        "baseUrl": "http://kingofdinner.realsun.me:8081/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
         "localbaseUrl": "",
-        "hostuser":"demo1",
+        "hostuser":"001",
         "hostucode":"GHgfPHoXCQm3k3m3DY4DqQ==",
         "hostwebpos":530122554910,
         "getMethod": "ShowHostTableDatas_Ajax",
