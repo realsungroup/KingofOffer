@@ -8,7 +8,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     var resid=appConfig.app.resid;
     var cpnid=appConfig.app.cpnid;
     var me=this;
-    var cpn=[];
     var addmenu = function() {
     };
     addmenu.prototype.menuIndex=ko.observableArray([]),
