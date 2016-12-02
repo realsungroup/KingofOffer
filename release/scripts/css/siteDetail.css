@@ -10,6 +10,13 @@
 .oa{
     overflow: auto;
 }
+.oa-x{
+    overflow-x: auto;
+}
+.oa-y{
+    overflow-y: auto;
+    height: 625px;
+}
 .imgw1{
     width: 20%;
     height:100%;
@@ -251,7 +258,7 @@
     border: 2px solid #ddd;
     background: #fefefe;
 }
-.cpnlist>div{
+.cpnlist>div:first-child{
     background: #428bca;;
 }
 .cpnlist>div>div{
