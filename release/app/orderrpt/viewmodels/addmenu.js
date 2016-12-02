@@ -6,10 +6,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     var user  = appConfig.app.user;
     var dbs=new dbHelper(baseUrl,user,ucode);
     var resid=appConfig.app.resid;
-    // var cpnid=appConfig.app.cpnid;
-    // var cmswhere="";
+    var cpnid=appConfig.app.cpnid;
+    var me=this;
+    var cpn=[];
     var addmenu = function() {
     };
+    addmenu.prototype.menuIndex=ko.observableArray([]),
     addmenu.prototype.cancel = function() {
         dialog.close(this);              
     };
@@ -32,11 +34,19 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         };
         function fnhttperror(jqXHR, textStatus, errorThrown){
             dialog.showMessage('error','菜品新增',['返回'],true);
-        }
+        };
         
     };
     addmenu.prototype.attached=function(){
         mini.parse();
+        dbs.dbGetdata(cpnid,0,'',fnSuccess,null,fnhttperror);
+        function fnSuccess(cpnList){
+            var box = new mini.get("comboBox");
+            box.set({data:cpnList});
+        };
+        function fnhttperror(jqXHR, textStatus, errorThrown){
+            console.log(jqXHR);
+        };
     };
    
 

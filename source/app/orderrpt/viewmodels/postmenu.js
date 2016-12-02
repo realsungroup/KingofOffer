@@ -19,6 +19,7 @@ define(['plugins/http','durandal/app','knockout','durandal/system','plugins/rout
                 dbs.dbGetdata(relid,0,cmswhere,fnSuccess,null,fnhttperror);
                 function fnSuccess(data){
                     me.rList(data);
+                    console.log(data);
                 };
                 function fnhttperror(jqXHR, textStatus, errorThrown){
                     console.log(jqXHR);
