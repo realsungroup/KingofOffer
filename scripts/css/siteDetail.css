@@ -293,3 +293,65 @@
     opacity: .8;
     cursor:pointer;
 }
+/***************************************************************/
+.op{
+    width: 900px;
+    margin:10px auto;
+    border: 2px solid #ddd;
+    background: #fefefe;
+    padding: 10px;  
+}
+.op .title{
+    width: 125px;
+    padding-left:10px; 
+}
+.op .head{
+    padding-left:10px;
+    font-size: 1.5em;
+    background: #29b6f6;
+}
+.op tr{
+    height: 34px;
+}
+.cbnn{
+    width: 700px;
+    height: 650px;
+    margin:20px auto;
+    border: 2px solid #ddd;
+    background: #fefefe;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.cbnn table{
+    width: 90%;
+    margin: 20px 24px;
+    border: 2px solid #ddd;
+}
+.cbnn table th,.cbnn table td{
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+.cbnn table tbody tr:hover{
+    background: #29b6f6;
+    cursor:pointer;
+}
+.opp{
+    width: 100%;
+    margin:10px auto;
+    border: 2px solid #ddd;
+    background: #fefefe;
+    padding: 10px;  
+}
+.opp .title{
+    width: 125px;
+    padding-left:10px; 
+}
+.opp .head{
+    padding-left:10px;
+    font-size: 1.5em;
+    background: #29b6f6;
+}
+.opp tr{
+    height: 34px;
+}
