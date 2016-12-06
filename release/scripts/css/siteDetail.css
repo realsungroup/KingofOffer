@@ -263,7 +263,7 @@
     background: #fefefe;
 }
 .cpnlist>div:first-child{
-    background: #428bca;;
+    background: #428bca;
 }
 .cpnlist>div>div{
     width: 12.5%;
@@ -288,6 +288,7 @@
     position: relative;
     right: -7px;
     top: -6px;
+    z-index: 2;
 }
 .closecp:hover{
     opacity: .8;
@@ -322,6 +323,7 @@
     position: absolute;
     overflow-y: auto;
     overflow-x: hidden;
+    z-index: 1;
 }
 .cbnn table{
     width: 90%;
@@ -344,14 +346,37 @@
     padding: 10px;  
 }
 .opp .title{
-    width: 125px;
-    padding-left:10px; 
+    padding-right:10px; 
+    background: #eee;
+    text-align: right;
 }
 .opp .head{
     padding-left:10px;
     font-size: 1.5em;
     background: #29b6f6;
+    text-align: left;
+}
+.opp .head1{
+    padding-left:10px;
+    background: #29b6f6;
+    text-align: center;
+}
+.opp .head1:hover{
+    background: #428bca;
+    cursor:pointer;
+}
+.opp .acitveopp{
+    background: #428bca;
 }
 .opp tr{
     height: 34px;
+}
+.opp table td{
+    text-align: center;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
 }

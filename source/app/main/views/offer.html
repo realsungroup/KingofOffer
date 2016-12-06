@@ -1,42 +1,48 @@
 <form id="form1" class="opp">
-    <table align="center">
+    <table align="center" border='1'cellspacing="0" cellpadding="0">
         <thead>
             <tr>
-                <th>
+                <th colspan="8">
                     <input type="button" value="New Offer Proposal" class="btn btn-success mtaii" onclick= "newop()">
                 </th>
             </tr>
         </thead>
-        <tbody>
+        <tbody data-bind="foreach: oList">
             <tr>
-                <td colspan="8" class="head">
+                <td colspan="2" class="head" width="25%">
                     <b>Background Info</b>
+                </td>
+                <td colspan="2" class="head" width="25%">
+                </td>
+                <td colspan="2" class="head" width="25%">
+                </td>
+                <td colspan="2" class="head" width="25%">
                 </td>
             </tr>
             <tr>
-                <td class="title">
+                <td class="title" width="12%">
                     Job Title
                 </td>
-                <td>
-                    <input class="mini-textbox" name="C3_534181598826"/>
+                <td width="13%">
+                    <b data-bind="text: C3_534181598826"></b>
                 </td>
-                <td class="title">
+                <td class="title" width="12%">
                     Level
                 </td>
-                <td>
-                    <input class="mini-textbox" name="C3_534181645731"/>
+                <td width="13%">
+                    <b data-bind="text: C3_534181645731"></b>
                 </td>
-                <td class="title">
+                <td class="title" width="12%">
                     Location
                 </td>
-                <td>
-                    <input class="mini-textbox" name="C3_534181718652"/>
+                <td width="13%">
+                    <b data-bind="text: 534181718652"></b>
                 </td>
-                <td class="title">
+                <td class="title" width="12%">
                     Hiring Manager
                 </td>
-                <td>
-                    <input class="mini-textbox" name="C3_534264776828"/>
+                <td width="13%">
+                    <b data-bind="text: C3_534264776828"></b>
                 </td>
             </tr>
             <tr>
@@ -44,19 +50,19 @@
                     Department
                 </td>
                 <td colspan="3">
-                    <input class="mini-textbox" name="C3_534181730034" width="450px"/>
+                    <b data-bind="text: C3_534181730034"></b>
                 </td>
                 <td class="title">
                     Candidate
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534181747202"/>
+                    <b data-bind="text: C3_534181747202"></b>
                 </td>
                 <td class="title">
                     of Birth
                 </td>
                 <td>
-                    <input class="mini-datepicker" value="2000-01-01" name="C3_534181767190"/>
+                    <b data-bind="text: C3_534336830490"></b>
                 </td>
             </tr>
             <tr>
@@ -64,25 +70,25 @@
                     Degree
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534181900158"/>
+                   <b data-bind="text: C3_534181900158"></b>
                 </td>
                 <td class="title">
                     Yrs of Work Exp
                 </td>
                 <td>
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="50" name="C3_534181788780"/>
+                    <b data-bind="text: C3_534181788780"></b>
                 </td>
                 <td class="title">
                     Yrs of Related Work
                 </td>
                 <td>
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="50" name="C3_534181801459"/>
+                    <b data-bind="text: C3_534181801459"></b>
                 </td>
                 <td class="title">
                     Exp
                 </td>
                 <td>
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="50" name="C3_534181882521"/>
+                    <b data-bind="text: C3_534181882521"></b>
                 </td>
             </tr>
             <tr>
@@ -100,22 +106,26 @@
                 <td class="tc" colspan="2">
                     Annual
                 </td>
+                <td colspan="2">
+                </td>
             </tr>
             <tr>
-                <td>
+                <td class="title">
                 </td>
                 <td class="title">
                     Base Salary
                 </td>
                 <td class="tc" colspan="2">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181957670" onvaluechanged='vchange'/>
+                    <b data-bind="text: C3_534181957670"></b>
                 </td>
                 <td class="tc" colspan="2">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="annualtotal" readonly/>
+                    <b data-bind="text: C3_534339050633"></b>
+                </td>
+                <td colspan="2">
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="title">
                 </td>
                 <td class="title">
                     Year-end Bonus
@@ -123,11 +133,13 @@
                 <td colspan="2">
                 </td>
                 <td class="tc" colspan="2">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181974758" onvaluechanged='vchange'/>
+                    <b data-bind="text: C3_534181974758"></b>
+                </td>
+                <td colspan="2">
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="title">
                 </td>
                 <td class="title">
                     Stocks
@@ -135,11 +147,13 @@
                 <td colspan="2">
                 </td>
                 <td class="tc" colspan="2">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181984193" onvaluechanged='vchange'/>
+                    <b data-bind="text: C3_534181984193"></b>
+                </td>
+                <td colspan="2">
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="title">
                 </td>
                 <td class="title">
                     Allowance
@@ -147,11 +161,13 @@
                 <td colspan="2">
                 </td>
                 <td class="tc" colspan="2">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181995445" onvaluechanged='vchange'/>
+                    <b data-bind="text: C3_534181995445"></b>
+                </td>
+                <td colspan="2">
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="title">
                 </td>
                 <td class="title">
                     Other
@@ -159,11 +175,13 @@
                 <td colspan="2">
                 </td>
                 <td class="tc" colspan="2">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534182003641" onvaluechanged='vchange'/>
+                    <b data-bind="text: C3_534182003641"></b>
+                </td>
+                <td colspan="2">
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="title">
                 </td>
                 <td class="title">
                     Total Cash
@@ -171,7 +189,9 @@
                 <td colspan="2">
                 </td>
                 <td class="tc" colspan="2">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534182046604" readonly/>
+                    <b data-bind="text: C3_534182046604"></b>
+                </td>
+                <td colspan="2">
                 </td>
             </tr>
             <tr>
@@ -179,9 +199,181 @@
                     Candidate's Expectation
                 </td>
                 <td class="tc" colspan="2">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534182182372"/>
+                    <b data-bind="text: C3_534182182372"></b>
                 </td>
                 <td colspan="2">
+                </td>
+                <td colspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="head1 eaphead acitveopp" onclick="headClick('eap')">
+                    <b>Employment & Approval process</b>
+                </td>
+                <td colspan="2" class="head1 sshead" onclick="headClick('ss')">
+                    <b>Salary structure</b>
+                </td>
+                <td colspan="2" class="head1 mdhead" onclick="headClick('md')">
+                    <b>Market data</b>
+                </td>
+                <td colspan="2" class="head1 dashead" onclick="headClick('das')">
+                    <b>Departmental average salary</b>
+                </td>
+            </tr>
+            <tr data-bind="foreach:" class="eap show">
+                <td class="title">
+                    流程名称
+                </td>
+                <td>
+                    <!--<b data-bind="text: C3_534187327391"></b>-->
+                </td>
+                <td class="title">
+                    审批节点
+                </td>
+                <td>
+                    <!--<b data-bind="text: C3_534184045558"></b>-->
+                </td>
+                <td class="title">
+                    审批人
+                </td>
+                <td>
+                    <!--<b data-bind="text: C3_534184046541"></b>-->
+                </td>
+                <td>
+                    <!--流程名称-->
+                </td>
+                <td>
+                    <!--<b data-bind="text: C3_534339050633"></b>-->
+                </td>
+            </tr>
+            <tr data-bind="foreach: " class="ss hide">
+                <td class="title">
+                    Level
+                </td>
+                <td>
+
+                </td>
+                <td class="title">
+                    Location
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr class="ss hide">
+                <td class="title">
+                    下限
+                </td>
+                <td>
+
+                </td>
+                <td class="title">
+                    中点
+                </td>
+                <td>
+                    
+                </td>
+                <td class="title">
+                    上限
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr data-bind="foreach: " class="md hide">
+                <td class="title">
+                    职位
+                </td>
+                <td>
+
+                </td>
+                <td class="title">
+                    级别
+                </td>
+                <td>
+                    
+                </td>
+                <td class="title">
+                    薪资范围
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr data-bind="foreach: " class="das hide">
+                <td class="title">
+                    Department
+                </td>
+                <td>
+
+                </td>
+                <td class="title">
+                    级别
+                </td>
+                <td>
+                    
+                </td>
+                <td class="title">
+                    人数
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr class="das hide">
+                <td class="title">
+                    平均基本和绩效
+                </td>
+                <td>
+
+                </td>
+                <td class="title">
+                    平均加班小时
+                </td>
+                <td>
+                    
+                </td>
+                <td class="title">
+                    最大基本和绩效
+                </td>
+                <td>
+                    
+                </td>
+                <td class="title">
+                    最小基本和绩效
+                </td>
+                <td>
+                    
                 </td>
             </tr>
         </tbody>

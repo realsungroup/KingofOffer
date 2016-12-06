@@ -43,13 +43,15 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         cnn={};
         cpnn=function(){
             recop.show().then(function(opn){
-                cnn.C3_534181598826=opn.C3_522691669347;
-                cnn.C3_534181645731=opn.C3_522691670315;
-                cnn.C3_534181718652=opn.C3_522691669613;
-                cnn.C3_534181730034=opn.C3_522691669878;
-                cnn.C3_534264776828=opn.C3_522691670096;
-                var form = new mini.Form("form2");
-                form.setData(cnn);
+                if(opn){
+                    cnn.C3_534181598826=opn.C3_522691669347;
+                    cnn.C3_534181645731=opn.C3_522691670315;
+                    cnn.C3_534181718652=opn.C3_522691669613;
+                    cnn.C3_534181730034=opn.C3_522691669878;
+                    cnn.C3_534264776828=opn.C3_522691670096;
+                    var form = new mini.Form("form2");
+                    form.setData(cnn);
+                }
             });
         }
         $("input[name*='C3_534181598826']").focus(function(){
@@ -77,7 +79,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
             var stocks = mini.getbyName('C3_534181984193').value;
             var allowance = mini.getbyName('C3_534181995445').value;
             var other = mini.getbyName('C3_534182003641').value;
-            var annualtotal = mini.getbyName('annualtotal');
+            var annualtotal = mini.getbyName('C3_534339050633');
             var annual = salary*12;
             annualtotal.setValue(annual);
             var totalcash = mini.getbyName('C3_534182046604');

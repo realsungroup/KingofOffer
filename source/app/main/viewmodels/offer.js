@@ -17,20 +17,19 @@ define(['plugins/dialog', 'knockout','./newoffer'], function (dialog, ko, newoff
             var user  = appConfig.app.user;
             var dbs=new dbHelper(baseUrl,user,ucode);
             var opaid=appConfig.offer.opaid;
-            var subid=appConfig.offer.subid;
+            var eaaid=appConfig.offer.eaaid;
             var strid=appConfig.offer.strid;
             var marid=appConfig.offer.marid;
             var aveid=appConfig.offer.aveid;
             var me=this;
             mini.parse();
-            offerList=function(){
-
+            offerList=function(subid){
                 dbs.dbGetdata(opaid,subid,"",fnSuccess,fnerror,fnhttperror);
-                function fnSuccess(data,subdata1){
+                function fnSuccess(data,subdata){
                     console.log(data);
-                    console.log(subdata1);
+                    console.log(subdata);
                     me.oList(data);
-                    me.subList(subdata1);
+                    me.subList(subdata);
                 };
                 function fnerror(text){
                     dialog.showMessage(text.message,'新增失败',['返回'],true);
@@ -38,31 +37,37 @@ define(['plugins/dialog', 'knockout','./newoffer'], function (dialog, ko, newoff
                 function fnhttperror(jqXHR, textStatus, errorThrown){
                     console.log(jqXHR);
                 };
-                dbs.dbGetdata(opaid,strid,"",fnSuccess,fnerror,fnhttperror);
-                function fnSuccess(data,subdata2){
-                    me.subList(subdata2);
-                };
-                dbs.dbGetdata(opaid,marid,"",fnSuccess,fnerror,fnhttperror);
-                function fnSuccess(data,subdata3){
-                    me.subList(subdata3);
-                };
-                dbs.dbGetdata(opaid,aveid,"",fnSuccess,fnerror,fnhttperror);
-                function fnSuccess(data,subdata4){
-                    me.subList(subdata4);
-                };
             }
-            // menuIndex(this);
-            offerList();
+            offerList(eaaid);
+            offerList(strid);
+            offerList(marid);
+            offerList(aveid);
             offerEdit=function(){
                 // editmenu.show(cpn.C3_511302131411).then(function(){
                 //     menuList(me);
                 // });
             };
-            newop=function(){
-                newoffer.show().then(function(){
-                    offerList();
-                });
+            headClick=function(offersub){
+                $('.acitveopp').removeClass('acitveopp');
+                $('.show').removeClass('hide');
+                console.log(offersub);
+                if(offersub=='eap'){
+                    $('.eap').addClass('show');
+                    $('.eaphead').addClass('acitveopp');
+                }else if(offersub=='ss'){
+                    $('.ss').addClass('show');
+                    $('.sshead').addClass('acitveopp');
+                }else if(offersub=='md'){
+                    $('.md').addClass('show');
+                    $('.mdhead').addClass('acitveopp');
+                }else if(offersub=='das'){
+                    $('.das').addClass('show');
+                    $('.dashead').addClass('acitveopp');
+                }
             };
+            setTimeout(function() {
+                headClick("eap");
+            }, 1000);
             offerDel = function(){//删除按钮
                 if(confirm('您确定要删除么？')){
                     
