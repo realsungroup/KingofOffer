@@ -47,27 +47,6 @@ define(['plugins/dialog', 'knockout','./newoffer'], function (dialog, ko, newoff
                 //     menuList(me);
                 // });
             };
-            headClick=function(offersub){
-                $('.acitveopp').removeClass('acitveopp');
-                $('.show').removeClass('hide');
-                console.log(offersub);
-                if(offersub=='eap'){
-                    $('.eap').addClass('show');
-                    $('.eaphead').addClass('acitveopp');
-                }else if(offersub=='ss'){
-                    $('.ss').addClass('show');
-                    $('.sshead').addClass('acitveopp');
-                }else if(offersub=='md'){
-                    $('.md').addClass('show');
-                    $('.mdhead').addClass('acitveopp');
-                }else if(offersub=='das'){
-                    $('.das').addClass('show');
-                    $('.dashead').addClass('acitveopp');
-                }
-            };
-            setTimeout(function() {
-                headClick("eap");
-            }, 1000);
             offerDel = function(){//删除按钮
                 if(confirm('您确定要删除么？')){
                     
@@ -83,6 +62,31 @@ define(['plugins/dialog', 'knockout','./newoffer'], function (dialog, ko, newoff
                     }, 200);
                 }else{
                     return;
+                }
+            };
+                // $('.eap').hide();
+                // $('.ss').hide();
+                // $('.md').hide();
+                // $('.das').hide();
+            headClick=function(offersub){
+                $('.acitveopp').removeClass('acitveopp');
+                // $('.eap').hide();
+                // $('.ss').hide();
+                // $('.md').hide();
+                // $('.das').hide();
+                console.log(offersub);
+                if(offersub=='eap'){
+                    // $('.eap').show();
+                    $('.eaphead').addClass('acitveopp');
+                }else if(offersub=='ss'){
+                    // $('.ss').show();
+                    $('.sshead').addClass('acitveopp');
+                }else if(offersub=='md'){
+                    // $('.md').show();
+                    $('.mdhead').addClass('acitveopp');
+                }else if(offersub=='das'){
+                    // $('.das').show();
+                    $('.dashead').addClass('acitveopp');
                 }
             };
         }
