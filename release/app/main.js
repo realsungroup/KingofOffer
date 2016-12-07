@@ -21,7 +21,7 @@ requirejs.config({
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap','realsun/common'],  function (system, app, viewLocator) {
   
-    app.title = '新同事订餐系统';
+    app.title = ' ';
     app.configurePlugins({
         router:true,
         dialog: true

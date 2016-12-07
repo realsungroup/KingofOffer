@@ -1,4 +1,4 @@
-define(['plugins/dialog', 'knockout','./newoffer'], function (dialog, ko, newoffer) {
+define(['plugins/dialog', 'knockout','./newoffer','./preoffer','./editoffer'], function (dialog, ko, newoffer,preoffer,editoffer) {
     return {
         user:"",
         ucode:"",
@@ -17,19 +17,14 @@ define(['plugins/dialog', 'knockout','./newoffer'], function (dialog, ko, newoff
             var user  = appConfig.app.user;
             var dbs=new dbHelper(baseUrl,user,ucode);
             var opaid=appConfig.offer.opaid;
-            var eaaid=appConfig.offer.eaaid;
-            var strid=appConfig.offer.strid;
-            var marid=appConfig.offer.marid;
-            var aveid=appConfig.offer.aveid;
             var me=this;
+            var o={};
             mini.parse();
-            offerList=function(subid){
-                dbs.dbGetdata(opaid,subid,"",fnSuccess,fnerror,fnhttperror);
+            offerList=function(){
+                dbs.dbGetdata(opaid,0,"",fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data,subdata){
                     console.log(data);
-                    console.log(subdata);
                     me.oList(data);
-                    me.subList(subdata);
                 };
                 function fnerror(text){
                     dialog.showMessage(text.message,'新增失败',['返回'],true);
@@ -38,55 +33,46 @@ define(['plugins/dialog', 'knockout','./newoffer'], function (dialog, ko, newoff
                     console.log(jqXHR);
                 };
             }
-            offerList(eaaid);
-            offerList(strid);
-            offerList(marid);
-            offerList(aveid);
-            offerEdit=function(){
-                // editmenu.show(cpn.C3_511302131411).then(function(){
-                //     menuList(me);
-                // });
+            offerList();
+            newOp=function(){
+                newoffer.show().then(function(){
+                    offerList();
+                });
             };
-            offerDel = function(){//删除按钮
-                if(confirm('您确定要删除么？')){
-                    
-                    cp._id=1;
-                    cp._state="modified";
-                    cp.C3_533643824454="Y";
-                    cp.REC_ID=cpn.REC_ID;
-                    json="["+JSON.stringify(cp)+"]";
-                    console.log(json);
-                    dbs.dbSavedata(resid,0,json);
+            offerEdit=function(e){
+                editoffer.show(e).then(function(){
+                    offerList();
+                });
+            };
+            offerView=function(e){
+                preoffer.show(e).then(function(){
+                    offerList();
+                });
+            };
+            offerSubmit = function(e){//提交按钮
+                if(confirm('您确定要提交么？')){
+                    o._id=1;
+                    o._state="modified";
+                    o.C3_534184252529="Y";
+                    o.REC_ID=e.REC_ID;
+                    json="["+JSON.stringify(o)+"]";
+                    dbs.dbSavedata(opaid,0,json);
                     setTimeout(function() {
-                        menuList(me);
-                    }, 200);
-                }else{
-                    return;
+                        offerList();
+                    }, 500);
                 }
             };
-                // $('.eap').hide();
-                // $('.ss').hide();
-                // $('.md').hide();
-                // $('.das').hide();
-            headClick=function(offersub){
-                $('.acitveopp').removeClass('acitveopp');
-                // $('.eap').hide();
-                // $('.ss').hide();
-                // $('.md').hide();
-                // $('.das').hide();
-                console.log(offersub);
-                if(offersub=='eap'){
-                    // $('.eap').show();
-                    $('.eaphead').addClass('acitveopp');
-                }else if(offersub=='ss'){
-                    // $('.ss').show();
-                    $('.sshead').addClass('acitveopp');
-                }else if(offersub=='md'){
-                    // $('.md').show();
-                    $('.mdhead').addClass('acitveopp');
-                }else if(offersub=='das'){
-                    // $('.das').show();
-                    $('.dashead').addClass('acitveopp');
+            offerDel = function(e){//删除按钮
+                if(confirm('您确定要删除么？')){
+                    o._id=1;
+                    o._state="removed";
+                    o.C3_534184252529="Y";
+                    o.REC_ID=e.REC_ID;
+                    json="["+JSON.stringify(o)+"]";
+                    dbs.dbSavedata(opaid,0,json);
+                    setTimeout(function() {
+                        offerList();
+                    }, 500);
                 }
             };
         }

@@ -5,7 +5,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     var ucode = appConfig.app.ucode;
     var user  = appConfig.app.user;
     var dbs=new dbHelper(baseUrl,user,ucode);
-    var recid=appConfig.app.recid;
+    var opaid=appConfig.offer.opaid;
     var cnn={};
     var newoffer = function() {
     };
@@ -18,24 +18,24 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
             $('#fbb').removeAttr("disabled");
         }, 1000);
         var that=this;
-        // var form = new mini.Form("form2");
-        // var o =  new mini.Form("form2").getData();
-        // form.validate(); 
-        // if (form.isValid() == false) return;
-        // o._id=1;
-        // o._state="added";
-        // var json = mini.encode([o]);
-        // dbs.dbSavedata(relid,0,json,dataSaved,fnerror,fnhttperror);
-        // function dataSaved(text){
-        //     // dialog.showMessage('<h1>发布成功</h1>','菜品发布',['返回'],true);
-        //     dialog.close(that);
-        // };
-        // function fnerror(text){
-        //     dialog.showMessage(text.message,'发布失败',['返回'],true);
-        // };
-        // function fnhttperror(jqXHR, textStatus, errorThrown){
-        //     dialog.showMessage('error','菜品发布',['返回'],true);
-        // }
+        var form = new mini.Form("form2");
+        var o =  new mini.Form("form2").getData();
+        form.validate(); 
+        if (form.isValid() == false) return;
+        o._id=1;
+        o._state="added";
+        var json = mini.encode([o]);
+        dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
+        function dataSaved(text){
+            dialog.showMessage('<h1>Success</h1>','Save',['Cancel'],true);
+            dialog.close(that);
+        };
+        function fnerror(text){
+            dialog.showMessage(text.message,'Error',['Cancel'],true);
+        };
+        function fnhttperror(jqXHR, textStatus, errorThrown){
+            dialog.showMessage('error','Save',['Cancel'],true);
+        }
         
     };
     newoffer.prototype.attached=function(){
@@ -44,6 +44,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         cpnn=function(){
             recop.show().then(function(opn){
                 if(opn){
+                    cnn.C3_534181767190="2000-01-01"
                     cnn.C3_534181598826=opn.C3_522691669347;
                     cnn.C3_534181645731=opn.C3_522691670315;
                     cnn.C3_534181718652=opn.C3_522691669613;
@@ -57,18 +58,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         $("input[name*='C3_534181598826']").focus(function(){
             cpnn();
         });
-        $("input[name*='C3_534181645731']").focus(function(){
-            cpnn();
-        });
-        $("input[name*='C3_534181718652']").focus(function(){
-            cpnn();
-        });
-        $("input[name*='C3_534181730034']").focus(function(){
-            cpnn();
-        });
-        $("input[name*='C3_534264776828']").focus(function(){
-            cpnn();
-        });
+        // $("input[name*='C3_534181645731']").focus(function(){
+        //     cpnn();
+        // });
+        // $("input[name*='C3_534181718652']").focus(function(){
+        //     cpnn();
+        // });
+        // $("input[name*='C3_534181730034']").focus(function(){
+        //     cpnn();
+        // });
+        // $("input[name*='C3_534264776828']").focus(function(){
+        //     cpnn();
+        // });
       
     };
    

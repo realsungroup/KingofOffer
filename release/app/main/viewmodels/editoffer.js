@@ -6,24 +6,25 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     var user  = appConfig.app.user;
     var dbs=new dbHelper(baseUrl,user,ucode);
     var opaid=appConfig.offer.opaid;
-    var cnn={};
-    var newoffer = function() {
+    var editdata;
+    var editoffer = function() {
     };
-    newoffer.prototype.cancel = function() {
+    editoffer.prototype.cancel = function() {
         dialog.close(this);
     };
-    newoffer.prototype.ok = function() {
+    editoffer.prototype.ok = function() {
         $('#fbb').attr({"disabled":"disabled"});
         setTimeout(function() {
             $('#fbb').removeAttr("disabled");
         }, 1000);
         var that=this;
-        var form = new mini.Form("form2");
-        var o =  new mini.Form("form2").getData();
+        var form = new mini.Form("form3");
+        var o =  new mini.Form("form3").getData();
         form.validate(); 
         if (form.isValid() == false) return;
         o._id=1;
-        o._state="added";
+        o._state="modified";
+        o.REC_ID=editdata.REC_ID;
         var json = mini.encode([o]);
         dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
         function dataSaved(text){
@@ -38,25 +39,25 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         }
         
     };
-    newoffer.prototype.attached=function(){
+    editoffer.prototype.attached=function(){
         mini.parse();
-        cnn={};
-        cpnn=function(){
+        var form = new mini.Form("form3");
+        form.setData(editdata);
+        ecpnn=function(){
             recop.show().then(function(opn){
                 if(opn){
-                    cnn.C3_534181767190="2000-01-01"
-                    cnn.C3_534181598826=opn.C3_522691669347;
-                    cnn.C3_534181645731=opn.C3_522691670315;
-                    cnn.C3_534181718652=opn.C3_522691669613;
-                    cnn.C3_534181730034=opn.C3_522691669878;
-                    cnn.C3_534264776828=opn.C3_522691670096;
-                    var form = new mini.Form("form2");
-                    form.setData(cnn);
+                    editdata.C3_534181598826=opn.C3_522691669347;
+                    editdata.C3_534181645731=opn.C3_522691670315;
+                    editdata.C3_534181718652=opn.C3_522691669613;
+                    editdata.C3_534181730034=opn.C3_522691669878;
+                    editdata.C3_534264776828=opn.C3_522691670096;
+                    var form = new mini.Form("form3");
+                    form.setData(editdata);
                 }
             });
         }
         $("input[name*='C3_534181598826']").focus(function(){
-            cpnn();
+            ecpnn();
         });
         // $("input[name*='C3_534181645731']").focus(function(){
         //     cpnn();
@@ -73,7 +74,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
       
     };
    
-    newoffer.prototype.compositionComplete=function(){
+    editoffer.prototype.compositionComplete=function(){
         vchange=function(){
             var salary = mini.getbyName('C3_534181957670').value;
             var yeb = mini.getbyName('C3_534181974758').value;
@@ -89,10 +90,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         }
 
     }
-    newoffer.show = function(){
-        return dialog.show(new newoffer());
+    editoffer.show = function(e){
+        console.log(e);
+        editdata=e;
+        return dialog.show(new editoffer());
     };
    
-    return newoffer;
+    return editoffer;
 });
  
