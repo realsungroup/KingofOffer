@@ -11,17 +11,22 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
     var me=this;
     var preview={};
     var cmswhere="";
-    var preoffer = function() {
+    var preoffer = function(preview) {
+        preoffer.prototype.oDetail(preview);
     };
-    preoffer.prototype.oDetail=ko.observableArray([]),
+    preoffer.prototype.oDetail=ko.observableArray({}),
     preoffer.prototype.subList1=ko.observableArray([]),
     preoffer.prototype.subList2=ko.observableArray([]),
     preoffer.prototype.subList3=ko.observableArray([]),
     preoffer.prototype.subList4=ko.observableArray([]),
     preoffer.prototype.attached=function(){
-        mini.parse();
+         mini.parse();
+    }
+    preoffer.prototype.activate=function(){
+    
+       
         cmswhere="REC_ID='"+preview.REC_ID+"'";
-        this.oDetail(preview);
+       
         offerList=function(subid,callback){
             dbs.dbGetdata(opaid,subid,cmswhere,fnSuccess,fnerror,fnhttperror);
             function fnSuccess(data,subdata){
@@ -35,10 +40,10 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
             };
         }
         
-        offerList(eaaid,function(subdata){me.subList1(subdata);});
-        offerList(strid,function(subdata){me.subList2(subdata);});
-        offerList(marid,function(subdata){me.subList3(subdata);});
-        offerList(aveid,function(subdata){me.subList4(subdata);});
+        offerList(eaaid,function(subdata){preoffer.prototype.subList1(subdata);});
+        offerList(strid,function(subdata){preoffer.prototype.subList2(subdata);});
+        offerList(marid,function(subdata){preoffer.prototype.subList3(subdata);});
+        offerList(aveid,function(subdata){preoffer.prototype.subList4(subdata);});
         var i=101;
         headClick=function(offersub){
             $('.oacitve').removeClass('oacitve');
@@ -64,7 +69,8 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
     preoffer.show = function(e){
         preview=e;
         console.log(preview);
-        return dialog.show(new preoffer());
+      
+        return dialog.show(new preoffer(preview));
     };
     return preoffer;
 });       
