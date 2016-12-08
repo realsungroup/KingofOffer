@@ -374,7 +374,7 @@
 }
 .preview{
     width: 900px;
-    height: 605px;
+    height: 680px;
     border: 2px solid #ddd;
     background: #fefefe;
     padding:10px;
@@ -387,19 +387,23 @@
     background: #eee;
     text-align: right;
 }
+.preview .title1{
+    padding-left:90px; 
+    background: #aaa;
+    text-align: left;
+}
 .preview .head{
     padding-left:10px;
     font-size: 1.5em;
     background: #29b6f6;
+    text-align: left;
 }
 .preview tr{
     height: 34px;
 }
-.preview td{
-    text-align: center;
-}
 .preview .foot{
     background: #29b6f6;
+    text-align: center;
 }
 .preview .foot:hover{
     background: #428bca;
@@ -408,8 +412,13 @@
 .preview  tfoot .oacitve{
     background: #428bca;
 }
+.preview .tr span input{
+    text-align: right;
+}
 .datafoot{
     position: relative;
+    width: 876px;
+    height: 150px;
 }
 .eap,.ss,.md,.das{
     position: absolute;
@@ -421,7 +430,42 @@
     left: 0px;
     z-index: 100;
 }
-.datafoot>div>div{
-    width:12.5%;
-    text-align: center;
+.datafoot>div{
+    height: 130px;
 }
+.datafoot>div>div>div>div{
+    width: 12.5%;
+    height: 19px;
+    text-align: right;
+    float: left;
+    overflow: hidden;
+    padding-right: 10px;
+}
+.datafoot>div>div>div>div.w25{
+    width: 25%;
+    overflow: auto;
+}
+.datafoot>div>div>div{
+    height: 19px;
+}
+.datafoot>div>div>div:nth-child(2n){
+    background: #f5f5f5;
+    width: 876px;
+}
+    .asLabel .mini-textbox-border,
+    .asLabel .mini-textbox-input,
+    .asLabel .mini-buttonedit-border,
+    .asLabel .mini-buttonedit-input,
+    .asLabel .mini-textboxlist-border
+    {
+        border:0;background:none;cursor:default;
+    }
+    .asLabel .mini-buttonedit-button,
+    .asLabel .mini-textboxlist-close
+    {
+        display:none;
+    }
+    .asLabel .mini-textboxlist-item
+    {
+        padding-right:8px;
+    }  

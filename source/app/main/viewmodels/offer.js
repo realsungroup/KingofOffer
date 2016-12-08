@@ -23,7 +23,6 @@ define(['plugins/dialog', 'knockout','./newoffer','./preoffer','./editoffer'], f
             offerList=function(){
                 dbs.dbGetdata(opaid,0,"",fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data,subdata){
-                    console.log(data);
                     me.oList(data);
                 };
                 function fnerror(text){
