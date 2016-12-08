@@ -70,6 +70,11 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
         };
     }
     preoffer.prototype.cancel = function() {
+        subdata=[];
+        preoffer.prototype.subList1(subdata);
+        preoffer.prototype.subList2(subdata);
+        preoffer.prototype.subList3(subdata);
+        preoffer.prototype.subList4(subdata);
         dialog.close(this);
     };
     preoffer.show = function(e){
