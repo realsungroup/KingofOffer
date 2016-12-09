@@ -7,7 +7,7 @@
         "hostucode":"GHgfPHoXCQm3k3m3DY4DqQ==",
         "hostwebpos":530122554910,
         "getMethod": "ShowHostTableDatas_Ajax",
-        "uploadFileUrl":"http://www.realsun.me:8003//rispweb/rispservice/SvcUploadFile2.aspx",
+        "uploadFileUrl":"http://www.realsun.me:8003/rispweb/rispservice/SvcUploadFile2.aspx",
         "uppath":"?savepath=c:\\web\\web\\rispweb\\upfiles&httppath=",
         "httppath":"www.realsun.me:8003//rispweb/upfiles",
         "saveMethod":"SaveData_Ajax",

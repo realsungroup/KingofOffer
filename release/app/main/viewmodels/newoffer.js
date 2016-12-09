@@ -13,9 +13,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         dialog.close(this);
     };
     newoffer.prototype.ok = function() {
-        $('#fbb').attr({"disabled":"disabled"});
+        $('.fbb').attr({"disabled":"disabled"});
         setTimeout(function() {
-            $('#fbb').removeAttr("disabled");
+            $('.fbb').removeAttr("disabled");
         }, 1000);
         var that=this;
         var form = new mini.Form("form2");
@@ -37,6 +37,19 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
             dialog.showMessage('error','Save',['Cancel'],true);
         }
         
+    };
+    newoffer.prototype.activate=function(){
+        showImg=function(no){
+            alert(1)
+            if(no=="img1"){
+                $("#imgUploaded").removeAttr("hidden"); 
+            }else if(no=="img2"){
+                $("#imgUploaded2").removeAttr("hidden"); 
+            }
+        };
+        // $("#imgurl").change(function(){
+        //     alert(1)
+        // });
     };
     newoffer.prototype.attached=function(){
         mini.parse();
@@ -70,7 +83,43 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         // $("input[name*='C3_534264776828']").focus(function(){
         //     cpnn();
         // });
-      
+        // var fileupload = mini.get("fileupload1");//上传图片
+        // // fileupload.setUploadUrl(appConfig.app.uploadFileUrl+appConfig.app.uppath+appConfig.app.httppath);
+        // var imgfield=mini.get('imgurl');
+        // var imgurl= imgfield.getValue();
+        // if (imgurl)
+        // {
+        //     $("#imgUploaded").removeAttr("hidden"); 
+        // };
+        // var fileupload2 = mini.get("fileupload2");//上传图片
+        // // fileupload.setUploadUrl(appConfig.app.uploadFileUrl+appConfig.app.uppath+appConfig.app.httppath);
+        // var imgfield2=mini.get('imgurl2');
+        // var imgurl2= imgfield2.getValue();
+        // if (imgurl2)
+        // {
+        //     $("#imgUploaded2").removeAttr("hidden"); 
+        // };
+        // varfileupload = mini.get("fileupload1");
+        // fileupload.setUploadUrl(appConfig.app.uploadFileUrl+"?savepath=d:\\web\\rispweb\\upfiles&httppath="+appConfig.app.httppath);
+        // var imgfield=mini.get('imgurl');
+        // var imgurl= imgfield.getValue();
+        // if (imgurl)
+        // {
+        //     // var img=$("#imgUploaded");
+        //     // img[0].src=imgurl;
+        //     console.log(imgurl);
+        //     alert(1)
+        // }
+        // // var fileupload2 = mini.get("fileupload2");
+        // // fileupload2.setUploadUrl(appConfig.app.uploadFileUrl+"?savepath=d:\\web\\rispweb\\upfiles&httppath="+appConfig.app.httppath);
+        // var imgfield2=mini.get('imgurl2'); 
+        // var imgurl2= imgfield2.getValue();
+        // if (imgurl2)
+        // {
+        //     //    var img=$("#imgUploaded2");
+        //     //     img[0].src=imgurl2;
+        //     console.log(imgurl2)
+        // }
     };
    
     newoffer.prototype.compositionComplete=function(){

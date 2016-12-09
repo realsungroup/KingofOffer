@@ -34,16 +34,28 @@ define(['plugins/dialog', 'knockout','./newoffer','./preoffer','./editoffer'], f
             }
             offerList();
             newOp=function(){
+                $('.fbb').attr({"disabled":"disabled"});
+                setTimeout(function() {
+                    $('.fbb').removeAttr("disabled");
+                }, 1000);
                 newoffer.show().then(function(){
                     offerList();
                 });
             };
             offerEdit=function(e){
+                $('.fbb').attr({"disabled":"disabled"});
+                setTimeout(function() {
+                    $('.fbb').removeAttr("disabled");
+                }, 1000);
                 editoffer.show(e).then(function(){
                     offerList();
                 });
             };
             offerView=function(e){
+                $('.fbb').attr({"disabled":"disabled"});
+                setTimeout(function() {
+                    $('.fbb').removeAttr("disabled");
+                }, 1000);
                 preoffer.show(e).then(function(){
                     offerList();
                 });

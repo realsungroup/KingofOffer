@@ -9,7 +9,8 @@
         activate: function () {
             router.map([
              
-                { route: ['','offer'],title:'Offer', moduleId: 'main/viewmodels/offer', nav: true }
+                { route: ['','offer'],title:'Offer', moduleId: 'main/viewmodels/offer', nav: true },
+                { route: 'auditpage/:id', title:'auditpage', moduleId: 'main/viewmodels/auditpage' }
                 
             ]).buildNavigationModel();
            

@@ -90,17 +90,15 @@
                 <td></td>
                 <td>
                 </td>
-                <td class="tc" colspan="2">
+                <td class="title1 tc" colspan="2">
                     Monthly
                 </td>
-                <td class="tc" colspan="2">
+                <td class="title1 tc" colspan="2">
                     Annual
                 </td>
             </tr>
             <tr>
-                <td>
-                </td>
-                <td class="title">
+                <td class="title" colspan="2">
                     Base Salary
                 </td>
                 <td class="tc" colspan="2">
@@ -111,9 +109,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                </td>
-                <td class="title">
+                <td class="title" colspan="2">
                     Year-end Bonus
                 </td>
                 <td colspan="2">
@@ -123,9 +119,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                </td>
-                <td class="title">
+                <td class="title" colspan="2">
                     Stocks
                 </td>
                 <td colspan="2">
@@ -135,9 +129,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                </td>
-                <td class="title">
+                <td class="title" colspan="2">
                     Allowance
                 </td>
                 <td colspan="2">
@@ -147,9 +139,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                </td>
-                <td class="title">
+                <td class="title" colspan="2">
                     Other
                 </td>
                 <td colspan="2">
@@ -159,9 +149,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                </td>
-                <td class="title">
+                <td class="title" colspan="2">
                     Total Cash
                 </td>
                 <td colspan="2">
@@ -180,12 +168,63 @@
                 <td colspan="2">
                 </td>
             </tr>
+            <tr>
+                <td colspan="6" class="head">
+                    <b>Upload Attachments</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="title1" colspan="2">
+                    Upload PDF
+                </td>
+                <td class="title1"  colspan="2">
+                    Upload PDF
+                </td>
+                <td colspan="2" rowspan="2" class="tc">
+                    <a id="ahref" href="#"><img id='imgUploaded'/></a>
+                    <a id="ahref2" href="#"><img id='imgUploaded2'/></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="tc">
+                     <input
+                    cursor="pointer"
+                    id='fileupload1'
+                    buttonText="PDF"
+                    onuploaderror='onUploadError'
+                    onfileselect='onFileSelect'
+                    onuploadsuccess='onUploadSuccess'
+                    uploadUrl='http://www.realsun.me:8003/rispweb/rispservice/SvcUploadFile2.aspx?savepath=e:\\web\\rispweb\\upfiles&httppath=http://www.realsun.me:8003/rispweb/upfiles'
+                    flashUrl='swfupload/swfupload.swf'
+                    class='mini-fileupload'
+                    uploadOnSelect=true 
+                    name='Fdata'
+                    limitType='*.pdf'/>
+                    <input id="imgurl" name='C3_534182834029' class="mini-hidden"/>
+                </td>
+                <td colspan="2" class="tc">
+                    <input
+                    cursor="pointer"
+                    id='fileupload2'
+                    buttonText="WORD"
+                    onuploaderror='onUploadError2'
+                    onfileselect='onFileSelect2'
+                    onuploadsuccess='onUploadSuccess2'
+                    uploadUrl='http://www.realsun.me:8003/rispweb/rispservice/SvcUploadFile2.aspx?savepath=e:\\web\\rispweb\\upfiles&httppath=http://www.realsun.me:8003/rispweb/upfiles'
+                    flashUrl='swfupload/swfupload.swf'
+                    class='mini-fileupload'
+                    uploadOnSelect=true
+                    name='Fdata2'  
+                    limitType='*.doc;*.docx'/>
+                    <input id="imgurl2" name='C3_534182839409' class="mini-hidden"/>
+                </td>
+            </tr>
         </tbody>
         <tfoot>
             <tr>
                 <td colspan="6" class="foot">
                     <input type="button" value="Cancel" class="btn btn-warning rf" data-bind="click : cancel">
-                    <input type="button" id="fbb" value="Save" class="btn btn-success rf" data-bind="click : ok">
+                    <input type="button" value="Save" class="btn btn-success rf fbb" data-bind="click : ok">
                 </td>
             </tr>
         </tfoot>

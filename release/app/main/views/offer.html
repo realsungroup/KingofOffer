@@ -4,7 +4,7 @@
         <thead>
             <tr>
                 <th colspan="8">
-                    <input type="button" value="New Offer Proposal" class="btn btn-success mtaii" onclick= "newOp()">
+                    <input type="button" value="New Offer Proposal" class="btn btn-success mtaii fbb" onclick= "newOp()">
                 </th>
             </tr>
         </thead>
@@ -13,9 +13,9 @@
                 <td colspan="8" class="head">
                     <!--<b>Background Info</b>-->
                     <input type="button" value="Delete" class="btn btn-danger rf" data-bind="click : offerDel.bind()">
-                    <input type="button" id="fbb" value="Edit" class="btn btn-warning rf" data-bind="click : offerEdit.bind(),visible:($data.C3_534184252529==null||$data.C3_534184252529=='N')">
-                    <input type="button" id="fbb" value="Preview" class="btn btn-primary rf" data-bind="click : offerView.bind()">
-                    <input type="button" id="fbb" value="Submit" class="btn btn-success rf" data-bind="click : offerSubmit.bind(),visible:($data.C3_534184252529==null||$data.C3_534184252529=='N')">
+                    <input type="button" value="Edit" class="btn btn-warning rf fbb" data-bind="click : offerEdit.bind(),visible:($data.C3_534184252529==null||$data.C3_534184252529=='N')">
+                    <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offerView.bind()">
+                    <input type="button" value="Submit" class="btn btn-success rf" data-bind="click : offerSubmit.bind(),visible:($data.C3_534184252529==null||$data.C3_534184252529=='N')">
                 </td>
             </tr>
             <tr>
