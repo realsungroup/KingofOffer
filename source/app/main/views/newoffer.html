@@ -170,6 +170,31 @@
             </tr>
             <tr>
                 <td colspan="6" class="head">
+                    <b>Salary Proposal</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Salary
+                </td>
+                <td>
+                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183009192"/>Min<br><input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183037917"/>Max
+                </td>
+                <td class="title">
+                    RSUs
+                </td>
+                <td>
+                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183031497"/>
+                </td>
+                <td class="title">
+                    Other
+                </td>
+                <td>
+                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183067213"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="head">
                     <b>Upload Attachments</b>
                 </td>
             </tr>
@@ -178,7 +203,7 @@
                     Upload PDF
                 </td>
                 <td class="title1"  colspan="2">
-                    Upload PDF
+                    Upload WORD
                 </td>
                 <td colspan="2" rowspan="2" class="tc">
                     <a id="ahref" href="#"><img id='imgUploaded'/></a>
@@ -207,14 +232,14 @@
                     cursor="pointer"
                     id='fileupload2'
                     buttonText="WORD"
-                    onuploaderror='onUploadError2'
-                    onfileselect='onFileSelect2'
-                    onuploadsuccess='onUploadSuccess2'
+                    onuploaderror='onUploadError'
+                    onfileselect='onFileSelect'
+                    onuploadsuccess='onUploadSuccess'
                     uploadUrl='http://www.realsun.me:8003/rispweb/rispservice/SvcUploadFile2.aspx?savepath=e:\\web\\rispweb\\upfiles&httppath=http://www.realsun.me:8003/rispweb/upfiles'
                     flashUrl='swfupload/swfupload.swf'
                     class='mini-fileupload'
-                    uploadOnSelect=true
-                    name='Fdata2'  
+                    uploadOnSelect=true 
+                    name='Fdata2'
                     limitType='*.doc;*.docx'/>
                     <input id="imgurl2" name='C3_534182839409' class="mini-hidden"/>
                 </td>

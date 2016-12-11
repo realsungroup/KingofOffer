@@ -37,7 +37,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         function fnhttperror(jqXHR, textStatus, errorThrown){
             dialog.showMessage('error','Save',['Cancel'],true);
         }
-        
     };
     editoffer.prototype.attached=function(){
         mini.parse();
@@ -71,7 +70,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         // $("input[name*='C3_534264776828']").focus(function(){
         //     cpnn();
         // });
-      
+        if(editdata.C3_534182834029){
+            var a1=$("#ahref");
+            a1[0].href=editdata.C3_534182834029;
+        }else{
+            $("#ahref").hide();
+        }
+        if(editdata.C3_534182839409){
+            var a2=$("#ahref2");
+            a2[0].href=editdata.C3_534182839409;
+        }else{
+            $("#ahref2").hide();
+        }
     };
    
     editoffer.prototype.compositionComplete=function(){
@@ -91,7 +101,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
 
     }
     editoffer.show = function(e){
-        console.log(e);
         editdata=e;
         return dialog.show(new editoffer());
     };

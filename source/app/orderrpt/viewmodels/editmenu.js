@@ -49,7 +49,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         o._id=1;
         o._state="modified";
         var json = mini.encode([o]);
-        console.log(json);
         dbs.dbSavedata(resid,0,json,dataSaved,fnerror,fnhttperror);
         function dataSaved(text){
             dialog.showMessage('<h1>修改成功</h1>','菜品编辑',['返回'],true);

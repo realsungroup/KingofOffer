@@ -28,6 +28,19 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
             if (c.setIsValid) c.setIsValid(true);      //去除错误提示
             if (c.addCls) c.addCls("asLabel");          //增加asLabel外观
         }
+        
+        if(preview.C3_534182834029){
+            var a1=$("#ahref");
+            a1[0].href=preview.C3_534182834029;
+        }else{
+            $("#ahref").hide();
+        }
+        if(preview.C3_534182839409){
+            var a2=$("#ahref2");
+            a2[0].href=preview.C3_534182839409;
+        }else{
+            $("#ahref2").hide();
+        }
     }
 
     preoffer.prototype.activate=function(){

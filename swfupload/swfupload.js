@@ -1000,7 +1000,7 @@ SWFUpload.Console.writeLine = function (message) {
                  var data = mini.decode( e.serverData);
 				 if (data.error==0)
 				 {
-					//  alert("上传成功：" + data.httpfilename);
+					 alert("上传成功：" + data.httpfilename);
 					 try {
 						  	var img=$("#imgUploaded");
 						  	var a=$("#ahref");
@@ -1010,8 +1010,6 @@ SWFUpload.Console.writeLine = function (message) {
 					 	  	img[0].src="../../img/pdf.jpg";//data.httpfilename;
 							img[0].width="60";
 							a[0].href=data.httpfilename;
-					
-						 
 					 } catch (error) {
 						 alert(error);
 						 
@@ -1036,22 +1034,20 @@ SWFUpload.Console.writeLine = function (message) {
 	            alert(e.message);
         }
  		function onUploadSuccess2(e) {
-               // alert("上传成功：" + e.serverData);
+               alert("上传成功：" + e.serverData);
                  var data = mini.decode( e.serverData);
 				 if (data.error==0)
 				 {
-					//  alert("上传成功：" + data.httpfilename);
+					 alert("上传成功：" + data.httpfilename);
 					 try {
 							var img=$("#imgUploaded2");
-							var a=$("#ahref2");
-							mini.parse();
-							var imgfield=mini.get('imgurl2');
-							imgfield.setValue(data.httpfilename);
-							img[0].src="../../img/word.jpg";//data.httpfilename;
+						  	var a=$("#ahref2");
+                    	  	mini.parse();
+					 	  	var imgfield=mini.get('imgurl2');
+					 	  	imgfield.setValue(data.httpfilename);
+					 	  	img[0].src="../../img/word.jpg";//data.httpfilename;
 							img[0].width="60";
 							a[0].href=data.httpfilename;
-						
-						 
 					 } catch (error) {
 						 alert(error);
 						 
