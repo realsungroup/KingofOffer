@@ -10,7 +10,8 @@
             router.map([
              
                 { route: ['','offer'],title:'Offer', moduleId: 'main/viewmodels/offer', nav: true },
-                { route: 'auditpage/:id', title:'auditpage', moduleId: 'main/viewmodels/auditpage' }
+                { route: 'auditpage/:id', title:'auditpage', moduleId: 'main/viewmodels/auditpage' },
+                { route: 'eapage', title:'eapage', moduleId: 'main/viewmodels/eapage' }
                 
             ]).buildNavigationModel();
            

@@ -5,8 +5,8 @@ define(['plugins/dialog', 'knockout','./newoffer','./preoffer','./editoffer'], f
         activate:function(e){
             if (e!==undefined)
             {
-               this.user=e.user;
-               this.ucode=e.ucode;
+               appConfig.app.user=e.user;
+               appConfig.app.ucode=e.ucode;
             }
         },
         oList:ko.observableArray([]),

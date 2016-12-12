@@ -25,6 +25,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             offerSub=function(subid,callback){
                 dbs.dbGetdata(opaid,subid,cmswhere,fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data,subdata){
+                    if(data[0].C3_534184428625=="Y"){
+                        $('#fbb').hide()
+                    }
                     var form = new mini.Form("form5");
                     form.setData(data[0]);
                     var form6 = new mini.Form("form6");
@@ -105,7 +108,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
             function dataSaved(text){
                 dialog.showMessage('<h1>Success</h1>','Submit',['Cancel'],true);
-                dialog.close(that);
+                $('#fbb').hide();
+                history.back(-1);
             };
             function fnerror(text){
                 dialog.showMessage(text.message,'Error',['Cancel'],true);
