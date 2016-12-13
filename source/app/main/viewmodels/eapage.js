@@ -41,7 +41,7 @@ define(['plugins/dialog', 'knockout','./preoffer'], function (dialog, ko, preoff
                 preoffer.show(e);
             };
             offerSubmit = function(e){//提交按钮
-                location.href = "#auditpage/"+e.REC_ID
+                location.href = "#auditpage/"+e.REC_ID;
             };
         }
     }

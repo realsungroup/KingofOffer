@@ -6,7 +6,7 @@
                 <td colspan="8" class="head">
                     <!--<b>Background Info</b>-->
                     <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offerView.bind()">
-                    <input type="button" value="Submit" class="btn btn-success rf" data-bind="click : offerSubmit.bind()">
+                    <input type="button" value="Submit" class="btn btn-success rf" data-bind="click : offerSubmit.bind(),visible:($data.C3_534184428625==null||$data.C3_534184428625=='N')">
                 </td>
             </tr>
             <tr>
