@@ -89,6 +89,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                 if (c.addCls) c.addCls("asLabel");          //增加asLabel外观
             }
         },
+        cancel:function(){
+            location.href = "#eapage";
+        },
         ok:function(){
             $('#fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
@@ -107,9 +110,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             var json = mini.encode([o]);
             dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
             function dataSaved(text){
-                dialog.showMessage('<h1>Success</h1>','Submit',['Cancel'],true);
-                $('#fbb').hide();
-                history.back(-1);
+                dialog.showMessage('<h1>Success</h1>','Submit',['Cancel'],true).then(function(){
+                    $('#fbb').hide();
+                    location.href = "#eapage";// history.back(-1);
+                });
+               
+                
             };
             function fnerror(text){
                 dialog.showMessage(text.message,'Error',['Cancel'],true);

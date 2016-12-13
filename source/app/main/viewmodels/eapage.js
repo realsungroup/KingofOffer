@@ -40,7 +40,7 @@ define(['plugins/dialog', 'knockout','./preoffer'], function (dialog, ko, preoff
                 }, 1000);
                 preoffer.show(e);
             };
-            offerSubmit = function(e){//提交按钮
+            eaSubmit = function(e){//提交按钮
                 location.href = "#auditpage/"+e.REC_ID;
             };
         }
