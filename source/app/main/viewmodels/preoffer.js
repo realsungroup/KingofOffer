@@ -50,7 +50,7 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
             dbs.dbGetdata(opaid,subid,cmswhere,fnSuccess,fnerror,fnhttperror);
             function fnSuccess(data,subdata){
                 callback(subdata);
-                // console.log(subdata);
+                console.log(subdata);
             };
             function fnerror(text){
                 dialog.showMessage(text.message,'失败',['返回'],true);

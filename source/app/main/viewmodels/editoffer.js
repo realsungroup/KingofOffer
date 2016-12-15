@@ -7,7 +7,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     var dbs=new dbHelper(baseUrl,user,ucode);
     var opaid=appConfig.offer.opaid;
     var editdata;
-    var editoffer = function() {
+    var editoffer = function(){
     };
     editoffer.prototype.cancel = function() {
         dialog.close(this);

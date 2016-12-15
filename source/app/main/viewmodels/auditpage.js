@@ -21,7 +21,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             recidAp=recid;
             var me=this;
             cmswhere="REC_ID='"+recid+"'";
-            console.log(recid);
             offerSub=function(subid,callback){
                 dbs.dbGetdata(opaid,subid,cmswhere,fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data,subdata){
@@ -30,8 +29,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                     }
                     var form = new mini.Form("form5");
                     form.setData(data[0]);
-                    var form6 = new mini.Form("form6");
-                    form6.setData(data[0]);
                     preview=data[0];
                     callback(subdata);
                     if(preview.C3_534182834029){
@@ -51,7 +48,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                     dialog.showMessage(text.message,'失败',['返回'],true);
                 };
                 function fnhttperror(jqXHR, textStatus, errorThrown){
-                    console.log(jqXHR);
+                    //console.log(jqXHR);
                 };
             }
             offerSub(eaaid,function(subdata){me.subList1(subdata);});
@@ -61,10 +58,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             var i=101;
             headClick=function(offersub){
                 $('.oacitve').removeClass('oacitve');
-                if(offersub=='eap'){
-                    $('.eaphead').addClass('oacitve');
-                    $('.eap').css('z-index',i);
-                }else if(offersub=='ss'){
+                if(offersub=='ss'){
                     $('.sshead').addClass('oacitve');
                     $('.ss').css('z-index',i);
                 }else if(offersub=='md'){
@@ -81,12 +75,20 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             mini.parse();
             var form = new mini.Form("form5");
             form.setData(preview);
-            fields = form.getFields();                
+            fields = form.getFields();
             for (var i = 0, l = fields.length; i < l; i++) {
                 var c = fields[i];
-                if (c.setReadOnly) c.setReadOnly(true);     //只读
-                if (c.setIsValid) c.setIsValid(true);      //去除错误提示
-                if (c.addCls) c.addCls("asLabel");          //增加asLabel外观
+                if(c.name=='C3_534183782055'
+                ||c.name=='C3_534183782431'
+                ||c.name=='C3_534183782616'
+                ||c.name=='C3_535110269532'
+                ||c.name=='C3_534183782805'){
+                    return;
+                }else{
+                    if (c.setReadOnly) c.setReadOnly(true);     //只读
+                    if (c.setIsValid) c.setIsValid(true);      //去除错误提示
+                    if (c.addCls) c.addCls("asLabel");          //增加asLabel外观
+                }
             }
         },
         cancel:function(){
@@ -98,15 +100,14 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                 $('#fbb').removeAttr("disabled");
             }, 1000);
             var that=this;
-            var form = new mini.Form("form6");
-            var o =  new mini.Form("form6").getData();
+            var form = new mini.Form("form5");
+            var o =  new mini.Form("form5").getData();
             form.validate(); 
             if (form.isValid() == false) return;
             o._id=1;
             o._state="modified";
             o.C3_534184428625="Y";
             o.REC_ID=recidAp;
-            console.log(recidAp);
             var json = mini.encode([o]);
             dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
             function dataSaved(text){

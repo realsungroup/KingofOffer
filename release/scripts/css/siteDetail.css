@@ -319,7 +319,7 @@
 }
 .cbnn{
     width: 900px;
-    height: 650px;
+    height: 690px;
     margin:20px auto;
     border: 2px solid #ddd;
     background: #fefefe;
@@ -376,6 +376,10 @@
     width:74px;
     margin-right:5px;
 }
+.foot>input{
+    width:74px;
+    margin:10px 0 0 10px;
+}
 .preview{
     width: 900px;
     border: 2px solid #ddd;
@@ -397,17 +401,17 @@
 .auditpage td.title{
     width: 12%;
 }
-.preview .title1{
+.preview .title1,.auditpage .title1{
     padding-left: 90px; 
     background: #aaa;
     text-align: left;
 }
-.preview .title2{
+.preview .title2,.auditpage .title2{
     padding-left: 110px; 
     background: #aaa;
     text-align: left;
 }
-.preview .title3{
+.preview .title3,.auditpage .title3{
     background: #aaa;
     text-align: center;
 }
@@ -416,7 +420,7 @@
     font-size: 1.5em;
     background: #A4C8EE;
 }
-.preview .head2{
+.preview .head2,.auditpage .head2{
     padding-left:10px;
     font-size: 1.5em;
     background: #A4C8EE;
@@ -424,16 +428,16 @@
 .preview tr,.auditpage tr{
     height: 18px;
 }
-.auditpage .foot{
-    background: #29b6f6;
-    text-align: center;
+.auditpage .w500,.preview .w500{
+    width: 500px;
+    margin-right: 50px;
 }
-.preview .head2:hover,.auditpage .foot:hover{
+.preview .head2:hover,.auditpage .head2:hover{
     background: #3BE2EF;
     cursor:pointer;
 }
-.preview tfoot .oacitve,.auditpage tfoot .oacitve{
-    background: #428bca;
+.preview .oacitve,.auditpage .oacitve{
+    background: #aaa;
 }
 .preview .tr span input,.auditpage .tr span input{
     text-align: right;
@@ -441,13 +445,15 @@
 .datafoot{
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 40px;
 }
 .ss,.md,.das{
+    position: absolute;
     float: left;
     width: 100%;
     height: 40px;
     background: #fefefe;
+    top: 0;
     z-index: 100;
 }
 .datafoot th.title{
@@ -467,14 +473,11 @@
 .asLabel .mini-textboxlist-item{
     padding-right:8px;
 }
-.op td img{
+td img{
     margin-left: 15px;
 }
 .eap tbody tr,.ss tbody tr,.md tbody tr,.das tbody tr{
     height: 20px;
-}
-.eap tbody tr td,.ss tbody tr td,.md tbody tr td,.das tbody tr td{
-    text-align: right;
 }
 .eap tbody tr:nth-child(2n),.ss tbody tr:nth-child(2n),.md tbody tr:nth-child(2n),.das tbody tr:nth-child(2n){
     background: #eee;

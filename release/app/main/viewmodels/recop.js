@@ -12,6 +12,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     };
     recop.prototype.recopList=ko.observableArray([]),
     recop.prototype.attached=function(){
+        mini.parse();
         var me=this;
         dbs.dbGetdata(recid,0,"",fnSuccess,null,null);//获取并设置页面数据
         function fnSuccess(data){
@@ -36,12 +37,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             }
             me.recopList(newData);
         };
-        $('#searchBox').keydown(function() {
+        $('#searchBox').keydown(function(evt) {
             if (event.keyCode == "13") {//keyCode=13是回车键
                 $('#searchBtn').click();
                 event.preventDefault();
             }
-        });    
+        });
     };
     recop.prototype.cancel = function() {
         dialog.close(this);

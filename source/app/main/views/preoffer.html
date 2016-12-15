@@ -172,7 +172,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="head2 sshead" onclick="headClick('ss')">
+                <td colspan="2" class="head2 sshead oacitve" onclick="headClick('ss')">
                     <b>Salary structure</b>
                 </td>
                 <td colspan="2" class="head2 mdhead tc" onclick="headClick('md')">
@@ -188,27 +188,22 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="title" width="12.5%">
+                                    <th class="title3" width="33.3%">
                                         职位
                                     </th>
-                                    <th class="title" width="12.5%">
+                                    <th class="title3" width="33.3%">
                                         级别
                                     </th>
-                                    <th class="title" width="12.5%">
+                                    <th class="title3" width="33.3%">
                                         薪资范围
                                     </th>
                                 </tr>
                             </thead>
                             <tbody data-bind="foreach: subList3">
                                 <tr>
-                                    <td><b data-bind="text: C3_534182661935"></b></td>
-                                    <td><b data-bind="text: C3_534182668844"></b></td>
-                                    <td><b data-bind="text: C3_534182682809"></b></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td class="tc"><b data-bind="text: C3_534182661935"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182668844"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182682809"></b></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -217,44 +212,44 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="title" width="25%" colspan="2">
+                                    <th class="title3" width="25%" colspan="2">
                                         Department
                                     </th>
-                                    <th class="title" width="12.5%">
+                                    <th class="title3" width="12.5%">
                                         级别
                                     </th>
-                                    <th class="title" width="12.5%">
+                                    <th class="title3" width="12.5%">
                                         人数
                                     </th>
-                                    <th class="title" width="12.5%">
+                                    <th class="title3" width="12.5%">
                                         平均基本&绩效
                                     </th>
-                                    <th class="title" width="12.5%">
+                                    <th class="title3" width="12.5%">
                                         平均加班小时
                                     </th>
-                                    <th class="title" width="12.5%">
+                                    <th class="title3" width="12.5%">
                                         最大基本&绩效
                                     </th>
-                                    <th class="title" width="12.5%">
+                                    <th class="title3" width="12.5%">
                                         最小基本&绩效
                                     </th>
                                 </tr>
                             </thead>
                             <tbody data-bind="foreach: subList4">
                                 <tr>
-                                    <td colspan="2"><b data-bind="text: C3_534182432109"></b></td>
-                                    <td><b data-bind="text: C3_534182440112"></b></td>
-                                    <td><b data-bind="text: C3_534182447890"></b></td>
-                                    <td><b data-bind="text: C3_534182477477"></b></td>
-                                    <td><b data-bind="text: C3_534182501565"></b></td>
-                                    <td><b data-bind="text: C3_534182514734"></b></td>
-                                    <td><b data-bind="text: C3_534182525026"></b></td>
+                                    <td class="tc" colspan="2"><b data-bind="text: C3_534182432109"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182440112"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182447890"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182477477"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182501565"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182514734"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182525026"></b></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="ss oacitve">
-                        <table border='1'cellspacing="0" cellpadding="0">
+                    <div class="ss">
+                        <table>
                             <thead>
                                 <tr>
                                     <th class="title3" width="20%">
@@ -274,19 +269,13 @@
                                     </th>
                                 </tr>
                             </thead>
-                            <!--<tbody data-bind="foreach: subList2">-->
-                            <tbody>
+                            <tbody data-bind="foreach: subList2">
                                 <tr>
-                                    <td>123</td>
-                                    <td>123</td>
-                                    <td>123</td>
-                                    <td>123</td>
-                                    <td>123</td>
-                                    <!--<td><b data-bind="text: C3_534182272208"></b></td>
-                                    <td><b data-bind="text: C3_534182291688"></b></td>
-                                    <td><b data-bind="text: C3_534182320476"></b></td>
-                                    <td><b data-bind="text: C3_534182331126"></b></td>
-                                    <td><b data-bind="text: C3_534182340241"></b></td>-->
+                                    <td class="tc"><b data-bind="text: C3_534182272208"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182291688"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182320476"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182331126"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182340241"></b></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -388,14 +377,20 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="6" class="head">
+                <td colspan="2" class="head">
                     <b>Attachments</b>
+                </td>
+                <td colspan="4" class="head2 tc">
+                    <b>Approval Description</b>
                 </td>
             </tr>
             <tr>
-                <td colspan="6">
+                <td colspan="2" class="tc">
                     <a id="ahref" href="#"><img src="../../img/pdf.jpg" width="60"/></a>
                     <a id="ahref2" href="#"><img src="../../img/word.jpg" width="60"/></a>
+                </td>
+                <td colspan="4" class="tc">
+                    <input class="mini-textarea w500" name="C3_535110269532"/>
                 </td>
             </tr>
             <tr>
