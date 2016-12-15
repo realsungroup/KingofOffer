@@ -40,86 +40,32 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     };
     newoffer.prototype.activate=function(){
         showImg=function(no){
-            alert(1)
             if(no=="img1"){
                 $("#imgUploaded").removeAttr("hidden"); 
             }else if(no=="img2"){
                 $("#imgUploaded2").removeAttr("hidden"); 
             }
         };
-        // $("#imgurl").change(function(){
-        //     alert(1)
-        // });
     };
     newoffer.prototype.attached=function(){
         mini.parse();
         cnn={};
         cpnn=function(){
-            recop.show().then(function(opn){
-                if(opn){
-                    cnn.C3_534181767190="2000-01-01"
-                    cnn.C3_534181598826=opn.C3_522691669347;
-                    cnn.C3_534181645731=opn.C3_522691670315;
-                    cnn.C3_534181718652=opn.C3_522691669613;
-                    cnn.C3_534181730034=opn.C3_522691669878;
-                    cnn.C3_534264776828=opn.C3_522691670096;
-                    var form = new mini.Form("form2");
-                    form.setData(cnn);
-                }
-            });
+            setTimeout(function() {
+                recop.show().then(function(opn){
+                    if(opn){
+                        cnn.C3_534181767190="2000-01-01"
+                        cnn.C3_534181598826=opn.C3_522691669347;
+                        cnn.C3_534181645731=opn.C3_522691670315;
+                        cnn.C3_534181718652=opn.C3_522691669613;
+                        cnn.C3_534181730034=opn.C3_522691669878;
+                        cnn.C3_534264776828=opn.C3_522691670096;
+                        var form = new mini.Form("form2");
+                        form.setData(cnn);
+                    }
+                });
+            }, 200);
         }
-        $("input[name*='C3_534181598826']").focus(function(){
-            cpnn();
-        });
-        // $("input[name*='C3_534181645731']").focus(function(){
-        //     cpnn();
-        // });
-        // $("input[name*='C3_534181718652']").focus(function(){
-        //     cpnn();
-        // });
-        // $("input[name*='C3_534181730034']").focus(function(){
-        //     cpnn();
-        // });
-        // $("input[name*='C3_534264776828']").focus(function(){
-        //     cpnn();
-        // });
-        // var fileupload = mini.get("fileupload1");//上传图片
-        // // fileupload.setUploadUrl(appConfig.app.uploadFileUrl+appConfig.app.uppath+appConfig.app.httppath);
-        // var imgfield=mini.get('imgurl');
-        // var imgurl= imgfield.getValue();
-        // if (imgurl)
-        // {
-        //     $("#imgUploaded").removeAttr("hidden"); 
-        // };
-        // var fileupload2 = mini.get("fileupload2");//上传图片
-        // // fileupload.setUploadUrl(appConfig.app.uploadFileUrl+appConfig.app.uppath+appConfig.app.httppath);
-        // var imgfield2=mini.get('imgurl2');
-        // var imgurl2= imgfield2.getValue();
-        // if (imgurl2)
-        // {
-        //     $("#imgUploaded2").removeAttr("hidden"); 
-        // };
-        // varfileupload = mini.get("fileupload1");
-        // fileupload.setUploadUrl(appConfig.app.uploadFileUrl+"?savepath=d:\\web\\rispweb\\upfiles&httppath="+appConfig.app.httppath);
-        // var imgfield=mini.get('imgurl');
-        // var imgurl= imgfield.getValue();
-        // if (imgurl)
-        // {
-        //     // var img=$("#imgUploaded");
-        //     // img[0].src=imgurl;
-        //     console.log(imgurl);
-        //     alert(1)
-        // }
-        // // var fileupload2 = mini.get("fileupload2");
-        // // fileupload2.setUploadUrl(appConfig.app.uploadFileUrl+"?savepath=d:\\web\\rispweb\\upfiles&httppath="+appConfig.app.httppath);
-        // var imgfield2=mini.get('imgurl2'); 
-        // var imgurl2= imgfield2.getValue();
-        // if (imgurl2)
-        // {
-        //     //    var img=$("#imgUploaded2");
-        //     //     img[0].src=imgurl2;
-        //     console.log(imgurl2)
-        // }
     };
    
     newoffer.prototype.compositionComplete=function(){

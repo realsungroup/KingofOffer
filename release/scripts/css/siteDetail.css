@@ -286,8 +286,7 @@
     background: #fff;
     border-radius:50%;
     position: relative;
-    right: -15px;
-    top: -6px;
+    right: -8px;
 }
 .closecp:hover{
     opacity: .8;
@@ -313,13 +312,13 @@
 .op .head{
     padding-left:10px;
     font-size: 1.5em;
-    background: #29b6f6;
+    background: #A4C8EE;
 }
 .op tr{
-    height: 34px;
+    height: 18px;
 }
 .cbnn{
-    width: 700px;
+    width: 900px;
     height: 650px;
     margin:20px auto;
     border: 2px solid #ddd;
@@ -329,8 +328,8 @@
     overflow-x: hidden;
 }
 .cbnn table{
-    width: 90%;
-    margin: 20px 24px;
+    width: 98%;
+    margin: 10px;
     border: 2px solid #ddd;
 }
 .cbnn table th,.cbnn table td{
@@ -355,7 +354,7 @@
 }
 .opp .head{
     padding-left:10px;
-    background: #ddd;
+    background: #A4C8EE;
     text-align: left;
 }
 .opp .head1{
@@ -379,7 +378,6 @@
 }
 .preview{
     width: 900px;
-    height: 794px;
     border: 2px solid #ddd;
     background: #fefefe;
     padding: 0 10px;
@@ -404,21 +402,33 @@
     background: #aaa;
     text-align: left;
 }
+.preview .title2{
+    padding-left: 110px; 
+    background: #aaa;
+    text-align: left;
+}
+.preview .title3{
+    background: #aaa;
+    text-align: center;
+}
 .preview .head,.auditpage .head{
     padding-left:10px;
-    padding-right:160px;
     font-size: 1.5em;
-    background: #29b6f6;
-    text-align: left;
+    background: #A4C8EE;
+}
+.preview .head2{
+    padding-left:10px;
+    font-size: 1.5em;
+    background: #A4C8EE;
 }
 .preview tr,.auditpage tr{
     height: 18px;
 }
-.preview .foot,.auditpage .foot{
+.auditpage .foot{
     background: #29b6f6;
     text-align: center;
 }
-.preview .foot:hover,.auditpage .foot:hover{
+.preview .head2:hover,.auditpage .foot:hover{
     background: #3BE2EF;
     cursor:pointer;
 }
@@ -433,21 +443,15 @@
     width: 100%;
     height: 150px;
 }
-.eap,.ss,.md,.das{
-    position: absolute;
+.ss,.md,.das{
     float: left;
     width: 100%;
-    height: 68px;
+    height: 40px;
     background: #fefefe;
-    top: 0px;
-    left: 0px;
     z-index: 100;
 }
-.datafoot>div{
-    height: 130px;
-}
 .datafoot th.title{
-    background: #428bca;
+    background: #aaa;
 }
 .asLabel .mini-textbox-border,
 .asLabel .mini-textbox-input,

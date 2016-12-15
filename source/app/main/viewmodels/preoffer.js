@@ -66,10 +66,7 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
         var i=101;
         headClick=function(offersub){
             $('.oacitve').removeClass('oacitve');
-            if(offersub=='eap'){
-                $('.eaphead').addClass('oacitve');
-                $('.eap').css('z-index',i);
-            }else if(offersub=='ss'){
+            if(offersub=='ss'){
                 $('.sshead').addClass('oacitve');
                 $('.ss').css('z-index',i);
             }else if(offersub=='md'){
