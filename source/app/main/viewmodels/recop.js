@@ -28,6 +28,13 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             var skey = mini.getbyName('searchBox').value;
             // console.log(sData[0]);
             for(var i=0,a=0;i<sData.length;i++){
+                if(!sData[i].C3_522691671297)sData[i].C3_522691671297="";
+                if(!sData[i].C3_522691669347)sData[i].C3_522691669347="";
+                if(!sData[i].C3_522691670315)sData[i].C3_522691670315="";
+                if(!sData[i].C3_522691669613)sData[i].C3_522691669613="";
+                if(!sData[i].C3_522691669878)sData[i].C3_522691669878="";
+                if(!sData[i].C3_522691670096)sData[i].C3_522691670096="";
+                if(!sData[i].C3_522691670814)sData[i].C3_522691670814="";
                 if(sData[i].C3_522691671297.indexOf(skey)>=0
                 || sData[i].C3_522691669347.indexOf(skey)>=0
                 || sData[i].C3_522691670315.indexOf(skey)>=0
