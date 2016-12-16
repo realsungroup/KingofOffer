@@ -26,7 +26,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         search =  function() {
             newData=[];
             var skey = mini.getbyName('searchBox').value;
-            console.log(sData[0]);
+            // console.log(sData[0]);
             for(var i=0,a=0;i<sData.length;i++){
                 if(sData[i].C3_522691671297.indexOf(skey)>=0
                 || sData[i].C3_522691669347.indexOf(skey)>=0
