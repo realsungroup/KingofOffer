@@ -310,8 +310,8 @@
     text-align: center;
 }
 .op .head{
-    padding-left:10px;
-    font-size: 1.5em;
+    padding:2px 10px;
+    font-size: 1.2em;
     background: #A4C8EE;
 }
 .op tr{
@@ -353,7 +353,8 @@
     text-align: right;
 }
 .opp .head{
-    padding-left:10px;
+    padding:2px 10px;
+    font-size: 1.2em;
     background: #A4C8EE;
     text-align: left;
 }
@@ -416,13 +417,13 @@
     text-align: center;
 }
 .preview .head,.auditpage .head{
-    padding-left:10px;
-    font-size: 1.5em;
+    padding:2px 10px;
+    font-size: 1.2em;
     background: #A4C8EE;
 }
 .preview .head2,.auditpage .head2{
-    padding-left:10px;
-    font-size: 1.5em;
+    padding:2px 10px;
+    font-size: 1.2em;
     background: #A4C8EE;
 }
 .preview tr,.auditpage tr{
@@ -482,8 +483,3 @@ td img{
 .eap tbody tr:nth-child(2n),.ss tbody tr:nth-child(2n),.md tbody tr:nth-child(2n),.das tbody tr:nth-child(2n){
     background: #eee;
 }
-/*#searchBtn{
-    height: 30px;
-    line-height: 30px;
-    
-}*/
