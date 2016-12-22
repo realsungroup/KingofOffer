@@ -109,6 +109,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             o.C3_534184428625="Y";
             o.REC_ID=recidAp;
             var json = mini.encode([o]);
+            // console.log(json);
             dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
             function dataSaved(text){
                 dialog.showMessage('<h1>Success</h1>','Submit',['Cancel'],true).then(function(){

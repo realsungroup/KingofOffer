@@ -172,14 +172,11 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="head2 sshead oacitve" onclick="headClick('ss')">
+                <td colspan="3" class="head2 sshead oacitve" onclick="headClick('ss')">
                     <b>Salary structure</b>
                 </td>
-                <td colspan="2" class="head2 mdhead tc" onclick="headClick('md')">
+                <td colspan="3" class="head2 mdhead tc" onclick="headClick('md')">
                     <b>Market data</b>
-                </td>
-                <td colspan="2" class="head2 dashead tc" onclick="headClick('das')">
-                    <b>Departmental average salary</b>
                 </td>
             </tr>
             <tr>
@@ -204,46 +201,6 @@
                                     <td class="tc"><b data-bind="text: C3_534182661935"></b></td>
                                     <td class="tc"><b data-bind="text: C3_534182668844"></b></td>
                                     <td class="tc"><b data-bind="text: C3_534182682809"></b></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="das">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="title3" width="25%" colspan="2">
-                                        Department
-                                    </th>
-                                    <th class="title3" width="12.5%">
-                                        级别
-                                    </th>
-                                    <th class="title3" width="12.5%">
-                                        人数
-                                    </th>
-                                    <th class="title3" width="12.5%">
-                                        平均基本&绩效
-                                    </th>
-                                    <th class="title3" width="12.5%">
-                                        平均加班小时
-                                    </th>
-                                    <th class="title3" width="12.5%">
-                                        最大基本&绩效
-                                    </th>
-                                    <th class="title3" width="12.5%">
-                                        最小基本&绩效
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody data-bind="foreach: subList4">
-                                <tr>
-                                    <td class="tc" colspan="2"><b data-bind="text: C3_534182432109"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182440112"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182447890"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182477477"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182501565"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182514734"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182525026"></b></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -284,6 +241,59 @@
             </tr>
             <tr>
                 <td colspan="6" class="head">
+                    <b>Departmental payroll data</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="title3" width="30%" colspan="2">
+                                        Department
+                                    </th>
+                                    <th class="title3" width="5%">
+                                        级别
+                                    </th>
+                                    <th class="title3" width="5%">
+                                        人数
+                                    </th>
+                                    <th class="title3" width="12%">
+                                        Median中位数
+                                    </th>
+                                    <th class="title3" width="12%">
+                                        平均基本&绩效
+                                    </th>
+                                    <th class="title3" width="12%">
+                                        平均加班小时
+                                    </th>
+                                    <th class="title3" width="12%">
+                                        最小基本&绩效
+                                    </th>
+                                    <th class="title3" width="12%">
+                                        最大基本&绩效
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: subList4">
+                                <tr>
+                                    <td class="tc oh" colspan="2"><b data-bind="text: C3_534182432109"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182440112"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182447890"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_535718965183"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182477477"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182501565"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182525026"></b></td>
+                                    <td class="tc"><b data-bind="text: C3_534182514734"></b></td>   
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="head">
                     <b>Salary Proposal</b>
                 </td>
             </tr>
@@ -313,10 +323,10 @@
                 <td class="title" colspan="2">
                     RSUs
                 </td>
-                <td colspan="2">
+                <td colspan="2" class="tc">
+                    <input class="mini-textbox" name="C3_534183031497"/>
                 </td>
-                <td colspan="2" class="tr">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183031497" increment="100"/>
+                <td colspan="2" class="tc">
                 </td>
             </tr>
             <tr>
@@ -360,10 +370,10 @@
                 <td class="title" colspan="2">
                     RSUs
                 </td>
-                <td colspan="2">
+                <td colspan="2" class="tc">
+                    <input class="mini-textbox" name="C3_534183782616"/>
                 </td>
-                <td colspan="2" class="tr">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183782616" increment="100"/>
+                <td colspan="2" class="tc">
                 </td>
             </tr>
             <tr>
@@ -380,7 +390,7 @@
                 <td colspan="2" class="head">
                     <b>Attachments</b>
                 </td>
-                <td colspan="4" class="head2 tc">
+                <td colspan="4" class="head tc">
                     <b>Approval Description</b>
                 </td>
             </tr>

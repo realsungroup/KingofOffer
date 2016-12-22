@@ -43,33 +43,20 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         var form = new mini.Form("form3");
         form.setData(editdata);
         ecpnn=function(){
-            recop.show().then(function(opn){
-                if(opn){
-                    editdata.C3_534181598826=opn.C3_522691669347;
-                    editdata.C3_534181645731=opn.C3_522691670315;
-                    editdata.C3_534181718652=opn.C3_522691669613;
-                    editdata.C3_534181730034=opn.C3_522691669878;
-                    editdata.C3_534264776828=opn.C3_522691670096;
-                    var form = new mini.Form("form3");
-                    form.setData(editdata);
-                }
-            });
+            setTimeout(function() {
+                recop.show().then(function(opn){
+                    if(opn){
+                        editdata.C3_534181598826=opn.C3_522691669347;
+                        editdata.C3_534181645731=opn.C3_522691670315;
+                        editdata.C3_534181718652=opn.C3_522691669613;
+                        editdata.C3_534181730034=opn.C3_522691669878;
+                        editdata.C3_534264776828=opn.C3_522691670096;
+                        var form = new mini.Form("form3");
+                        form.setData(editdata);
+                    }
+                });
+            }, 200);
         }
-        $("input[name*='C3_534181598826']").focus(function(){
-            ecpnn();
-        });
-        // $("input[name*='C3_534181645731']").focus(function(){
-        //     cpnn();
-        // });
-        // $("input[name*='C3_534181718652']").focus(function(){
-        //     cpnn();
-        // });
-        // $("input[name*='C3_534181730034']").focus(function(){
-        //     cpnn();
-        // });
-        // $("input[name*='C3_534264776828']").focus(function(){
-        //     cpnn();
-        // });
         if(editdata.C3_534182834029){
             var a1=$("#ahref");
             a1[0].href=editdata.C3_534182834029;
