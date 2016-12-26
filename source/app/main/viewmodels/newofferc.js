@@ -13,32 +13,33 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop'], 
         dialog.close(this);
     };
     newofferc.prototype.submit = function() {
-        $('.fbb').attr({"disabled":"disabled"});
-        setTimeout(function() {
-            $('.fbb').removeAttr("disabled");
-        }, 1000);
-        var that=this;
-        var form = new mini.Form("form7");
-        var o =  new mini.Form("form7").getData();
-        form.validate(); 
-        if (form.isValid() == false) return;
-        o._id=1;
-        o._state="modified";
-        o.REC_ID=cfnData.REC_ID;
-        o.C3_534187099299='Y';
-        var json = mini.encode([o]);
-        dbs.dbSavedata(cfnid,0,json,dataSaved,fnerror,fnhttperror);
-        function dataSaved(text){
-            dialog.showMessage('<h1>Success</h1>','Save',['Cancel'],true);
-            dialog.close(that);
-        };
-        function fnerror(text){
-            dialog.showMessage(text.message,'Error',['Cancel'],true);
-        };
-        function fnhttperror(jqXHR, textStatus, errorThrown){
-            dialog.showMessage('error','Save',['Cancel'],true);
+        if(confirm('Are you sure you want to submit it?')){
+            $('.fbb').attr({"disabled":"disabled"});
+            setTimeout(function() {
+                $('.fbb').removeAttr("disabled");
+            }, 1000);
+            var that=this;
+            var form = new mini.Form("form7");
+            var o =  new mini.Form("form7").getData();
+            form.validate(); 
+            if (form.isValid() == false) return;
+            o._id=1;
+            o._state="modified";
+            o.REC_ID=cfnData.REC_ID;
+            o.C3_534187099299='Y';
+            var json = mini.encode([o]);
+            dbs.dbSavedata(cfnid,0,json,dataSaved,fnerror,fnhttperror);
+            function dataSaved(text){
+                dialog.showMessage('<h1>Success</h1>','Save',['Cancel'],true);
+                dialog.close(that);
+            };
+            function fnerror(text){
+                dialog.showMessage(text.message,'Error',['Cancel'],true);
+            };
+            function fnhttperror(jqXHR, textStatus, errorThrown){
+                dialog.showMessage('error','Save',['Cancel'],true);
+            }
         }
-        
     };
     newofferc.prototype.activate=function(){
         showImg=function(no){
@@ -53,6 +54,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop'], 
         mini.parse();
         var form = new mini.Form("form7");
         cfnData.C3_534339050633=cfnData.C3_534187095838*12;
+        if(cfnData.C3_534187101971>6){
+            cfnData.C3_535826470338="";
+        }else{
+            var cfn=mini.getbyName('C3_535826470338');
+            cfn.setReadOnly(true);
+        }
         form.setData(cfnData);
         cfnn=function(){
             setTimeout(function() {

@@ -17,39 +17,42 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         dbs.dbGetdata(cfmid,0,"",fnSuccess,null,null);//获取并设置页面数据
         function fnSuccess(data){
             sData=data;
-            console.log(data[0]);
+            // console.log(data[0]);
             me.cfnopList(data);
         };
         opnm = function(opn){
             dialog.close(me,opn);
         }
-        search =  function() {
+        searchCfn =  function() {
             newData=[];
-            var skey = mini.getbyName('searchBox').value;
+            var skey = mini.getbyName('searchBoxcfn').value;
+            // console.log(skey);
             // console.log(sData[0]);
             for(var i=0,a=0;i<sData.length;i++){
-                if(!sData[i].C3_522691671297)sData[i].C3_522691671297="";
-                if(!sData[i].C3_522691669347)sData[i].C3_522691669347="";
-                if(!sData[i].C3_522691670315)sData[i].C3_522691670315="";
-                if(!sData[i].C3_522691669613)sData[i].C3_522691669613="";
-                if(!sData[i].C3_522691669878)sData[i].C3_522691669878="";
-                if(!sData[i].C3_522691670096)sData[i].C3_522691670096="";
-                if(!sData[i].C3_522691670814)sData[i].C3_522691670814="";
-                if(sData[i].C3_522691671297.indexOf(skey)>=0
-                || sData[i].C3_522691669347.indexOf(skey)>=0
-                || sData[i].C3_522691670315.indexOf(skey)>=0
-                || sData[i].C3_522691669613.indexOf(skey)>=0
-                || sData[i].C3_522691669878.indexOf(skey)>=0
-                || sData[i].C3_522691670096.indexOf(skey)>=0
-                || sData[i].C3_522691670814.indexOf(skey)>=0)
+                if(!sData[i].C3_305737857578)sData[i].C3_305737857578="";
+                if(sData[i].C3_305737857578)sData[i].C3_305737857578=sData[i].C3_305737857578+"";
+                if(!sData[i].C3_417990929305)sData[i].C3_417990929305="";
+                if(!sData[i].C3_227192472953)sData[i].C3_227192472953="";
+                if(sData[i].C3_227192472953)sData[i].C3_227192472953=sData[i].C3_227192472953+"";
+                if(!sData[i].C3_227192484125)sData[i].C3_227192484125="";
+                if(!sData[i].C3_227192512406)sData[i].C3_227192512406="";
+                if(!sData[i].C3_227192496109)sData[i].C3_227192496109="";
+                if(!sData[i].C3_440000039379)sData[i].C3_440000039379="";
+                if(sData[i].C3_305737857578.indexOf(skey)>=0
+                || sData[i].C3_417990929305.indexOf(skey)>=0
+                || sData[i].C3_227192472953.indexOf(skey)>=0
+                || sData[i].C3_227192484125.indexOf(skey)>=0
+                || sData[i].C3_227192512406.indexOf(skey)>=0
+                || sData[i].C3_227192496109.indexOf(skey)>=0
+                || sData[i].C3_440000039379.indexOf(skey)>=0)
                 newData[a++] = sData[i];
             }
             me.cfnopList(newData);
         };
-        $('#searchBox').keydown(function(event) {
+        $('#searchBoxcfn').keydown(function(event) {
             if(event.keyCode == "13"){//keyCode=13是回车键
                 event.preventDefault();
-                $('#searchBtn').click();
+                $('#searchBtncfn').click();
             }
         });
     };
