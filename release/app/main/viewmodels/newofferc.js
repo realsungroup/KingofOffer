@@ -74,6 +74,14 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop'], 
                 });
             }, 200);
         }
+        var jt=mini.getbyName('C3_534187093586');
+        jt.setReadOnly(true);
+        jt.setIsValid(true);
+        jt.addCls("asLabel"); 
+        var ce=mini.getbyName('C3_534187094490');
+        ce.setReadOnly(true);
+        ce.setIsValid(true);
+        ce.addCls("asLabel"); 
         if(cfnData.C3_534187097298){
             var a1=$("#ahref");
             a1[0].href=cfnData.C3_534187097298;
