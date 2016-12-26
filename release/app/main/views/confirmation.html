@@ -1,0 +1,54 @@
+<form id="form6" class="opp">
+    <table align="center">
+         <!--border='1'cellspacing="0" cellpadding="0"-->
+        <tbody data-bind="foreach: cList">
+            <tr>
+                <td colspan="8" class="head1">
+                    <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offercView.bind()">
+                    <input type="button" value="Foshan Offer Confirmation" class="btn btn-success rf fbb" data-bind="click : newOc.bind(),visible:($data.C3_534187099299==null||$data.C3_534187099299=='N')">
+                </td>
+            </tr>
+            <tr>
+                <td class="title" width="12%">
+                    Job Title
+                </td>
+                <td width="13%">
+                    <b data-bind="text: C3_534187093586"></b>
+                </td>
+                <td class="title" width="12%">
+                    Level
+                </td>
+                <td width="13%">
+                    <b data-bind="text: C3_534187093868"></b>
+                </td>
+                <td class="title" width="12%">
+                    Location
+                </td>
+                <td width="13%">
+                    <b data-bind="text: C3_534187094088"></b>
+                </td>
+                <td class="title" width="12%">
+                    Hiring Manager
+                </td>
+                <td width="13%">
+                    <b data-bind="text: C3_534264724518"></b>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Target Manager
+                </td>
+                <td>
+                    <b data-bind="text: C3_534188520203"></b>
+                </td>
+                <td class="title">
+                    Department
+                </td>
+                <td colspan="5">
+                    <b data-bind="text: C3_534187094286"></b>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+ 

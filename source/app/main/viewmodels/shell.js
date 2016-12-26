@@ -11,7 +11,8 @@
              
                 { route: ['','offer'],title:'Offer', moduleId: 'main/viewmodels/offer', nav: true },
                 { route: 'auditpage/:id', title:'auditpage', moduleId: 'main/viewmodels/auditpage' },
-                { route: 'eapage', title:'eapage', moduleId: 'main/viewmodels/eapage' }
+                { route: 'eapage', title:'eapage', moduleId: 'main/viewmodels/eapage' },
+                { route: 'confirmation', title:'confirmation', moduleId: 'main/viewmodels/confirmation' }
                 
             ]).buildNavigationModel();
            

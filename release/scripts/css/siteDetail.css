@@ -370,6 +370,14 @@
     width:74px;
     margin-right:5px;
 }
+.head1{
+    padding:2px 10px;
+    background: #A4C8EE;
+    text-align: left;
+}
+.head1>input{
+    margin-right:5px;
+}
 .foot>input{
     width:74px;
     margin:10px 0 0 10px;

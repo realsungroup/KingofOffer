@@ -53,6 +53,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         cpnn=function(){
             setTimeout(function() {
                 recop.show().then(function(opn){
+                    console.log(opn);
                     if(opn){
                         cnn.C3_534181767190="2000-01-01"
                         cnn.C3_534181598826=opn.C3_522691669347;
@@ -60,6 +61,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                         cnn.C3_534181718652=opn.C3_522691669613;
                         cnn.C3_534181730034=opn.C3_522691669878;
                         cnn.C3_534264776828=opn.C3_522691670096;
+                        cnn.C3_534184180284=opn.C3_522691671516;
+                        cnn.C3_534184180596=opn.C3_522692208296;
                         var form = new mini.Form("form2");
                         form.setData(cnn);
                     }

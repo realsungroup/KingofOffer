@@ -5,20 +5,20 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     var ucode = appConfig.app.ucode;
     var user  = appConfig.app.user;
     var dbs=new dbHelper(baseUrl,user,ucode);
-    var recid=appConfig.offer.recid;
+    var cfmid=appConfig.offer.cfmid;
     var sData=[];
     var newData=[];
-    var recop = function() {
+    var cfnop = function() {
     };
-    recop.prototype.recopList=ko.observableArray([]),
-    recop.prototype.attached=function(){
+    cfnop.prototype.cfnopList=ko.observableArray([]),
+    cfnop.prototype.attached=function(){
         mini.parse();
         var me=this;
-        dbs.dbGetdata(recid,0,"",fnSuccess,null,null);//获取并设置页面数据
+        dbs.dbGetdata(cfmid,0,"",fnSuccess,null,null);//获取并设置页面数据
         function fnSuccess(data){
             sData=data;
-            me.recopList(data);
-            // console.log(data);
+            console.log(data[0]);
+            me.cfnopList(data);
         };
         opnm = function(opn){
             dialog.close(me,opn);
@@ -44,7 +44,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                 || sData[i].C3_522691670814.indexOf(skey)>=0)
                 newData[a++] = sData[i];
             }
-            me.recopList(newData);
+            me.cfnopList(newData);
         };
         $('#searchBox').keydown(function(event) {
             if(event.keyCode == "13"){//keyCode=13是回车键
@@ -53,13 +53,13 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             }
         });
     };
-    recop.prototype.cancel = function(){
+    cfnop.prototype.cancel = function(){
         dialog.close(this);
     };
 
-    recop.show = function(){
-        return dialog.show(new recop());
+    cfnop.show = function(){
+        return dialog.show(new cfnop());
     };
     
-    return recop;
+    return cfnop;
 });

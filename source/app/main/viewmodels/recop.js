@@ -47,7 +47,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             me.recopList(newData);
         };
         $('#searchBox').keydown(function(event) {
-            if (event.keyCode == "13") {//keyCode=13是回车键
+            if(event.keyCode == "13"){//keyCode=13是回车键
                 event.preventDefault();
                 $('#searchBtn').click();
             }
