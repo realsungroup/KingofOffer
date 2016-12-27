@@ -10,10 +10,11 @@ define(['plugins/router', 'durandal/app'], function (router, app) {
             router.map([
              
                 { route: ['','offer'],title:'Offer', moduleId: 'main/viewmodels/offer', nav: true },
-                { route: 'auditpage/:id', title:'auditpage', moduleId: 'main/viewmodels/auditpage' },
                 { route: 'eapage', title:'eapage', moduleId: 'main/viewmodels/eapage' },
-                { route: 'confirmation', title:'confirmation', moduleId: 'main/viewmodels/confirmation' }
-                
+                { route: 'auditpage/:id', title:'auditpage', moduleId: 'main/viewmodels/auditpage' },
+                { route: 'confirmation', title:'confirmation', moduleId: 'main/viewmodels/confirmation' },
+                { route: 'eacpage', title:'confirmation', moduleId: 'main/viewmodels/eacpage' }
+
             ]).buildNavigationModel();
            
             return router.activate();

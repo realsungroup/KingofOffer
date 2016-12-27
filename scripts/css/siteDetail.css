@@ -375,6 +375,12 @@
     background: #A4C8EE;
     text-align: left;
 }
+.head2{
+    padding:2px 10px;
+}
+.head2 .mini-textarea .mini-textbox-input,.title .mini-textarea .mini-textbox-input{
+    padding-top: 4px;
+}
 .head1>input{
     margin-right:5px;
 }

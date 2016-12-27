@@ -4,7 +4,7 @@
         <tbody data-bind="foreach: cList">
             <tr>
                 <td colspan="8" class="head1">
-                    <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offercView.bind()">
+                    <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offercView.bind(),visible:($data.C3_534187099299=='Y')">
                     <input type="button" value="Foshan Offer Confirmation" class="btn btn-success rf fbb" data-bind="click : newOc.bind(),visible:($data.C3_534187099299==null||$data.C3_534187099299=='N')">
                 </td>
             </tr>

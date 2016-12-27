@@ -1,4 +1,4 @@
-define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dialog, ko, newofferc,preofferc) {//,'./editofferc'
+define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dialog, ko, newofferc,preofferc) {
     return {
         user:"",
         ucode:"",
@@ -9,21 +9,21 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                appConfig.app.ucode=e.ucode;
             }
         },
-        cList:ko.observableArray([]),
+        ceList:ko.observableArray([]),
         attached:function(){
             var baseUrl=appConfig.app.baseUrl;
             var ucode = appConfig.app.ucode;
             var user  = appConfig.app.user;
             var dbs=new dbHelper(baseUrl,user,ucode);
-            var cfnid=appConfig.offer.cfnid;
+            var dfnid=appConfig.offer.dfnid;
             var me=this;
             var o={};
             mini.parse();
-            offercList=function(){
-                dbs.dbGetdata(cfnid,0,"",fnSuccess,fnerror,fnhttperror);
+            offerceList=function(){
+                dbs.dbGetdata(dfnid,0,"",fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data){
                     // console.log(data[0]);
-                    me.cList(data);
+                    me.ceList(data);
                 };
                 function fnerror(text){
                     dialog.showMessage(text.message,'新增失败',['返回'],true);
@@ -32,23 +32,23 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     console.log(jqXHR);
                 };
             }
-            offercList();
-            newOc=function(e){
+            offerceList();
+            subOc=function(e){
                 $('.fbb').attr({"disabled":"disabled"});
                 setTimeout(function() {
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
                 newofferc.show(e).then(function(){
-                    offercList();
+                    offerceList();
                 });
             };
-            offercView=function(e){
+            offerceView=function(e){
                 $('.fbb').attr({"disabled":"disabled"});
                 setTimeout(function() {
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
                 preofferc.show(e).then(function(){
-                    offercList();
+                    offerceList();
                 });
             };
         }

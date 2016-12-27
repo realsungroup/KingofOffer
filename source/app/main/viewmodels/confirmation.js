@@ -1,4 +1,4 @@
-define(['plugins/dialog', 'knockout','./newofferc'], function (dialog, ko, newofferc,preofferc) {//,'./preofferc','./editofferc'
+define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dialog, ko, newofferc,preofferc) {//,'./editofferc'
     return {
         user:"",
         ucode:"",
@@ -42,50 +42,15 @@ define(['plugins/dialog', 'knockout','./newofferc'], function (dialog, ko, newof
                     offercList();
                 });
             };
-            // offerEdit=function(e){
-            //     $('.fbb').attr({"disabled":"disabled"});
-            //     setTimeout(function() {
-            //         $('.fbb').removeAttr("disabled");
-            //     }, 1000);
-            //     editoffer.show(e).then(function(){
-            //         offerList();
-            //     });
-            // };
             offercView=function(e){
                 $('.fbb').attr({"disabled":"disabled"});
                 setTimeout(function() {
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
                 preofferc.show(e).then(function(){
-                    offerList();
+                    offercList();
                 });
             };
-            // offerSubmit = function(e){//提交按钮
-            //     if(confirm('您确定要提交么？')){
-            //         o._id=1;
-            //         o._state="modified";
-            //         o.C3_534184252529="Y";
-            //         o.REC_ID=e.REC_ID;
-            //         json="["+JSON.stringify(o)+"]";
-            //         dbs.dbSavedata(opaid,0,json);
-            //         setTimeout(function() {
-            //             offerList();
-            //         }, 500);
-            //     }
-            // };
-            // offerDel = function(e){//删除按钮
-            //     if(confirm('您确定要删除么？')){
-            //         o._id=1;
-            //         o._state="removed";
-            //         o.C3_534184252529="Y";
-            //         o.REC_ID=e.REC_ID;
-            //         json="["+JSON.stringify(o)+"]";
-            //         dbs.dbSavedata(opaid,0,json);
-            //         setTimeout(function() {
-            //             offerList();
-            //         }, 500);
-            //     }
-            // };
         }
     }
 });
