@@ -19,6 +19,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             sData=data;
             // console.log(data[0]);
             me.cfnopList(data);
+            $('#imgBox').hide();
         };
         opnm = function(opn){
             dialog.close(me,opn);

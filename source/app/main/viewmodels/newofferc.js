@@ -31,18 +31,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             }else{
                 o.C3_534187099299='Y';
             }
+            var dates=mini.getbyName('C3_535826527531').text;
+            o.C3_536319464780="This is "+o.C3_535826470338+" it has been approved by Jerry and Kurt on headcount "+dates
+            console.log(o.C3_536319464780);
             var json = mini.encode([o]);
-            dbs.dbSavedata(cfnid,0,json);//,dataSaved,fnerror,fnhttperror);
-            // function dataSaved(text){
-            //     dialog.showMessage('<h1>Success</h1>','Save',['Cancel'],true);
-                dialog.close(that);
-            // };
-            // function fnerror(text){
-            //     dialog.showMessage(text.message,'Error',['Cancel'],true);
-            // };
-            // function fnhttperror(jqXHR, textStatus, errorThrown){
-            //     dialog.showMessage('error','Save',['Cancel'],true);
-            // }
+            dbs.dbSavedata(cfnid,0,json);
+            dialog.close(that);
         }
     };
     newofferc.prototype.activate=function(){
@@ -63,10 +57,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             cfn.setReadOnly(true);
             cfn.setIsValid(true);
             cfn.addCls("asLabel");
-            var de=mini.getbyName('C3_535826527531');
-            // de.setReadOnly(true);
-            // de.setIsValid(true);
-            // de.addCls("asLabel");
         }
         if(cfnData.C3_534187097298){
             var a1=$("#ahref");
@@ -88,10 +78,14 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 if (c.setIsValid) c.setIsValid(true);      //去除错误提示
                 if (c.addCls) c.addCls("asLabel");          //增加asLabel外观
             }
-            form.setData(cfnData);
         }else{
-            form.setData(cfnData);
             cfnn=function(){
+                cfnData.C3_535826470338=mini.getbyName('C3_535826470338').value;
+                cfnData.C3_536319472674=mini.getbyName('C3_536319472674').value;
+                cfnData.C3_536319473964=mini.getbyName('C3_536319473964').value;
+                cfnData.C3_536319475165=mini.getbyName('C3_536319475165').value;
+                cfnData.C3_536319476423=mini.getbyName('C3_536319476423').value;
+                cfnData.C3_536319478009=mini.getbyName('C3_536319478009').value;
                 setTimeout(function() {
                     cfnop.show().then(function(opn){
                         if(opn){
@@ -126,15 +120,15 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                     sv.setValue(cfnData.C3_534187097900);
                 }
             }
-            var c2=mini.getbyName('C2');
+            var c2=mini.getbyName('C3_536319472674');
             c2.addCls("asLabel");
-            var c3=mini.getbyName('C3');
+            var c3=mini.getbyName('C3_536319473964');
             c3.addCls("asLabel");
-            var c4=mini.getbyName('C4');
+            var c4=mini.getbyName('C3_536319475165');
             c4.addCls("asLabel");
-            var c5=mini.getbyName('C5');
+            var c5=mini.getbyName('C3_536319476423');
             c5.addCls("asLabel");
-            var c6=mini.getbyName('C6');
+            var c6=mini.getbyName('C3_536319478009');
             c6.addCls("asLabel");
             var jt=mini.getbyName('C3_534187093586s');
             jt.setReadOnly(true);
@@ -149,6 +143,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             hm.setIsValid(true);
             hm.addCls("asLabel"); 
         }
+        form.setData(cfnData);
     };
     newofferc.show = function(e){
         cfnData=e;

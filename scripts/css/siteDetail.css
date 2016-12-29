@@ -492,3 +492,6 @@ td img{
 .eap tbody tr:nth-child(2n),.ss tbody tr:nth-child(2n),.md tbody tr:nth-child(2n),.das tbody tr:nth-child(2n){
     background: #eee;
 }
+#imgBox{
+    margin: 100px 125px;
+}
