@@ -9,7 +9,8 @@ requirejs.config({
         'jquery': '../lib/jquery/jquery-1.9.1',
         'jqueryprint': '../lib/jquery/jquery.jPrintArea',
         'realsun': '../lib/realsun/js',
-        'calendar': '../lib/fullcalendar'
+        'calendar': '../lib/fullcalendar',
+        'pace':'../vendor/pace.js/pace.min'
     },
     shim: {
         'bootstrap': {

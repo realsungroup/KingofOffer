@@ -1,4 +1,4 @@
-define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (app,ko,router,dialog) {
+define(['durandal/app','knockout','plugins/router','plugins/dialog','pace'], function (app,ko,router,dialog,pace) {
     var baseUrl=appConfig.app.baseUrl;
     var getMethod=appConfig.app.getMethod;
     var saveMethod=appConfig.app.saveMethod;
@@ -11,6 +11,42 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     var cfnop = function() {
     };
     cfnop.prototype.cfnopList=ko.observableArray([]),
+    cfnop.prototype.activate=function(){
+        function load(time){
+            var x = new XMLHttpRequest()
+            x.open('GET', "http://localhost:5646/walter/" + time, true);
+            x.send();
+        };
+        load(200);
+        load(300);
+        load(400);
+        load(600);
+        load(800);
+        load(1000);
+        load(1200);
+        load(1450);
+        load(1750);
+        load(2050);
+        load(2200);
+        load(2500);
+        load(2850);
+        load(3250);
+        load(3750);
+        setTimeout(function(){
+            Pace.ignore(function(){
+                load(4900);
+            });
+        },  6000);
+        Pace.on('hide', function(){
+            console.log('done');
+        });
+        // range.addEventListener( function(){
+        //     document.querySelector('.pace').classList.remove('pace-inactive');
+        //     document.querySelector('.pace').classList.add('pace-active');
+        //     document.querySelector('.pace-progress').setAttribute('data-progress-text', range.value + '%');
+        //     document.querySelector('.pace-progress').setAttribute('style', '-webkit-transform: translate3d(' + range.value + '%, 0px, 0px)');
+        // });
+    };
     cfnop.prototype.attached=function(){
         mini.parse();
         var me=this;
@@ -19,7 +55,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             sData=data;
             // console.log(data[0]);
             me.cfnopList(data);
-            $('#imgBox').hide();
+            // $('#imgBox').hide();
         };
         opnm = function(opn){
             dialog.close(me,opn);

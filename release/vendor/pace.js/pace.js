@@ -280,12 +280,17 @@
     };
 
     Bar.prototype.render = function() {
-      var el, progressStr;
+      var el, key, progressStr, transform, _j, _len1, _ref2;
       if (document.querySelector(options.target) == null) {
         return false;
       }
       el = this.getElement();
-      el.children[0].style.width = "" + this.progress + "%";
+      transform = "translate3d(" + this.progress + "%, 0, 0)";
+      _ref2 = ['webkitTransform', 'msTransform', 'transform'];
+      for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
+        key = _ref2[_j];
+        el.children[0].style[key] = transform;
+      }
       if (!this.lastRenderedProgress || this.lastRenderedProgress | 0 !== this.progress | 0) {
         el.children[0].setAttribute('data-progress-text', "" + (this.progress | 0) + "%");
         if (this.progress >= 100) {
@@ -344,13 +349,22 @@
   _WebSocket = window.WebSocket;
 
   extendNative = function(to, from) {
-    var e, key, val, _results;
+    var e, key, _results;
     _results = [];
     for (key in from.prototype) {
       try {
-        val = from.prototype[key];
-        if ((to[key] == null) && typeof val !== 'function') {
-          _results.push(to[key] = val);
+        if ((to[key] == null) && typeof from[key] !== 'function') {
+          if (typeof Object.defineProperty === 'function') {
+            _results.push(Object.defineProperty(to, key, {
+              get: function() {
+                return from.prototype[key];
+              },
+              configurable: true,
+              enumerable: true
+            }));
+          } else {
+            _results.push(to[key] = from.prototype[key]);
+          }
         } else {
           _results.push(void 0);
         }
@@ -907,7 +921,7 @@
   };
 
   if (typeof define === 'function' && define.amd) {
-    define(function() {
+    define(['pace'], function() {
       return Pace;
     });
   } else if (typeof exports === 'object') {
