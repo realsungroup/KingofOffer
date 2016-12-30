@@ -1,4 +1,4 @@
-define(['durandal/app','knockout','plugins/router','plugins/dialog','pace'], function (app,ko,router,dialog,pace) {
+define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (app,ko,router,dialog) {
     var baseUrl=appConfig.app.baseUrl;
     var getMethod=appConfig.app.getMethod;
     var saveMethod=appConfig.app.saveMethod;
@@ -12,34 +12,34 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','pace'], fun
     };
     cfnop.prototype.cfnopList=ko.observableArray([]),
     cfnop.prototype.activate=function(){
-        function load(time){
-            var x = new XMLHttpRequest()
-            x.open('GET', "http://localhost:5646/walter/" + time, true);
-            x.send();
-        };
-        load(200);
-        load(300);
-        load(400);
-        load(600);
-        load(800);
-        load(1000);
-        load(1200);
-        load(1450);
-        load(1750);
-        load(2050);
-        load(2200);
-        load(2500);
-        load(2850);
-        load(3250);
-        load(3750);
-        setTimeout(function(){
-            Pace.ignore(function(){
-                load(4900);
-            });
-        },  6000);
-        Pace.on('hide', function(){
-            console.log('done');
-        });
+        // function load(time){
+        //     var x = new XMLHttpRequest()
+        //     x.open('GET', "http://localhost:5646/walter/" + time, true);
+        //     x.send();
+        // };
+        // load(200);
+        // load(300);
+        // load(400);
+        // load(600);
+        // load(800);
+        // load(1000);
+        // load(1200);
+        // load(1450);
+        // load(1750);
+        // load(2050);
+        // load(2200);
+        // load(2500);
+        // load(2850);
+        // load(3250);
+        // load(3750);
+        // setTimeout(function(){
+        //     Pace.ignore(function(){
+        //         load(4900);
+        //     });
+        // },  6000);
+        // Pace.on('hide', function(){
+        //     console.log('done');
+        // });
         // range.addEventListener( function(){
         //     document.querySelector('.pace').classList.remove('pace-inactive');
         //     document.querySelector('.pace').classList.add('pace-active');
@@ -48,13 +48,21 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','pace'], fun
         // });
     };
     cfnop.prototype.attached=function(){
+        
         mini.parse();
         var me=this;
-        dbs.dbGetdata(cfmid,0,"",fnSuccess,null,null);//获取并设置页面数据
+        //Pace.start();
+      
+       document.querySelector('.pace').classList.remove('pace-inactive');
+       document.querySelector('.pace').classList.add('pace-active');
+       dbs.dbGetdata(cfmid,0,"",fnSuccess,null,null);
+       //获取并设置页面数据
+        
         function fnSuccess(data){
             sData=data;
             // console.log(data[0]);
             me.cfnopList(data);
+            Pace.stop();  
             // $('#imgBox').hide();
         };
         opnm = function(opn){
