@@ -409,30 +409,42 @@
                 </td>
             </tr>
             <tr>
-                <td class="title3" colspan="2">
-                    流程名称
-                </td>
-                <td class="title3" colspan="2">
-                    审批节点
-                </td>
-                <td class="title3" colspan="2">
-                    审批人
+                <td colspan="6">
+                    <table>
+                        <tbody>
+                            <td class="title3">
+                                审批节点
+                            </td>
+                            <td class="title3">
+                                审批人
+                            </td>
+                            <td class="title3">
+                                审批结果
+                            </td>
+                            <td class="title3">
+                                审批时间
+                            </td>
+                        </tbody>
+                        <tfoot data-bind="foreach: subList1">
+                            <tr>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534184045558"></b>
+                                </td>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534184046541"></b>
+                                </td>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534184046739"></b>
+                                </td>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534184046952"></b>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </td>
             </tr>
         </tbody>
-        <tfoot data-bind="foreach: subList1">
-            <tr>
-                <td colspan="2" class="tc">
-                    <b data-bind="text: C3_534187327391"></b>
-                </td>
-                <td colspan="2" class="tc">
-                    <b data-bind="text: C3_534184045558"></b>
-                </td>
-                <td colspan="2" class="tc">
-                    <b data-bind="text: C3_534184046541"></b>
-                </td>
-            </tr>
-        </tfoot>
     </table>
 </form>
  
