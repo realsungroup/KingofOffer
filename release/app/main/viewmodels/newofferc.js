@@ -31,10 +31,15 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             }else{
                 o.C3_534187099299='Y';
             }
-            var dates=mini.getbyName('C3_535826527531').text;
-            o.C3_536319464780="This is "+o.C3_535826470338+" it has been approved by Jerry and Kurt on headcount "+dates
+            if(cfnData.C3_534187101971<=6){
+                var dates=mini.getbyName('C3_535826527531').text;
+                o.C3_536319464780="This is "+o.C3_535826470338+" it has been approved by Jerry and Kurt on headcount "+dates
+            }else {
+                o.C3_536319464780=$('#val1').val();
+            }
             // console.log(o.C3_536319464780);
             var json = mini.encode([o]);
+            // console.log(json);
             dbs.dbSavedata(cfnid,0,json);
             dialog.close(that);
         }
@@ -50,14 +55,20 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         cfnData.C3_535826470338s=cfnData.C3_535826470338;
         // console.log(cfnData.C3_534187101971);
         if(cfnData.C3_534187099299!="Y"&&cfnData.C3_534187101971>6){
-            cfnData.C3_535826470338="";
-            var ed=mini.getbyName('C3_535826470338');
-            ed.addCls("asLabel");
+            $("#opt1").empty();
+            var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>'
+            $("#opt1").append(list);
         }else{
             var cfn=mini.getbyName('C3_535826470338');
             cfn.setReadOnly(true);
             cfn.setIsValid(true);
             cfn.addCls("asLabel");
+        }
+        if(cfnData.C3_536319464780&&cfnData.C3_534187101971>6){
+            $("#opt1").empty();
+            var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>'
+            $("#opt1").append(list);
+            $('#val1').val(cfnData.C3_536319464780);
         }
         if(cfnData.C3_534187097298){
             var a1=$("#ahref");
@@ -71,17 +82,17 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         }else{
             $("#ahref2").hide();
         }
-        if(cfnData.C3_534187099299=="Y"){
-            fields = form.getFields();                
-            for (var i = 0, l = fields.length; i < l; i++) {
-                var c = fields[i];
-                if (c.setReadOnly) c.setReadOnly(true);     //只读
-                if (c.setIsValid) c.setIsValid(true);      //去除错误提示
-                if (c.addCls) c.addCls("asLabel");          //增加asLabel外观
-            }
-        }else{
+        // if(cfnData.C3_534187099299=="Y"){
+        //     fields = form.getFields();                
+        //     for (var i = 0, l = fields.length; i < l; i++) {
+        //         var c = fields[i];
+        //         if (c.setReadOnly) c.setReadOnly(true);     //只读
+        //         if (c.setIsValid) c.setIsValid(true);      //去除错误提示
+        //         if (c.addCls) c.addCls("asLabel");          //增加asLabel外观
+        //     }
+        // }else{
             cfnn=function(){
-                cfnData.C3_535826470338=mini.getbyName('C3_535826470338').value;
+                // if(cfnData.C3_534187101971<=6)cfnData.C3_535826470338=mini.getbyName('C3_535826470338').value;
                 cfnData.C3_536319472674=mini.getbyName('C3_536319472674').value;
                 cfnData.C3_536319473964=mini.getbyName('C3_536319473964').value;
                 cfnData.C3_536319475165=mini.getbyName('C3_536319475165').value;
@@ -95,6 +106,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                             cfnData.C3_534188545242=opn.C3_227192472953;
                             var form = new mini.Form("form7");
                             form.setData(cfnData);
+                            if(cfnData.C3_534187101971>6){
+                                $("#opt1").empty();
+                                var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>'
+                                $("#opt1").append(list);
+                                $('#val1').val(cfnData.C3_536319464780);
+                            }
                         }
                     });
                 }, 200);
@@ -143,11 +160,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             hm.setReadOnly(true);
             hm.setIsValid(true);
             hm.addCls("asLabel"); 
-        }
+        // }
         form.setData(cfnData);
     };
     newofferc.show = function(e){
         cfnData=e;
+        // console.log(cfnData.C3_536319464780);
         return dialog.show(new newofferc());
     };
    
