@@ -39,13 +39,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         
     };
     newoffer.prototype.activate=function(){
-        showImg=function(no){
-            if(no=="img1"){
-                $("#imgUploaded").removeAttr("hidden"); 
-            }else if(no=="img2"){
-                $("#imgUploaded2").removeAttr("hidden"); 
-            }
-        };
+        
     };
     newoffer.prototype.attached=function(){
         mini.parse();
@@ -53,7 +47,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         cpnn=function(){
             setTimeout(function() {
                 recop.show().then(function(opn){
-                    console.log(opn);
                     if(opn){
                         cnn.C3_534181767190="2000-01-01"
                         cnn.C3_534181598826=opn.C3_522691669347;

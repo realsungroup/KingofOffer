@@ -1010,6 +1010,7 @@ SWFUpload.Console.writeLine = function (message) {
 					 	  	img[0].src="../../img/pdf.jpg";//data.httpfilename;
 							img[0].width="60";
 							a[0].href=data.httpfilename;
+							$("#ahref").show();
 					 } catch (error) {
 						 alert(error);
 						 
@@ -1048,6 +1049,7 @@ SWFUpload.Console.writeLine = function (message) {
 					 	  	img[0].src="../../img/word.jpg";//data.httpfilename;
 							img[0].width="60";
 							a2[0].href=data.httpfilename;
+							$("#ahref2").show();
 					 } catch (error) {
 						 alert(error);
 						 
