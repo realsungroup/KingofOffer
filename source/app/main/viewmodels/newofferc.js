@@ -33,7 +33,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             }
             var dates=mini.getbyName('C3_535826527531').text;
             o.C3_536319464780="This is "+o.C3_535826470338+" it has been approved by Jerry and Kurt on headcount "+dates
-            console.log(o.C3_536319464780);
+            // console.log(o.C3_536319464780);
             var json = mini.encode([o]);
             dbs.dbSavedata(cfnid,0,json);
             dialog.close(that);
@@ -48,7 +48,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         cfnData.C3_534187093586s=cfnData.C3_534187093586;
         cfnData.C3_534264724518s=cfnData.C3_534264724518;
         cfnData.C3_535826470338s=cfnData.C3_535826470338;
-        if(cfnData.C3_534187101971>6){
+        // console.log(cfnData.C3_534187101971);
+        if(cfnData.C3_534187099299!="Y"&&cfnData.C3_534187101971>6){
             cfnData.C3_535826470338="";
             var ed=mini.getbyName('C3_535826470338');
             ed.addCls("asLabel");

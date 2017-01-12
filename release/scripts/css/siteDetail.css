@@ -400,7 +400,7 @@
     background: #fefefe;
     padding: 0 10px;
 }
-.preview table,.auditpage table{
+.preview table,.auditpage table,.op table{
     width:100%;
 }
 .preview .title,.auditpage .title{
@@ -421,7 +421,7 @@
     background: #aaa;
     text-align: left;
 }
-.preview .title3,.auditpage .title3{
+.preview .title3,.auditpage .title3,.op .title3{
     background: #aaa;
     text-align: center;
 }

@@ -16,13 +16,14 @@ define(['plugins/dialog', 'knockout','./preoffer'], function (dialog, ko, preoff
             var ucode = appConfig.app.ucode;
             var user  = appConfig.app.user;
             var dbs=new dbHelper(baseUrl,user,ucode);
-            var eeaid=appConfig.offer.eeaid;
+            var opaid=appConfig.offer.opaid;
             var me=this;
             var o={};
             mini.parse();
             offerList=function(){
-                dbs.dbGetdata(eeaid,0,"",fnSuccess,fnerror,fnhttperror);
-                function fnSuccess(data,subdata){
+                dbs.dbGetdata(opaid,0,"",fnSuccess,fnerror,fnhttperror);
+                function fnSuccess(data){
+                    // console.log(data);
                     me.oList(data);
                 };
                 function fnerror(text){
