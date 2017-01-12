@@ -7,8 +7,10 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     var dbs=new dbHelper(baseUrl,user,ucode);
     var cfnid=appConfig.offer.cfnid;
     var cfmData;
+    var eadid=appConfig.offer.eadid;
     var preofferc = function() {
     };
+    preofferc.prototype.subList=ko.observableArray([]),
     preofferc.prototype.cancel = function() {
         dialog.close(this);
     };
@@ -16,6 +18,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     };
     preofferc.prototype.attached=function(){
         mini.parse();
+        var me=this;
+        cmswhere="REC_ID='"+cfmData.REC_ID+"'";
+        dbs.dbGetdata(cfnid,eadid,cmswhere,fnSuccess,fnerror,fnhttperror);
+        function fnSuccess(data,subdata){
+            me.subList(subdata);
+        };
+        function fnerror(text){
+            dialog.showMessage(text.message,'失败',['返回'],true);
+        };
+        function fnhttperror(jqXHR, textStatus, errorThrown){
+            alert(jqXHR);
+        };
         var form = new mini.Form("form8");
         cfmData.C3_534187094490s=cfmData.C3_534187094490;
         cfmData.C3_534187093586s=cfmData.C3_534187093586;

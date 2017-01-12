@@ -72,9 +72,6 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
             }else if(offersub=='md'){
                 $('.mdhead').addClass('oacitve');
                 $('.md').css('z-index',i);
-            }else if(offersub=='das'){
-                $('.dashead').addClass('oacitve');
-                $('.das').css('z-index',i);
             }
             i++;
         };
