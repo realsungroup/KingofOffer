@@ -7,6 +7,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var dbs=new dbHelper(baseUrl,user,ucode);
     var cfnid=appConfig.offer.cfnid;
     var cfnData;
+    var mName="";
     var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px; margin-left:8px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>';
     var newofferc = function() {
     };
@@ -29,6 +30,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             o.REC_ID=cfnData.REC_ID;
             if(cfnData.C3_534187099299=="Y"){
                 o.C3_534187100944='Y';
+                o.C3_534188520203=mName;
             }else{
                 o.C3_534187099299='Y';
             }
@@ -122,11 +124,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             cfnm=function(){
                 setTimeout(function() {
                     recop.show().then(function(opn){
+                        // console.log(opn);
                         if(opn){
                             cfnData.C3_534187093586=opn.C3_522691669347;
                             cfnData.C3_534264724518=opn.C3_522691670096;
+                            cfnData.C3_534187094286=opn.C3_522691669878;
                             var form = new mini.Form("form7");
                             form.setData(cfnData);
+                            if(cfnData.C3_534187101971>6){
+                                $("#opt1").empty();
+                                $("#opt1").append(list);
+                                $('#val1').val(cfnData.C3_536319464780);
+                            }
                         }
                     });
                 }, 200);
@@ -168,6 +177,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     newofferc.show = function(e){
         cfnData=e;
+        mName=cfnData.C3_534188520203;
         // console.log(cfnData);
         return dialog.show(new newofferc());
     };
