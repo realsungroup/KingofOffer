@@ -392,7 +392,7 @@
     width: 1000px;
     border: 2px solid #ddd;
     background: #fefefe;
-    padding: 0 10px;
+    padding: 10px;
     overflow-y: auto;
     overflow-x: hidden;
 }
