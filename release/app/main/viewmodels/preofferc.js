@@ -37,7 +37,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         cfmData.C3_535826470338s=cfmData.C3_535826470338;
         if(cfmData.C3_534187101971>6){
             $("#opt2").empty();
-            var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px;"><textarea readonly id="val2" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>'
+            var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px; margin-left:8px;"><textarea readonly id="val2" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>'
             $("#opt2").append(list);
             $('#val2').val(cfmData.C3_536319464780);
         }

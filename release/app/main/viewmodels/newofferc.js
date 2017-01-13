@@ -7,6 +7,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var dbs=new dbHelper(baseUrl,user,ucode);
     var cfnid=appConfig.offer.cfnid;
     var cfnData;
+    var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px; margin-left:8px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>';
     var newofferc = function() {
     };
     newofferc.prototype.cancel = function() {
@@ -56,7 +57,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         // console.log(cfnData.C3_534187101971);
         if(cfnData.C3_534187099299!="Y"&&cfnData.C3_534187101971>6){
             $("#opt1").empty();
-            var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>'
             $("#opt1").append(list);
         }else{
             var cfn=mini.getbyName('C3_535826470338');
@@ -66,7 +66,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         }
         if(cfnData.C3_536319464780&&cfnData.C3_534187101971>6){
             $("#opt1").empty();
-            var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>'
             $("#opt1").append(list);
             $('#val1').val(cfnData.C3_536319464780);
         }
@@ -92,29 +91,33 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         //     }
         // }else{
             cfnn=function(){
-                // if(cfnData.C3_534187101971<=6)cfnData.C3_535826470338=mini.getbyName('C3_535826470338').value;
-                cfnData.C3_536319472674=mini.getbyName('C3_536319472674').value;
-                cfnData.C3_536319473964=mini.getbyName('C3_536319473964').value;
-                cfnData.C3_536319475165=mini.getbyName('C3_536319475165').value;
-                cfnData.C3_536319476423=mini.getbyName('C3_536319476423').value;
-                cfnData.C3_536319478009=mini.getbyName('C3_536319478009').value;
-                setTimeout(function() {
-                    cfnop.show().then(function(opn){
-                        if(opn){
-                            cfnData.C3_534188517500=opn.C3_305737857578;
-                            cfnData.C3_534188520203=opn.C3_227192484125;
-                            cfnData.C3_534188545242=opn.C3_227192472953;
-                            var form = new mini.Form("form7");
-                            form.setData(cfnData);
-                            if(cfnData.C3_534187101971>6){
-                                $("#opt1").empty();
-                                var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>'
-                                $("#opt1").append(list);
-                                $('#val1').val(cfnData.C3_536319464780);
+                if(cfnData.C3_534187099299!="Y"){
+                    // if(cfnData.C3_534187101971<=6)cfnData.C3_535826470338=mini.getbyName('C3_535826470338').value;
+                    cfnData.C3_536319472674=mini.getbyName('C3_536319472674').value;
+                    cfnData.C3_536319473964=mini.getbyName('C3_536319473964').value;
+                    cfnData.C3_536319475165=mini.getbyName('C3_536319475165').value;
+                    cfnData.C3_536319476423=mini.getbyName('C3_536319476423').value;
+                    cfnData.C3_536319478009=mini.getbyName('C3_536319478009').value;
+                    setTimeout(function() {
+                        cfnop.show().then(function(opn){
+                            if(opn){
+                                cfnData.C3_534188517500=opn.C3_305737857578;
+                                cfnData.C3_534188520203=opn.C3_227192484125;
+                                cfnData.C3_534188545242=opn.C3_227192472953;
+                                var form = new mini.Form("form7");
+                                form.setData(cfnData);
+                                if(cfnData.C3_534187101971>6){
+                                    $("#opt1").empty();
+                                    $("#opt1").append(list);
+                                    $('#val1').val(cfnData.C3_536319464780);
+                                }
                             }
-                        }
-                    });
-                }, 200);
+                        });
+                    }, 200);
+                }else{
+                    var c1=mini.getbyName('C3_534188520203');
+                    c1.setReadOnly(true);
+                }
             }
             cfnm=function(){
                 setTimeout(function() {
@@ -165,7 +168,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     newofferc.show = function(e){
         cfnData=e;
-        // console.log(cfnData.C3_536319464780);
+        // console.log(cfnData);
         return dialog.show(new newofferc());
     };
    
