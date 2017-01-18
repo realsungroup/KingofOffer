@@ -12,7 +12,7 @@
         "httppath":"www.realsun.me:8003//rispweb/upfiles",
         "saveMethod":"SaveData_Ajax",
         "getBysqlMethod":"Ajax_QueryBySql",
-        "debug":false,
+        "debug":true,
         "dbs":null,
         "user":"demo1",
         "ucode":"GHgfPHoXCQm3k3m3DY4DqQ==",

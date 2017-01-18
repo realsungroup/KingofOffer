@@ -7,6 +7,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var dbs=new dbHelper(baseUrl,user,ucode);
     var cfnid=appConfig.offer.cfnid;
     var cfnData;
+    var eadid=appConfig.offer.eadid;
     var mName="";
     var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px; margin-left:8px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>';
     var newofferc = function() {
@@ -14,6 +15,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     newofferc.prototype.cancel = function() {
         dialog.close(this);
     };
+    newofferc.prototype.subList=ko.observableArray([]),
     newofferc.prototype.submit = function() {
         if(confirm('Are you sure you want to submit it?')){
             $('.fbb').attr({"disabled":"disabled"});
@@ -51,6 +53,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     newofferc.prototype.attached=function(){
         mini.parse();
+        var me=this;
+        cmswhere="REC_ID='"+cfnData.REC_ID+"'";
+        dbs.dbGetdata(cfnid,eadid,cmswhere,fnSuccess,fnerror,fnhttperror);
+        function fnSuccess(data,subdata){
+            me.subList(subdata);
+        };
+        function fnerror(text){
+            dialog.showMessage(text.message,'失败',['返回'],true);
+        };
+        function fnhttperror(jqXHR, textStatus, errorThrown){
+            alert(jqXHR);
+        };
         var form = new mini.Form("form7");
         cfnData.C3_534187094490s=cfnData.C3_534187094490;
         cfnData.C3_534187093586s=cfnData.C3_534187093586;

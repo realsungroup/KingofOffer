@@ -12,7 +12,7 @@
                     目标部门经理
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534188520203" onclick="cfnn()"/>
+                    <input class="mini-textbox" name="C3_534188520203" required="true" onclick="cfnn()"/>
                 </td>
                 <td class="title">
                     目标经理编号
@@ -205,6 +205,46 @@
                 <td colspan="2" class="foot">
                     <input type="button" value="Cancel" class="btn btn-warning rf" data-bind="click : cancel">
                     <input type="button" value="Submit" class="btn btn-success rf fbb" data-bind="click : submit">
+                </td>
+            </tr><tr>
+                <td colspan="6" class="head">
+                    <b>Approval process</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <table>
+                        <tbody>
+                            <td class="title3" width="25%">
+                                审批节点
+                            </td>
+                            <td class="title3" width="25%">
+                                审批人
+                            </td>
+                            <td class="title3" width="25%">
+                                审批结果
+                            </td>
+                            <td class="title3" width="25%">
+                                审批时间
+                            </td>
+                        </tbody>
+                        <tfoot data-bind="foreach: subList">
+                            <tr>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534187897342"></b>
+                                </td>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534187898575"></b>
+                                </td>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534187898785"></b>
+                                </td>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534187898986"></b>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </td>
             </tr>
         </tbody>
