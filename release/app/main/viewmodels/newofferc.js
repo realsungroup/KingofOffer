@@ -9,7 +9,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var cfnData;
     var eadid=appConfig.offer.eadid;
     var mName="";
-    var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 840px; height: 28px; margin-left:8px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>';
+    var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 800px; height: 28px; margin-left:8px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>';
     var newofferc = function() {
     };
     newofferc.prototype.cancel = function() {
