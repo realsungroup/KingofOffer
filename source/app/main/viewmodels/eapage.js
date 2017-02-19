@@ -22,7 +22,8 @@ define(['plugins/dialog', 'knockout','./preoffer'], function (dialog, ko, preoff
             mini.parse();
             offerList=function(){
                 dbs.dbGetdata(eeaid,0,"",fnSuccess,fnerror,fnhttperror);
-                function fnSuccess(data,subdata){
+                function fnSuccess(data){
+                    // console.log(data);
                     me.oList(data);
                 };
                 function fnerror(text){

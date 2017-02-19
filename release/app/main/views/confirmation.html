@@ -5,10 +5,16 @@
             <tr>
                 <td colspan="8" class="head1">
                     <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offercView.bind(),visible:($data.C3_534187099299=='Y')">
-                    <input type="button" value="Foshan Offer Confirmation" class="btn btn-success rf fbb" data-bind="click : newOc.bind(),visible:($data.C3_534187099299==null||$data.C3_534187099299=='N')">
+                    <input type="button" value="Offer Confirmation" class="btn btn-success rf fbb" data-bind="click : newOc.bind(),visible:($data.C3_534187099299==null||$data.C3_534187099299=='N')">
                 </td>
             </tr>
             <tr>
+                <td class="title">
+                    Candidate
+                </td>
+                <td>
+                    <b data-bind="text: C3_534187094490"></b>
+                </td>
                 <td class="title" width="12%">
                     Job Title
                 </td>
@@ -27,14 +33,14 @@
                 <td width="13%">
                     <b data-bind="text: C3_534187094088"></b>
                 </td>
+            </tr>
+            <tr>
                 <td class="title" width="12%">
                     Hiring Manager
                 </td>
                 <td width="13%">
                     <b data-bind="text: C3_534264724518"></b>
                 </td>
-            </tr>
-            <tr>
                 <td class="title">
                     Target Manager
                 </td>
@@ -44,7 +50,7 @@
                 <td class="title">
                     Department
                 </td>
-                <td colspan="5">
+                <td colspan="3">
                     <b data-bind="text: C3_534187094286"></b>
                 </td>
             </tr>

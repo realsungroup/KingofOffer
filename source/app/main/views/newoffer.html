@@ -12,7 +12,7 @@
                     Job Title
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534181598826" onfocus="cpnn()"/>
+                    <input class="mini-textbox" name="C3_534181598826" required="true" onclick="cpnn()"/>
                 </td>
                 <td class="title">
                     Level
@@ -48,7 +48,7 @@
                     Candidate
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534181747202"/>
+                    <input class="mini-textbox" name="C3_534181747202" required="true"/>
                 </td>
                 <td class="title">
                     of Birth
@@ -233,8 +233,8 @@
                     Upload WORD
                 </td>
                 <td colspan="2" rowspan="2" class="tc">
-                    <a id="ahref" href="#"><img id='imgUploaded'/></a>
-                    <a id="ahref2" href="#"><img id='imgUploaded2'/></a>
+                    <a id="ahref" target="_blank" href="#"><img id='imgUploaded'/></a>
+                    <a id="ahref2" target="_blank" href="#"><img id='imgUploaded2'/></a>
                 </td>
             </tr>
             <tr>
@@ -276,7 +276,7 @@
             <tr>
                 <td colspan="6" class="foot">
                     <input type="button" value="Cancel" class="btn btn-warning rf" data-bind="click : cancel">
-                    <input type="button" value="Save" class="btn btn-success rf fbb" data-bind="click : ok">
+                    <input type="button" value="Submit" class="btn btn-success rf fbb" data-bind="click : ok">
                 </td>
             </tr>
         </tfoot>

@@ -12,7 +12,7 @@
                     Job Title
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534181598826" onfocus="ecpnn()"/>
+                    <input class="mini-textbox" name="C3_534181598826" required="true" onclick="ecpnn()"/>
                 </td>
                 <td class="title">
                     Level
@@ -48,7 +48,7 @@
                     Candidate
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534181747202"/>
+                    <input class="mini-textbox" name="C3_534181747202" required="true"/>
                 </td>
                 <td class="title">
                     of Birth
@@ -238,8 +238,8 @@
                     Upload WORD
                 </td>
                 <td colspan="2" rowspan="2" class="tc">
-                    <a id="ahref" href="#"><img src="../../img/pdf.jpg" width="60"/></a>
-                    <a id="ahref2" href="#"><img src="../../img/word.jpg" width="60"/></a>
+                    <a id="ahref" target="_blank" href="#"><img id='imgUploaded' src="../../img/pdf.jpg" width="60"/></a>
+                    <a id="ahref2" target="_blank" href="#"><img id='imgUploaded2' src="../../img/word.jpg" width="60"/></a>
                 </td>
             </tr>
             <tr>
@@ -264,9 +264,9 @@
                     cursor="pointer"
                     id='fileupload2'
                     buttonText="WORD"
-                    onuploaderror='onUploadError'
-                    onfileselect='onFileSelect'
-                    onuploadsuccess='onUploadSuccess'
+                    onuploaderror='onUploadError2'
+                    onfileselect='onFileSelect2'
+                    onuploadsuccess='onUploadSuccess2'
                     uploadUrl='http://www.realsun.me:8003/rispweb/rispservice/SvcUploadFile2.aspx?savepath=e:\\web\\rispweb\\upfiles&httppath=http://www.realsun.me:8003/rispweb/upfiles'
                     flashUrl='swfupload/swfupload.swf'
                     class='mini-fileupload'

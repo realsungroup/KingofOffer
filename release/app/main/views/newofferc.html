@@ -1,4 +1,4 @@
-<form id="form7" class="op">
+<form id="form7" class="op ht864">
     <table width="100%"> 
         <!--border='1'cellspacing="0" cellpadding="0"-->
         <tbody>
@@ -12,7 +12,7 @@
                     目标部门经理
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534188520203" onfocus="cfnn()" required="true"/>
+                    <input class="mini-textbox" name="C3_534188520203" required="true" onclick="cfnn()"/>
                 </td>
                 <td class="title">
                     目标经理编号
@@ -38,33 +38,33 @@
                 </td>
             </tr>
             <tr>
-                <td class="title" colspan="6">
-                    1.This is <input class="mini-textbox" name="C3_535826470338" width="250px" required="true"/>it has been approved by Jerry and Kurt on headcount<input class="mini-DatePicker" showClearButton="false" name="C3_535826527531" required="true"/>
+                <td class="title" colspan="6" id="opt1">
+                    1.This is <input class="mini-textbox" name="C3_535826470338" width="250px"/>it has been approved by Jerry and Kurt on headcount<input class="mini-DatePicker" showClearButton="false" name="C3_535826527531" required="true"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="6" class="head2">
-                    2.<input class="mini-textarea" name="C3_536319472674" width="840px" height="28px"/>
+                    2.<input class="mini-textarea" name="C3_536319472674" width="800px" height="28px"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="6" class="title">
-                    3.<input class="mini-textarea" name="C3_536319473964" width="840px" height="28px"/>
+                    3.<input class="mini-textarea" name="C3_536319473964" width="800px" height="28px"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="6" class="head2">
-                    4.<input class="mini-textarea" name="C3_536319475165" width="840px" height="28px"/>
+                    4.<input class="mini-textarea" name="C3_536319475165" width="800px" height="28px"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="6" class="title">
-                    5.<input class="mini-textarea" name="C3_536319476423" width="840px" height="28px"/>
+                    5.<input class="mini-textarea" name="C3_536319476423" width="800px" height="28px"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="6" class="head2">
-                    6.<input class="mini-textarea" name="C3_536319478009" width="840px" height="28px"/>
+                    6.<input class="mini-textarea" name="C3_536319478009" width="800px" height="28px"/>
                 </td>
             </tr>
             <tr>
@@ -77,19 +77,19 @@
                     Name
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534187094490"/>
+                    <input class="mini-textbox" name="C3_534187094490" readonly/>
                 </td>
                 <td class="title">
                     Title
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534187093586" onfocus="cfnm()"/>
+                    <input class="mini-textbox" name="C3_534187093586" onclick="cfnm()"/>
                 </td>
                 <td class="title">
                     Report to
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534264724518" onfocus="cfnm()"/>
+                    <input class="mini-textbox" name="C3_534264724518" onclick="cfnm()"/>
                 </td>
             </tr>
             <tr>
@@ -197,14 +197,54 @@
             </tr>
             <tr>
                 <td colspan="2" class="tc">
-                    <a id="ahref" href="#"><img src="../../img/pdf.jpg" width="60"/></a>
-                    <a id="ahref2" href="#"><img src="../../img/word.jpg" width="60"/></a>
+                    <a id="ahref" target="_blank" href="#"><img src="../../img/pdf.jpg" width="60"/></a>
+                    <a id="ahref2" target="_blank" href="#"><img src="../../img/word.jpg" width="60"/></a>
                 </td>
                 <td colspan="2">
                 </td>
                 <td colspan="2" class="foot">
                     <input type="button" value="Cancel" class="btn btn-warning rf" data-bind="click : cancel">
                     <input type="button" value="Submit" class="btn btn-success rf fbb" data-bind="click : submit">
+                </td>
+            </tr><tr>
+                <td colspan="6" class="head">
+                    <b>Approval process</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <table>
+                        <tbody>
+                            <td class="title3" width="25%">
+                                审批节点
+                            </td>
+                            <td class="title3" width="25%">
+                                审批人
+                            </td>
+                            <td class="title3" width="25%">
+                                审批结果
+                            </td>
+                            <td class="title3" width="25%">
+                                审批时间
+                            </td>
+                        </tbody>
+                        <tfoot data-bind="foreach: subList">
+                            <tr>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534187897342"></b>
+                                </td>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534187898575"></b>
+                                </td>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534187898785"></b>
+                                </td>
+                                <td class="tc">
+                                    <b data-bind="text: C3_534187898986"></b>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </td>
             </tr>
         </tbody>
