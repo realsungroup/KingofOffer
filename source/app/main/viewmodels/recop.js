@@ -7,6 +7,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     var dbs=new dbHelper(baseUrl,user,ucode);
     var recid=appConfig.offer.recid;
     var sData=[];
+    var oldData=[];
     var newData=[];
     var recop = function() {
     };
@@ -16,13 +17,17 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         var me=this;
         dbs.dbGetdata(recid,0,"",fnSuccess,null,null);//获取并设置页面数据
         function fnSuccess(data){
-            sData=data;
+            oldData=sData=data;
             me.recopList(data);
-            // console.log(data);
+            console.log(data);
+        };
+        rePage =  function() {
+            me.recopList(oldData);
+            sData=oldData;
         };
         opnm = function(opn){
             dialog.close(me,opn);
-        }
+        };
         search =  function() {
             newData=[];
             var skey = mini.getbyName('searchBox').value;
@@ -43,8 +48,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                 || sData[i].C3_522691670096.indexOf(skey)>=0
                 || sData[i].C3_522691670814.indexOf(skey)>=0)
                 newData[a++] = sData[i];
-            }
+            };
             me.recopList(newData);
+            sData=newData;
         };
         $('#searchBox').keydown(function(event) {
             if(event.keyCode == "13"){//keyCode=13是回车键

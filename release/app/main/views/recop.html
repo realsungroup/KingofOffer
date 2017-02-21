@@ -1,11 +1,13 @@
 <form class="cbnn">
     <!--<b class="closecp rf" data-bind="click : cancel">×</b>-->
-    <b class="closecp rf" data-bind="click : cancel">×</b>
     <table class="tc" align="center">
         <thead>
             <tr>
                 <th colspan="7" class="tr">
-                    <input type="button" value="search" class="rf" onclick="search()" id="searchBtn"><input class="rf mini-textbox" id="searchBox" name="searchBox">
+                    <input type="button" value="cancel" class="rf" data-bind="click : cancel">
+                    <input type="button" value="recovery" class="rf" onclick="rePage()">
+                    <input type="button" value="search" class="rf" onclick="search()" id="searchBtn">
+                    <input class="rf mini-textbox" id="searchBox" name="searchBox">
                 </th>
             </tr>
             <tr>

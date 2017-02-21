@@ -4,7 +4,7 @@
         <tbody>
             <tr>
                 <td colspan="6" class="head">
-                    <b>Background Info</b>
+                    <b>Background Info.</b>
                 </td>
             </tr>
             <tr>
@@ -12,7 +12,7 @@
                     Job Title
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534181598826" required="true" onclick="ecpnn()"/>
+                    <input class="mini-textbox" name="C3_534181598826" required="true" onclick="cpnn()"/>
                 </td>
                 <td class="title">
                     Level
@@ -50,37 +50,34 @@
                 <td>
                     <input class="mini-textbox" name="C3_534181747202" required="true"/>
                 </td>
+                <td class="tc" colspan="2">
+                    <input class="mini-textbox" name="C3_541011395561" required="true"/>
+                </td>
                 <td class="title">
-                    of Birth
+                    Date of Birth
                 </td>
                 <td>
                     <input class="mini-datepicker" value="2000-01-01" name="C3_534181767190"/>
                 </td>
+            </tr>
+            <tr>
                 <td class="title">
                     Degree
                 </td>
                 <td>
                     <input class="mini-textbox" name="C3_534181900158"/>
                 </td>
-            </tr>
-            <tr>
                 <td class="title">
-                    Yrs of Work Exp
+                    Yrs of Work Exp.
                 </td>
                 <td>
                     <input class="mini-spinner" value="0" minValue="0" maxValue="50" name="C3_534181788780"/>
                 </td>
                 <td class="title">
-                    Yrs of Related Work
+                    Yrs of Related Working Exp.
                 </td>
                 <td>
                     <input class="mini-spinner" value="0" minValue="0" maxValue="50" name="C3_534181801459"/>
-                </td>
-                <td class="title">
-                    Exp
-                </td>
-                <td>
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="50" name="C3_534181882521"/>
                 </td>
             </tr>
             <tr>
@@ -89,38 +86,29 @@
                 </td>
             </tr>
             <tr>
-                <td></td>
-                <td>
-                </td>
-                <td class="tc title1" colspan="2">
-                    Monthly
-                </td>
-                <td class="tc title1" colspan="2">
-                    Annual
-                </td>
-            </tr>
-            <tr>
-                <td>
-                </td>
-                <td class="title">
+                <td class="title" colspan="2">
                     Base Salary
                 </td>
-                <td class="tc" colspan="2">
+                <td class="tc">
+                    A monthly salary:
+                </td>
+                <td class="tc">
                     <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181957670" onvaluechanged='vchange'/>
                 </td>
-                <td class="tc" colspan="2">
+                <td class="tc">
+                    Annual salary:
+                </td>
+                <td class="tc">
                     <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534339050633" readonly/>
                 </td>
             </tr>
             <tr>
-                <td>
-                </td>
-                <td class="title">
+                <td class="title" colspan="2">
                     Year-end Bonus
                 </td>
-                <td colspan="2">
+                <td colspan="3">
                 </td>
-                <td class="tc" colspan="2">
+                <td class="tc">
                     <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181974758" onvaluechanged='vchange'/>
                 </td>
             </tr>
@@ -128,10 +116,10 @@
                 <td class="title" colspan="2">
                     Stocks
                 </td>
-                <td colspan="2" class="tc">
-                    <input class="mini-textbox" name="C3_535110109847"/>
+                <td colspan="3" class="tc">
+                    <input class="mini-textbox" style="width:96%" name="C3_535110109847"/>
                 </td>
-                <td class="tc" colspan="2">
+                <td class="tc">
                     <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181984193" onvaluechanged='vchange'/>
                 </td>
             </tr>
@@ -139,10 +127,10 @@
                 <td class="title" colspan="2">
                     Allowance
                 </td>
-                <td colspan="2" class="tc">
-                    <input class="mini-textbox" name="C3_535110132760"/>
+                <td colspan="3" class="tc">
+                    <input class="mini-textbox" style="width:96%" name="C3_535110132760"/>
                 </td>
-                <td class="tc" colspan="2">
+                <td class="tc">
                     <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181995445" onvaluechanged='vchange'/>
                 </td>
             </tr>
@@ -150,34 +138,126 @@
                 <td class="title" colspan="2">
                     Other
                 </td>
-                <td colspan="2" class="tc">
-                    <input class="mini-textbox" name="C3_535110147865"/>
+                <td colspan="3" class="tc">
+                    <input class="mini-textbox" style="width:96%" name="C3_535110147865"/>
                 </td>
-                <td class="tc" colspan="2">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534182003641" onvaluechanged='vchange'/>
+                <td class="tc">
                 </td>
             </tr>
             <tr>
-                <td>
-                </td>
-                <td class="title">
+                <td class="title" colspan="2">
                     Total Cash
                 </td>
-                <td colspan="2">
+                <td colspan="3">
                 </td>
-                <td class="tc" colspan="2">
+                <td class="tc">
                     <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534182046604" readonly/>
                 </td>
             </tr>
             <tr>
-                <td class="title tc" colspan="2">
+                <td class="title" colspan="2">
                     Candidate's Expectation
                 </td>
-                <td class="tc" colspan="2">
+                <td>
+                </td>
+                <td class="tc">
                     <input class="mini-spinner" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534182182372"/>
                 </td>
-                <td colspan="2">
+                <td>
                 </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="head">
+                    <b>Salary Structure</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="title3" width="20%">
+                                    Level
+                                </th>
+                                <th class="title3" width="20%">
+                                    Location
+                                </th>
+                                <th class="title3" width="20%">
+                                    Min.
+                                </th>
+                                <th class="title3" width="20%">
+                                    Median
+                                </th>
+                                <th class="title3" width="20%">
+                                    Max.
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: subList2">
+                            <tr>
+                                <td class="tc"><b data-bind="text: C3_534182272208"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182291688"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182320476"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182331126"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182340241"></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="head">
+                    <b>Departmental payroll data</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="title3" width="30%" colspan="2">
+                                    Department
+                                </th>
+                                <th class="title3" width="5%">
+                                    Level
+                                </th>
+                                <th class="title3" width="5%">
+                                    No. of Employees
+                                </th>
+                                <th class="title3" width="12%">
+                                    Median of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Average of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Min. of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Max. of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Average of OT
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: subList4">
+                            <tr>
+                                <td class="tc oh" colspan="2"><b data-bind="text: C3_534182432109"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182440112"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182447890"></b></td>
+                                <td class="tc"><b data-bind="text: C3_535718965183"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182477477"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182525026"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182514734"></b></td>   
+                                <td class="tc"><b data-bind="text: C3_534182501565"></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
             <tr>
                 <td colspan="6" class="head">
                     <b>Salary Proposal</b>
@@ -188,10 +268,10 @@
                 <td>
                 </td>
                 <td class="title1 tc" colspan="2">
-                    Min
+                    Min.
                 </td>
                 <td class="title1 tc" colspan="2">
-                    Max
+                    Max.
                 </td>
             </tr>
             <tr>
@@ -202,6 +282,7 @@
                     <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183009192" increment="100"/>
                 </td>
                 <td colspan="2"  class="tc">
+                    <b style="font-size: 30px;float:left;line-height: 30px;">～</b>
                     <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183037917" increment="100"/>
                 </td>
             </tr>
@@ -209,20 +290,16 @@
                 <td class="title" colspan="2">
                     RSUs
                 </td>
-                <td colspan="2" class="tc">
-                    <input class="mini-textbox" name="C3_534183031497"/>
-                </td>
-                <td colspan="2" class="tc">
+                <td colspan="4" class="tc">
+                    <input class="mini-textbox" style="width:98%" name="C3_534183031497"/>
                 </td>
             </tr>
             <tr>
                 <td class="title" colspan="2">
                     Other
                 </td>
-                <td colspan="2">
-                </td>
-                <td colspan="2" class="tc">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183067213" increment="100"/>
+                <td colspan="4" class="tc">
+                    <input class="mini-textbox" style="width:98%" name="C3_534183067213"/>
                 </td>
             </tr>
             <tr>
@@ -238,8 +315,8 @@
                     Upload WORD
                 </td>
                 <td colspan="2" rowspan="2" class="tc">
-                    <a id="ahref" target="_blank" href="#"><img id='imgUploaded' src="../../img/pdf.jpg" width="60"/></a>
-                    <a id="ahref2" target="_blank" href="#"><img id='imgUploaded2' src="../../img/word.jpg" width="60"/></a>
+                    <a id="ahref" target="_blank" href="#"><img id='imgUploaded'/></a>
+                    <a id="ahref2" target="_blank" href="#"><img id='imgUploaded2'/></a>
                 </td>
             </tr>
             <tr>
@@ -275,7 +352,6 @@
                     limitType='*.doc;*.docx'/>
                     <input id="imgurl2" name='C3_534182839409' class="mini-hidden"/>
                 </td>
-            </tr>
             </tr>
         </tbody>
         <tfoot>

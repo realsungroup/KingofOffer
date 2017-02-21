@@ -59,6 +59,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                 newData[a++] = sData[i];
             }
             me.cfnopList(newData);
+            sData=newData;
         };
         $('#searchBoxcfn').keydown(function(event) {
             if(event.keyCode == "13"){//keyCode=13是回车键

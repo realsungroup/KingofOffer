@@ -6,9 +6,13 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     var user  = appConfig.app.user;
     var dbs=new dbHelper(baseUrl,user,ucode);
     var opaid=appConfig.offer.opaid;
+    var strid=appConfig.offer.strid;
+    var aveid=appConfig.offer.aveid;
     var cnn={};
     var newoffer = function() {
     };
+    newoffer.prototype.subList2=ko.observableArray([]),
+    newoffer.prototype.subList4=ko.observableArray([]),
     newoffer.prototype.cancel = function() {
         dialog.close(this);
     };
@@ -39,11 +43,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         
     };
     newoffer.prototype.activate=function(){
-        
+
     };
     newoffer.prototype.attached=function(){
         mini.parse();
         cnn={};
+        var me=this;
         cpnn=function(){
             setTimeout(function() {
                 recop.show().then(function(opn){
@@ -58,24 +63,39 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                         cnn.C3_534184180596=opn.C3_522692208296;
                         var form = new mini.Form("form2");
                         form.setData(cnn);
+                        offerSub1=function(recid,cmswhere,callback){
+                            console.log(recid);
+                            console.log(cmswhere);
+                            dbs.dbGetdata(recid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
+                            function fnSuccess(data){
+                                callback(data);
+                                console.log(data);
+                            };
+                            function fnerror(text){
+                                dialog.showMessage(text.message,'失败',['返回'],true);
+                            };
+                            function fnhttperror(jqXHR, textStatus, errorThrown){
+                                // console.log(jqXHR);
+                            };
+                        }
+                        offerSub1(strid,"C3_534182272208='"+cnn.C3_534181645731+"'",function(data){me.subList2(data);});
+                        offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"'",function(data){me.subList4(data);});
                     }
                 });
             }, 200);
         }
     };
-   
     newoffer.prototype.compositionComplete=function(){
         vchange=function(){
             var salary = mini.getbyName('C3_534181957670').value;
             var yeb = mini.getbyName('C3_534181974758').value;
             var stocks = mini.getbyName('C3_534181984193').value;
             var allowance = mini.getbyName('C3_534181995445').value;
-            var other = mini.getbyName('C3_534182003641').value;
             var annualtotal = mini.getbyName('C3_534339050633');
             var annual = salary*12;
             annualtotal.setValue(annual);
             var totalcash = mini.getbyName('C3_534182046604');
-            var total = annual+yeb+stocks+allowance+other;
+            var total = annual+yeb+stocks+allowance;
             totalcash.setValue(total);
         }
 
