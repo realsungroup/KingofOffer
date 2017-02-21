@@ -8,7 +8,6 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
     var strid=appConfig.offer.strid;
     var marid=appConfig.offer.marid;
     var aveid=appConfig.offer.aveid;
-    var me=this;
     var preview={};
     var cmswhere="";
     var preoffer = function() {
@@ -44,37 +43,21 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
     }
 
     preoffer.prototype.activate=function(){
-        cmswhere="REC_ID='"+preview.REC_ID+"'";
-       
-        offerSub=function(subid,callback){
-            dbs.dbGetdata(opaid,subid,cmswhere,fnSuccess,fnerror,fnhttperror);
-            function fnSuccess(data,subdata){
-                callback(subdata);
-                // console.log(subdata);
+        var me=this;
+        offerSub1=function(recid,cmswhere,callback){
+            dbs.dbGetdata(recid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
+            function fnSuccess(data){
+                callback(data);
             };
             function fnerror(text){
                 dialog.showMessage(text.message,'失败',['返回'],true);
             };
             function fnhttperror(jqXHR, textStatus, errorThrown){
-                alert(jqXHR);
+                // console.log(jqXHR);
             };
         }
-        offerSub(eaaid,function(subdata){preoffer.prototype.subList1(subdata);});
-        offerSub(strid,function(subdata){preoffer.prototype.subList2(subdata);});
-        offerSub(marid,function(subdata){preoffer.prototype.subList3(subdata);});
-        offerSub(aveid,function(subdata){preoffer.prototype.subList4(subdata);});
-        var i=101;
-        headClick=function(offersub){
-            $('.oacitve').removeClass('oacitve');
-            if(offersub=='ss'){
-                $('.sshead').addClass('oacitve');
-                $('.ss').css('z-index',i);
-            }else if(offersub=='md'){
-                $('.mdhead').addClass('oacitve');
-                $('.md').css('z-index',i);
-            }
-            i++;
-        };
+        offerSub1(strid,"C3_534182272208='"+preview.C3_534181645731+"'",function(data){me.subList2(data);});
+        offerSub1(aveid,"C3_534182432109='"+preview.C3_534181730034+"'",function(data){me.subList4(data);});
     }
     preoffer.prototype.cancel = function() {
         subdata=[];

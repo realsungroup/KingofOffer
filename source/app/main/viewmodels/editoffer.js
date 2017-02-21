@@ -14,6 +14,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     editoffer.prototype.subList2=ko.observableArray([]),
     editoffer.prototype.subList4=ko.observableArray([]),
     editoffer.prototype.cancel = function() {
+        subdata=[];
+        editoffer.prototype.subList2(subdata);
+        editoffer.prototype.subList4(subdata);
         dialog.close(this);
     };
     editoffer.prototype.ok = function() {
@@ -47,23 +50,20 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         var me=this;
         var form = new mini.Form("form3");
         form.setData(editdata);
-                                offerSub1=function(recid,cmswhere,callback){
-                            console.log(recid);
-                            console.log(cmswhere);
-                            dbs.dbGetdata(recid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
-                            function fnSuccess(data){
-                                callback(data);
-                                console.log(data);
-                            };
-                            function fnerror(text){
-                                dialog.showMessage(text.message,'失败',['返回'],true);
-                            };
-                            function fnhttperror(jqXHR, textStatus, errorThrown){
-                                // console.log(jqXHR);
-                            };
-                        }
-                        offerSub1(strid,"C3_534182272208='"+editdata.C3_534181645731+"'",function(data){me.subList2(data);});
-                        offerSub1(aveid,"C3_534182432109='"+editdata.C3_534181730034+"'",function(data){me.subList4(data);});
+        offerSub1=function(recid,cmswhere,callback){
+            dbs.dbGetdata(recid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
+            function fnSuccess(data){
+                callback(data);
+            };
+            function fnerror(text){
+                dialog.showMessage(text.message,'失败',['返回'],true);
+            };
+            function fnhttperror(jqXHR, textStatus, errorThrown){
+                // console.log(jqXHR);
+            };
+        }
+        offerSub1(strid,"C3_534182272208='"+editdata.C3_534181645731+"'",function(data){me.subList2(data);});
+        offerSub1(aveid,"C3_534182432109='"+editdata.C3_534181730034+"'",function(data){me.subList4(data);});
         ecpnn=function(){
             setTimeout(function() {
                 recop.show().then(function(opn){
@@ -76,12 +76,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                         var form = new mini.Form("form3");
                         form.setData(editdata);
                         offerSub1=function(recid,cmswhere,callback){
-                            console.log(recid);
-                            console.log(cmswhere);
                             dbs.dbGetdata(recid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
                             function fnSuccess(data){
                                 callback(data);
-                                console.log(data);
                             };
                             function fnerror(text){
                                 dialog.showMessage(text.message,'失败',['返回'],true);

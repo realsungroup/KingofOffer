@@ -14,6 +14,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     newoffer.prototype.subList2=ko.observableArray([]),
     newoffer.prototype.subList4=ko.observableArray([]),
     newoffer.prototype.cancel = function() {
+        subdata=[];
+        newoffer.prototype.subList2(subdata);
+        newoffer.prototype.subList4(subdata);
         dialog.close(this);
     };
     newoffer.prototype.ok = function() {
@@ -64,12 +67,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                         var form = new mini.Form("form2");
                         form.setData(cnn);
                         offerSub1=function(recid,cmswhere,callback){
-                            console.log(recid);
-                            console.log(cmswhere);
                             dbs.dbGetdata(recid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
                             function fnSuccess(data){
                                 callback(data);
-                                console.log(data);
                             };
                             function fnerror(text){
                                 dialog.showMessage(text.message,'失败',['返回'],true);

@@ -116,8 +116,36 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                     $('#fbb').hide();
                     location.href = "#eapage";// history.back(-1);
                 });
-               
-                
+            };
+            function fnerror(text){
+                dialog.showMessage(text.message,'Error',['Cancel'],true);
+            };
+            function fnhttperror(jqXHR, textStatus, errorThrown){
+                dialog.showMessage('error','Save',['Cancel'],true);
+            }
+        },
+        no:function(){
+            $('#fbb').attr({"disabled":"disabled"});
+            setTimeout(function() {
+                $('#fbb').removeAttr("disabled");
+            }, 1000);
+            var that=this;
+            var form = new mini.Form("form5");
+            var o =  new mini.Form("form5").getData();
+            form.validate(); 
+            if (form.isValid() == false) return;
+            o._id=1;
+            o._state="modified";
+            o.C3_534184428625="N";
+            o.REC_ID=recidAp;
+            var json = mini.encode([o]);
+            // console.log(json);
+            dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
+            function dataSaved(text){
+                dialog.showMessage('<h1>Success</h1>','Submit',['Cancel'],true).then(function(){
+                    $('#fbb').hide();
+                    location.href = "#eapage";// history.back(-1);
+                });
             };
             function fnerror(text){
                 dialog.showMessage(text.message,'Error',['Cancel'],true);

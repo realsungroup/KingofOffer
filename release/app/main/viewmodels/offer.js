@@ -29,7 +29,7 @@ define(['plugins/dialog', 'knockout','./newoffer','./preoffer','./editoffer'], f
                     dialog.showMessage(text.message,'新增失败',['返回'],true);
                 };
                 function fnhttperror(jqXHR, textStatus, errorThrown){
-                    console.log(jqXHR);
+                    // console.log(jqXHR);
                 };
             }
             offerList();

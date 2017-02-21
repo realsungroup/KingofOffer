@@ -34,13 +34,13 @@ define(['plugins/dialog', 'knockout','./preoffer'], function (dialog, ko, preoff
                 };
             }
             offerList();
-            offerView=function(e){
-                $('.fbb').attr({"disabled":"disabled"});
-                setTimeout(function() {
-                    $('.fbb').removeAttr("disabled");
-                }, 1000);
-                preoffer.show(e);
-            };
+            // offerView=function(e){
+            //     $('.fbb').attr({"disabled":"disabled"});
+            //     setTimeout(function() {
+            //         $('.fbb').removeAttr("disabled");
+            //     }, 1000);
+            //     preoffer.show(e);
+            // };
             eaSubmit = function(e){//提交按钮
                 location.href = "#auditpage/"+e.REC_ID;
             };

@@ -172,71 +172,42 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="head2 sshead oacitve" onclick="headClick('ss')">
+                <td colspan="6" class="head">
                     <b>Salary structure</b>
-                </td>
-                <td colspan="3" class="head2 mdhead tc" onclick="headClick('md')">
-                    <b>Market data</b>
                 </td>
             </tr>
             <tr>
-                <td colspan="6" class="datafoot">
-                    <div class="md">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="title3" width="33.3%">
-                                        职位
-                                    </th>
-                                    <th class="title3" width="33.3%">
-                                        级别
-                                    </th>
-                                    <th class="title3" width="33.3%">
-                                        薪资范围
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody data-bind="foreach: subList3">
-                                <tr>
-                                    <td class="tc"><b data-bind="text: C3_534182661935"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182668844"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182682809"></b></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="ss">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="title3" width="20%">
-                                        Level
-                                    </th>
-                                    <th class="title3" width="20%">
-                                        Location
-                                    </th>
-                                    <th class="title3" width="20%">
-                                        下限
-                                    </th>
-                                    <th class="title3" width="20%">
-                                        中点
-                                    </th>
-                                    <th class="title3" width="20%">
-                                        上限
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody data-bind="foreach: subList2">
-                                <tr>
-                                    <td class="tc"><b data-bind="text: C3_534182272208"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182291688"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182320476"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182331126"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182340241"></b></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <td colspan="6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="title3" width="20%">
+                                    Level
+                                </th>
+                                <th class="title3" width="20%">
+                                    Location
+                                </th>
+                                <th class="title3" width="20%">
+                                    Min.
+                                </th>
+                                <th class="title3" width="20%">
+                                    Median
+                                </th>
+                                <th class="title3" width="20%">
+                                    Max.
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: subList2">
+                            <tr>
+                                <td class="tc"><b data-bind="text: C3_534182272208"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182291688"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182320476"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182331126"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182340241"></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </td>
             </tr>
             <tr>
@@ -246,50 +217,48 @@
             </tr>
             <tr>
                 <td colspan="6">
-                    <div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="title3" width="30%" colspan="2">
-                                        Department
-                                    </th>
-                                    <th class="title3" width="5%">
-                                        级别
-                                    </th>
-                                    <th class="title3" width="5%">
-                                        人数
-                                    </th>
-                                    <th class="title3" width="12%">
-                                        Median中位数
-                                    </th>
-                                    <th class="title3" width="12%">
-                                        平均基本&绩效
-                                    </th>
-                                    <th class="title3" width="12%">
-                                        平均加班小时
-                                    </th>
-                                    <th class="title3" width="12%">
-                                        最小基本&绩效
-                                    </th>
-                                    <th class="title3" width="12%">
-                                        最大基本&绩效
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody data-bind="foreach: subList4">
-                                <tr>
-                                    <td class="tc oh" colspan="2"><b data-bind="text: C3_534182432109"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182440112"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182447890"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_535718965183"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182477477"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182501565"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182525026"></b></td>
-                                    <td class="tc"><b data-bind="text: C3_534182514734"></b></td>   
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="title3" width="30%" colspan="2">
+                                    Department
+                                </th>
+                                <th class="title3" width="5%">
+                                    Level
+                                </th>
+                                <th class="title3" width="5%">
+                                    No. of Employees
+                                </th>
+                                <th class="title3" width="12%">
+                                    Median of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Average of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Min. of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Max. of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Average of OT
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: subList4">
+                            <tr>
+                                <td class="tc oh" colspan="2"><b data-bind="text: C3_534182432109"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182440112"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182447890"></b></td>
+                                <td class="tc"><b data-bind="text: C3_535718965183"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182477477"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182525026"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182514734"></b></td>   
+                                <td class="tc"><b data-bind="text: C3_534182501565"></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </td>
             </tr>
             <tr>
@@ -302,10 +271,10 @@
                 <td>
                 </td>
                 <td class="title1 tc" colspan="2">
-                    Min
+                    Min.
                 </td>
                 <td class="title2 tc" colspan="2">
-                    Max
+                    Max.
                 </td>
             </tr>
             <tr>
@@ -323,20 +292,16 @@
                 <td class="title" colspan="2">
                     RSUs
                 </td>
-                <td colspan="2" class="tc">
-                    <input class="mini-textbox" name="C3_534183031497"/>
-                </td>
-                <td colspan="2" class="tc">
+                <td colspan="4" class="tc">
+                    <input class="mini-textbox" style="width:98%" name="C3_534183031497"/>
                 </td>
             </tr>
             <tr>
                 <td class="title" colspan="2">
                     Other
                 </td>
-                <td colspan="2">
-                </td>
-                <td colspan="2" class="tr">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183067213" increment="100"/>
+                <td colspan="4" class="tr">
+                    <input class="mini-textbox" style="width:98%" name="C3_534183067213"/>
                 </td>
             </tr>
             <tr>
@@ -349,10 +314,10 @@
                 <td>
                 </td>
                 <td class="title1 tc" colspan="2">
-                    Min
+                    Min.
                 </td>
                 <td class="title2 tc" colspan="2">
-                    Max
+                    Max.
                 </td>
             </tr>
             <tr>
@@ -370,20 +335,16 @@
                 <td class="title" colspan="2">
                     RSUs
                 </td>
-                <td colspan="2" class="tc">
-                    <input class="mini-textbox" name="C3_534183782616"/>
-                </td>
-                <td colspan="2" class="tc">
+                <td colspan="4" class="tc">
+                    <input class="mini-textbox" style="width:98%" name="C3_534183782616"/>
                 </td>
             </tr>
             <tr>
                 <td class="title" colspan="2">
                     Other
                 </td>
-                <td colspan="2">
-                </td>
-                <td colspan="2" class="tr">
-                    <input class="mini-spinner" value="0" minValue="0" maxValue="99999999" name="C3_534183782805" increment="100"/>
+                <td colspan="4" class="tc">
+                    <input class="mini-textbox" style="width:98%" name="C3_534183782805"/>
                 </td>
             </tr>
             <tr>
@@ -391,7 +352,7 @@
                     <b>Attachments</b>
                 </td>
                 <td colspan="4" class="head tc">
-                    <b>Approval Description</b>
+                    <b>Suggestion</b>
                 </td>
             </tr>
             <tr>
@@ -401,7 +362,8 @@
                 </td>
                 <td colspan="4" class="tc">
                     <input class="mini-textarea w500" name="C3_535110269532"/>
-                    <input type="button" id="fbb" value="Submit" class="btn btn-success" data-bind="click : ok">
+                    <input type="button" id="fbb" value="Approve" class="btn btn-success" data-bind="click : ok">
+                    <input type="button" value="Reject" class="btn btn-success" data-bind="click : no">
                     <input type="button" value="Return" class="btn btn-warning" data-bind="click : cancel">
                 </td>
             </tr>
