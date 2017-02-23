@@ -29,6 +29,10 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         var o =  new mini.Form("form3").getData();
         form.validate(); 
         if (form.isValid() == false) return;
+        if (o.C3_534181957670==0){
+            alert('Monthly salary of "0"?');
+            return;
+        }
         if (o.C3_534183009192>=o.C3_534183037917){
             alert('"Max". should be greater than "Min."');
             return;

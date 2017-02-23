@@ -117,9 +117,10 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                     setTimeout(function() {
                         cfnop.show().then(function(opn){
                             if(opn){
+                                console.log(opn)
                                 cfnData.C3_534188520203=opn.C3_419343735913;
-                                cfnData.C3_534188520203=opn.C3_419343735913;//工号
-                                cfnData.C3_534188520203=opn.C3_419343735913;//编号
+                                cfnData.C3_534188545242=opn.C3_227192472953;//工号
+                                cfnData.C3_534188517500=opn.C3_305737857578;//编号
                                 var form = new mini.Form("form7");
                                 form.setData(cfnData);
                             }
