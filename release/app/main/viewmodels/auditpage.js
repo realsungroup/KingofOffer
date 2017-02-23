@@ -112,7 +112,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             // console.log(json);
             dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
             function dataSaved(text){
-                dialog.showMessage('<h1>Success</h1>','Submit',['Cancel'],true).then(function(){
+                dialog.showMessage('<h1>Success</h1>','Submit',['Ok'],true).then(function(){
                     $('#fbb').hide();
                     location.href = "#eapage";// history.back(-1);
                 });
@@ -142,7 +142,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             // console.log(json);
             dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
             function dataSaved(text){
-                dialog.showMessage('<h1>Success</h1>','Submit',['Cancel'],true).then(function(){
+                dialog.showMessage('<h1>Success</h1>','Submit',['Ok'],true).then(function(){
                     $('#fbb').hide();
                     location.href = "#eapage";// history.back(-1);
                 });

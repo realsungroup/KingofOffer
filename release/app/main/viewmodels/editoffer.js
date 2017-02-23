@@ -29,13 +29,17 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         var o =  new mini.Form("form3").getData();
         form.validate(); 
         if (form.isValid() == false) return;
+        if (o.C3_534183009192>=o.C3_534183037917){
+            alert('"Max". should be greater than "Min."');
+            return;
+        }
         o._id=1;
         o._state="modified";
         o.REC_ID=editdata.REC_ID;
         var json = mini.encode([o]);
         dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
         function dataSaved(text){
-            dialog.showMessage('<h1>Success</h1>','Save',['Cancel'],true);
+            dialog.showMessage('<h1>Success</h1>','Save',['Ok'],true);
             dialog.close(that);
         };
         function fnerror(text){
@@ -108,20 +112,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     };
    
     editoffer.prototype.compositionComplete=function(){
-        vchange=function(){
+        evchange=function(){
             var salary = mini.getbyName('C3_534181957670').value;
             var yeb = mini.getbyName('C3_534181974758').value;
             var stocks = mini.getbyName('C3_534181984193').value;
             var allowance = mini.getbyName('C3_534181995445').value;
-            var other = mini.getbyName('C3_534182003641').value;
             var annualtotal = mini.getbyName('C3_534339050633');
             var annual = salary*12;
             annualtotal.setValue(annual);
             var totalcash = mini.getbyName('C3_534182046604');
-            var total = annual+yeb+stocks+allowance+other;
+            var total = annual+yeb+stocks+allowance;
             totalcash.setValue(total);
         }
-
     }
     editoffer.show = function(e){
         editdata=e;

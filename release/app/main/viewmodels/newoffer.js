@@ -29,12 +29,20 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         var o =  new mini.Form("form2").getData();
         form.validate(); 
         if (form.isValid() == false) return;
+        if (o.C3_534181957670==0){
+            alert('Monthly salary of "0"?');
+            return;
+        }
+        if (o.C3_534183009192>=o.C3_534183037917){
+            alert('"Max". should be greater than "Min."');
+            return;
+        }
         o._id=1;
         o._state="added";
         var json = mini.encode([o]);
         dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
         function dataSaved(text){
-            dialog.showMessage('<h1>Success</h1>','Save',['Cancel'],true);
+            dialog.showMessage('<h1>Success</h1>','Save',['Ok'],true);
             dialog.close(that);
         };
         function fnerror(text){
@@ -98,12 +106,10 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
             var total = annual+yeb+stocks+allowance;
             totalcash.setValue(total);
         }
-
     }
     newoffer.show = function(){
         return dialog.show(new newoffer());
     };
-   
     return newoffer;
 });
  

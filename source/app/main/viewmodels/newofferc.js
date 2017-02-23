@@ -118,6 +118,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                         cfnop.show().then(function(opn){
                             if(opn){
                                 cfnData.C3_534188520203=opn.C3_419343735913;
+                                cfnData.C3_534188520203=opn.C3_419343735913;//工号
+                                cfnData.C3_534188520203=opn.C3_419343735913;//编号
                                 var form = new mini.Form("form7");
                                 form.setData(cfnData);
                             }
