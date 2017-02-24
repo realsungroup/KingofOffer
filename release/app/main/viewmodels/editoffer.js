@@ -101,20 +101,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                 });
             }, 200);
         }
-        setTimeout(function() {
-            if(editdata.C3_534182834029){
-                var a1=$("#ahref");
-                a1[0].href=editdata.C3_534182834029;
-            }else{
-                $("#ahref").hide();
-            }
-            if(editdata.C3_534182839409){
-                var a2=$("#ahref2");
-                a2[0].href=editdata.C3_534182839409;
-            }else{
-                $("#ahref2").hide();
-            }
-        }, 500);
+        if(editdata.C3_534182834029){
+            var a1=$("#ahref");
+            a1[0].href=editdata.C3_534182834029;
+        }else{
+            $("#ahref").hide();
+        }
+        if(editdata.C3_534182839409){
+            var a2=$("#ahref2");
+            a2[0].href=editdata.C3_534182839409;
+        }else{
+            $("#ahref2").hide();
+        }
     };
    
     editoffer.prototype.compositionComplete=function(){
