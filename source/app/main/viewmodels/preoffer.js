@@ -56,6 +56,7 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
                 // console.log(jqXHR);
             };
         }
+        offerSub1(eaaid,"REC_ID='"+preview.REC_ID+"'",function(data){me.subList1(data);});
         offerSub1(strid,"C3_534182272208='"+preview.C3_534181645731+"'",function(data){me.subList2(data);});
         offerSub1(aveid,"C3_534182432109='"+preview.C3_534181730034+"'",function(data){me.subList4(data);});
     }

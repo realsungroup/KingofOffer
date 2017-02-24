@@ -41,14 +41,16 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                     if(!sData[i].C3_522691669613)sData[i].C3_522691669613="";
                     if(!sData[i].C3_522691669878)sData[i].C3_522691669878="";
                     if(!sData[i].C3_522691670096)sData[i].C3_522691670096="";
-                    if(!sData[i].C3_522691670814)sData[i].C3_522691670814="";
+                    if(!sData[i].C3_541159579095)sData[i].C3_541159579095="";
+                    if(!sData[i].C3_541159687587)sData[i].C3_541159687587="";
                     if(sData[i].C3_522691671297.toLowerCase().indexOf(skey)>=0
                     || sData[i].C3_522691669347.toLowerCase().indexOf(skey)>=0
                     || sData[i].C3_522691670315.toLowerCase().indexOf(skey)>=0
                     || sData[i].C3_522691669613.toLowerCase().indexOf(skey)>=0
                     || sData[i].C3_522691669878.toLowerCase().indexOf(skey)>=0
                     || sData[i].C3_522691670096.toLowerCase().indexOf(skey)>=0
-                    || sData[i].C3_522691670814.toLowerCase().indexOf(skey)>=0)
+                    || sData[i].C3_541159579095.toLowerCase().indexOf(skey)>=0
+                    || sData[i].C3_541159687587.toLowerCase().indexOf(skey)>=0)
                     newData[a++] = sData[i];
                 };
                 me.recopList(newData);

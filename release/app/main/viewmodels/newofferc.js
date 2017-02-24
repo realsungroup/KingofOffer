@@ -12,12 +12,13 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 800px; height: 28px; margin-left:8px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>';
     var newofferc = function() {
     };
+    newofferc.prototype.cfnList=ko.observableArray([]),
+    newofferc.prototype.subList=ko.observableArray([]),
     newofferc.prototype.cancel = function() {
         dialog.close(this);
     };
-    newofferc.prototype.subList=ko.observableArray([]),
-    newofferc.prototype.submit = function() {
-        if(confirm('Are you sure you want to submit it?')){
+    newofferc.prototype.ok = function() {
+        if(confirm('Are you sure you want to approve it?')){
             $('.fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
                 $('.fbb').removeAttr("disabled");
@@ -49,11 +50,37 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             dialog.close(that);
         }
     };
+    newofferc.prototype.no = function() {
+        if(confirm('Are you sure you want to reject it?')){
+            $('.fbb').attr({"disabled":"disabled"});
+            setTimeout(function() {
+                $('.fbb').removeAttr("disabled");
+            }, 1000);
+            var that=this;
+            var form = new mini.Form("form7");
+            var o =  new mini.Form("form7").getData();
+            form.validate(); 
+            if (form.isValid() == false) return;
+            o._id=1;
+            o._state="modified";
+            o.REC_ID=cfnData.REC_ID;
+            if(cfnData.C3_534187099299=="Y"){
+                o.C3_534187100944='Y';
+                o.C3_534188520203=mName;
+            }else{
+                o.C3_534187099299='N';
+            }
+            var json = mini.encode([o]);
+            dbs.dbSavedata(cfnid,0,json);
+            dialog.close(that);
+        }
+    };
     newofferc.prototype.activate=function(){
     };
     newofferc.prototype.attached=function(){
         mini.parse();
         var me=this;
+        me.cfnList(cfnData);
         cmswhere="REC_ID='"+cfnData.REC_ID+"'";
         dbs.dbGetdata(cfnid,eadid,cmswhere,fnSuccess,fnerror,fnhttperror);
         function fnSuccess(data,subdata){
@@ -117,9 +144,10 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                     setTimeout(function() {
                         cfnop.show().then(function(opn){
                             if(opn){
+                                console.log(opn)
                                 cfnData.C3_534188520203=opn.C3_419343735913;
-                                cfnData.C3_534188520203=opn.C3_419343735913;//工号
-                                cfnData.C3_534188520203=opn.C3_419343735913;//编号
+                                cfnData.C3_534188545242=opn.C3_227192472953;//工号
+                                cfnData.C3_534188517500=opn.C3_305737857578;//编号
                                 var form = new mini.Form("form7");
                                 form.setData(cfnData);
                             }
