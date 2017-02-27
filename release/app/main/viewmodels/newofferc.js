@@ -9,7 +9,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var cfnData;
     var eadid=appConfig.offer.eadid;
     var mName="";
-    var list='1.<span class="mini-textbox mini-textarea" style="border-width: 0px; width: 800px; height: 28px; margin-left:8px;"><textarea id="val1" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536319464780" style="height: 26px;border-style:none"></textarea></span>';
     var newofferc = function() {
     };
     newofferc.prototype.subList=ko.observableArray([]),
@@ -18,6 +17,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     newofferc.prototype.ok = function() {
         if(confirm('Are you sure you want to approve it?')){
+            sRange();
             $('.fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
                 $('.fbb').removeAttr("disabled");
@@ -43,6 +43,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     newofferc.prototype.no = function() {
         if(confirm('Are you sure you want to reject it?')){
+            var sv=mini.getbyName('C3_536089623045');
+            if(sv.value<cfnData.C3_534187097705){
+                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                sv.setValue(cfnData.C3_534187097705);
+                sv.focus();
+                return;
+            }else if(sv.value>cfnData.C3_534187097900){
+                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                sv.setValue(cfnData.C3_534187097900);
+                sv.focus();
+                return;
+            }
             $('.fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
                 $('.fbb').removeAttr("disabled");
@@ -66,14 +78,51 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             dialog.close(that);
         }
     };
+    newofferc.prototype.save = function() {
+        if(confirm('Are you sure you want to save it?')){
+            var sv=mini.getbyName('C3_536089623045');
+            if(sv.value<cfnData.C3_534187097705){
+                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                sv.setValue(cfnData.C3_534187097705);
+                sv.focus();
+                return;
+            }else if(sv.value>cfnData.C3_534187097900){
+                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                sv.setValue(cfnData.C3_534187097900);
+                sv.focus();
+                return;
+            }
+            $('.fbb').attr({"disabled":"disabled"});
+            setTimeout(function() {
+                $('.fbb').removeAttr("disabled");
+            }, 1000);
+            var that=this;
+            var form = new mini.Form("form7");
+            var o =  new mini.Form("form7").getData();
+            form.validate(); 
+            if (form.isValid() == false) return;
+            o._id=1;
+            o._state="modified";
+            o.REC_ID=cfnData.REC_ID;
+            var json = mini.encode([o]);
+            dbs.dbSavedata(cfnid,0,json);
+            dialog.close(that);
+        }
+    };
     newofferc.prototype.activate=function(){
     };
     newofferc.prototype.attached=function(){
+        if(cfnData.C3_534187099299!="Y"){
+            $('#fbb').val("Submit");
+            $('#fbc').hide();
+        }else{
+            $('#fbd').hide();
+        }
         if(!((cfnData.C3_534187093868=="M3"||cfnData.C3_534187093868=="M4")&&cfnData.C3_541165035428=="Y")){
             $('#lgid').hide();
         }else{
             var lg=mini.getbyName('C3_534187093868');
-            lg.addCls("asLabel"); 
+            lg.addCls("asLabel");
         }
         mini.parse();
         var me=this;
@@ -144,14 +193,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 });
             }, 200);
         }
-        sRange=function(e){
+        sRange=function(){
             var sv=mini.getbyName('C3_536089623045');
-            if(e.value<cfnData.C3_534187097705){
+            if(sv.value<cfnData.C3_534187097705){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097705);
-            }else if(e.value>cfnData.C3_534187097900){
+                sv.focus();
+                return;
+            }else if(sv.value>cfnData.C3_534187097900){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097900);
+                sv.focus();
+                return;
             }
         }
         var c1=mini.getbyName('C3_536319464780');
