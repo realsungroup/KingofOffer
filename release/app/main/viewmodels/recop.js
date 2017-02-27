@@ -14,6 +14,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     recop.prototype.recopList=ko.observableArray([]),
     recop.prototype.attached=function(){
         mini.parse();
+        mini.getbyName('searchBox').focus();
         var me=this;
         dbs.dbGetdata(recid,0,"",fnSuccess,null,null);//获取并设置页面数据
         function fnSuccess(data){
@@ -23,6 +24,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         rePage =  function() {
             me.recopList(oldData);
             sData=oldData;
+            mini.getbyName('searchBox').setValue("");
         };
         opnm = function(opn){
             dialog.close(me,opn);
@@ -56,6 +58,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                 me.recopList(newData);
                 sData=newData;
             }
+            mini.getbyName('searchBox').setValue("");
         };
         $('#searchBox').keydown(function(event) {
             if(event.keyCode == "13"){//keyCode=13是回车键

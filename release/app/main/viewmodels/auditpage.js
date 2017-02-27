@@ -15,43 +15,51 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         recid:ko.observableArray(""),
         subList1:ko.observableArray([]),
         subList2:ko.observableArray([]),
-        subList3:ko.observableArray([]),
         subList4:ko.observableArray([]),
         activate:function(recid,e){
             recidAp=recid;
             var me=this;
-            cmswhere="REC_ID='"+recid+"'";
-            offerSub=function(subid,callback){
-                dbs.dbGetdata(opaid,subid,cmswhere,fnSuccess,fnerror,fnhttperror);
-                function fnSuccess(data,subdata){
-                    var form = new mini.Form("form5");
-                    form.setData(data[0]);
-                    preview=data[0];
-                    callback(subdata);
-                    if(preview.C3_534182834029){
-                        var a1=$("#ahref");
-                        a1[0].href=preview.C3_534182834029;
-                    }else{
-                        $("#ahref").hide();
-                    }
-                    if(preview.C3_534182839409){
-                        var a2=$("#ahref2");
-                        a2[0].href=preview.C3_534182839409;
-                    }else{
-                        $("#ahref2").hide();
-                    }
+             offerSub1=function(recid,cmswhere,callback){
+                dbs.dbGetdata(recid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
+                function fnSuccess(data){
+                    // console.log(data);
+                    callback(data);
                 };
                 function fnerror(text){
                     dialog.showMessage(text.message,'失败',['返回'],true);
                 };
                 function fnhttperror(jqXHR, textStatus, errorThrown){
-                    //console.log(jqXHR);
+                    // console.log(jqXHR);
                 };
             }
-            offerSub(eaaid,function(subdata){me.subList1(subdata);});
-            offerSub(strid,function(subdata){me.subList2(subdata);});
-            offerSub(marid,function(subdata){me.subList3(subdata);});
-            offerSub(aveid,function(subdata){me.subList4(subdata);});
+            cmswhere="REC_ID='"+recid+"'";
+            dbs.dbGetdata(opaid,eaaid,cmswhere,fnSuccess,fnerror,fnhttperror);
+            function fnSuccess(data,subdata){
+                me.subList1(subdata);
+                var form = new mini.Form("form5");
+                form.setData(data[0]);
+                preview=data[0];
+                if(preview.C3_534182834029){
+                    var a1=$("#ahref");
+                    a1[0].href=preview.C3_534182834029;
+                }else{
+                    $("#ahref").hide();
+                }
+                if(preview.C3_534182839409){
+                    var a2=$("#ahref2");
+                    a2[0].href=preview.C3_534182839409;
+                }else{
+                    $("#ahref2").hide();
+                }
+                offerSub1(strid,"C3_534182272208='"+data[0].C3_534181645731+"'",function(data){me.subList2(data);});
+                offerSub1(aveid,"C3_534182432109='"+data[0].C3_534181730034+"'",function(data){me.subList4(data);});
+            };
+            function fnerror(text){
+                dialog.showMessage(text.message,'失败',['返回'],true);
+            };
+            function fnhttperror(jqXHR, textStatus, errorThrown){
+                //console.log(jqXHR);
+            };
         },
         attached:function(){
             mini.parse();

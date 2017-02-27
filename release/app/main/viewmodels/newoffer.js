@@ -31,10 +31,17 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         if (form.isValid() == false) return;
         if (o.C3_534181957670==0){
             alert('Monthly salary of "0"?');
+            mini.getbyName('C3_534181957670').focus();
+            return;
+        }
+        if (o.C3_534182182372==0){
+            alert('Candidate\'s Expectation of "0"?');
+            mini.getbyName('C3_534182182372').focus();
             return;
         }
         if (o.C3_534183009192>=o.C3_534183037917){
             alert('"Max". should be greater than "Min."');
+            mini.getbyName('C3_534183037917').focus();
             return;
         }
         o._id=1;
