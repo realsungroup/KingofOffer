@@ -24,9 +24,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             offerSub=function(subid,callback){
                 dbs.dbGetdata(opaid,subid,cmswhere,fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data,subdata){
-                    if(data[0].C3_534184428625=="Y"){
-                        $('#fbb').hide()
-                    }
                     var form = new mini.Form("form5");
                     form.setData(data[0]);
                     preview=data[0];
@@ -55,21 +52,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             offerSub(strid,function(subdata){me.subList2(subdata);});
             offerSub(marid,function(subdata){me.subList3(subdata);});
             offerSub(aveid,function(subdata){me.subList4(subdata);});
-            var i=101;
-            headClick=function(offersub){
-                $('.oacitve').removeClass('oacitve');
-                if(offersub=='ss'){
-                    $('.sshead').addClass('oacitve');
-                    $('.ss').css('z-index',i);
-                }else if(offersub=='md'){
-                    $('.mdhead').addClass('oacitve');
-                    $('.md').css('z-index',i);
-                }else if(offersub=='das'){
-                    $('.dashead').addClass('oacitve');
-                    $('.das').css('z-index',i);
-                }
-                i++;
-            };
         },
         attached:function(){
             mini.parse();
@@ -95,9 +77,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             location.href = "#eapage";
         },
         ok:function(){
-            $('#fbb').attr({"disabled":"disabled"});
+            $('.fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
-                $('#fbb').removeAttr("disabled");
+                $('.fbb').removeAttr("disabled");
             }, 1000);
             var that=this;
             var form = new mini.Form("form5");
@@ -113,7 +95,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
             function dataSaved(text){
                 dialog.showMessage('<h1>Success</h1>','Submit',['Ok'],true).then(function(){
-                    $('#fbb').hide();
                     location.href = "#eapage";// history.back(-1);
                 });
             };
@@ -125,9 +106,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             }
         },
         no:function(){
-            $('#fbb').attr({"disabled":"disabled"});
+            $('.fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
-                $('#fbb').removeAttr("disabled");
+                $('.fbb').removeAttr("disabled");
             }, 1000);
             var that=this;
             var form = new mini.Form("form5");
@@ -143,7 +124,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             dbs.dbSavedata(opaid,0,json,dataSaved,fnerror,fnhttperror);
             function dataSaved(text){
                 dialog.showMessage('<h1>Success</h1>','Submit',['Ok'],true).then(function(){
-                    $('#fbb').hide();
                     location.href = "#eapage";// history.back(-1);
                 });
             };
