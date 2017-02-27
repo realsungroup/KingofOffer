@@ -131,7 +131,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     }
     editoffer.show = function(e){
         editdata=e;
-                    console.log(editdata.C3_534182839409);
         return dialog.show(new editoffer());
     };
    
