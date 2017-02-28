@@ -58,6 +58,7 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
             rePage =  function() {
                 me.cList(oldData);
                 sData=oldData;
+                mini.getbyName('searchBoxcf').setValue("");
             };
             searchcf =  function() {
                 newData=[];
@@ -86,6 +87,7 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     me.cList(newData);
                     sData=newData;
                 }
+                mini.getbyName('searchBoxcf').setValue("");
             };
             $('#searchBoxcf').keydown(function(event) {
                 if(event.keyCode == "13"){//keyCode=13是回车键
