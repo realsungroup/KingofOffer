@@ -105,13 +105,14 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             o._state="modified";
             o.REC_ID=cfnData.REC_ID;
             var json = mini.encode([o]);
-            dbs.dbSavedata(cfnid,0,json);
+            // dbs.dbSavedata(cfnid,0,json);
             dialog.close(that);
         }
     };
     newofferc.prototype.activate=function(){
     };
     newofferc.prototype.attached=function(){
+        mini.parse();
         if(cfnData.C3_534187099299!="Y"){
             $('#fbb').val("Submit");
             $('#fbc').hide();
@@ -124,7 +125,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             var lg=mini.getbyName('C3_534187093868');
             lg.addCls("asLabel");
         }
-        mini.parse();
         var me=this;
         cmswhere="REC_ID='"+cfnData.REC_ID+"'";
         dbs.dbGetdata(cfnid,eadid,cmswhere,fnSuccess,fnerror,fnhttperror);
