@@ -446,7 +446,7 @@
     height: 18px;
 }
 .auditpage .w500,.preview .w500{
-    width: 500px;
+    width: 60%;
     margin-right: 50px;
 }
 .preview .head2:hover,.auditpage .head2:hover{

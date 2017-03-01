@@ -93,6 +93,11 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             var form = new mini.Form("form5");
             var o =  new mini.Form("form5").getData();
             form.validate(); 
+            if (o.C3_534183782055>=o.C3_534183782431){
+                alert('"Max". should be greater than "Min."');
+                mini.getbyName('C3_534183782431').focus();
+                return;
+            }
             if (form.isValid() == false) return;
             o._id=1;
             o._state="modified";
@@ -122,6 +127,11 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             var form = new mini.Form("form5");
             var o =  new mini.Form("form5").getData();
             form.validate(); 
+            if (o.C3_534183782055>=o.C3_534183782431){
+                alert('"Max". should be greater than "Min."');
+                mini.getbyName('C3_534183782431').focus();
+                return;
+            }
             if (form.isValid() == false) return;
             o._id=1;
             o._state="modified";

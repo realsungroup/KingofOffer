@@ -17,6 +17,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     newofferc.prototype.ok = function() {
         if(confirm('Are you sure you want to approve it?')){
+            if(cfnData.C3_534188520203==""){
+                mini.getbyName('C3_534188520203').focus();
+            }
             var sv=mini.getbyName('C3_536089623045');
             if(sv.value<cfnData.C3_534187097705){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
@@ -116,7 +119,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             o._state="modified";
             o.REC_ID=cfnData.REC_ID;
             var json = mini.encode([o]);
-            // dbs.dbSavedata(cfnid,0,json);
+            dbs.dbSavedata(cfnid,0,json);
             dialog.close(that);
         }
     };
