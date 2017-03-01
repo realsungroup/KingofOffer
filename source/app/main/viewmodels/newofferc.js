@@ -17,7 +17,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     newofferc.prototype.ok = function() {
         if(confirm('Are you sure you want to approve it?')){
-            sRange();
+            var sv=mini.getbyName('C3_536089623045');
+            if(sv.value<cfnData.C3_534187097705){
+                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                sv.setValue(cfnData.C3_534187097705);
+                sv.focus();
+                return;
+            }else if(sv.value>cfnData.C3_534187097900){
+                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                sv.setValue(cfnData.C3_534187097900);
+                sv.focus();
+                return;
+            }
             $('.fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
                 $('.fbb').removeAttr("disabled");
@@ -68,10 +79,10 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             o._state="modified";
             o.REC_ID=cfnData.REC_ID;
             if(cfnData.C3_534187099299=="Y"){
-                o.C3_534187100944='Y';
+                o.C3_534187100944='N';
                 o.C3_534188520203=mName;
             }else{
-                o.C3_534187099299='N';
+                o.C3_534187099299='Y';
             }
             var json = mini.encode([o]);
             dbs.dbSavedata(cfnid,0,json);
@@ -165,7 +176,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 setTimeout(function() {
                     cfnop.show().then(function(opn){
                         if(opn){
-                            // console.log(opn)
                             cfnData.C3_534188520203=opn.C3_419343735913;
                             cfnData.C3_534188545242=opn.C3_227192472953;//工号
                             cfnData.C3_534188517500=opn.C3_305737857578;//编号

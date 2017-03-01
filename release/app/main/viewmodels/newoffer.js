@@ -65,9 +65,10 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     };
     newoffer.prototype.attached=function(){
         mini.parse();
-        cnn={};
         var me=this;
         cpnn=function(){
+            var form = new mini.Form("form2");
+            cnn =  new mini.Form("form2").getData();
             setTimeout(function() {
                 recop.show().then(function(opn){
                     if(opn){
