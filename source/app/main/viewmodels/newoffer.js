@@ -64,7 +64,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
 
     };
     newoffer.prototype.attached=function(){
-        mini.parse();
+       mini.parse();
         var me=this;
         cpnn=function(){
             var form = new mini.Form("form2");
