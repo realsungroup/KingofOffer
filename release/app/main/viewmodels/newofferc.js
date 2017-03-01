@@ -176,6 +176,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 cfnData.C3_536319475165=mini.getbyName('C3_536319475165').value;
                 cfnData.C3_536319476423=mini.getbyName('C3_536319476423').value;
                 cfnData.C3_536319478009=mini.getbyName('C3_536319478009').value;
+                cfnData.C3_536089623045=mini.getbyName('C3_536089623045').value;
                 setTimeout(function() {
                     cfnop.show().then(function(opn){
                         if(opn){
