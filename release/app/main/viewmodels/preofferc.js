@@ -22,6 +22,11 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         cmswhere="REC_ID='"+cfmData.REC_ID+"'";
         dbs.dbGetdata(cfnid,eadid,cmswhere,fnSuccess,fnerror,fnhttperror);
         function fnSuccess(data,subdata){
+            for(var i=0;i<subdata.length;i++){
+                if(subdata[i].C3_534187898986){
+                    subdata[i].C3_534187898986=subdata[i].C3_534187898986.toLocaleDateString()+subdata[i].C3_534187898986.toLocaleTimeString();
+                }
+            }
             me.subList(subdata);
         };
         function fnerror(text){

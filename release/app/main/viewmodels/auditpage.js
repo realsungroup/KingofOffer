@@ -35,6 +35,11 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             cmswhere="REC_ID='"+recid+"'";
             dbs.dbGetdata(opaid,eaaid,cmswhere,fnSuccess,fnerror,fnhttperror);
             function fnSuccess(data,subdata){
+                for(var i=0;i<subdata.length;i++){
+                    if(subdata[i].C3_534184046952){
+                        subdata[i].C3_534184046952=subdata[i].C3_534184046952.toLocaleDateString()+subdata[i].C3_534184046952.toLocaleTimeString();
+                    }
+                }
                 me.subList1(subdata);
                 var form = new mini.Form("form5");
                 form.setData(data[0]);

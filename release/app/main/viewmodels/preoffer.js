@@ -62,7 +62,11 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
         cmswhere="REC_ID='"+preview.REC_ID+"'";
         dbs.dbGetdata(opaid,eaaid,cmswhere,fnSuccess,fnerror,fnhttperror);
         function fnSuccess(data,subdata){
-            // console.log(subdata);
+            for(var i=0;i<subdata.length;i++){
+                if(subdata[i].C3_534184046952){
+                    subdata[i].C3_534184046952=subdata[i].C3_534184046952.toLocaleDateString()+subdata[i].C3_534184046952.toLocaleTimeString();
+                }
+            }
             me.subList1(subdata);
         };
         function fnerror(text){

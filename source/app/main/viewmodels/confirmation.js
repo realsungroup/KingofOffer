@@ -55,6 +55,13 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     offercList();
                 });
             };
+            trClick=function(e){
+                if(e.C3_534187099299){
+                    offercView(e);
+                }else{
+                    newOc(e);
+                };
+            };
             rePage =  function() {
                 me.cList(oldData);
                 sData=oldData;

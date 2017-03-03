@@ -27,17 +27,17 @@
             </tr>
             <tr>
                 <td class="title" colspan="6" id="opt1">
-                    1.<input class="mini-textbox" name="C3_536319464780" width="96%"/>
+                    1.<input class="mini-textbox" name="C3_536319464780" width="96%" emptyText="请至少输入三条文本!"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="6" class="head2">
-                    2.<input class="mini-textbox" name="C3_536319472674" width="96%"/>
+                    2.<input class="mini-textbox" name="C3_536319472674" width="96%" emptyText="请至少输入三条文本!"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="6" class="title">
-                    3.<input class="mini-textbox" name="C3_536319473964" width="96%"/>
+                    3.<input class="mini-textbox" name="C3_536319473964" width="96%" emptyText="请至少输入三条文本!"/>
                 </td>
             </tr>
             <tr>
@@ -71,7 +71,7 @@
                     Job Title
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534187093586" onclick="cfnm()"/>
+                    <input class="mini-textbox" name="C3_534187093586" readonly/>
                 </td>
                 <td class="title">
                     Report to
@@ -102,10 +102,10 @@
                     <input class="mini-textbox" name="C3_535827034365" readonly/>
                 </td>
                 <td class="title">
-                    Repacement
+                    Replacement
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_541167519681"/>
+                    <input class="mini-textbox" name="C3_541167519681" readonly/>
                 </td>
                 <td class="title">
                     Project/Function
@@ -124,7 +124,7 @@
                     Salary
                 </td>
                 <td colspan="2"  class="tc">
-                    <input class="mini-spinner" minValue="0" maxValue="999999" increment="100" name="C3_536089623045" onvaluechanged="sRange"/><b>/monthly</b>
+                    <input class="mini-spinner" changeOnMousewheel="false" minValue="0" maxValue="999999" increment="100" name="C3_536089623045" onvaluechanged="sRange"/><b>/monthly</b>
                 </td>
                 <td colspan="3"  class="tc">
                     <input class="mini-textbox" style="text-align: right;" name="C3_534187097705" readonly/>
@@ -178,7 +178,8 @@
                     <input type="button" id="fbd" value="Save" class="btn btn-danger rf" data-bind="click : save">
                     <input type="button" id="fbb" value="Approve" class="btn btn-success rf" data-bind="click : ok">
                 </td>
-            </tr><tr>
+            </tr>
+            <tr>
                 <td colspan="6" class="head">
                     <b>Approval process</b>
                 </td>

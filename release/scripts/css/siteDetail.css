@@ -373,6 +373,10 @@
 .opp table td{
     padding-left:10px;
 }
+.opp table tbody tr:hover{
+    background: #29b6f6;
+    cursor:pointer;
+}
 .head>input,.foot>input{
     width:74px;
     margin-right:5px;

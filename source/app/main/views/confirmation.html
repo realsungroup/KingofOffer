@@ -1,16 +1,36 @@
 <form id="form6" class="opp">
-    <table align="center">
+    <table align="center" border='1'cellspacing="0" cellpadding="0">
          <!--border='1'cellspacing="0" cellpadding="0"-->
          <thead>
              <tr>
-                 <th colspan="8">
+                 <th colspan="7">
                     <input type="button" value="clear" class="rf" onclick="rePage()">
                     <input type="button" value="filter" class="rf" onclick="searchcf()" id="searchBtncf">
                     <input class="rf mini-textbox" id="searchBoxcf" name="searchBoxcf">
                  </th>
              </tr>
+             <tr>
+                 <th class="tc">Candidate</th>
+                 <th class="tc">Job Title</th>
+                 <th class="tc">Level</th>
+                 <th class="tc">Location</th>
+                 <th class="tc">Hiring Manager</th>
+                 <th class="tc">Target Manager</th>
+                 <th class="tc">Department</th>
+             </tr>
          </thead>
-        <tbody data-bind="foreach: cList">
+         <tbody data-bind="foreach: cList" >
+             <tr data-bind="click : trClick.bind()">
+                 <td class="tc"><span data-bind="text: C3_534187094490"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534187093586"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534187093868"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534187094088"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534264724518"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534188520203"></span></td>
+                 <td><span data-bind="text: C3_534187094286"></span></td>
+             </tr>
+         </tbody>
+        <!--<tbody data-bind="foreach: cList">
             <tr>
                 <td colspan="8" class="head1">
                     <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offercView.bind(),visible:($data.C3_534187099299=='Y')">
@@ -63,7 +83,7 @@
                     <b data-bind="text: C3_534187094286"></b>
                 </td>
             </tr>
-        </tbody>
+        </tbody>-->
     </table>
 </form>
  
