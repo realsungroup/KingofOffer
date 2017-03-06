@@ -145,7 +145,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         function fnSuccess(data,subdata){
             for(var i=0;i<subdata.length;i++){
                 if(subdata[i].C3_534187898986){
-                    subdata[i].C3_534187898986=subdata[i].C3_534187898986.toLocaleDateString()+subdata[i].C3_534187898986.toLocaleTimeString();
+                    subdata[i].C3_534187898986=subdata[i].C3_534187898986.toLocaleDateString();
                 }
             }
             me.subList(subdata);
@@ -172,6 +172,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             a2[0].href=cfnData.C3_534187097504;
         }else{
             $("#ahref2").hide();
+        }
+        if(cfnData.C3_541852509945){
+            var a3=$("#ahref3");
+            a3[0].href=cfnData.C3_541852509945;
+        }else{
+            $("#ahref3").hide();
         }
         cfnn=function(){
             if(cfnData.C3_534187099299!="Y"){

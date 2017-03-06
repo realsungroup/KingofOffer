@@ -377,6 +377,10 @@
     background: #29b6f6;
     cursor:pointer;
 }
+.opp td>input{
+    width: 73px;
+    margin-right: 10px; 
+}
 .head>input,.foot>input{
     width:74px;
     margin-right:5px;

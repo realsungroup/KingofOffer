@@ -3,7 +3,7 @@
          <!--border='1'cellspacing="0" cellpadding="0"-->
          <thead>
              <tr>
-                 <th colspan="7">
+                 <th colspan="8">
                     <input type="button" value="clear" class="rf" onclick="rePage()">
                     <input type="button" value="filter" class="rf" onclick="searchcf()" id="searchBtncf">
                     <input class="rf mini-textbox" id="searchBoxcf" name="searchBoxcf">
@@ -17,10 +17,11 @@
                  <th class="tc">Hiring Manager</th>
                  <th class="tc">Target Manager</th>
                  <th class="tc">Department</th>
+                 <th></th>
              </tr>
          </thead>
          <tbody data-bind="foreach: cList" >
-             <tr data-bind="click : trClick.bind()">
+             <tr>
                  <td class="tc"><span data-bind="text: C3_534187094490"></span></td>
                  <td class="tc"><span data-bind="text: C3_534187093586"></span></td>
                  <td class="tc"><span data-bind="text: C3_534187093868"></span></td>
@@ -28,6 +29,10 @@
                  <td class="tc"><span data-bind="text: C3_534264724518"></span></td>
                  <td class="tc"><span data-bind="text: C3_534188520203"></span></td>
                  <td><span data-bind="text: C3_534187094286"></span></td>
+                 <td>
+                    <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offercView.bind(),visible:($data.C3_534187099299=='Y')">
+                    <input type="button" value="Offer Confirmation" class="btn btn-success rf fbb" data-bind="click : newOc.bind(),visible:($data.C3_534187099299==null||$data.C3_534187099299=='N')">
+                 </td>
              </tr>
          </tbody>
         <!--<tbody data-bind="foreach: cList">

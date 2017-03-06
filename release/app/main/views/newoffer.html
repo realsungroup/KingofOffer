@@ -136,6 +136,7 @@
                     <input class="mini-textarea" width="96%" style="height:66px" name="C3_535110147865"/>
                 </td>
                 <td class="tc">
+                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="999999" increment="100" name="C3_541879174848" onvaluechanged='vchange'/>
                 </td>
             </tr>
             <tr>
@@ -331,10 +332,25 @@
                     name='Fdata2'
                     limitType='*.doc;*.docx'/>
                     <input id="imgurl2" name='C3_534182839409' class="mini-hidden"/>
+                    <input
+                    cursor="pointer"
+                    id='fileupload3'
+                    buttonText="Attach"
+                    onuploaderror='onUploadError3'
+                    onfileselect='onFileSelect3'
+                    onuploadsuccess='onUploadSuccess3'
+                    uploadUrl='http://www.realsun.me:8003/rispweb/rispservice/SvcUploadFile2.aspx?savepath=e:\\web\\rispweb\\upfiles&httppath=http://www.realsun.me:8003/rispweb/upfiles'
+                    flashUrl='swfupload/swfupload.swf'
+                    class='mini-fileupload'
+                    uploadOnSelect=true 
+                    name='Fdata3'
+                    limitType='*.*'/>
+                    <input id="imgurl3" name='C3_541852470955' class="mini-hidden"/>
                 </td>
                 <td colspan="2" rowspan="2" class="tc">
                     <a id="ahref" target="_blank" href="#"><img id='imgUploaded'/></a>
                     <a id="ahref2" target="_blank" href="#"><img id='imgUploaded2'/></a>
+                    <a id="ahref3" target="_blank" href="#"><img id='imgUploaded3'/></a>
                 </td>
             </tr>
         </tbody>

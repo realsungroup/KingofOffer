@@ -107,11 +107,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
             var yeb = mini.getbyName('C3_534181974758').value;
             var stocks = mini.getbyName('C3_534181984193').value;
             var allowance = mini.getbyName('C3_534181995445').value;
+            var other = mini.getbyName('C3_541879174848').value;
             var annualtotal = mini.getbyName('C3_534339050633');
             var annual = salary*12;
             annualtotal.setValue(annual);
             var totalcash = mini.getbyName('C3_534182046604');
-            var total = annual+yeb+stocks+allowance;
+            var total = annual+yeb+stocks+allowance+other;
             totalcash.setValue(total);
         }
     }

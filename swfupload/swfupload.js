@@ -1061,3 +1061,37 @@ SWFUpload.Console.writeLine = function (message) {
 	        alert(e.message);
     }
 	function uploadcomplete2(){alert("上传完成");}
+
+	function onFileSelect3(e) {}
+ 	function onUploadSuccess3(e) {
+        //    alert("上传成功：" + e.serverData);
+            var data = mini.decode( e.serverData);
+			if (data.error==0)
+			{
+			//  alert("上传成功：" + data.httpfilename);
+			 try {
+					var img=$("#imgUploaded3");
+				  	var a3=$("#ahref3");
+               	  	mini.parse();
+			 	  	var imgfield3=mini.get('imgurl3');
+			 	  	imgfield3.setValue(data.httpfilename);
+			 	  	img[0].src="../../img/timg.jpg";
+					img[0].width="60";
+					a3[0].href=data.httpfilename;
+					$("#ahref3").show();
+			 } catch (error) {
+				 alert(error);
+				 
+			 }
+			
+			}
+			else
+			{
+			 alert("上传失败：" + data.message);
+			}
+        this.setText("");
+    }
+ 	function onUploadError3(e) {
+	        alert(e.message);
+    }
+	function uploadcomplete3(){alert("上传完成");}

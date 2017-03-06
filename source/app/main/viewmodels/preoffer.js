@@ -40,6 +40,12 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
         }else{
             $("#ahref2").hide();
         }
+        if(preview.C3_541852470955){
+            var a3=$("#ahref3");
+            a3[0].href=preview.C3_541852470955;
+        }else{
+            $("#ahref3").hide();
+        }
     }
 
     preoffer.prototype.activate=function(){
@@ -64,7 +70,7 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
         function fnSuccess(data,subdata){
             for(var i=0;i<subdata.length;i++){
                 if(subdata[i].C3_534184046952){
-                    subdata[i].C3_534184046952=subdata[i].C3_534184046952.toLocaleDateString()+subdata[i].C3_534184046952.toLocaleTimeString();
+                    subdata[i].C3_534184046952=subdata[i].C3_534184046952.toLocaleDateString();
                 }
             }
             me.subList1(subdata);

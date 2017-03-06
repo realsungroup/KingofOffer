@@ -1,11 +1,33 @@
 <form id="form1" class="opp">
     <table align="center" border='1'cellspacing="0" cellpadding="0">
-         <!--border='1'cellspacing="0" cellpadding="0"-->
+        <thead>
+            <th class="tc">Candidate</th>
+            <th class="tc">Job Title</th>
+            <th class="tc">Level</th>
+            <th class="tc">Location</th>
+            <th class="tc">Hiring Manager</th>
+            <th class="tc">Department</th>
+            <th class="tc">RequistionNumber</th>
+            <th></th>
+        </thead>
         <tbody data-bind="foreach: oList">
             <tr>
+                <td class="tc"><span data-bind="text: C3_534181747202"></span></td>
+                <td class="tc"><span data-bind="text: C3_534181598826"></span></td>
+                <td class="tc"><span data-bind="text: C3_534181645731"></span></td>
+                <td class="tc"><span data-bind="text: C3_534181718652"></span></td>
+                <td class="tc"><span data-bind="text: C3_534264776828"></span></td>
+                <td class="tc"><span data-bind="text: C3_534181730034"></span></td>
+                <td class="tc"><span data-bind="text: C3_534184180284"></span></td>
+                <td>
+                    <input type="button" value="Review" class="btn btn-success rf" data-bind="click : eaSubmit.bind(),visible:($data.C3_534184428625==null||$data.C3_534184428625=='N')">
+                </td>
+            </tr>
+        </tbody>
+         <!--border='1'cellspacing="0" cellpadding="0"-->
+        <!--<tbody data-bind="foreach: oList">
+            <tr>
                 <td colspan="8" class="head">
-                    <!--<b>Background Info</b>-->
-                    <!--<input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offerView.bind()">-->
                     <input type="button" value="Review" class="btn btn-success rf" data-bind="click : eaSubmit.bind(),visible:($data.C3_534184428625==null||$data.C3_534184428625=='N')">
                 </td>
             </tr>
@@ -55,7 +77,7 @@
                     <b data-bind="text: C3_534184180284"></b>
                 </td>
             </tr>
-        </tbody>
+        </tbody>-->
     </table>
 </form>
  

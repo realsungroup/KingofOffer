@@ -120,6 +120,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
         }else{
             $("#ahref2").hide();
         }
+        if(editdata.C3_541852470955){
+            var a3=$("#ahref3");
+            a3[0].href=editdata.C3_541852470955;
+        }else{
+            $("#ahref3").hide();
+        }
     };
    
     editoffer.prototype.compositionComplete=function(){
