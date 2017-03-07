@@ -1,4 +1,6 @@
 <form class="opp">
+    <input type="button" value="已审批" class="btn btn-success fbb" onclick="ysp()">
+    <input type="button" value="未审批" class="btn btn-warning fbb" onclick="wsp()">
     <table align="center" border='1'cellspacing="0" cellpadding="0">
         <thead>
             <th class="tc">Candidate</th>
@@ -20,8 +22,8 @@
                 <td class="tc"><b data-bind="text: C3_534188520203"></b></td>
                 <td class="tc"><b data-bind="text: C3_534187094286"></b></td>
                 <td>
-                    <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offerceView.bind(),visible:($data.C3_534187100944=='Y')">
-                    <input type="button" value="Review" class="btn btn-success rf fbb" data-bind="click : subOc.bind(),visible:($data.C3_534187100944==null||$data.C3_534187100944=='N')">
+                    <input type="button" value="Preview" class="p1 btn btn-primary rf fbb" data-bind="click : offerceView.bind()">
+                    <input type="button" value="Review" class="r1 btn btn-success rf fbb" data-bind="click : subOc.bind()">
                 </td>
             </tr>
         </tbody>

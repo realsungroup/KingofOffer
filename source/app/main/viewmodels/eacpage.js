@@ -16,14 +16,21 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
             var user  = appConfig.app.user;
             var dbs=new dbHelper(baseUrl,user,ucode);
             var dfnid=appConfig.offer.dfnid;
+            var ylsid=appConfig.offer.ylsid;
             var me=this;
             var o={};
             mini.parse();
-            offerceList=function(){
-                dbs.dbGetdata(dfnid,0,"",fnSuccess,fnerror,fnhttperror);
+            offerceList=function(id){
+                dbs.dbGetdata(id,0,"",fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data){
-                    // console.log(data[0]);
                     me.ceList(data);
+                    if(id==542197833056){
+                        $('.p1').show();
+                        $('.r1').hide();
+                    }else{
+                        $('.r1').show();
+                        $('.p1').hide();
+                    }
                 };
                 function fnerror(text){
                     dialog.showMessage(text.message,'新增失败',['返回'],true);
@@ -32,7 +39,13 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     console.log(jqXHR);
                 };
             }
-            offerceList();
+            ysp=function(){
+                offerceList(ylsid);
+            };
+            wsp=function(){
+                offerceList(dfnid);
+            };
+            wsp();
             subOc=function(e){
                 $('.fbb').attr({"disabled":"disabled"});
                 setTimeout(function() {

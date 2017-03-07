@@ -323,6 +323,16 @@
 .op tr{
     height: 18px;
 }
+.blx{
+    font-size: 30px;
+    display: inline-block;
+    height: 30px;
+    margin: 0 50px;
+    vertical-align: bottom;
+    position: relative;
+    top: -7px;
+    left: 0px;
+}
 .cbnn{
     width: 900px;
     height: 690px;
@@ -427,14 +437,10 @@
     width: 12%;
 }
 .preview .title1,.auditpage .title1{
-    padding-left: 90px; 
     background: #aaa;
-    text-align: left;
 }
 .preview .title2,.auditpage .title2{
-    padding-left: 150px; 
     background: #aaa;
-    text-align: left;
 }
 .preview .title3,.auditpage .title3,.op .title3{
     background: #aaa;
