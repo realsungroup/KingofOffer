@@ -252,11 +252,13 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         hm.setIsValid(true);
         hm.addCls("asLabel"); 
         form.setData(cfnData);
+        if(cfnData.C3_534187101971>=8){
+            $('.dy8').hide();
+        }
     };
     newofferc.show = function(e){
         cfnData=e;
         mName=cfnData.C3_534188520203;
-        // console.log(cfnData);
         return dialog.show(new newofferc());
     };
    

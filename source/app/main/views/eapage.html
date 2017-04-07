@@ -1,6 +1,10 @@
 <form id="form1" class="opp">
     <input type="button" value="已审批" class="btn btn-success fbb" onclick="ysp()">
     <input type="button" value="未审批" class="btn btn-warning fbb" onclick="wsp()">
+    <input type="button" value="已拒绝" class="btn btn-warning fbb" onclick="yjj()">
+    <input type="button" value="clear" class="rf" onclick="rePage()">
+    <input type="button" value="filter" class="rf" onclick="searchcf()" id="searchBtncf">
+    <input class="rf mini-textbox" id="searchBoxcf" name="searchBoxcf">
     <table align="center" border='1'cellspacing="0" cellpadding="0">
         <thead>
             <th class="tc">Candidate</th>
@@ -27,60 +31,6 @@
                 </td>
             </tr>
         </tbody>
-         <!--border='1'cellspacing="0" cellpadding="0"-->
-        <!--<tbody data-bind="foreach: oList">
-            <tr>
-                <td colspan="8" class="head">
-                    <input type="button" value="Review" class="btn btn-success rf" data-bind="click : eaSubmit.bind(),visible:($data.C3_534184428625==null||$data.C3_534184428625=='N')">
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Candidate
-                </td>
-                <td>
-                    <b data-bind="text: C3_534181747202"></b>
-                </td>
-                <td class="title" width="12%">
-                    Job Title
-                </td>
-                <td width="13%">
-                    <b data-bind="text: C3_534181598826"></b>
-                </td>
-                <td class="title" width="12%">
-                    Level
-                </td>
-                <td width="13%">
-                    <b data-bind="text: C3_534181645731"></b>
-                </td>
-                <td class="title" width="12%">
-                    Location
-                </td>
-                <td width="13%">
-                    <b data-bind="text: C3_534181718652"></b>
-                </td>
-            </tr>
-            <tr>
-                <td class="title" width="12%">
-                    Hiring Manager
-                </td>
-                <td width="13%">
-                    <b data-bind="text: C3_534264776828"></b>
-                </td>
-                <td class="title">
-                    Department
-                </td>
-                <td colspan="3">
-                    <b data-bind="text: C3_534181730034"></b>
-                </td>
-                <td class="title">
-                    RequistionNumber
-                </td>
-                <td>
-                    <b data-bind="text: C3_534184180284"></b>
-                </td>
-            </tr>
-        </tbody>-->
     </table>
 </form>
  

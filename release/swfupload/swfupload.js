@@ -1007,7 +1007,7 @@ SWFUpload.Console.writeLine = function (message) {
             	  	mini.parse();
 			 	  	var imgfield=mini.get('imgurl');
 			 	  	imgfield.setValue(data.httpfilename);
-			 	  	img[0].src="../../img/pdf.jpg";
+			 	  	img[0].src="../../img/timg.jpg";
 					img[0].width="60";
 					a[0].href=data.httpfilename;
 					$("#ahref").show();
@@ -1041,7 +1041,7 @@ SWFUpload.Console.writeLine = function (message) {
                	  	mini.parse();
 			 	  	var imgfield2=mini.get('imgurl2');
 			 	  	imgfield2.setValue(data.httpfilename);
-			 	  	img[0].src="../../img/word.jpg";
+			 	  	img[0].src="../../img/timg.jpg";
 					img[0].width="60";
 					a2[0].href=data.httpfilename;
 					$("#ahref2").show();

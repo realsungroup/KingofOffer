@@ -55,13 +55,6 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     offercList();
                 });
             };
-            // trClick=function(e){
-            //     if(e.C3_534187099299){
-            //         offercView(e);
-            //     }else{
-            //         newOc(e);
-            //     };
-            // };
             rePage =  function() {
                 me.cList(oldData);
                 sData=oldData;
@@ -88,7 +81,14 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                         || sData[i].C3_534187094088.toLowerCase().indexOf(skey)>=0
                         || sData[i].C3_534264724518.toLowerCase().indexOf(skey)>=0
                         || sData[i].C3_534188520203.toLowerCase().indexOf(skey)>=0
-                        || sData[i].C3_534187094286.toLowerCase().indexOf(skey)>=0)
+                        || sData[i].C3_534187094286.toLowerCase().indexOf(skey)>=0
+                        || sData[i].C3_534187094490.indexOf(skey)>=0
+                        || sData[i].C3_534187093586.indexOf(skey)>=0
+                        || sData[i].C3_534187093868.indexOf(skey)>=0
+                        || sData[i].C3_534187094088.indexOf(skey)>=0
+                        || sData[i].C3_534264724518.indexOf(skey)>=0
+                        || sData[i].C3_534188520203.indexOf(skey)>=0
+                        || sData[i].C3_534187094286.indexOf(skey)>=0)
                         newData[a++] = sData[i];
                     };
                     me.cList(newData);

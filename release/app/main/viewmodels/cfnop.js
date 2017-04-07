@@ -27,7 +27,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         
         function fnSuccess(data){
             oldData=sData=data;
-            // console.log(data[0]);
+            console.log(data[0]);
             me.cfnopList(data);
             // Pace.stop();  
             $('#imgBox').hide();

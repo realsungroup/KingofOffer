@@ -323,16 +323,6 @@
 .op tr{
     height: 18px;
 }
-.blx{
-    font-size: 30px;
-    display: inline-block;
-    height: 30px;
-    margin: 0 50px;
-    vertical-align: bottom;
-    position: relative;
-    top: -7px;
-    left: 0px;
-}
 .cbnn{
     width: 900px;
     height: 690px;
@@ -388,7 +378,7 @@
     cursor:pointer;
 }
 .opp td>input{
-    width: 73px;
+    min-width: 50px;
     margin-right: 10px; 
 }
 .head>input,.foot>input{

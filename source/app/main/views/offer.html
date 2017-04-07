@@ -3,6 +3,13 @@
          <!--border='1'cellspacing="0" cellpadding="0"-->
         <input type="button" value="New Offer Proposal" class="btn btn-success mtaii fbb" onclick= "newOp()">
         <thead>
+             <tr>
+                 <th colspan="8">
+                    <input type="button" value="clear" class="rf" onclick="rePage()">
+                    <input type="button" value="filter" class="rf" onclick="searchcf()" id="searchBtncf">
+                    <input class="rf mini-textbox" id="searchBoxcf" name="searchBoxcf">
+                 </th>
+             </tr>
             <tr>
                 <th class="tc">Candidate</th>
                 <th class="tc">Job Title</th>
@@ -10,19 +17,19 @@
                 <th class="tc">Location</th>
                 <th class="tc">Hiring Manager</th>
                 <th class="tc">Department</th>
-                <th class="tc">RequistionNumber</th>
+                <th class="tc">审批状态</th>
                 <th></th>
             </tr>
         </thead>
         <tbody data-bind="foreach: oList">
             <tr>
-                <td class="tc"><span data-bind="text: C3_534181747202"></span></td>
+                <td class="tc"><span data-bind="text: C3_541011395561"></span></td>
                 <td class="tc"><span data-bind="text: C3_534181598826"></span></td>
                 <td class="tc"><span data-bind="text: C3_534181645731"></span></td>
                 <td class="tc"><span data-bind="text: C3_534181718652"></span></td>
                 <td class="tc"><span data-bind="text: C3_534264776828"></span></td>
                 <td class="tc"><span data-bind="text: C3_534181730034"></span></td>
-                <td class="tc"><span data-bind="text: C3_534184180284"></span></td>
+                <td class="tc"><span data-bind="text: C3_544804530402"></span></td>
                 <td class="tc">
                     <input type="button" value="Delete" class="btn btn-warning rf fbb" data-bind="click : offerDel.bind(),visible:($data.C3_534184252529==null||$data.C3_534184252529=='N')">
                     <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offerView.bind()">

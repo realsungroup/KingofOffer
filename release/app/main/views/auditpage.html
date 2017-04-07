@@ -5,6 +5,7 @@
             <tr>
                 <td colspan="6" class="head">
                     <b>Background Info.</b>
+                    <b class="closecp rf" data-bind="click : cancel">×</b>
                 </td>
             </tr>
             <tr>
@@ -51,16 +52,16 @@
                     <input class="mini-textbox" name="C3_534181747202"/>
                 </td>
                 <td class="title">
-                    Chinese name
+                    Chinese Name
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_541011395561" required="true"/>
+                    <input class="mini-textbox" name="C3_541011395561"/>
                 </td>
                 <td class="title">
                     Date of Birth
                 </td>
                 <td>
-                    <input class="mini-datepicker" value="2000-01-01" name="C3_534181767190"/>
+                    <input class="mini-textbox" name="C3_534181767190"/>
                 </td>
             </tr>
             <tr>
@@ -74,13 +75,13 @@
                     Yrs of Work Exp.
                 </td>
                 <td>
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="50" name="C3_534181788780"/>
+                    <input class="mini-textbox" name="C3_534181788780"/>
                 </td>
                 <td class="title">
                     Yrs of Related Working Exp.
                 </td>
                 <td>
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="50" name="C3_534181801459"/>
+                    <input class="mini-textbox" name="C3_534181801459"/>
                 </td>
             </tr>
             <tr>
@@ -88,23 +89,23 @@
                     <b>Current Package</b>
                 </td>
             </tr>
-            <tr>
+            <tr style="height:66px">
                 <td class="title" colspan="2">
                     Base Salary
                 </td>
                 <td class="tr" colspan="2">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181957670" onvaluechanged='vchange'/><b>/monthly</b>
+                    <input class="mini-textbox" name="C3_534181957670" onvaluechanged='vchange'/><b>/Monthly</b>
                 </td>
                 <td class="tr" colspan="2">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="99999999" name="C3_534339050633" readonly/><b>/annual</b>
+                    <input class="mini-textbox" name="C3_534339050633" readonly/><b>/Annual</b>
                 </td>
             </tr>
-            <tr>
+            <tr style="height:66px">
                 <td class="title" colspan="2">
                     Year-end Bonus
                 </td>
                 <td colspan="4" class="tr">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181974758" onvaluechanged='vchange'/><b>/annual</b>
+                    <input class="mini-textbox" onvaluechanged='vchange'/><b>/Annual</b>
                 </td>
             </tr>
             <tr>
@@ -115,7 +116,7 @@
                     <input class="mini-textarea" width="96%" style="height:66px" name="C3_535110109847"/>
                 </td>
                 <td class="tr">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181984193" onvaluechanged='vchange'/><b>/annual</b>
+                    <input class="mini-textbox" onvaluechanged='vchange'/><b>/Annual</b>
                 </td>
             </tr>
             <tr>
@@ -126,7 +127,7 @@
                     <input class="mini-textarea" width="96%" style="height:66px" name="C3_535110132760"/>
                 </td>
                 <td class="tr">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534181995445" onvaluechanged='vchange'/><b>/annual</b>
+                    <input class="mini-textbox" onvaluechanged='vchange'/><b>/Annual</b>
                 </td>
             </tr>
             <tr>
@@ -137,23 +138,23 @@
                     <input class="mini-textarea" width="96%" style="height:66px" name="C3_535110147865"/>
                 </td>
                 <td class="tr">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="999999" increment="100" name="C3_541879174848" onvaluechanged='vchange'/><b>/annual</b>
+                    <input class="mini-textbox" name="C3_541879174848" onvaluechanged='vchange'/><b>/Annual</b>
                 </td>
             </tr>
-            <tr>
+            <tr style="height:66px">
                 <td class="title" colspan="2">
                     Total Cash
                 </td>
                 <td colspan="4" class="tr">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="99999999" name="C3_534182046604" readonly/><b>/annual</b>
+                    <input class="mini-textbox" name="C3_534182046604" readonly/><b>/Annual</b>
                 </td>
             </tr>
-            <tr>
+            <tr style="height:66px">
                 <td class="title tc" colspan="2">
                     Candidate's Expectation
                 </td>
-                <td class="tc" colspan="2">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="999999" increment="100" name="C3_534182182372"/><b>/monthly</b>
+                <td class="tr" colspan="2">
+                    <input class="mini-textbox" name="C3_534182182372"/><b>/Monthly</b>
                 </td>
                 <td colspan="2">
                 </td>
@@ -268,19 +269,19 @@
                 <td class="title" colspan="2">
                     Salary
                 </td>
-                <td colspan="2" class="tc">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="99999999" name="C3_534183009192" increment="100"/>
+                <td colspan="2">
+                    <input class="mini-textbox" name="C3_534183009192"/>
                 </td>
-                <td colspan="2" class="tc">
+                <td colspan="2">
                     <b style="font-size: 30px;float:left;line-height: 30px;">～</b>
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="99999999" name="C3_534183037917" increment="100"/>
+                    <input class="mini-textbox"name="C3_534183037917"/>
                 </td>
             </tr>
             <tr>
                 <td class="title" colspan="2">
                     RSUs
                 </td>
-                <td colspan="4" class="tc">
+                <td colspan="4">
                     <input class="mini-textbox" style="width:98%" name="C3_534183031497"/>
                 </td>
             </tr>
@@ -288,7 +289,7 @@
                 <td class="title" colspan="2">
                     Other
                 </td>
-                <td colspan="4" class="tc">
+                <td colspan="4">
                     <input class="mini-textbox" style="width:98%" name="C3_534183067213"/>
                 </td>
             </tr>
@@ -312,19 +313,19 @@
                 <td class="title" colspan="2">
                     Salary
                 </td>
-                <td colspan="2" class="tc">
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="99999999" name="C3_534183782055" increment="100"/>
+                <td colspan="2">
+                    <input class="mini-textbox" name="C3_534183782055"/>
                 </td>
-                <td colspan="2" class="tc">
+                <td colspan="2">
                     <b style="font-size: 30px;float:left;line-height: 30px;">～</b>
-                    <input class="mini-spinner" changeOnMousewheel="false" value="0" minValue="0" maxValue="99999999" name="C3_534183782431" increment="100"/>
+                    <input class="mini-textbox" name="C3_534183782431"/>
                 </td>
             </tr>
             <tr>
                 <td class="title" colspan="2">
                     RSUs
                 </td>
-                <td colspan="4" class="tc">
+                <td colspan="4">
                     <input class="mini-textbox" style="width:98%" name="C3_534183782616"/>
                 </td>
             </tr>
@@ -332,7 +333,7 @@
                 <td class="title" colspan="2">
                     Other
                 </td>
-                <td colspan="4" class="tc">
+                <td colspan="4">
                     <input class="mini-textbox" style="width:98%" name="C3_534183782805"/>
                 </td>
             </tr>
@@ -347,29 +348,25 @@
             </tr>
             <tr>
                 <td colspan="2" class="tc">
-                    <a id="ahref" target="_blank" href="#"><img src="../../img/pdf.jpg" width="60"/></a>
-                    <a id="ahref2" target="_blank" href="#"><img src="../../img/word.jpg" width="60"/></a>
+                    <a id="ahref" target="_blank" href="#"><img src="../../img/timg.jpg" width="60"/></a>
+                    <a id="ahref2" target="_blank" href="#"><img src="../../img/timg.jpg" width="60"/></a>
                     <a id="ahref3" target="_blank" href="#"><img src="../../img/timg.jpg" width="60"/></a>
                 </td>
                 <td colspan="4" class="tc">
                     <input class="mini-textarea w500" style="height:66px" name="C3_535110269532"/>
                     <input type="button" value="Approve" class="btn btn-success fbb" data-bind="click : ok">
-                    <input type="button" value="Reject" class="btn btn-danger fbb" data-bind="click : no">
-                    <input type="button" value="Return" class="btn btn-warning" data-bind="click : cancel">
+                    <input type="button" value="Reject" class="btn btn-warning fbb" data-bind="click : no">
                 </td>
             </tr>
             <tr>
                 <td colspan="6" class="head">
-                    <b>Employment & Approval process</b>
+                    <b>Approval Process</b>
                 </td>
             </tr>
             <tr>
                 <td colspan="6">
                     <table border='1'cellspacing="0" cellpadding="0">
                         <tbody>
-                            <td class="title3">
-                                审批节点
-                            </td>
                             <td class="title3">
                                 审批人
                             </td>
@@ -382,9 +379,6 @@
                         </tbody>
                         <tfoot data-bind="foreach: subList1">
                             <tr>
-                                <td class="tc">
-                                    <b data-bind="text: C3_534184045558"></b>
-                                </td>
                                 <td class="tc">
                                     <b data-bind="text: C3_534184046541"></b>
                                 </td>
