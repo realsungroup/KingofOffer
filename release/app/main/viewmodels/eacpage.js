@@ -30,12 +30,12 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     me.ceList(data);
                     oldData=sData=data;
                     for(var i=0;i<data.length;i++){
-                        if(data[i].C3_544898150082=='已审批'){
-                            $('.p1').show();
-                            $('.r1').hide();
-                        }else{
+                        if(data[i].C3_544898150082=='未审批'){
                             $('.r1').show();
                             $('.p1').hide();
+                        }else{
+                            $('.p1').show();
+                            $('.r1').hide();
                         }
                     }
                 };
@@ -62,7 +62,7 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
                 newofferc.show(e).then(function(){
-                    offerceList();
+                    offerceList(dfnid);
                 });
             };
             offerceView=function(e){
@@ -71,18 +71,18 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
                 preofferc.show(e).then(function(){
-                    offerceList();
+                    offerceList(ylsid);
                 });
             };
             rePage =  function() {
                 me.ceList(oldData);
                 for(var i=0;i<oldData.length;i++){
-                    if(oldData[i].C3_544898150082=='已审批'){
-                        $('.p1').show();
-                        $('.r1').hide();
-                    }else{
+                    if(oldData[i].C3_544898150082=='未审批'){
                         $('.r1').show();
                         $('.p1').hide();
+                    }else{
+                        $('.p1').show();
+                        $('.r1').hide();
                     }
                 }
                 sData=oldData;
@@ -121,12 +121,12 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     };
                     me.ceList(newData);
                     for(var i=0;i<newData.length;i++){
-                        if(newData[i].C3_544898150082=='已审批'){
-                            $('.p1').show();
-                            $('.r1').hide();
-                        }else{
+                        if(newData[i].C3_544898150082=='未审批'){
                             $('.r1').show();
                             $('.p1').hide();
+                        }else{
+                            $('.p1').show();
+                            $('.r1').hide();
                         }
                     }
                     sData=newData;

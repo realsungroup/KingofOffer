@@ -31,12 +31,12 @@ define(['plugins/dialog', 'knockout','./preoffer'], function (dialog, ko, preoff
                     me.oList(data);
                     oldData=sData=data;
                     for(var i=0;i<data.length;i++){
-                        if(data[i].C3_544804530402=='已审批'){
-                            $('.p1').show();
-                            $('.r1').hide();
-                        }else{
+                        if(data[i].C3_544804530402=='未审批'){
                             $('.r1').show();
                             $('.p1').hide();
+                        }else{
+                            $('.p1').show();
+                            $('.r1').hide();
                         }
                     }
                 };
@@ -76,12 +76,12 @@ define(['plugins/dialog', 'knockout','./preoffer'], function (dialog, ko, preoff
                 sData=oldData;
                 mini.getbyName('searchBoxcf').setValue("");
                 for(var i=0;i<oldData.length;i++){
-                    if(oldData[i].C3_544804530402=='已审批'){
-                        $('.p1').show();
-                        $('.r1').hide();
-                    }else{
+                    if(oldData[i].C3_544804530402=='未审批'){
                         $('.r1').show();
                         $('.p1').hide();
+                    }else{
+                        $('.p1').show();
+                        $('.r1').hide();
                     }
                 }
             };
@@ -118,12 +118,12 @@ define(['plugins/dialog', 'knockout','./preoffer'], function (dialog, ko, preoff
                     };
                     me.oList(newData);
                     for(var i=0;i<newData.length;i++){
-                        if(newData[i].C3_544804530402=='已审批'){
-                            $('.p1').show();
-                            $('.r1').hide();
-                        }else{
+                        if(newData[i].C3_544804530402=='未审批'){
                             $('.r1').show();
                             $('.p1').hide();
+                        }else{
+                            $('.p1').show();
+                            $('.r1').hide();
                         }
                     }
                     sData=newData;

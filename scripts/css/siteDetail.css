@@ -298,7 +298,7 @@
 }
 /***************************************************************/
 .op{
-    width: 920px;
+    width: 930px;
     margin:10px auto;
     border: 2px solid #ddd;
     background: #fefefe;
@@ -319,9 +319,6 @@
     padding:2px 10px;
     font-size: 1.2em;
     background: #A4C8EE;
-}
-.op tr{
-    height: 18px;
 }
 .cbnn{
     width: 900px;
@@ -445,9 +442,6 @@
     padding:2px 10px;
     font-size: 1.2em;
     background: #A4C8EE;
-}
-.preview tr,.auditpage tr{
-    height: 18px;
 }
 .auditpage .w500,.preview .w500{
     width: 60%;

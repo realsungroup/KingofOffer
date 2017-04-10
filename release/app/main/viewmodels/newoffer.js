@@ -39,8 +39,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
             mini.getbyName('C3_534182182372').focus();
             return;
         }
-        if (o.C3_534183009192>=o.C3_534183037917){
-            alert('"Max". should be greater than "Min."');
+        if (parseFloat(o.C3_534183009192)>=parseFloat(o.C3_534183037917)){
+            alert('"Max." should be greater than "Min."');
             mini.getbyName('C3_534183037917').focus();
             return;
         }
@@ -72,7 +72,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
             setTimeout(function() {
                 recop.show().then(function(opn){
                     if(opn){
-                        cnn.C3_534181767190="2000-01-01"
                         cnn.C3_534181598826=opn.C3_522691669347;
                         cnn.C3_534181645731=opn.C3_522691670315;
                         cnn.C3_534181718652=opn.C3_522691669613;
@@ -103,11 +102,11 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     };
     newoffer.prototype.compositionComplete=function(){
         vchange=function(){
-            var salary = mini.getbyName('C3_534181957670').value;
-            var yeb = mini.getbyName('C3_534181974758').value;
-            var stocks = mini.getbyName('C3_534181984193').value;
-            var allowance = mini.getbyName('C3_534181995445').value;
-            var other = mini.getbyName('C3_541879174848').value;
+            var salary = parseFloat(mini.getbyName('C3_534181957670').value);
+            var yeb = parseFloat(mini.getbyName('C3_534181974758').value);
+            var stocks = parseFloat(mini.getbyName('C3_534181984193').value);
+            var allowance = parseFloat(mini.getbyName('C3_534181995445').value);
+            var other = parseFloat(mini.getbyName('C3_541879174848').value);
             var annualtotal = mini.getbyName('C3_534339050633');
             var annual = salary*12;
             annualtotal.setValue(annual);

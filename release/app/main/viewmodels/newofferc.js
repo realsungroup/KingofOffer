@@ -21,12 +21,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 mini.getbyName('C3_534188520203').focus();
             }
             var sv=mini.getbyName('C3_536089623045');
-            if(sv.value<cfnData.C3_534187097705){
+            if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097705);
                 sv.focus();
                 return;
-            }else if(sv.value>cfnData.C3_534187097900){
+            }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097900);
                 sv.focus();
@@ -58,12 +58,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     newofferc.prototype.no = function() {
         if(confirm('Are you sure you want to reject it?')){
             var sv=mini.getbyName('C3_536089623045');
-            if(sv.value<cfnData.C3_534187097705){
+            if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097705);
                 sv.focus();
                 return;
-            }else if(sv.value>cfnData.C3_534187097900){
+            }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097900);
                 sv.focus();
@@ -80,6 +80,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             if (form.isValid() == false) return;
             o._id=1;
             o._state="modified";
+            o.C3_544898150082=='已拒绝';
             o.REC_ID=cfnData.REC_ID;
             if(cfnData.C3_534187099299=="Y"){
                 o.C3_534187100944='N';
@@ -95,12 +96,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     newofferc.prototype.save = function() {
         if(confirm('Are you sure you want to save it?')){
             var sv=mini.getbyName('C3_536089623045');
-            if(sv.value<cfnData.C3_534187097705){
+            if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097705);
                 sv.focus();
                 return;
-            }else if(sv.value>cfnData.C3_534187097900){
+            }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097900);
                 sv.focus();
@@ -187,6 +188,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 cfnData.C3_536319476423=mini.getbyName('C3_536319476423').value;
                 cfnData.C3_536319478009=mini.getbyName('C3_536319478009').value;
                 cfnData.C3_536089623045=mini.getbyName('C3_536089623045').value;
+                cfnData.C3_544810053160=mini.getbyName('C3_544810053160').value;
                 setTimeout(function() {
                     cfnop.show().then(function(opn){
                         if(opn){
@@ -215,12 +217,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         }
         sRange=function(){
             var sv=mini.getbyName('C3_536089623045');
-            if(sv.value<cfnData.C3_534187097705){
+            if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097705);
                 sv.focus();
                 return;
-            }else if(sv.value>cfnData.C3_534187097900){
+            }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
                 alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
                 sv.setValue(cfnData.C3_534187097900);
                 sv.focus();

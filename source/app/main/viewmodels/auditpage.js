@@ -103,9 +103,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             var that=this;
             var form = new mini.Form("form5");
             var o =  new mini.Form("form5").getData();
-            form.validate(); 
-            if (o.C3_534183782055>=o.C3_534183782431){
-                alert('"Max". should be greater than "Min."');
+            form.validate();
+            if (parseFloat(o.C3_534183782055)>=parseFloat(o.C3_534183782431)){
+                alert('"Max." should be greater than "Min."');
                 mini.getbyName('C3_534183782431').focus();
                 return;
             }
@@ -147,6 +147,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             o._id=1;
             o._state="modified";
             o.C3_534184428625="N";
+            o.C3_544804530402=='已拒绝';
             o.REC_ID=recidAp;
             var json = mini.encode([o]);
             // console.log(json);
