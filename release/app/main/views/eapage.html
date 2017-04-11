@@ -2,6 +2,7 @@
     <input type="button" value="已审批" class="btn btn-success fbb" onclick="ysp()">
     <input type="button" value="未审批" class="btn btn-warning fbb" onclick="wsp()">
     <input type="button" value="已拒绝" class="btn btn-warning fbb" onclick="yjj()">
+    <b id="fhead" class="fhead"></b>
     <input type="button" value="clear" class="rf" onclick="rePage()">
     <input type="button" value="filter" class="rf" onclick="searchcf()" id="searchBtncf">
     <input class="rf mini-textbox" id="searchBoxcf" name="searchBoxcf">
@@ -13,18 +14,20 @@
             <th class="tc">Location</th>
             <th class="tc">Hiring Manager</th>
             <th class="tc">Department</th>
-            <th class="tc">RequistionNumber</th>
+            <th class="tc">审批节点</th>
+            <th class="tc">申请人</th>
             <th></th>
         </thead>
         <tbody data-bind="foreach: oList">
             <tr>
-                <td class="tc"><span data-bind="text: C3_534181747202"></span></td>
+                <td class="tc"><span data-bind="text: C3_541011395561"></span></td>
                 <td class="tc"><span data-bind="text: C3_534181598826"></span></td>
                 <td class="tc"><span data-bind="text: C3_534181645731"></span></td>
                 <td class="tc"><span data-bind="text: C3_534181718652"></span></td>
                 <td class="tc"><span data-bind="text: C3_534264776828"></span></td>
                 <td class="tc"><span data-bind="text: C3_534181730034"></span></td>
-                <td class="tc"><span data-bind="text: C3_534184180284"></span></td>
+                <td class="tc"><span data-bind="text: C3_534184427255"></span></td>
+                <td class="tc"><span data-bind="text: C3_545246056999"></span></td>
                 <td>
                     <input type="button" value="Preview" class="p1 btn btn-primary rf fbb" data-bind="click : offerView.bind()">
                     <input type="button" value="Review" class="r1 btn btn-success rf fbb" data-bind="click : eaSubmit.bind()">
