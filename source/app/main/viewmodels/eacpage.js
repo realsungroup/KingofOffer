@@ -23,19 +23,20 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
             var sData=[];
             var oldData=[];
             var newData=[];
+            var type;
             mini.parse();
-            offerceList=function(id){
+            offerceList=function(id,type){
                 dbs.dbGetdata(id,0,"",fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data){
                     me.ceList(data);
                     oldData=sData=data;
                     for(var i=0;i<data.length;i++){
-                        if(data[i].C3_544898150082=='未审批'){
-                            $('.r1').show();
-                            $('.p1').hide();
-                        }else{
+                        if(type==1){
                             $('.p1').show();
                             $('.r1').hide();
+                        }else{
+                            $('.r1').show();
+                            $('.p1').hide();
                         }
                     }
                 };
@@ -47,13 +48,22 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                 };
             }
             ysp=function(){
-                offerceList(ylsid);
+                $('#fhead').empty();
+                $('#fhead').append('已通过');
+                type=1;
+                offerceList(ylsid,type);
             };
             wsp=function(){
-                offerceList(dfnid);
+                $('#fhead').empty();
+                $('#fhead').append('未审批');
+                type=2;
+                offerceList(dfnid,type);
             };
             yjj=function(){
-                offerceList(yjjid);
+                $('#fhead').empty();
+                $('#fhead').append('已拒绝');
+                type=1;
+                offerceList(yjjid,type);
             };
             wsp();
             subOc=function(e){
@@ -71,18 +81,18 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
                 preofferc.show(e).then(function(){
-                    offerceList(ylsid);
+                    wsp();
                 });
             };
             rePage =  function() {
                 me.ceList(oldData);
                 for(var i=0;i<oldData.length;i++){
-                    if(oldData[i].C3_544898150082=='未审批'){
-                        $('.r1').show();
-                        $('.p1').hide();
-                    }else{
+                    if(type==1){
                         $('.p1').show();
                         $('.r1').hide();
+                    }else{
+                        $('.r1').show();
+                        $('.p1').hide();
                     }
                 }
                 sData=oldData;
@@ -121,12 +131,12 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     };
                     me.ceList(newData);
                     for(var i=0;i<newData.length;i++){
-                        if(newData[i].C3_544898150082=='未审批'){
-                            $('.r1').show();
-                            $('.p1').hide();
-                        }else{
+                        if(type==1){
                             $('.p1').show();
                             $('.r1').hide();
+                        }else{
+                            $('.r1').show();
+                            $('.p1').hide();
                         }
                     }
                     sData=newData;
