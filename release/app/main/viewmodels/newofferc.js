@@ -158,6 +158,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             alert(jqXHR);
         };
         var form = new mini.Form("form7");
+        cfnData.C3_534187093868s=cfnData.C3_534187093868;
         cfnData.C3_534187094490s=cfnData.C3_534187094490;
         cfnData.C3_534187093586s=cfnData.C3_534187093586;
         cfnData.C3_534264724518s=cfnData.C3_534264724518;
@@ -203,17 +204,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             }else{
                 mini.getbyName('C3_534188520203').setReadOnly(true);
             }
-        }
-        cfnm=function(){
-            setTimeout(function() {
-                 cfnop.show().then(function(opn){
-                        if(opn){
-                            cfnData.C3_534264724518=opn.C3_419343735913;
-                            var form = new mini.Form("form7");
-                            form.setData(cfnData);
-                        }
-                    });
-            }, 200);
         }
         sRange=function(){
             var sv=mini.getbyName('C3_536089623045');

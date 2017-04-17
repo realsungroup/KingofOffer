@@ -36,6 +36,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             alert(jqXHR);
         };
         var form = new mini.Form("form8");
+        cfmData.C3_534187093868s=cfmData.C3_534187093868;
         cfmData.C3_534187094490s=cfmData.C3_534187094490;
         cfmData.C3_534187093586s=cfmData.C3_534187093586;
         cfmData.C3_534264724518s=cfmData.C3_534264724518;
