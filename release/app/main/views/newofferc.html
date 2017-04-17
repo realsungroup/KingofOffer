@@ -1,5 +1,5 @@
 <form id="form7" class="op">
-    <table border='1'cellspacing="0" cellpadding="0"> 
+    <table> 
         <!--border='1'cellspacing="0" cellpadding="0"-->
         <tbody>
             <tr>
@@ -78,7 +78,7 @@
                     Report to
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_534264724518"/>
+                    <input class="mini-textbox" name="C3_534264724518" required="true"/>
                 </td>
             </tr>
             <tr>
@@ -92,7 +92,7 @@
                     Project/Function
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_535826701051"/>
+                    <input class="mini-textbox" name="C3_535826701051" required="true"/>
                 </td>
             </tr>
             <tr>
@@ -109,16 +109,18 @@
                     <input class="mini-textbox" name="C3_534187094088" readonly/>
                 </td>
                 <td class="title">
+                    Level
                 </td>
                 <td>
+                    <input class="mini-textbox" name="C3_534187093868" readonly/>
                 </td>
             </tr>
             <tr>
                 <td class="title">
-                    Salary
+                    Base Salary
                 </td>
                 <td colspan="2"  class="tc">
-                    RMB<input class="mini-textbox" name="C3_536089623045" onvaluechanged="sRange"/><b>/Monthly</b>
+                    RMB<input class="mini-textbox" name="C3_536089623045" onvaluechanged="sRange" required="true"/><b>/Monthly</b>
                 </td>
                 <td colspan="3"  class="tc">
                     <input class="mini-textbox" style="text-align: right;" name="C3_534187097705" readonly/>
@@ -190,7 +192,7 @@
             </tr>
             <tr>
                 <td colspan="6">
-                    <table border='1'cellspacing="0" cellpadding="0">
+                    <table>
                         <tbody>
                             <td class="title3" width="25%">
                                 审批人

@@ -505,3 +505,18 @@ td img{
     display: inline-block;
     margin:0 30%;
 }
+form>table{
+    border-top:1px solid #333;
+    border-left:1px solid #333;
+}
+form>table>tbody>tr>td,form>table>thead>tr>th{
+    border-right:1px solid #333;
+    border-bottom:1px solid #333;
+}
+form table table td{
+    border-right:1px solid #333;
+}
+form table table th{
+    border-right:1px solid #333;
+    border-bottom:1px solid #333;
+}
