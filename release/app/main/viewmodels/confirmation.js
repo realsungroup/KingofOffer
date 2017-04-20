@@ -36,6 +36,7 @@ define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc']
                         for(var i=0,j=0;i<data.length;i++){
                             if(data[i].C3_545943331211=="未审批"){
                                 nData[j]=data[i];
+                                j++;
                             }
                         }
                         me.cList(nData);
@@ -50,6 +51,7 @@ define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc']
                         for(var i=0,j=0;i<data.length;i++){
                             if(data[i].C3_545943331211=="审批中"){
                                 nData[j]=data[i];
+                                j++;
                             }
                         }
                         me.cList(nData);
@@ -64,6 +66,7 @@ define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc']
                         for(var i=0,j=0;i<data.length;i++){
                             if(data[i].C3_545943331211=="审批完成"){
                                 nData[j]=data[i];
+                                j++;
                             }
                         }
                         me.cList(nData);
