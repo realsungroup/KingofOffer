@@ -1,4 +1,4 @@
-define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dialog, ko, newofferc,preofferc) {//,'./editofferc'
+define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc'], function (dialog, ko, newofferc,editofferc,preofferc) {//,'./editofferc'
     return {
         user:"",
         ucode:"",
@@ -17,17 +17,61 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
             var dbs=new dbHelper(baseUrl,user,ucode);
             var cfnid=appConfig.offer.cfnid;
             var me=this;
+            var type='';
             var o={};
             var sData=[];
             var oldData=[];
             var newData=[];
             mini.parse();
-            offercList=function(){
+            offercList=function(type){
                 dbs.dbGetdata(cfnid,0,"",fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data){
                     // console.log(data[0]);
-                    me.cList(data);
-                    oldData=sData=data;
+                    wsp=function(){
+                        $('#fhead').empty();
+                        $('#fhead').append('未审批');
+                        $('#spjd').show();
+                        $('#spsj').hide();
+                        var nData=[];
+                        for(var i=0,j=0;i<data.length;i++){
+                            if(data[i].C3_545943331211=="未审批"){
+                                nData[j]=data[i];
+                            }
+                        }
+                        me.cList(nData);
+                        oldData=sData=nData;
+                    }
+                    spz=function(){
+                        $('#fhead').empty();
+                        $('#fhead').append('审批中');
+                        $('#spjd').show();
+                        $('#spsj').hide();
+                        var nData=[];
+                        for(var i=0,j=0;i<data.length;i++){
+                            if(data[i].C3_545943331211=="审批中"){
+                                nData[j]=data[i];
+                            }
+                        }
+                        me.cList(nData);
+                        oldData=sData=nData;
+                    }
+                    ywc=function(){
+                        $('#fhead').empty();
+                        $('#fhead').append('审批完成');
+                        $('#spjd').hide();
+                        $('#spsj').show();
+                        var nData=[];
+                        for(var i=0,j=0;i<data.length;i++){
+                            if(data[i].C3_545943331211=="审批完成"){
+                                nData[j]=data[i];
+                            }
+                        }
+                        me.cList(nData);
+                        oldData=sData=nData;
+                    }
+                    if(type=="wsp")wsp();
+                    if(type=="spz")spz();
+                    if(type=="ywc")ywc();
                 };
                 function fnerror(text){
                     dialog.showMessage(text.message,'新增失败',['返回'],true);
@@ -36,14 +80,23 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     // console.log(jqXHR);
                 };
             }
-            offercList();
+            offercList('wsp');
             newOc=function(e){
                 $('.fbb').attr({"disabled":"disabled"});
                 setTimeout(function() {
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
                 newofferc.show(e).then(function(){
-                    offercList();
+                    offercList('wsp');
+                });
+            };
+            editOc=function(e){
+                $('.fbb').attr({"disabled":"disabled"});
+                setTimeout(function() {
+                    $('.fbb').removeAttr("disabled");
+                }, 1000);
+                editofferc.show(e).then(function(){
+                    offercList('ywc');
                 });
             };
             offercView=function(e){
@@ -52,7 +105,7 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
                 preofferc.show(e).then(function(){
-                    offercList();
+                    offercList('spz');
                 });
             };
             rePage =  function() {

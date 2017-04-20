@@ -1,23 +1,29 @@
 <form class="opp">
-    <input type="button" value="未审批" class="btn btn-primary fbb" onclick="wsp()">
-    <input type="button" value="已通过" class="btn btn-success fbb" onclick="ysp()">
-    <input type="button" value="已拒绝" class="btn btn-warning fbb" onclick="yjj()">
-    <b id="fhead" class="fhead"></b>
-    <input type="button" value="clear" class="rf" onclick="rePage()">
-    <input type="button" value="filter" class="rf" onclick="searchcf()" id="searchBtncf">
-    <input class="rf mini-textbox" id="searchBoxcf" name="searchBoxcf">
     <table align="center">
         <thead>
-            <th class="tc">Candidate</th>
-            <th class="tc">Job Title</th>
-            <th class="tc">Level</th>
-            <th class="tc">Location</th>
-            <th class="tc">Hiring Manager</th>
-            <th class="tc">Target Manager</th>
-            <th class="tc">Department</th>
-            <th class="tc">审批节点</th>
-            <th class="tc">申请人</th>
-            <th></th>
+            <tr>
+                <th colspan="10">
+                    <input type="button" value="未审批" class="btn btn-primary fbb" onclick="wsp()">
+                    <input type="button" value="已审批" class="btn btn-success fbb" onclick="ysp()">
+                    <input type="button" value="已拒绝" class="btn btn-warning fbb" onclick="yjj()">
+                    <b id="fhead" class="fhead"></b>
+                    <input type="button" value="clear" class="rf btn btn-warning fbb" onclick="rePage()">
+                    <input type="button" value="filter" class="rf btn btn-success fbb" onclick="searchcf()" id="searchBtncf">
+                    <input class="rf mini-textbox" id="searchBoxcf" name="searchBoxcf">
+                </th>
+            </tr>
+            <tr>
+                <th class="tc">Candidate</th>
+                <th class="tc">Job Title</th>
+                <th class="tc">Level</th>
+                <th class="tc">Location</th>
+                <th class="tc">Hiring Manager</th>
+                <th class="tc">Target Manager</th>
+                <th class="tc">Department</th>
+                <th class="tc">审批节点</th>
+                <th class="tc">申请人</th>
+                <th></th>
+            </tr>
         </thead>
         <tbody data-bind="foreach: ceList">
             <tr>

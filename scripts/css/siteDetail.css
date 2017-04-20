@@ -378,6 +378,13 @@
     min-width: 50px;
     margin-right: 10px; 
 }
+.opp th{
+    line-height: 40px;
+}
+.opp th input,.opp th .mini-textbox-border{
+    height: 34px;
+    margin: 3px;
+}
 .head>input,.foot>input{
     width:74px;
     margin-right:5px;
@@ -503,7 +510,7 @@ td img{
 .fhead{
     font-size: 24px;
     display: inline-block;
-    margin:0 30%;
+    margin:0 0 0 30%;
 }
 form>table{
     border-top:1px solid #333;
