@@ -20,17 +20,32 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             if(cfnData.C3_534188520203==""){
                 mini.getbyName('C3_534188520203').focus();
             }
-            var sv=mini.getbyName('C3_536089623045');
-            if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
-                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
-                sv.setValue(cfnData.C3_534187097705);
-                sv.focus();
-                return;
-            }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
-                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
-                sv.setValue(cfnData.C3_534187097900);
-                sv.focus();
-                return;
+            if(cfnData.C3_534187099299==null){
+                var sv=$('#l3').val();
+                if(parseFloat(sv)<parseFloat(cfnData.C3_534187097705)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    $('#l3').val(cfnData.C3_534187097705);
+                    $('#l3').focus();
+                    return;
+                }else if(parseFloat(sv)>parseFloat(cfnData.C3_534187097900)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    $('#l3').val(cfnData.C3_534187097900);
+                    $('#l3').focus();
+                    return;
+                }
+            }else{
+                var sv=mini.getbyName('C3_536089623045');
+                if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    sv.setValue(cfnData.C3_534187097705);
+                    sv.focus();
+                    return;
+                }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    sv.setValue(cfnData.C3_534187097900);
+                    sv.focus();
+                    return;
+                }
             }
             $('.fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
@@ -43,6 +58,11 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             if (form.isValid() == false) return;
             o._id=1;
             o._state="modified";
+            if(cfnData.C3_534187099299==null){
+                o.C3_536089623045=$('#l3').val();
+                o.C3_535826701051=$('#l2').val();
+                o.C3_534264724518=$('#l1').val();
+            }
             o.REC_ID=cfnData.REC_ID;
             if(cfnData.C3_534187099299=="Y"){
                 o.C3_534187100944='Y';
@@ -57,17 +77,32 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     newofferc.prototype.no = function() {
         if(confirm('Are you sure you want to reject it?')){
-            var sv=mini.getbyName('C3_536089623045');
-            if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
-                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
-                sv.setValue(cfnData.C3_534187097705);
-                sv.focus();
-                return;
-            }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
-                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
-                sv.setValue(cfnData.C3_534187097900);
-                sv.focus();
-                return;
+            if(cfnData.C3_534187099299==null){
+                var sv=$('#l3').val();
+                if(parseFloat(sv)<parseFloat(cfnData.C3_534187097705)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    $('#l3').val(cfnData.C3_534187097705);
+                    $('#l3').focus();
+                    return;
+                }else if(parseFloat(sv)>parseFloat(cfnData.C3_534187097900)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    $('#l3').val(cfnData.C3_534187097900);
+                    $('#l3').focus();
+                    return;
+                }
+            }else{
+                var sv=mini.getbyName('C3_536089623045');
+                if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    sv.setValue(cfnData.C3_534187097705);
+                    sv.focus();
+                    return;
+                }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    sv.setValue(cfnData.C3_534187097900);
+                    sv.focus();
+                    return;
+                }
             }
             $('.fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
@@ -80,7 +115,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             if (form.isValid() == false) return;
             o._id=1;
             o._state="modified";
-            o.C3_544898150082=='已拒绝';
+            o.C3_544898150082='已拒绝';
+            if(cfnData.C3_534187099299==null){
+                o.C3_536089623045=$('#l3').val();
+                o.C3_535826701051=$('#l2').val();
+                o.C3_534264724518=$('#l1').val();
+            }
             o.REC_ID=cfnData.REC_ID;
             if(cfnData.C3_534187099299=="Y"){
                 o.C3_534187100944='N';
@@ -95,17 +135,32 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     newofferc.prototype.save = function() {
         if(confirm('Are you sure you want to save it?')){
-            var sv=mini.getbyName('C3_536089623045');
-            if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
-                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
-                sv.setValue(cfnData.C3_534187097705);
-                sv.focus();
-                return;
-            }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
-                alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
-                sv.setValue(cfnData.C3_534187097900);
-                sv.focus();
-                return;
+            if(cfnData.C3_534187099299==null){
+                var sv=$('#l3').val();
+                if(parseFloat(sv)<parseFloat(cfnData.C3_534187097705)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    $('#l3').val(cfnData.C3_534187097705);
+                    $('#l3').focus();
+                    return;
+                }else if(parseFloat(sv)>parseFloat(cfnData.C3_534187097900)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    $('#l3').val(cfnData.C3_534187097900);
+                    $('#l3').focus();
+                    return;
+                }
+            }else{
+                var sv=mini.getbyName('C3_536089623045');
+                if(parseFloat(sv.value)<parseFloat(cfnData.C3_534187097705)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    sv.setValue(cfnData.C3_534187097705);
+                    sv.focus();
+                    return;
+                }else if(parseFloat(sv.value)>parseFloat(cfnData.C3_534187097900)){
+                    alert("Salary range between"+cfnData.C3_534187097705+"~"+cfnData.C3_534187097900+"!");
+                    sv.setValue(cfnData.C3_534187097900);
+                    sv.focus();
+                    return;
+                }
             }
             $('.fbb').attr({"disabled":"disabled"});
             setTimeout(function() {
@@ -118,6 +173,11 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             if (form.isValid() == false) return;
             o._id=1;
             o._state="modified";
+            if(cfnData.C3_534187099299==null){
+                o.C3_536089623045=$('#l3').val();
+                o.C3_535826701051=$('#l2').val();
+                o.C3_534264724518=$('#l1').val();
+            }
             o.REC_ID=cfnData.REC_ID;
             var json = mini.encode([o]);
             dbs.dbSavedata(cfnid,0,json);
@@ -133,12 +193,6 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             $('#fbc').hide();
         }else{
             $('#fbd').hide();
-        }
-        if(!((cfnData.C3_534187093868=="M3"||cfnData.C3_534187093868=="M4")&&cfnData.C3_541165035428=="Y")){
-            $('#lgid').hide();
-        }else{
-            var lg=mini.getbyName('C3_534187093868');
-            lg.addCls("asLabel");
         }
         var me=this;
         cmswhere="REC_ID='"+cfnData.REC_ID+"'";
@@ -188,7 +242,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 cfnData.C3_536319475165=mini.getbyName('C3_536319475165').value;
                 cfnData.C3_536319476423=mini.getbyName('C3_536319476423').value;
                 cfnData.C3_536319478009=mini.getbyName('C3_536319478009').value;
-                cfnData.C3_536089623045=mini.getbyName('C3_536089623045').value;
+                cfnData.C3_536089623045=$('#l3').val();
+                cfnData.C3_535826701051=$('#l2').val();
+                cfnData.C3_534264724518=$('#l1').val();
                 cfnData.C3_544810053160=mini.getbyName('C3_544810053160').value;
                 setTimeout(function() {
                     cfnop.show().then(function(opn){
@@ -197,6 +253,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                             cfnData.C3_534188545242=opn.C3_227192472953;//工号
                             cfnData.C3_534188517500=opn.C3_305737857578;//编号
                             var form = new mini.Form("form7");
+                            req();
                             form.setData(cfnData);
                         }
                     });
@@ -243,6 +300,26 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         hm.setReadOnly(true);
         hm.setIsValid(true);
         hm.addCls("asLabel"); 
+        req=function(){
+            if(cfnData.C3_534187099299==null){
+                $('#rt').empty();
+                var list1='<span class="mini-textbox" style="border-width: 0px;"><span class="mini-textbox-border"><input id="l1" value="'+cfnData.C3_534264724518+'" type="text" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_534264724518"></span><input type="hidden"></span>';
+                $('#rt').append(list1);
+                $('#pf').empty();
+                if(cfnData.C3_535826701051==null){
+                    cfnData.C3_535826701051="";
+                }
+                var list2='<span class="mini-textbox" style="border-width: 0px;"><span class="mini-textbox-border"><input id="l2" value="'+cfnData.C3_535826701051+'" type="text" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_535826701051"></span><input type="hidden"></span>'
+                $('#pf').append(list2);
+                $('#bs').empty();
+                if(cfnData.C3_536089623045==null){
+                    cfnData.C3_536089623045="";
+                }
+                var list3='RMB<span class="mini-textbox" style="border-width: 0px;"><span class="mini-textbox-border"><input id="l3" value="'+cfnData.C3_536089623045+'" type="text" class="mini-textbox-input" autocomplete="off" placeholder="" name="C3_536089623045"></span><input type="hidden"></span><b>/Monthly</b>'
+                $('#bs').append(list3);
+            }
+        }
+        req();
         form.setData(cfnData);
         if(cfnData.C3_534187101971>=8){
             $('.dy8').hide();
