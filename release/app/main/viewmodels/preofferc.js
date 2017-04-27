@@ -43,6 +43,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         cfmData.C3_535826470338s=cfmData.C3_535826470338;
         form.setData(cfmData);
         fields = form.getFields();
+        if(cfmData.C3_541165035428!=="Y"||cfmData.C3_545943331211!=="未审批"){
+            $('#lgid').hide();
+        }else{
+            var lg=mini.getbyName('C3_534187093868');
+            lg.addCls("asLabel");
+        }
         for (var i = 0, l = fields.length; i < l; i++) {
             var c = fields[i];
             if (c.setReadOnly) c.setReadOnly(true);     //只读

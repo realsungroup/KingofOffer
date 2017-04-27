@@ -194,6 +194,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         }else{
             $('#fbd').hide();
         }
+        if(cfnData.C3_541165035428!=="Y"||cfnData.C3_545943331211!=="未审批"){
+            $('#lgid').hide();
+        }else{
+            var lg=mini.getbyName('C3_534187093868');
+            lg.addCls("asLabel");
+        }
         var me=this;
         cmswhere="REC_ID='"+cfnData.REC_ID+"'";
         dbs.dbGetdata(cfnid,eadid,cmswhere,fnSuccess,fnerror,fnhttperror);
