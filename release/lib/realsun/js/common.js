@@ -6,7 +6,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-//http://www.realsun.me:8003/rispweb/
+//http://wux-hr03/rispweb/
 //http://kingofdinner.realsun.me:8081/rispweb
 appfunctions.system=new function(){ 
     this.setFullCalendar=function(dayClickCallback){
@@ -295,7 +295,7 @@ appfunctions.system=new function(){
 appfunctions.uploadFile = new function () {
     var uploadFile = this;
     this.swfFileUpload = function (aappConfig, fileupload) {
-        fileupload.setUploadUrl(aappConfig.app.uploadFileUrl + "?savepath=e:\\web\\rispweb\\upfiles&httppath=" + aappConfig.app.httppath);
+        fileupload.setUploadUrl(aappConfig.app.uploadFileUrl + "?savepath=d:\\web\\rispweb\\upfiles&httppath=" + aappConfig.app.httppath);
         fileupload.startUpload();
     };
 this.ajaxFileUpload = function (aappConfig, inputFile) {
@@ -306,7 +306,7 @@ this.ajaxFileUpload = function (aappConfig, inputFile) {
             $.ajaxFileUpload({
                 url: aappConfig.app.uploadFileUrl,
                 fileElementId: inputFile,
-                data: { savepath: "e:\\web\\rispweb\\upfiles" },
+                data: { savepath: "d:\\web\\rispweb\\upfiles" },
                 dataType: 'json',
                 success: function (data, status) {
                     if (data) {

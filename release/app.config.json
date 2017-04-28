@@ -1,13 +1,13 @@
 {
     "app": {
         "loginUrl": "",
-        "baseUrl": "http://www.realsun.me:8003/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
+        "baseUrl": "http://wux-hr03/rispweb/risphost/data/AjaxService.aspx?uiver=200&dynlogin=1",
         "localbaseUrl": "",
         "hostuser":"001",
         "hostucode":"GHgfPHoXCQm3k3m3DY4DqQ==",
         "hostwebpos":530122554910,
         "getMethod": "ShowHostTableDatas_Ajax",
-        "uploadFileUrl":"http://www.realsun.me:8003/rispweb/rispservice/SvcUploadFile2.aspx",
+        "uploadFileUrl":"http://wux-hr03/rispweb/rispservice/SvcUploadFile2.aspx",
         "uppath":"?savepath=c:\\web\\web\\rispweb\\upfiles&httppath=",
         "httppath":"www.realsun.me:8003//rispweb/upfiles",
         "saveMethod":"SaveData_Ajax",
