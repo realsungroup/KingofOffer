@@ -1,4 +1,4 @@
-﻿define(['durandal/app','knockout','plugins/router','plugins/dialog','./scanner'], function (app,ko,router,dialog,scanner) {
+define(['durandal/app','knockout','plugins/router','plugins/dialog','./scanner'], function (app,ko,router,dialog,scanner) {
      var user = ko.observable(),
          upass = ko.observable();
 

@@ -1,4 +1,4 @@
-﻿requirejs.config({
+requirejs.config({
     paths: {
         'text': '../lib/require/text',
         'durandal':'../lib/durandal/js',

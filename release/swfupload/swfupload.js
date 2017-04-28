@@ -1006,6 +1006,7 @@ SWFUpload.Console.writeLine = function (message) {
 				  	var a=$("#ahref");
             	  	mini.parse();
 			 	  	var imgfield=mini.get('imgurl');
+					   alert(data.httpfilename);
 			 	  	imgfield.setValue(data.httpfilename);
 			 	  	img[0].src="../../img/timg.jpg";
 					img[0].width="60";
