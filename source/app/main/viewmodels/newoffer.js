@@ -63,9 +63,38 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
     newoffer.prototype.activate=function(){
 
     };
+  
     newoffer.prototype.attached=function(){
        mini.parse();
         var me=this;
+         changedept=function(){
+       
+            var form = new mini.Form("form2");
+            cnn =  new mini.Form("form2").getData();
+            setTimeout(function() {
+               
+                        var form = new mini.Form("form2");
+                        form.setData(cnn);
+                        offerSub1=function(recid,cmswhere,callback){
+                            dbs.dbGetdata(recid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
+                            function fnSuccess(data){
+                                callback(data);
+                            };
+                            function fnerror(text){
+                                dialog.showMessage(text.message,'失败',['返回'],true);
+                            };
+                            function fnhttperror(jqXHR, textStatus, errorThrown){
+                                // console.log(jqXHR);
+                            };
+                        }
+                      //  alert(cnn.C3_534181730034);
+                        offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"'",function(data){me.subList4(data);});
+                        // offerSub1(aveid,"'"+cnn.C3_534181730034+"' like '%"+"convert(char,C3_534182432109)"+"%'",function(data){me.subList4(data);});
+                    }
+              
+             , 200);
+        
+    };
         cpnn=function(){
             var form = new mini.Form("form2");
             cnn =  new mini.Form("form2").getData();
@@ -93,8 +122,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                                 // console.log(jqXHR);
                             };
                         }
-                        offerSub1(strid,"C3_534182272208='"+cnn.C3_534181645731+"'",function(data){me.subList2(data);});
-                        offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"'",function(data){me.subList4(data);});
+                        offerSub1(strid,"C3_534182272208='"+cnn.C3_534181645731+"' and C3_534182291688='"+cnn.C3_534181718652+"'",function(data){me.subList2(data);});
+                        offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"' and C3_534182440112='"+cnn.C3_534181645731+"'",function(data){me.subList4(data);});
+                        // offerSub1(aveid,"'"+cnn.C3_534181730034+"' like '%"+"convert(char,C3_534182432109)"+"%'",function(data){me.subList4(data);});
                     }
                 });
             }, 200);
