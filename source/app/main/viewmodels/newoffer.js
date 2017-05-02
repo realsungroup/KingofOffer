@@ -87,9 +87,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                                 // console.log(jqXHR);
                             };
                         }
-                      //  alert(cnn.C3_534181730034);
-                        offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"'",function(data){me.subList4(data);});
-                        // offerSub1(aveid,"'"+cnn.C3_534181730034+"' like '%"+"convert(char,C3_534182432109)"+"%'",function(data){me.subList4(data);});
+                       offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"' and C3_534182440112='"+cnn.C3_534181645731+"'",function(data){me.subList4(data);});
+                       
                     }
               
              , 200);

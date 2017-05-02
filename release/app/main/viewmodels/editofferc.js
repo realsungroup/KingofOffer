@@ -41,7 +41,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             $('#fbd').hide();
         }
         if(efnData.C3_541165035428!=="Y"||efnData.C3_545943331211!=="未审批"){
-            $('#lgid').hide();
+           // $('#lgid').hide();
         }else{
             var lg=mini.getbyName('C3_534187093868');
             lg.addCls("asLabel");
