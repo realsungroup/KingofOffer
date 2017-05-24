@@ -81,32 +81,103 @@
                     <input class="mini-textbox" name="C3_534264724518" required="true"/>
                 </td>
             </tr>
-            <tr>
+            <tr id="con1">
                 <td class="title">
-                    Department
+                    Company
                 </td>
-                <td colspan="3">
-                     <input class="mini-textbox" name="C3_534187094286" width="450px" readonly/>
+                <td colspan="2">
+                    <input class="mini-textbox" name="scompany" width="98%" readonly/>
                 </td>
                 <td class="title">
-                    Project/Function
+                    Location
                 </td>
-                <td id="pf">
-                    <input class="mini-textbox" name="C3_535826701051" required="true"/>
+                <td id="pf" colspan="2">
+                    <input class="mini-textbox" name="C3_534187094088" readonly/>
+                </td>
+            </tr>
+            <tr id="con2">
+                <td class="title">
+                    Department Ⅰ
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="sdept1" width="98%" readonly/>
+                </td>
+                <td class="title">
+                    Department Ⅱ
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="sdept2" width="98%" readonly/>
+                </td>
+            </tr>
+            <tr id="con3">
+                <td class="title">
+                    Department Ⅲ
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="sdept3" width="98%" readonly/>
+                </td>
+                <td class="title">
+                    Department Ⅳ
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="sdept4" width="98%" readonly/>
+                </td>
+            </tr>
+            <tr id="eac1">
+                <td class="title">
+                    Company
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="company" width="98%" required="true"/>
+                </td>
+                <td class="title">
+                    Location
+                </td>
+                <td id="pf" colspan="2">
+                    <input class="mini-textbox" name="C3_534187094088" readonly/>
+                </td>
+            </tr>
+            <tr id="eac2">
+                <td class="title">
+                    Department Ⅰ
+                </td>
+                <td colspan="2">
+                    <input onclick="sdept1()" onvaluechanged="sdept2(e)" width="98%" class="mini-combobox" valueField="C3_461011989083" textField="C3_461011989083" name="dept1" id="dept1" required="true"/>
+                </td>
+                <td class="title">
+                    Department Ⅱ
+                </td>
+                <td colspan="2">
+                    <input onvaluechanged="sdept3(e)" width="98%" class="mini-combobox" valueField="C3_461011989333" textField="C3_461011989333" name="dept2" id="dept2" required="true"/>
+                </td>
+            </tr>
+            <tr id="eac3">
+                <td class="title">
+                    Department Ⅲ
+                </td>
+                <td colspan="2">
+                    <input onvaluechanged="sdept4(e)" width="98%" class="mini-combobox" valueField="C3_461011989568" textField="C3_461011989568" name="dept3" id="dept3" required="true"/>
+                </td>
+                <td class="title">
+                    Department Ⅳ
+                </td>
+                <td colspan="2">
+                    <input class="mini-combobox" width="98%" valueField="C3_461011989771" textField="C3_461011989771" name="dept4" id="dept4" required="true"/>
                 </td>
             </tr>
             <tr>
+                <td class="title">
+                    Project/Function
+                </td>
+                <td>
+                    <input class="mini-textbox" id="con4" name="C3_535826701051" readonly/>
+                    <input class="mini-textbox" id="eac4" name="C3_535826701051" required="true"/>
+                </td>
                 <td class="title">
                     Type
                 </td>
                 <td>
                     <input class="mini-textbox" name="C3_535827034365" readonly/>
-                </td>
-                <td class="title">
-                    Location
-                </td>
-                <td>
-                    <input class="mini-textbox" name="C3_534187094088" readonly/>
                 </td>
                 <td class="title">
                     Level

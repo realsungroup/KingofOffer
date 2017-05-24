@@ -39,8 +39,8 @@
                     Department
                 </td>
                 <td colspan="4">
-                    <input class="mini-textbox" name="C3_534181730034" width="68%"  onclick="changedept()"/>
-                    <button class="mini-button" class="btn btn-success rf fbb" text="部门薪资数据"  width="30%"  onclick="changedept()"/>
+                    <input class="mini-textbox" name="C3_534181730034" width="75%"  onclick="changedept()"/>
+                    <button class="mini-button" class="btn btn-success rf fbb" text="部门薪资数据"  width="23%"  onclick="changedept()"/>
                     <input class="mini-hidden" name="C3_534184180284" readonly/>
                     <input class="mini-hidden" name="C3_534184180596" readonly/>
                 </td>
@@ -83,6 +83,42 @@
                 </td>
                 <td>
                     <input class="mini-textbox" name="C3_534181801459"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Company
+                </td>
+                <td colspan="6">
+                    <input onvaluechanged="ndept1(e)" valueField="C3_419448436728" textField="C3_419448436728" id="company" class="mini-combobox" name="company" width="99%" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Department Ⅰ
+                </td>
+                <td colspan="2">
+                    <input onvaluechanged="ndept2(e)" width="97%" class="mini-combobox" valueField="C3_461011989083" textField="C3_461011989083" name="dept1" id="dept1" required="true"/>
+                </td>
+                <td class="title">
+                    Department Ⅱ
+                </td>
+                <td colspan="3">
+                    <input onvaluechanged="ndept3(e)" width="97%" class="mini-combobox" valueField="C3_461011989333" textField="C3_461011989333" name="dept2" id="dept2" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Department Ⅲ
+                </td>
+                <td colspan="2">
+                    <input onvaluechanged="ndept4(e)" width="97%" class="mini-combobox" valueField="C3_461011989568" textField="C3_461011989568" name="dept3" id="dept3" required="true"/>
+                </td>
+                <td class="title">
+                    Department Ⅳ
+                </td>
+                <td colspan="3">
+                    <input class="mini-combobox" width="97%" valueField="C3_461011989771" textField="C3_461011989771" name="dept4" id="dept4" required="true"/>
                 </td>
             </tr>
             <tr>

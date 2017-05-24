@@ -7,6 +7,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var dbs=new dbHelper(baseUrl,user,ucode);
     var cfnid=appConfig.offer.cfnid;
     var eadid=appConfig.offer.eadid;
+    var bmbid=appConfig.offer.bmbid;
+    var dp1,dp2,dp3,dp4;
     var efnData;
     var mName="";
     var editofferc = function() {
@@ -127,6 +129,74 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 return;
             }
         }
+        edepts=function(cmswhere,callback){
+            dbs.dbGetdata(bmbid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
+            function fnSuccess(data){
+                callback(data);
+            };
+            function fnerror(text){
+                dialog.showMessage(text.message,'失败',['返回'],true);
+            };
+            function fnhttperror(jqXHR, textStatus, errorThrown){
+                // console.log(jqXHR);
+            };
+        }
+        edeptc1=function(e){
+            dp1=e.value;
+            var where="C3_419448436728 = '"+dp1+"' and C3_417728131816=1 and DEP_ADMIN_ID>0";
+            edepts(where,function(data){
+                var dept1=new mini.get("dept1");
+                dept1.set({data:[{'C3_461011989083':'none'}]})
+                dept1.set({data:data});
+                var dept2=new mini.get("dept2");
+                dept2.set({data:[{'C3_461011989333':'none'}]})
+                var dept3=new mini.get("dept3");
+                dept3.set({data:[{'C3_461011989568':'none'}]})
+                var dept4=new mini.get("dept4");
+                dept4.set({data:[{'C3_461011989771':'none'}]})
+            })
+        }
+        edeptc2=function(e){
+            dp2=e.value;
+            var where="C3_419448436728 = '"+dp1+"' and C3_461011989083='"+dp2+"' and C3_417728131816=2";
+            edepts(where,function(data){
+                var dept2=new mini.get("dept2");
+                data.push({'C3_461011989333':'none'});
+                dept2.set({data:data})
+                var dept3=new mini.get("dept3");
+                dept3.set({data:[{'C3_461011989568':'none'}]})
+                var dept4=new mini.get("dept4");
+                dept4.set({data:[{'C3_461011989771':'none'}]})
+            })
+        }
+        edeptc3=function(e){
+             dp3=e.value;
+            var where="C3_419448436728 = '"+dp1+"' and C3_461011989083='"+dp2+"' and C3_461011989333='"+dp3+"' and C3_417728131816=3";
+            edepts(where,function(data){
+                var dept3=new mini.get("dept3");
+                data.push({'C3_461011989568':'none'});
+                dept3.set({data:data})
+                var dept4=new mini.get("dept4");
+                dept4.set({data:[{'C3_461011989771':'none'}]})
+            })
+        }
+        edeptc4=function(e){
+             dp4=e.value;
+            var where="C3_419448436728 = '"+dp1+"' and C3_461011989083='"+dp2+"' and C3_461011989333='"+dp3+"' and C3_461011989568='"+dp4+"' and C3_417728131816=4";
+            edepts(where,function(data){
+                var dept4=new mini.get("dept4");
+                data.push({'C3_461011989771':'none'});
+                dept4.set({data:data})
+            })
+        }
+        edeptCom=function(){
+            var where="DEP_id= 100 or  DEP_ID = 2000";
+            edepts(where,function(data){
+                var com=new mini.get("company");
+                com.set({data:data});
+            })
+        }
+        edeptCom();
         var c1=mini.getbyName('C3_536319464780');
         c1.addCls("asLabel");
         var c2=mini.getbyName('C3_536319472674');

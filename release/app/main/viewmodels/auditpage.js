@@ -11,6 +11,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     var preview=[];
     var cmswhere="";
     var recidAp;
+    
     return {
         recid:ko.observableArray(""),
         subList1:ko.observableArray([]),
@@ -62,8 +63,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
                 }else{
                     $("#ahref3").hide();
                 }
-                offerSub1(strid,"C3_534182272208='"+data[0].C3_534181645731+"'",function(data){me.subList2(data);});
-                offerSub1(aveid,"C3_534182432109='"+data[0].C3_534181730034+"'",function(data){me.subList4(data);});
+                offerSub1(strid,"C3_534182272208='"+data[0].C3_534181645731+"' AND C3_534182291688='"+preview.C3_534181718652+"'",function(data){me.subList2(data);});
+                offerSub1(aveid,"C3_534182432109='"+data[0].C3_534181730034+"' AND C3_534182440112='"+preview.C3_534181645731+"'",function(data){me.subList4(data);});
             };
             function fnerror(text){
                 dialog.showMessage(text.message,'失败',['返回'],true);

@@ -20,6 +20,7 @@ requirejs.config({
     }
 });
 
+
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap','realsun/common'],  function (system, app, viewLocator) {
   
     app.title = ' ';

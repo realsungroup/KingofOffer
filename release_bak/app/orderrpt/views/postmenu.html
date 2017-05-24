@@ -1,0 +1,17 @@
+<form id="form">
+    <input type="button" value="菜品发布" class="mtai btn btn-primary" onclick="addRel()">
+    <div data-bind="foreach: rList">
+	    <div class="mList lf">
+			<img  class="lf" data-bind="attr: { src: C3_529015359909 }" width="150" height="150"/>
+			<!--<b class="lf">发布日期:</b><div class="lf"><span data-bind="text: C3_529015397294"></span></div>-->
+            <!--<b class="lf">餐别名称:</b><span class="lf" data-bind="text: C3_529015877010"></span>-->
+            <b class="lf">餐厅名称:</b><div class="lf"><span data-bind="text: C3_529015233937"></span></div>
+            <b class="lf">菜品名称:</b><div class="lf"><span data-bind="text: C3_529015358827"></span></div>
+            <b class="lf">菜品描述:</b><div class="lf oh"><span data-bind="text: C3_529015359363"></span></div>
+            <b class="lf">菜品价格:</b><div class="lf"><span data-bind="text: C3_529015359113"></span><span>元</span></div>
+            <input type="button" value="上架" class="btn btn-success mtai" data-bind="click : upClick.bind(C3_529015358827),visible:($data.C3_530885453314==null||$data.C3_530885453314=='N')">
+            <input type="button" value="下架" class="btn btn-warning mtai" data-bind="click : downClick.bind(C3_529015358827),visible:($data.C3_530885453314=='Y')">
+            <input type="button" value="删除" class="btn btn-danger mtai" data-bind="click : delClick.bind(C3_529015358827)">
+	    </div>
+    </div>
+</form>

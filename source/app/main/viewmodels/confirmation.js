@@ -89,7 +89,8 @@ define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc']
                 setTimeout(function() {
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
-                newofferc.show(e).then(function(){
+                var nType="con";
+                newofferc.show(e,nType).then(function(){
                     offercList('wsp');
                 });
             };

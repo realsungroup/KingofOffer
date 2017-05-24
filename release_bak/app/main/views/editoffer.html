@@ -1,0 +1,410 @@
+<form id="form3" class="op">
+    <table width="100%"> 
+        <!--border='1'cellspacing="0" cellpadding="0"-->
+        <tbody>
+            <tr>
+                <td colspan="7" class="head">
+                    <b>Background Info.</b>
+                    <b class="closecp rf" data-bind="click : cancel">×</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Job Title
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_534181598826" required="true" onclick="cpnn()"/>
+                </td>
+                <td class="title">
+                    Level
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_534181645731" readonly/>
+                </td>
+                <td class="title" colspan="2">
+                    Location
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_534181718652" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Hiring Manager
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_534264776828" readonly/>
+                </td>
+                <td class="title">
+                    Department
+                </td>
+                <td colspan="4">
+                    <input class="mini-textbox" name="C3_534181730034" width="98%" readonly/>
+                    <input class="mini-hidden" name="C3_534184180284" readonly/>
+                    <input class="mini-hidden" name="C3_534184180596" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Candidate
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_534181747202" required="true"/>
+                </td>
+                <td class="title">
+                    Chinese Name
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_541011395561" required="true"/>
+                </td>
+                <td class="title" colspan="2">
+                    Date of Birth
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_534181767190"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Degree
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_534181900158"/>
+                </td>
+                <td class="title">
+                    Yrs of Work Exp.
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_534181788780"/>
+                </td>
+                <td class="title" colspan="2">
+                    Yrs of Related Working Exp.
+                </td>
+                <td>
+                    <input class="mini-textbox" name="C3_534181801459"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Company
+                </td>
+                <td colspan="3">
+                    <input onvaluechanged="edept1()" valueField="C3_419448436728" textField="C3_419448436728" id="company" class="mini-combobox" name="company" width="98%" required="true"/>
+                </td>
+                <td class="title">
+                    Department Ⅰ
+                </td>
+                <td colspan="2">
+                    <input onclick="edept1()" onvaluechanged="edept2()" width="97%" class="mini-combobox" valueField="C3_461011989083" textField="C3_461011989083" name="dept1" id="dept1" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Department Ⅱ
+                </td>
+                <td>
+                    <input onclick="edept2()" onvaluechanged="edept3()" class="mini-combobox" valueField="C3_461011989333" textField="C3_461011989333" name="dept2" id="dept2" required="true"/>
+                </td>
+                <td class="title">
+                    Department Ⅲ
+                </td>
+                <td>
+                    <input onclick="edept3()" onvaluechanged="edept4()" class="mini-combobox" valueField="C3_461011989568" textField="C3_461011989568" name="dept3" id="dept3" required="true"/>
+                </td>
+                <td class="title" colspan="2">
+                    Department Ⅳ
+                </td>
+                <td>
+                    <input onclick="edept4()" class="mini-combobox" valueField="C3_461011989771" textField="C3_461011989771" name="dept4" id="dept4" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" class="head">
+                    <b>Current Package</b>
+                </td>
+            </tr>
+            <tr style="height:66px">
+                <td class="title" colspan="2" width="270">
+                    Base Salary
+                </td>
+                <td class="tc" colspan="3" width="400">
+                    <input class="mini-textbox" name="C3_534181957670" value="0" onvaluechanged='vchange'/><b>/Monthly</b>
+                </td>
+                <td class="tr" colspan="2" width="220">
+                    <input class="mini-textbox" name="C3_534339050633" value="0" readonly/><b>/Annual</b>
+                </td>
+            </tr>
+            <tr style="height:66px">
+                <td class="title" colspan="2">
+                    Year-end Bonus
+                </td>
+                <td class="tr" colspan="5">
+                    <input class="mini-textbox" name="C3_534181974758" value="0" onvaluechanged='vchange'/><b>/Annual</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="title" colspan="2">
+                    Stocks
+                </td>
+                <td colspan="3" class="tc">
+                    <input class="mini-textarea" width="96%" style="height:66px" name="C3_535110109847"/>
+                </td>
+                <td class="tr" colspan="2">
+                    <input class="mini-textbox" name="C3_534181984193" value="0" onvaluechanged='vchange'/><b>/Annual</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="title" colspan="2">
+                    Allowance
+                </td>
+                <td colspan="3" class="tc">
+                    <input class="mini-textarea" width="96%" style="height:66px" name="C3_535110132760"/>
+                </td>
+                <td class="tr" colspan="2">
+                    <input class="mini-textbox" name="C3_534181995445" value="0" onvaluechanged='vchange'/><b>/Annual</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="title" colspan="2">
+                    Other
+                </td>
+                <td colspan="3" class="tc">
+                    <input class="mini-textarea" width="96%" style="height:66px" name="C3_535110147865"/>
+                </td>
+                <td class="tr" colspan="2">
+                    <input class="mini-textbox" name="C3_541879174848" value="0" onvaluechanged='vchange'/><b>/Annual</b>
+                </td>
+            </tr>
+            <tr style="height:66px">
+                <td class="title" colspan="2">
+                    Total Cash
+                </td>
+                <td class="tr" colspan="5">
+                    <input class="mini-textbox" name="C3_534182046604" value="0" readonly/><b>/Annual</b>
+                </td>
+            </tr>
+            <tr style="height:66px">
+                <td class="title" colspan="2">
+                    Candidate's Expectation
+                </td>
+                <td class="tc" colspan="3">
+                    <input class="mini-textbox" name="C3_534182182372" value="0"/><b>/Monthly</b>
+                </td>
+                <td colspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" class="head">
+                    <b>Salary Structure</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="title3" width="20%">
+                                    Level
+                                </th>
+                                <th class="title3" width="20%">
+                                    Location
+                                </th>
+                                <th class="title3" width="20%">
+                                    Min.
+                                </th>
+                                <th class="title3" width="20%">
+                                    Median
+                                </th>
+                                <th class="title3" width="20%">
+                                    Max.
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: subList2">
+                            <tr>
+                                <td class="tc"><b data-bind="text: C3_534182272208"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182291688"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182320476"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182331126"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182340241"></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" class="head">
+                    <b>Departmental payroll data</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="title3" width="30%" colspan="2">
+                                    Department
+                                </th>
+                                <th class="title3" width="5%">
+                                    Level
+                                </th>
+                                <th class="title3" width="5%">
+                                    No. of Employees
+                                </th>
+                                <th class="title3" width="12%">
+                                    Median of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Average of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Min. of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Max. of Gross Salary
+                                </th>
+                                <th class="title3" width="12%">
+                                    Average of OT
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: subList4">
+                            <tr>
+                                <td class="tc oh" colspan="2"><b data-bind="text: C3_534182432109"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182440112"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182447890"></b></td>
+                                <td class="tc"><b data-bind="text: C3_535718965183"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182477477"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182525026"></b></td>
+                                <td class="tc"><b data-bind="text: C3_534182514734"></b></td>   
+                                <td class="tc"><b data-bind="text: C3_534182501565"></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" class="head">
+                    <b>Salary Proposal</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="5">
+                    <table>
+                        <tr>
+                            <td width="50%" class="title1 tc">Min.</td>
+                            <td width="50%" class="title1 tc">Max.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="title" colspan="2">
+                    Salary
+                </td>
+                <td colspan="5">
+                    <table>
+                        <tr>
+                            <td class="tc">
+                                <input class="mini-textbox" name="C3_534183009192"/>
+                                <b class="blx">～</b>
+                                <input class="mini-textbox" name="C3_534183037917"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="title" colspan="2">
+                    RSUs
+                </td>
+                <td colspan="5" class="tc">
+                    <input class="mini-textbox" style="width:98%" name="C3_534183031497"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title" colspan="2">
+                    Other
+                </td>
+                <td colspan="5" class="tc">
+                    <input class="mini-textbox" style="width:98%" name="C3_534183067213"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" class="head">
+                    <b>Upload Attachments</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="tc">
+                     <input
+                    cursor="pointer"
+                    id='fileupload1'
+                    buttonText="Attach1"
+                    onuploaderror='onUploadError'
+                    onfileselect='onFileSelect'
+                    onuploadsuccess='onUploadSuccess'
+                    uploadUrl='http://wux-hr03/rispweb/rispservice/SvcUploadFile2.aspx?savepath=d:\\web\\rispweb\\upfiles&httppath=http://wux-hr03/rispweb/upfiles'
+                    flashUrl='swfupload/swfupload.swf'
+                    class='mini-fileupload'
+                    uploadOnSelect=true 
+                    name='Fdata'
+                    limitType='*.*'/>
+                    <input id="imgurl" name='C3_534182834029' class="mini-hidden"/>
+                    <input
+                    cursor="pointer"
+                    id='fileupload2'
+                    buttonText="Attach2"
+                    onuploaderror='onUploadError2'
+                    onfileselect='onFileSelect2'
+                    onuploadsuccess='onUploadSuccess2'
+                    uploadUrl='http://wux-hr03/rispweb/rispservice/SvcUploadFile2.aspx?savepath=d:\\web\\rispweb\\upfiles&httppath=http://wux-hr03/rispweb/upfiles'
+                    flashUrl='swfupload/swfupload.swf'
+                    class='mini-fileupload'
+                    uploadOnSelect=true 
+                    name='Fdata2'
+                    limitType='*.*'/>
+                    <input id="imgurl2" name='C3_534182839409' class="mini-hidden"/>
+                    <input
+                    cursor="pointer"
+                    id='fileupload3'
+                    buttonText="Attach3"
+                    onuploaderror='onUploadError3'
+                    onfileselect='onFileSelect3'
+                    onuploadsuccess='onUploadSuccess3'
+                    uploadUrl='http://wux-hr03/rispweb/rispservice/SvcUploadFile2.aspx?savepath=d:\\web\\rispweb\\upfiles&httppath=http://wux-hr03/rispweb/upfiles'
+                    flashUrl='swfupload/swfupload.swf'
+                    class='mini-fileupload'
+                    uploadOnSelect=true 
+                    name='Fdata3'
+                    limitType='*.*'/>
+                    <input id="imgurl3" name='C3_541852470955' class="mini-hidden"/>
+                </td>
+                <td colspan="3" class="tc">
+                    <a id="ahref" target="_blank" href="#"><img id='imgUploaded'src="../../img/timg.jpg" width="60"/></a>
+                    <a id="ahref2" target="_blank" href="#"><img id='imgUploaded2'src="../../img/timg.jpg" width="60"/></a>
+                    <a id="ahref3" target="_blank" href="#"><img id='imgUploaded3'src="../../img/timg.jpg" width="60"/></a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" class="foot">
+                    <input type="button" value="Cancel" class="btn btn-warning rf" data-bind="click : cancel">
+                    <input type="button" id="fbb" value="Save" class="btn btn-success rf" data-bind="click : ok">
+                </td>
+            </tr>
+            <tr>
+                <td width="120px" class="title"></td>
+                <td width="150px" class="title"></td>
+                <td width="120px" class="title"></td>
+                <td width="150px" class="title"></td>
+                <td width="130px" class="title"></td>
+                <td width="80px" class="title"></td>
+                <td width="150px" class="title"></td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
+ 

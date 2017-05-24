@@ -8,7 +8,9 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var cfnid=appConfig.offer.cfnid;
     var cfnData;
     var eadid=appConfig.offer.eadid;
+    var bmbid=appConfig.offer.bmbid;
     var mName="";
+    var n;
     var newofferc = function() {
     };
     newofferc.prototype.subList=ko.observableArray([]),
@@ -282,6 +284,76 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 return;
             }
         }
+        depts=function(cmswhere,callback){
+            dbs.dbGetdata(bmbid,0,cmswhere,fnSuccess,fnerror,fnhttperror);
+            function fnSuccess(data){
+                callback(data);
+            };
+            function fnerror(text){
+                dialog.showMessage(text.message,'失败',['返回'],true);
+            };
+            function fnhttperror(jqXHR, textStatus, errorThrown){
+                // console.log(jqXHR);
+            };
+        }
+        sdept1=function(){
+            dp1=cfnData.company;
+            var where="C3_419448436728 = '"+dp1+"' and C3_417728131816=1 and DEP_ADMIN_ID>0";
+            depts(where,function(data){
+                var dept1=new mini.get("dept1");
+                dept1.set({data:[{'C3_461011989083':'none'}]})
+                dept1.set({data:data});
+                var dept2=new mini.get("dept2");
+                dept2.set({data:[{'C3_461011989333':'none'}]})
+                var dept3=new mini.get("dept3");
+                dept3.set({data:[{'C3_461011989568':'none'}]})
+                var dept4=new mini.get("dept4");
+                dept4.set({data:[{'C3_461011989771':'none'}]})
+            })
+        }
+        sdept2=function(e){
+            dp2=e.value;
+            var where="C3_419448436728 = '"+dp1+"' and C3_461011989083='"+dp2+"' and C3_417728131816=2";
+            depts(where,function(data){
+                var dept2=new mini.get("dept2");
+                data.push({'C3_461011989333':'none'});
+                dept2.set({data:data})
+                var dept3=new mini.get("dept3");
+                dept3.set({data:[{'C3_461011989568':'none'}]})
+                var dept4=new mini.get("dept4");
+                dept4.set({data:[{'C3_461011989771':'none'}]})
+            })
+        }
+        sdept3=function(e){
+             dp3=e.value;
+            var where="C3_419448436728 = '"+dp1+"' and C3_461011989083='"+dp2+"' and C3_461011989333='"+dp3+"' and C3_417728131816=3";
+            depts(where,function(data){
+                var dept3=new mini.get("dept3");
+                data.push({'C3_461011989568':'none'});
+                dept3.set({data:data})
+                var dept4=new mini.get("dept4");
+                dept4.set({data:[{'C3_461011989771':'none'}]})
+            })
+        }
+        sdept4=function(e){
+             dp4=e.value;
+            var where="C3_419448436728 = '"+dp1+"' and C3_461011989083='"+dp2+"' and C3_461011989333='"+dp3+"' and C3_461011989568='"+dp4+"' and C3_417728131816=4";
+            depts(where,function(data){
+                var dept4=new mini.get("dept4");
+                data.push({'C3_461011989771':'none'});
+                dept4.set({data:data})
+            })
+        }
+        // deptCom=function(){
+        //     var where="DEP_id= 100 or  DEP_ID = 2000";
+        //     depts(where,function(data){
+        //         var com=new mini.get("company");
+        //         com.set({data:data});
+        //     })
+        // }
+        if(!cfnData.dept1){
+            sdept1();
+        }
         var c1=mini.getbyName('C3_536319464780');
         c1.addCls("asLabel");
         var c2=mini.getbyName('C3_536319472674');
@@ -330,10 +402,22 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         if(cfnData.C3_534187101971>=8){
             $('.dy8').hide();
         }
+        if(n=='con'){
+            $('#eac1').hide();
+            $('#eac2').hide();
+            $('#eac3').hide();
+            $('#eac4').hide();
+        }else if(n=='eac'){
+            $('#con1').hide();
+            $('#con2').hide();
+            $('#con3').hide();
+            $('#con4').hide();
+        }
     };
-    newofferc.show = function(e){
+    newofferc.show = function(e,nType){
         cfnData=e;
         mName=cfnData.C3_534188520203;
+        n=nType;
         return dialog.show(new newofferc());
     };
    

@@ -29,6 +29,7 @@
         "displaymode":"",
         "dbh":null,
         "posrecordsjson":null,
+        "nType":null,
         "cpnid":516747252561,
         "relid":530889813533,
         "cbnid":533903478030,
@@ -68,7 +69,9 @@
         "yjjid":544807032852,
         "yyjid":545135053311,
         "ylsid":542197833056,
-        "jlsid":542197296605
+        "jlsid":542197296605,
+        "bmbid":466282405067,
+        "cmsid":548936690604
     },
     "appfunction":null
 

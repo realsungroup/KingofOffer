@@ -71,7 +71,8 @@ define(['plugins/dialog', 'knockout','./newofferc','./preofferc'], function (dia
                 setTimeout(function() {
                     $('.fbb').removeAttr("disabled");
                 }, 1000);
-                newofferc.show(e).then(function(){
+                var nType="eac";
+                newofferc.show(e,nType).then(function(){
                     offerceList(dfnid);
                 });
             };
