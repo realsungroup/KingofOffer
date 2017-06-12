@@ -9,6 +9,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var cfnData;
     var eadid=appConfig.offer.eadid;
     var bmbid=appConfig.offer.bmbid;
+    var lyyid=appConfig.offer.lyyid;
+    var lyeid=appConfig.offer.lyeid;
     var mName="";
     var n;
     var newofferc = function() {

@@ -8,6 +8,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     var cfnid=appConfig.offer.cfnid;
     var eadid=appConfig.offer.eadid;
     var bmbid=appConfig.offer.bmbid;
+    var lyyid=appConfig.offer.lyyid;
+    var lyeid=appConfig.offer.lyeid;
     var dp1,dp2,dp3,dp4;
     var efnData;
     var mName="";
@@ -36,6 +38,26 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     };
     editofferc.prototype.attached=function(){
         mini.parse();
+        elyFn=function(recid,callback){
+            dbs.dbGetdata(recid,0,"",fnSuccess,fnerror,fnhttperror);
+            function fnSuccess(data){
+                callback(data);
+            };
+            function fnerror(text){
+                dialog.showMessage(text.message,'失败',['返回'],true);
+            };
+            function fnhttperror(jqXHR, textStatus, errorThrown){
+                alert(jqXHR);
+            };
+        }
+        elyFn(lyyid,function(data){
+                var lyy=new mini.get("elyy");
+                lyy.set({data:data})
+        })
+        elyFn(lyeid,function(data){
+                var lye=new mini.get("elye");
+                lye.set({data:data})
+        })
         if(efnData.C3_534187099299!="Y"){
             $('#fbb').val("Submit");
             $('#fbc').hide();

@@ -33,27 +33,27 @@
             </tr>
             <tr class="dy8">
                 <td colspan="6" class="head2">
-                    2.<input class="mini-textbox" name="C3_536319472674" width="96%" readonly/>
+                    2.<input class="mini-textbox" name="C3_536319472674" width="96%" required="true"/>
                 </td>
             </tr>
             <tr class="dy8">
                 <td colspan="6" class="title">
-                    3.<input class="mini-textbox" name="C3_536319473964" width="96%" readonly/>
+                    3.<input class="mini-textbox" name="C3_536319473964" width="96%" required="true"/>
                 </td>
             </tr>
             <tr class="dy8">
                 <td colspan="6" class="head2">
-                    4.<input class="mini-textbox" name="C3_536319475165" width="96%" readonly/>
+                    4.<input class="mini-textbox" name="C3_536319475165" width="96%" required="true"/>
                 </td>
             </tr>
             <tr class="dy8">
                 <td colspan="6" class="title">
-                    5.<input class="mini-textbox" name="C3_536319476423" width="96%" readonly/>
+                    5.<input class="mini-textbox" name="C3_536319476423" width="96%"/>
                 </td>
             </tr>
             <tr class="dy8">
                 <td colspan="6" class="head2">
-                    6.<input class="mini-textbox" name="C3_536319478009" width="96%" readonly/>
+                    6.<input class="mini-textbox" name="C3_536319478009" width="96%"/>
                 </td>
             </tr>
             <tr>
@@ -65,53 +65,83 @@
                 <td class="title">
                     Name
                 </td>
-                <td>
+                <td colspan="2">
                     <input class="mini-textbox" name="C3_534187094490" readonly/>
                 </td>
                 <td class="title">
                     Job Title
                 </td>
-                <td>
+                <td colspan="2">
                     <input class="mini-textbox" name="C3_534187093586" readonly/>
-                </td>
-                <td class="title">
-                    Report to
-                </td>
-                <td id="rt">
-                    <input class="mini-textbox" name="C3_534264724518" readonly/>
                 </td>
             </tr>
             <tr>
                 <td class="title">
-                    Department
+                    Company
                 </td>
-                <td colspan="3">
-                     <input class="mini-textbox" name="C3_534187094286" width="450px" readonly/>
+                <td colspan="2">
+                    <input class="mini-textbox" name="company" width="99%" readonly/>
                 </td>
+                <td class="title">
+                    Location
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="C3_534187094088" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Department Ⅰ
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="dept1" width="98%" readonly/>
+                </td>
+                <td class="title">
+                    Department Ⅱ
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="dept2" width="98%" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Department Ⅲ
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="dept3" width="98%" readonly/>
+                </td>
+                <td class="title">
+                    Department Ⅳ
+                </td>
+                <td colspan="2">
+                    <input class="mini-textbox" name="dept4" width="98%" readonly/>
+                </td>
+            </tr>
+            <tr>
                 <td class="title">
                     Project/Function
                 </td>
-                <td id="pf">
+                <td id="pf" colspan="2">
                     <input class="mini-textbox" name="C3_535826701051" readonly/>
+                </td>
+                <td class="title">
+                    Report to
+                </td>
+                <td id="rt" colspan="2">
+                    <input class="mini-textbox" name="C3_534264724518" readonly/>
                 </td>
             </tr>
             <tr>
                 <td class="title">
                     Type
                 </td>
-                <td>
+                <td colspan="2">
                     <input class="mini-textbox" name="C3_535827034365" readonly/>
-                </td>
-                <td class="title">
-                    Location
-                </td>
-                <td>
-                    <input class="mini-textbox" name="C3_534187094088" readonly/>
                 </td>
                 <td class="title">
                     Level
                 </td>
-                <td>
+                <td colspan="2">
                     <input class="mini-textbox" name="C3_534187093868s" readonly/>
                 </td>
             </tr>
@@ -142,41 +172,6 @@
                 </td>
                 <td colspan="5" class="tc">
                     <input class="mini-textbox" style="width:98%" name="C3_534187098301" readonly/>
-                </td>
-            </tr>
-                <td class="title">
-                    Company
-                </td>
-                <td colspan="5">
-                    <input class="mini-textbox" name="company" width="99%" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Department Ⅰ
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="dept1" width="98%" readonly/>
-                </td>
-                <td class="title">
-                    Department Ⅱ
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="dept2" width="98%" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Department Ⅲ
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="dept3" width="98%" readonly/>
-                </td>
-                <td class="title">
-                    Department Ⅳ
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="dept4" width="98%" readonly/>
                 </td>
             </tr>
             <tr>
@@ -214,7 +209,7 @@
                     <input class="mini-textbox" name="C3_546099439567"/>
                 </td>
                 <td class="title">
-                    录用日期
+                    Offer Date
                 </td>
                 <td>
                     <input class="mini-datepicker" name="C3_546099701952"/>
@@ -225,16 +220,16 @@
                     来源1
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_546099285708"/>
+                    <input class="mini-combobox" valueField="C3_550592812766" textField="C3_550592812766" name="C3_546099285708" id="elyy"/>
                 </td>
                 <td class="title">
                     来源2
                 </td>
                 <td>
-                    <input class="mini-textbox" name="C3_546099838950"/>
+                    <input class="mini-combobox" valueField="C3_550592945016" textField="C3_550592945016" name="C3_546099838950" id="elye"/>
                 </td>
                 <td class="title">
-                    入司日期
+                    Onboard Date
                 </td>
                 <td>
                     <input class="mini-datepicker" name="C3_546099207452"/>
