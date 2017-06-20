@@ -1,0 +1,34 @@
+<form class="cbnn">
+    <!--<b class="closecp rf" data-bind="click : cancel">×</b>-->
+    <table class="tc" align="center">
+        <thead>
+            <tr>
+                <th colspan="7" class="tr">
+                    <input type="button" value="cancel" class="rf" data-bind="click : cancel">
+                    <input type="button" value="clear" class="rf" onclick="rePage()">
+                    <input type="button" value="filter" class="rf" onclick="searchCfn()" id="searchBtncfn">
+                    <input class="rf mini-textbox" id="searchBoxcfn" name="searchBoxcfn">
+                </th>
+            </tr>
+            <tr>
+                <th class="tc">人员编号</th>
+                <th class="tc">职务英文</th>
+                <th class="tc">员工工号</th>
+                <th class="tc">员工姓名</th>
+                <th class="tc">英文全名</th>
+            </tr>
+        </thead>
+        <tbody class="ct" data-bind="foreach: cfnopList">
+            <tr data-bind="click : opnm">
+                <td data-bind="text: C3_305737857578"></td>
+                <td data-bind="text: C3_417990929081"></td>
+                <td data-bind="text: C3_227192472953"></td>
+                <td data-bind="text: C3_227192484125"></td>
+                <td data-bind="text: C3_419343735913"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="imgBox">
+        <img src="../../img/jzz3.gif">
+    </div>
+</form>

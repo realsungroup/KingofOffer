@@ -409,11 +409,15 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             $('#eac2').hide();
             $('#eac3').hide();
             $('#eac4').hide();
+            $('.dd8').hide();
+            $('#rte').hide();
         }else if(n=='eac'){
             $('#con1').hide();
             $('#con2').hide();
             $('#con3').hide();
             $('#con4').hide();
+            $('.dd0').hide();
+            $('#rt').hide();
         }
     };
     newofferc.show = function(e,nType){

@@ -26,7 +26,16 @@ define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc']
             offercList=function(type){
                 dbs.dbGetdata(cfnid,0,"",fnSuccess,fnerror,fnhttperror);
                 function fnSuccess(data){
-                    // console.log(data[0]);
+                    // data.forEach(function(element) {
+                    //     if(element.C3_534264724518==null){
+                    //         element.C3_534264724518="";
+                    //     }
+                    // });
+                    for(var i=0;i<data.length;i++){
+                        if(data[i].C3_534264724518==null){
+                            data[i].C3_534264724518="";
+                        }
+                    }
                     wsp=function(){
                         $('#fhead').empty();
                         $('#fhead').append('未审批');
@@ -120,7 +129,6 @@ define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc']
             searchcf =  function() {
                 newData=[];
                 var skey = mini.getbyName('searchBoxcf').value;
-                // console.log(skey);
                 if(skey==""){
                     rePage();
                 }else{

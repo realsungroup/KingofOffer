@@ -1,0 +1,51 @@
+<form id="form6" class="opp">
+    <table align="center">
+         <!--border='1'cellspacing="0" cellpadding="0"-->
+         <thead>
+             <tr>
+                 <th colspan="10">
+                    <input type="button" value="未审批" class="btn btn-primary fbb lf" onclick="wsp()">
+                    <input type="button" value="审批中" class="btn btn-success fbb lf" onclick="spz()">
+                    <input type="button" value="审批完成" class="btn btn-warning fbb lf" onclick="ywc()">
+                    <b id="fhead" class="fhead"></b>
+                    <input type="button" value="clear" class="rf btn btn-warning fbb" onclick="rePage()">
+                    <input type="button" value="filter" class="rf btn btn-success fbb" onclick="searchcf()" id="searchBtncf">
+                    <input class="rf mini-textbox" id="searchBoxcf" name="searchBoxcf">
+                 </th>
+             </tr>
+             <tr>
+                <th class="tc">Candidate</th>
+                <th class="tc">Job Title</th>
+                <th class="tc">Level</th>
+                <th class="tc">Location</th>
+                <th class="tc">Hiring Manager</th>
+                <th class="tc">Target Manager</th>
+                <th class="tc">Department</th>
+                <th class="tc" id="spjd">审批节点</th>
+                <th class="tc" id="spsj">审批时间</th>
+                <th class="tc">申请人</th>
+                <th></th>
+             </tr>
+         </thead>
+         <tbody data-bind="foreach: cList" >
+             <tr>
+                 <td class="tc"><span data-bind="text: C3_544878121401"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534187093586"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534187093868"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534187094088"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534264724518"></span></td>
+                 <td class="tc"><span data-bind="text: C3_534188520203"></span></td>
+                 <td><span data-bind="text: C3_534187094286"></span></td>
+                 <td class="tc" data-bind="visible:($data.C3_545943331211!=='审批完成')"><b data-bind="text: C3_534187099704"></b></td>
+                 <td class="tc" data-bind="visible:($data.C3_545943331211=='审批完成')"><b data-bind="text: C3_545943965722"></b></td>
+                 <td class="tc"><b data-bind="text: C3_544808264238"></b></td>
+                 <td>
+                    <input type="button" value="Preview" class="btn btn-primary rf fbb" data-bind="click : offercView,visible:($data.C3_534187099299=='Y'&&$data.C3_545943331211!=='审批完成')">
+                    <input type="button" value="Offer Confirmation" class="btn btn-success rf fbb" data-bind="click : newOc,visible:($data.C3_534187099299==null||$data.C3_534187099299=='N')">
+                    <input type="button" value="edit" class="btn btn-success rf fbb" data-bind="click : editOc,visible:($data.C3_545943331211=='审批完成')">
+                 </td>
+             </tr>
+         </tbody>
+    </table>
+</form>
+ 

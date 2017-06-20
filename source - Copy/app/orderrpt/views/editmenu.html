@@ -1,0 +1,76 @@
+<form class="mta" id="editform">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>编辑菜品</th>
+            </tr>
+        </thead>
+        <tr>
+            <td width="96px">菜品类别:</td>
+            <td>
+                <select class="mini-combobox" name="C3_530883695470">
+                    <option value="主荤">主荤</option>
+                    <option value="副荤">副荤</option>
+                    <option value="素菜">汤</option>
+                    <option value="汤">汤</option>
+                    <option value="小吃">小吃</option>
+                    <option value="饮料">饮料</option>
+                    <option value="主食">主食</option>
+                    <option value="水果">水果</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>菜品名称:</td>
+            <td>
+                <input class="mini-textbox" name="C3_511302131411" required="true"/>
+            </td>
+        </tr>
+        <tr>
+            <td>菜品价格:</td>
+            <td>
+                <input class="mini-textbox" name="C3_511302150302" required="true"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                菜品图片:
+            </td>
+            <td>
+                <input
+                    cursor="pointer"
+                    id='fileupload2'
+                    onuploaderror='onUploadError'
+                    onfileselect='onFileSelect2'
+                    onuploadsuccess='onUploadSuccess2'
+                      uploadUrl='http://kingofdinner.realsun.me:8081/rispweb/rispservice/SvcUploadFile2.aspx?savepath=c:\\web\\web\\rispweb\\upfiles&httppath=http://kingofdinner.realsun.me:8081/rispweb/upfiles'
+                    flashUrl='swfupload/swfupload.swf'
+                    class='mini-fileupload'
+                    uploadOnSelect=true 
+                    name='Fdata'
+                    limitType='*.jpg;*.jpeg;*.png'/>
+                <input id="imgurl2" name='C3_511302422114' class="mini-hidden"  allowInput="false"/>
+                <img align='right' id='imgUploaded2' width="70px" hidden/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                菜品描述:
+            </td>
+            <td>
+                <input name="C3_511302171145" class="mini-textarea" required="true"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="button" value="保存" class="btn btn-success mtai" data-bind="click : ok">
+                <!--<input type="button" value="删除" class="btn btn-danger" data-bind="click : del">-->
+                <input type="button" value="取消" class="btn btn-danger mtai" data-bind="click : cancel">
+                <input name="REC_ID" class="mini-Hidden" allowInput="false"/>
+            </td>
+        </tr>
+    </table>
+</form>
