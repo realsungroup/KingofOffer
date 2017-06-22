@@ -428,6 +428,16 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         }
         req();
         form.setData(cfnData);
+         //韩涛添加2017-06-22 修改因为添加了重复字段无法保存的问题。
+         mini.getbyName("C3_536319472674").setValue(cfnData.C3_536319472674);
+         mini.getbyName("C3_536319473964").setValue(cfnData.C3_536319473964);
+         mini.getbyName("C3_536319475165").setValue(cfnData.C3_536319475165);
+         mini.getbyName("C3_536319476423").setValue(cfnData.C3_536319476423);
+         mini.getbyName("C3_536319478009").setValue(cfnData.C3_536319478009);
+         mini.getbyName("C3_535826701051").setValue(cfnData.C3_535826701051);
+         mini.getbyName("C3_534264724518").setValue(cfnData.C3_534264724518);
+         
+          
         if(cfnData.C3_534187101971>=8){
             $('.dy8').hide();
         }
