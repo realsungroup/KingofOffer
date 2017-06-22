@@ -74,8 +74,18 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             }else{
                 o.C3_534187099299='Y';
             }
-            var json = mini.encode([o]);
-            dbs.dbSavedata(cfnid,0,json);
+           
+             //韩涛添加2017-06-22 修改因为添加了重复字段无法保存的问题。
+            if (o.C3_536319472674==""){ o.C3_536319472674=mini.getbyName("C3_536319472674").value;}
+            if (o.C3_536319473964==""){o.C3_536319473964=mini.getbyName("C3_536319473964").value;}
+            if (o.C3_536319475165==""){o.C3_536319475165=mini.getbyName("C3_536319475165").value;}
+            if (o.C3_536319476423==""){o.C3_536319476423=mini.getbyName("C3_536319476423").value;}
+            if (o.C3_536319478009==""){o.C3_536319478009=mini.getbyName("C3_536319478009").value;}
+            if (o.C3_535826701051==""){o.C3_535826701051=mini.getbyName("C3_535826701051").value;}
+            if (o.C3_534264724518==""){o.C3_534264724518=mini.getbyName("C3_534264724518").value;}
+             var json = mini.encode([o]);
+           // console.log(json);
+           dbs.dbSavedata(cfnid,0,json);
             dialog.close(that);
         }
     };
@@ -132,6 +142,14 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             }else{
                 o.C3_534187099299='Y';
             }
+              //韩涛添加2017-06-22 修改因为添加了重复字段无法保存的问题。
+            if (o.C3_536319472674==""){ o.C3_536319472674=mini.getbyName("C3_536319472674").value;}
+            if (o.C3_536319473964==""){o.C3_536319473964=mini.getbyName("C3_536319473964").value;}
+            if (o.C3_536319475165==""){o.C3_536319475165=mini.getbyName("C3_536319475165").value;}
+            if (o.C3_536319476423==""){o.C3_536319476423=mini.getbyName("C3_536319476423").value;}
+            if (o.C3_536319478009==""){o.C3_536319478009=mini.getbyName("C3_536319478009").value;}
+            if (o.C3_535826701051==""){o.C3_535826701051=mini.getbyName("C3_535826701051").value;}
+            if (o.C3_534264724518==""){o.C3_534264724518=mini.getbyName("C3_534264724518").value;}
             var json = mini.encode([o]);
             dbs.dbSavedata(cfnid,0,json);
             dialog.close(that);
@@ -183,7 +201,16 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
                 o.C3_534264724518=$('#l1').val();
             }
             o.REC_ID=cfnData.REC_ID;
+            //韩涛添加2017-06-22 修改因为添加了重复字段无法保存的问题。
+            if (o.C3_536319472674==""){ o.C3_536319472674=mini.getbyName("C3_536319472674").value;}
+            if (o.C3_536319473964==""){o.C3_536319473964=mini.getbyName("C3_536319473964").value;}
+            if (o.C3_536319475165==""){o.C3_536319475165=mini.getbyName("C3_536319475165").value;}
+            if (o.C3_536319476423==""){o.C3_536319476423=mini.getbyName("C3_536319476423").value;}
+            if (o.C3_536319478009==""){o.C3_536319478009=mini.getbyName("C3_536319478009").value;}
+            if (o.C3_535826701051==""){o.C3_535826701051=mini.getbyName("C3_535826701051").value;}
+            if (o.C3_534264724518==""){o.C3_534264724518=mini.getbyName("C3_534264724518").value;}
             var json = mini.encode([o]);
+            //console.log(json);
             dbs.dbSavedata(cfnid,0,json);
             dialog.close(that);
         }
