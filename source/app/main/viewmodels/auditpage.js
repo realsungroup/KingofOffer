@@ -105,7 +105,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             var form = new mini.Form("form5");
             var o =  new mini.Form("form5").getData();
             form.validate();
-            if (parseFloat(o.C3_534183782055)>=parseFloat(o.C3_534183782431)){
+            if (parseFloat(o.C3_534183782055)>parseFloat(o.C3_534183782431)){
                 alert('"Max." should be greater than "Min."');
                 mini.getbyName('C3_534183782431').focus();
                 return;

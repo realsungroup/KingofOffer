@@ -43,7 +43,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
             mini.getbyName('C3_534182182372').focus();
             return;
         }
-        if (parseFloat(o.C3_534183009192)>=parseFloat(o.C3_534183037917)){
+        if (parseFloat(o.C3_534183009192)>parseFloat(o.C3_534183037917)){
             alert('"Max." should be greater than "Min."');
             mini.getbyName('C3_534183037917').focus();
             return;

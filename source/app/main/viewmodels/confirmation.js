@@ -48,6 +48,7 @@ define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc']
                                 j++;
                             }
                         }
+                           me.cList([]);
                         me.cList(nData);
                         oldData=sData=nData;
                     }
@@ -63,6 +64,7 @@ define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc']
                                 j++;
                             }
                         }
+                           me.cList([]);
                         me.cList(nData);
                         oldData=sData=nData;
                     }
@@ -78,8 +80,13 @@ define(['plugins/dialog', 'knockout','./newofferc','./editofferc','./preofferc']
                                 j++;
                             }
                         }
-                        me.cList(nData);
+                         me.cList([]);
+                          setTimeout(function() {
+                                me.cList(nData);
                         oldData=sData=nData;
+                   
+                }, 1000);
+                      
                     }
                     if(type=="wsp")wsp();
                     if(type=="spz")spz();

@@ -22,6 +22,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
     editofferc.prototype.save = function() {
         if(confirm('Are you sure you want to save it?')){
             var that=this;
+             mini.parse();
             var form = new mini.Form("form9");
             var o =  new mini.Form("form9").getData();
             form.validate(); 
@@ -214,7 +215,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         edeptCom=function(){
             var where="DEP_id= 100 or  DEP_ID = 2000";
             edepts(where,function(data){
-                var com=new mini.get("company");
+                var com=new mini.getbyName("company");
                 com.set({data:data});
             })
         }

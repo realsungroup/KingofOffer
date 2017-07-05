@@ -85,7 +85,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             if (o.C3_534264724518==""){o.C3_534264724518=mini.getbyName("C3_534264724518").value;}
              var json = mini.encode([o]);
            // console.log(json);
-           dbs.dbSavedata(cfnid,0,json);
+            dbs.dbSavedata(cfnid,0,json);
             dialog.close(that);
         }
     };
