@@ -387,7 +387,7 @@ var dbHelper = (function () {
     }
     dbHelper.prototype.dbGetdata = function (resid, subresid, cmswhere, fnSuccess, fnError, fnSyserror,pageSize,pageIndex) {
         var url;
-        url = this.baseUrl + "&method=" + this.getMethod + "&user=" + this.user + "&ucode=" + this.ucode + "&resid=" + resid + "&subresid=" + subresid + "&cmswhere=" + cmswhere;
+        url = this.baseUrl + "&method=" + this.getMethod + "&user=" + this.user + "&ucode=" + this.ucode + "&resid=" + resid + "&subresid=" + subresid + "&cmswhere=" + escape(cmswhere);
         if ((pageSize >0))
         {
              url=url+"&pageIndex="+pageIndex+"&pageSize="+pageSize;

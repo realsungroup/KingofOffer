@@ -92,7 +92,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                                 // console.log(jqXHR);
                             };
                         }
-                       offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"' and C3_534182440112='"+cnn.C3_534181645731+"'",function(data){me.subList4(data);});
+                        var companyValue=escape(new mini.get("company").value);
+                       offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"' and C3_534182440112='"+cnn.C3_534181645731+"' and C3_552996983507='"+companyValue+"'",function(data){me.subList4(data);});
                        
                     }
               
