@@ -93,6 +93,11 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         efnData.C3_534187093586s=efnData.C3_534187093586;
         efnData.C3_534264724518s=efnData.C3_534264724518;
         efnData.C3_535826470338s=efnData.C3_535826470338;
+        if(efnData.C3_557945948360=='部门经理确认'||efnData.C3_557945948360=='HR核对'){
+            $('#bs2').show();
+        }else{
+            $('#bs2').hide();
+        }
         if(efnData.C3_534187097298){
             var a1=$("#ahref");
             a1[0].href=efnData.C3_534187097298;

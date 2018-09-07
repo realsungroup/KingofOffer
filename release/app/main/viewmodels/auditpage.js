@@ -11,7 +11,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
     var preview=[];
     var cmswhere="";
     var recidAp;
-    
+     
     return {
         recid:ko.observableArray(""),
         subList1:ko.observableArray([]),

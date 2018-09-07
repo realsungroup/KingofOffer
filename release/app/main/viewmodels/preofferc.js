@@ -43,6 +43,12 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         cfmData.C3_535826470338s=cfmData.C3_535826470338;
         form.setData(cfmData);
         fields = form.getFields();
+        if(cfmData.C3_557945948360=='部门经理确认'||cfmData.C3_557945948360=='HR核对'){
+            $('#bs1').show();
+        }else{
+            $('#bs1').hide();
+        }
+        debugger
         if(cfmData.C3_541165035428!=="Y"||cfmData.C3_545943331211!=="未审批"){
             $('#lgid').hide();
         }else{

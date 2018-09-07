@@ -298,11 +298,14 @@
 }
 /***************************************************************/
 .op{
-    width: 930px;
+   width: 930px;
     margin:10px auto;
     border: 2px solid #ddd;
     background: #fefefe;
     padding: 10px;  
+}
+.width-1300{
+    width: 1300px !important;
 }
 .ht864{
     height:864px;
@@ -526,4 +529,7 @@ form table table td{
 form table table th{
     border-right:1px solid #333;
     border-bottom:1px solid #333;
+}
+.mini-required span,.mini-required>span>input{
+    background-color: #fff;
 }

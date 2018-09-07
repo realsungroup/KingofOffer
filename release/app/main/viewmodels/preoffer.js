@@ -79,7 +79,7 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
             dialog.showMessage(text.message,'失败',['返回'],true);
         };
         function fnhttperror(jqXHR, textStatus, errorThrown){
-            alert(jqXHR);
+            // alert(jqXHR);
         };
     }
     preoffer.prototype.cancel = function() {

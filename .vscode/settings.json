@@ -7,6 +7,7 @@
         "test/**/*.js": false,
         "release":false,
         "durandalRelease":true,
+        "New folder/Release":true,
         "source/entities":true,
         "source/interfaces":true,
         "source/*.ts":true,
