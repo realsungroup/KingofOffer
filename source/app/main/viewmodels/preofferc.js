@@ -36,7 +36,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
             alert(jqXHR);
         };
         var form = new mini.Form("form8");
-        cfmData.C3_534187093868s=cfmData.C3_534187093868;
+        cfmData.C3_589650650993s=cfmData.C3_589650650993;
         cfmData.C3_534187094490s=cfmData.C3_534187094490;
         cfmData.C3_534187093586s=cfmData.C3_534187093586;
         cfmData.C3_534264724518s=cfmData.C3_534264724518;
@@ -46,7 +46,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog'], function (
         if(cfmData.C3_541165035428!=="Y"||cfmData.C3_545943331211!=="未审批"){
             $('#lgid').hide();
         }else{
-            var lg=mini.getbyName('C3_534187093868');
+            var lg=mini.getbyName('C3_589650650993');
             lg.addCls("asLabel");
         }
         for (var i = 0, l = fields.length; i < l; i++) {

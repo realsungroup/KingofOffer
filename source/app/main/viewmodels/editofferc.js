@@ -68,7 +68,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         if(efnData.C3_541165035428!=="Y"||efnData.C3_545943331211!=="未审批"){
            // $('#lgid').hide();
         }else{
-            var lg=mini.getbyName('C3_534187093868');
+            var lg=mini.getbyName('C3_589650650993');
             lg.addCls("asLabel");
         }
         var me=this;
@@ -88,7 +88,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         function fnhttperror(jqXHR, textStatus, errorThrown){
             alert(jqXHR);
         };
-        var form = new mini.Form("form9");efnData.C3_534187093868s=efnData.C3_534187093868;
+        var form = new mini.Form("form9");efnData.C3_589650650993s=efnData.C3_589650650993;
         efnData.C3_534187094490s=efnData.C3_534187094490;
         efnData.C3_534187093586s=efnData.C3_534187093586;
         efnData.C3_534264724518s=efnData.C3_534264724518;

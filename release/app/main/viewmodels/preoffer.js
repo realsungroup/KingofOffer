@@ -62,8 +62,8 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
                 // console.log(jqXHR);
             };
         }
-        offerSub1(strid,"C3_534182272208='"+preview.C3_534181645731+"' AND C3_534182291688='"+preview.C3_534181718652+"'",function(data){me.subList2(data);});
-        offerSub1(aveid,"C3_534182432109='"+preview.C3_534181730034+"' AND C3_534182440112='"+preview.C3_534181645731+"'",function(data){me.subList4(data);});
+        offerSub1(strid,"C3_534182272208='"+preview.C3_589650598855+"' AND C3_534182291688='"+preview.C3_534181718652+"'",function(data){me.subList2(data);});
+        offerSub1(aveid,"C3_534182432109='"+preview.C3_534181730034+"' AND C3_589650519666='"+preview.C3_589650598855+"'",function(data){me.subList4(data);});
         
         cmswhere="REC_ID='"+preview.REC_ID+"'";
         dbs.dbGetdata(opaid,eaaid,cmswhere,fnSuccess,fnerror,fnhttperror);
@@ -79,7 +79,7 @@ define(['plugins/dialog', 'knockout'], function (dialog, ko) {
             dialog.showMessage(text.message,'失败',['返回'],true);
         };
         function fnhttperror(jqXHR, textStatus, errorThrown){
-            // alert(jqXHR);
+            alert(jqXHR);
         };
     }
     preoffer.prototype.cancel = function() {

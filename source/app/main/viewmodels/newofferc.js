@@ -228,7 +228,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
         if(cfnData.C3_541165035428!=="Y"){
             $('#lgid').hide();
         }else{
-            var lg=mini.getbyName('C3_534187093868');
+            var lg=mini.getbyName('C3_589650650993');
             lg.addCls("asLabel");
         }
         var me=this;
@@ -249,7 +249,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./cfnop','.
             alert(jqXHR);
         };
         var form = new mini.Form("form7");
-        cfnData.C3_534187093868s=cfnData.C3_534187093868;
+        cfnData.C3_589650650993s=cfnData.C3_589650650993;
         cfnData.C3_534187094490s=cfnData.C3_534187094490;
         cfnData.C3_534187093586s=cfnData.C3_534187093586;
         cfnData.C3_534264724518s=cfnData.C3_534264724518;

@@ -93,7 +93,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                             };
                         }
                         var companyValue= new mini.get("company").value;
-                       offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"' and C3_534182440112='"+cnn.C3_534181645731+"' and C3_552996983507='"+companyValue+"'",function(data){me.subList4(data);});
+                       offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"' and C3_589650519666='"+cnn.C3_589650598855+"' and C3_552996983507='"+companyValue+"'",function(data){me.subList4(data);});
                        
                     }
               
@@ -169,7 +169,7 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                 recop.show().then(function(opn){
                     if(opn){
                         cnn.C3_534181598826=opn.C3_522691669347;
-                        cnn.C3_534181645731=opn.C3_522691670315;
+                        cnn.C3_589650598855=opn.C3_589803096733;
                         cnn.C3_534181718652=opn.C3_522691669613;
                         cnn.C3_534181730034=opn.C3_522691669878;
                         cnn.C3_534264776828=opn.C3_522691670096;
@@ -194,8 +194,8 @@ define(['durandal/app','knockout','plugins/router','plugins/dialog','./recop'], 
                                 // console.log(jqXHR);
                             };
                         }
-                        offerSub1(strid,"C3_534182272208='"+cnn.C3_534181645731+"' and C3_534182291688='"+cnn.C3_534181718652+"'",function(data){me.subList2(data);});
-                        offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"' and C3_534182440112='"+cnn.C3_534181645731+"'",function(data){me.subList4(data);});
+                        offerSub1(strid,"C3_534182272208='"+cnn.C3_589650598855+"' and C3_534182291688='"+cnn.C3_534181718652+"'",function(data){me.subList2(data);});
+                        offerSub1(aveid,"C3_534182432109='"+cnn.C3_534181730034+"' and C3_589650519666='"+cnn.C3_589650598855+"'",function(data){me.subList4(data);});
                         offerSub1(cmsid,"DEP_id= 100 or  DEP_ID = 2000",function(data){
                             var bmb=new mini.get("company");
                             bmb.set({data:data});
