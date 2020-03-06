@@ -1,338 +1,440 @@
 <form id="form9" class="op">
-    <table> 
-        <!--border='1'cellspacing="0" cellpadding="0"-->
-        <tbody>
-            <tr>
-                <td colspan="6" class="head">
-                    <b>Offer Confirmation</b>
-                    <b class="closecp rf" data-bind="click : cancel">×</b>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    部门经理
-                </td>
-                <td>
-                    <input class="mini-textbox" name="C3_534188520203" readonly/>
-                    <input class="mini-hidden" name="C3_534188545242">
-                    <input class="mini-hidden" name="C3_534188517500">
-                </td>
-                <td colspan="4" class="title">
-                    <input class="mini-textbox" name="C3_534187093586s"/>-<input class="mini-textbox" name="C3_534187094490s"/>
-                </td>
-            </tr>
-            <tr class="dy8">
-                <td colspan="6" class="head2">
-                    <span>Summary from Hiring Manager</span><input class="mini-textbox" name="C3_534264724518s" readonly/>
-                </td>
-            </tr>
-            <tr class="dy8">
-                <td class="title" colspan="6" id="opt1">
-                    1.<input class="mini-textbox" name="C3_536319464780" width="96%" readonly/>
-                </td>
-            </tr>
-            <tr class="dy8">
-                <td colspan="6" class="head2">
-                    2.<input class="mini-textbox" name="C3_536319472674" width="96%" required="true"/>
-                </td>
-            </tr>
-            <tr class="dy8">
-                <td colspan="6" class="title">
-                    3.<input class="mini-textbox" name="C3_536319473964" width="96%" required="true"/>
-                </td>
-            </tr>
-            <tr class="dy8">
-                <td colspan="6" class="head2">
-                    4.<input class="mini-textbox" name="C3_536319475165" width="96%" required="true"/>
-                </td>
-            </tr>
-            <tr class="dy8">
-                <td colspan="6" class="title">
-                    5.<input class="mini-textbox" name="C3_536319476423" width="96%"/>
-                </td>
-            </tr>
-            <tr class="dy8">
-                <td colspan="6" class="head2">
-                    6.<input class="mini-textbox" name="C3_536319478009" width="96%"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6" class="head">
-                    <b>Offer information</b>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Name
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="C3_534187094490" readonly/>
-                </td>
-                <td class="title">
-                    Job Title
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="C3_534187093586" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Company
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="company" width="99%" readonly/>
-                </td>
-                <td class="title">
-                    Location
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="C3_534187094088" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Department Ⅰ
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="dept1" width="98%" readonly/>
-                </td>
-                <td class="title">
-                    Department Ⅱ
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="dept2" width="98%" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Department Ⅲ
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="dept3" width="98%" readonly/>
-                </td>
-                <td class="title">
-                    Department Ⅳ
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="dept4" width="98%" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Project/Function
-                </td>
-                <td id="pf" colspan="2">
-                    <input class="mini-textbox" name="C3_535826701051" readonly/>
-                </td>
-                <td class="title">
-                    Report to
-                </td>
-                <td id="rt" colspan="2">
-                    <input class="mini-textbox" name="C3_534264724518" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Type
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="C3_535827034365" readonly/>
-                </td>
-                <td class="title">
-                    Level
-                </td>
-                <td colspan="2">
-                    <input class="mini-textbox" name="C3_589650650993s" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Base Salary
-                </td>
-                <td colspan="2"  class="tc" id="bs">
-                    RMB<input class="mini-textbox" name="C3_536089623045" onvaluechanged="sRange" readonly/><b>/Monthly</b>
-                </td>
-                <td colspan="3"  class="tc">
-                    <input class="mini-textbox" style="text-align: right;" name="C3_534187097705" readonly/>
-                    <b>～</b>
-                    <input class="mini-textbox" name="C3_534187097900" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    RSUs
-                </td>
-                <td colspan="5" class="tc">
-                    <input class="mini-textbox" style="width:98%" name="C3_534187098102" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    Other
-                </td>
-                <td colspan="5" class="tc">
-                    <input class="mini-textbox" style="width:98%" name="C3_534187098301" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6" class="head">
-                    <b>总部审批</b>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    总部审批通过
-                </td>
-                <td>
-                    <select class="mini-combobox" showNullItem="true" name="C3_545943975225">
-                        <option value="审批通过">审批通过</option>
-                        <option value="审批拒绝 ">审批拒绝 </option>
-                    </select>
-                </td>
-                <td class="title">
-                    总部通过日期
-                </td>
-                <td>
-                    <input class="mini-datepicker" value="2016-10-10" name="C3_545943965722" required="true"/>
-                </td>
-                <td colspan="2">
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    英文名
-                </td>
-                <td>
-                    <input class="mini-textbox" name="C3_546098965010"/>
-                </td>
-                <td class="title">
-                    性别
-                </td>
-                <td>
-                    <input class="mini-textbox" name="C3_546099439567"/>
-                </td>
-                <td class="title">
-                    Offer Date
-                </td>
-                <td>
-                    <input class="mini-datepicker" name="C3_546099701952"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    来源1
-                </td>
-                <td>
-                    <input class="mini-combobox" valueField="C3_550592812766" textField="C3_550592812766" name="C3_546099285708" id="elyy"/>
-                </td>
-                <td class="title">
-                    来源2
-                </td>
-                <td>
-                    <input class="mini-combobox" valueField="C3_550592945016" textField="C3_550592945016" name="C3_546099838950" id="elye"/>
-                </td>
-                <td class="title">
-                    Onboard Date
-                </td>
-                <td>
-                    <input class="mini-datepicker" name="C3_546099207452"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="title">
-                    推荐人
-                </td>
-                <td>
-                    <input class="mini-textbox" name="C3_546099890958"/>
-                </td>
-                <td class="title">
-                    推荐费
-                </td>
-                <td>
-                    <input class="mini-textbox" name="C3_546099905253"/>
-                </td>
-                <td class="title">
-                    猎头费
-                </td>
-                <td>
-                    <input class="mini-textbox" name="C3_546099914719"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6" class="head">
-                    <b>Comments</b>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6" class="tc">
-                    <input class="mini-textarea" width="96%" style="height:66px" name="C3_544810053160" readonly/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6" class="head">
-                    <b>Attachments</b>
-                </td>
-            </tr>
-            <tr>
-                <td class="tc" colspan="2">
-                    <a id="ahref" target="_blank" href="#"><img src="../../img/timg.jpg" width="60"/></a>
-                    <a id="ahref2" target="_blank" href="#"><img src="../../img/timg.jpg" width="60"/></a>
-                    <a id="ahref3" target="_blank" href="#"><img src="../../img/timg.jpg" width="60"/></a>
-                </td>
-                <td colspan="2" class="tc">
-                    <div id="lgid">
-                        Level: 
-                        <input class="mini-textbox" name="C3_589650650993" readonly/>
-                        Grade: 
-                        <select class="mini-combobox" style="width:50px" showNullItem="true" name="C3_541174246921" id="">
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-                            <option value="E">E</option>
-                        </select>
-                    </div>
-                </td>
-                <td colspan="2" class="foot">
-                    <input type="button" value="Save" class="btn btn-primary rf" data-bind="click : save">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6" class="head">
-                    <b>Approval process</b>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6">
-                    <table>
-                        <tbody>
-                            <td class="title3" width="25%">
-                                审批人
-                            </td>
-                            <td class="title3" width="25%">
-                                审批结果
-                            </td>
-                            <td class="title3" width="25%">
-                                审批时间
-                            </td>
-                        </tbody>
-                        <tfoot data-bind="foreach: subList">
-                            <tr>
-                                <td class="tc">
-                                    <b data-bind="text: C3_534187898575"></b>
-                                </td>
-                                <td class="tc">
-                                    <b data-bind="text: C3_534187898785"></b>
-                                </td>
-                                <td class="tc">
-                                    <b data-bind="text: C3_534187898986"></b>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <table>
+    <!--border='1'cellspacing="0" cellpadding="0"-->
+    <tbody>
+      <tr>
+        <td colspan="6" class="head">
+          <b>Offer Confirmation</b>
+          <b class="closecp rf" data-bind="click : cancel">×</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          部门经理
+        </td>
+        <td>
+          <input class="mini-textbox" name="C3_534188520203" readonly />
+          <input class="mini-hidden" name="C3_534188545242" />
+          <input class="mini-hidden" name="C3_534188517500" />
+        </td>
+        <td colspan="4" class="title">
+          <input class="mini-textbox" name="C3_534187093586s" />-<input
+            class="mini-textbox"
+            name="C3_534187094490s"
+          />
+        </td>
+      </tr>
+      <tr class="dy8">
+        <td colspan="6" class="head2">
+          <span>Summary from Hiring Manager</span
+          ><input class="mini-textbox" name="C3_534264724518s" readonly />
+        </td>
+      </tr>
+      <tr class="dy8">
+        <td class="title" colspan="6" id="opt1">
+          1.<input
+            class="mini-textbox"
+            name="C3_536319464780"
+            width="96%"
+            readonly
+          />
+        </td>
+      </tr>
+      <tr class="dy8">
+        <td colspan="6" class="head2">
+          2.<input
+            class="mini-textbox"
+            name="C3_536319472674"
+            width="96%"
+            required="true"
+          />
+        </td>
+      </tr>
+      <tr class="dy8">
+        <td colspan="6" class="title">
+          3.<input
+            class="mini-textbox"
+            name="C3_536319473964"
+            width="96%"
+            required="true"
+          />
+        </td>
+      </tr>
+      <tr class="dy8">
+        <td colspan="6" class="head2">
+          4.<input
+            class="mini-textbox"
+            name="C3_536319475165"
+            width="96%"
+            required="true"
+          />
+        </td>
+      </tr>
+      <tr class="dy8">
+        <td colspan="6" class="title">
+          5.<input class="mini-textbox" name="C3_536319476423" width="96%" />
+        </td>
+      </tr>
+      <tr class="dy8">
+        <td colspan="6" class="head2">
+          6.<input class="mini-textbox" name="C3_536319478009" width="96%" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="head">
+          <b>Offer information</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Name
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="C3_534187094490" readonly />
+        </td>
+        <td class="title">
+          Job Title
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="C3_534187093586" readonly />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Company
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="company" width="99%" readonly />
+        </td>
+        <td class="title">
+          Location
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="C3_534187094088" readonly />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Department Ⅰ
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="dept1" width="98%" readonly />
+        </td>
+        <td class="title">
+          Department Ⅱ
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="dept2" width="98%" readonly />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Department Ⅲ
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="dept3" width="98%" readonly />
+        </td>
+        <td class="title">
+          Department Ⅳ
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="dept4" width="98%" readonly />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Project/Function
+        </td>
+        <td id="pf" colspan="2">
+          <input class="mini-textbox" name="C3_535826701051" readonly />
+        </td>
+        <td class="title">
+          Report to
+        </td>
+        <td id="rt" colspan="2">
+          <input class="mini-textbox" name="C3_534264724518" readonly />
+        </td>
+      </tr>
+     
+      <tr>
+        <td class="title">
+          Dept Code
+        </td>
+        <td id="pf" colspan="2">
+          <input class="mini-textbox" width="98%" name="DeptCode" />
+        </td>
+        <td class="title">
+          BU Code
+        </td>
+        <td id="rt" colspan="2">
+          <input class="mini-textbox" width="98%" name="BUCode" />
+        </td>
+      </tr>
+
+      <tr>
+        <td class="title">
+          Type
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="C3_535827034365" readonly />
+        </td>
+        <td class="title">
+          Level
+        </td>
+        <td colspan="2">
+          <input class="mini-textbox" name="C3_589650650993s" readonly />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Base Salary
+        </td>
+        <td colspan="2" class="tc" id="bs">
+          RMB<input
+            class="mini-textbox"
+            name="C3_536089623045"
+            onvaluechanged="sRange"
+            readonly
+          /><b>/Monthly</b>
+        </td>
+        <td colspan="3" class="tc">
+          <input
+            class="mini-textbox"
+            style="text-align: right;"
+            name="C3_534187097705"
+            readonly
+          />
+          <b>～</b>
+          <input class="mini-textbox" name="C3_534187097900" readonly />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          RSUs
+        </td>
+        <td colspan="5" class="tc">
+          <input
+            class="mini-textbox"
+            style="width:98%"
+            name="C3_534187098102"
+            readonly
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Other
+        </td>
+        <td colspan="5" class="tc">
+          <input
+            class="mini-textbox"
+            style="width:98%"
+            name="C3_534187098301"
+            readonly
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="head">
+          <b>总部审批</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          总部审批通过
+        </td>
+        <td>
+          <select
+            class="mini-combobox"
+            showNullItem="true"
+            name="C3_545943975225"
+          >
+            <option value="审批通过">审批通过</option>
+            <option value="审批拒绝 ">审批拒绝 </option>
+          </select>
+        </td>
+        <td class="title">
+          总部通过日期
+        </td>
+        <td>
+          <input
+            class="mini-datepicker"
+            value="2016-10-10"
+            name="C3_545943965722"
+            required="true"
+          />
+        </td>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td class="title">
+          英文名
+        </td>
+        <td>
+          <input class="mini-textbox" name="C3_546098965010" />
+        </td>
+        <td class="title">
+          性别
+        </td>
+        <td>
+          <input class="mini-textbox" name="C3_546099439567" />
+        </td>
+        <td class="title">
+          Offer Date
+        </td>
+        <td>
+          <input class="mini-datepicker" name="C3_546099701952" />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          来源1
+        </td>
+        <td>
+          <input
+            class="mini-combobox"
+            valueField="C3_550592812766"
+            textField="C3_550592812766"
+            name="C3_546099285708"
+            id="elyy"
+          />
+        </td>
+        <td class="title">
+          来源2
+        </td>
+        <td>
+          <input
+            class="mini-combobox"
+            valueField="C3_550592945016"
+            textField="C3_550592945016"
+            name="C3_546099838950"
+            id="elye"
+          />
+        </td>
+        <td class="title">
+          Onboard Date
+        </td>
+        <td>
+          <input class="mini-datepicker" name="C3_546099207452" />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          推荐人
+        </td>
+        <td>
+          <input class="mini-textbox" name="C3_546099890958" />
+        </td>
+        <td class="title">
+          推荐费
+        </td>
+        <td>
+          <input class="mini-textbox" name="C3_546099905253" />
+        </td>
+        <td class="title">
+          猎头费
+        </td>
+        <td>
+          <input class="mini-textbox" name="C3_546099914719" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="head">
+          <b>Comments</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="tc">
+          <input
+            class="mini-textarea"
+            width="96%"
+            style="height:66px"
+            name="C3_544810053160"
+            readonly
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="head">
+          <b>Attachments</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="tc" colspan="2">
+          <a id="ahref" target="_blank" href="#"
+            ><img src="../../img/timg.jpg" width="60"
+          /></a>
+          <a id="ahref2" target="_blank" href="#"
+            ><img src="../../img/timg.jpg" width="60"
+          /></a>
+          <a id="ahref3" target="_blank" href="#"
+            ><img src="../../img/timg.jpg" width="60"
+          /></a>
+        </td>
+        <td colspan="2" class="tc">
+          <div id="lgid">
+            Level:
+            <input class="mini-textbox" name="C3_589650650993" readonly />
+            Grade:
+            <select
+              class="mini-combobox"
+              style="width:50px"
+              showNullItem="true"
+              name="C3_541174246921"
+              id=""
+            >
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+            </select>
+          </div>
+        </td>
+        <td colspan="2" class="foot">
+          <input
+            type="button"
+            value="Save"
+            class="btn btn-primary rf"
+            data-bind="click : save"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="head">
+          <b>Approval process</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6">
+          <table>
+            <tbody>
+              <td class="title3" width="25%">
+                审批人
+              </td>
+              <td class="title3" width="25%">
+                审批结果
+              </td>
+              <td class="title3" width="25%">
+                审批时间
+              </td>
+            </tbody>
+            <tfoot data-bind="foreach: subList">
+              <tr>
+                <td class="tc">
+                  <b data-bind="text: C3_534187898575"></b>
+                </td>
+                <td class="tc">
+                  <b data-bind="text: C3_534187898785"></b>
+                </td>
+                <td class="tc">
+                  <b data-bind="text: C3_534187898986"></b>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </form>
- 
