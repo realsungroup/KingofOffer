@@ -382,11 +382,12 @@ define([
         });
       };
       if (input.files && input.files[0]) {
-        var type = input.files[0].type.split("/");
+        var type = input.files[0].name.split(".");
+
         uploadFile(
           input.files[0],
           "https://finisarinterview.realsun.me/api/AliyunOss/PutOneImageObject?bucketname=nutritiontower&srctype=" +
-            type[1],
+            type[type.length - 1],
           "cloud"
         )
           .then(function (url) {
@@ -433,11 +434,12 @@ define([
         });
       };
       if (input.files && input.files[0]) {
-        var type = input.files[0].type.split("/");
+        var type = input.files[0].name.split(".");
+
         uploadFile(
           input.files[0],
           "https://finisarinterview.realsun.me/api/AliyunOss/PutOneImageObject?bucketname=nutritiontower&srctype=" +
-            type[1],
+            type[type.length - 1],
           "cloud"
         )
           .then(function (url) {
@@ -484,11 +486,13 @@ define([
         });
       };
       if (input.files && input.files[0]) {
-        var type = input.files[0].type.split("/");
+        var type = input.files[0].name.split(".");
+
+        return console.log(input.files[0]);
         uploadFile(
           input.files[0],
           "https://finisarinterview.realsun.me/api/AliyunOss/PutOneImageObject?bucketname=nutritiontower&srctype=" +
-            type[1],
+            type[type.length - 1],
           "cloud"
         )
           .then(function (url) {
